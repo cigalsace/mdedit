@@ -39,29 +39,20 @@ mdEdit repose sur les choix suivants:
 
 ### Frameworks et bibliothèques utilisés:
 
-Côté interface:
-
 - JQuery
 - AngularJS
 - Twitter Bootstrap
 - Showdown
-    
-Côté serveur:
-
-- Python Bottle
-- Openpyxl
-- API Zaphir
-
 
 ## Historique:
 
 ### TODO:
 
-- [] Ajouter possibilité de configurer authentification HTTP côté serveur Python (Bottle)
-- [] Reprendre view-tpl.html pour visualisation des fiches
-- [] Compléter documentation (rédaction + ajout à l'interface des liens vers les fichiers)
-- [] Nettoyer code de mdEdit.js
-- [] Ajouter liste de sélection pour les contacts avec recherche sur le nom, l'organisme et l'email ((cf. data_geographicextent)
+- [ ] Ajouter possibilité de configurer authentification HTTP côté serveur Python (Bottle)
+- [ ] Reprendre view-tpl.html pour visualisation des fiches
+- [ ] Compléter documentation (rédaction + ajout à l'interface des liens vers les fichiers)
+- [ ] Nettoyer code de mdEdit.js
+- [ ] Ajouter liste de sélection pour les contacts avec recherche sur le nom, l'organisme et l'email ((cf. data_geographicextent)
 - [x] Générer liste des emprises communes, département, région, SCOT, EPCI, etc. (cf. fichier Excel v2)
 - [x] Ajouter import de fichiers au format XML ISO/Inspire
 - [x] Ajouter export de fichiers au format XML ISO/Inspire
