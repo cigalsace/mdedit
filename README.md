@@ -1,18 +1,15 @@
 # mdedit
+
 Outil simple et ouvert de saisie, modification et consultation de fiches de métadonnées conforme au format ISO 19139 INSPIRE
 
-## Fonctionnalités:
+
+## Fonctionnalités principales:
 
 - Création de fiches de métadonnées ISO/INSPIRE
 - Modification de fiches de métadonnées ISO/INSPIRE
 - Visualisation de fiches de métadonnées ISO/INSPIRE
 - Import de fichiers au format XML ISO/Inspire
-- Import de fichiers au format JSON
-- Import de fichiers au format XLS CIGAL
-- Import de fichiers au format XLSX CIGAL
 - Export de fichiers au format XML ISO/Inspire
-- Export de fichiers au format JSON
-- Export de fichiers au format XLSX CIGAL
 
 
 ## Principes:
@@ -33,9 +30,8 @@ mdEdit repose sur les choix suivants:
 ### Langages de programmation:
 
 - JS, HTML et CSS côté interface utilisateur
-- Python côté serveur (import et export XLS(X))
+- Python (serveur emarqué pour usage desktop)
 - Markdown pour la documentation
-
 
 ### Frameworks et bibliothèques utilisés:
 
@@ -43,6 +39,8 @@ mdEdit repose sur les choix suivants:
 - AngularJS
 - Twitter Bootstrap
 - Showdown
+- Bottle (serveur embarqué)
+
 
 ## Historique:
 
@@ -56,11 +54,11 @@ mdEdit repose sur les choix suivants:
 - [x] Générer liste des emprises communes, département, région, SCOT, EPCI, etc. (cf. fichier Excel v2)
 - [x] Ajouter import de fichiers au format XML ISO/Inspire
 - [x] Ajouter export de fichiers au format XML ISO/Inspire
-- [ANNULE] Ajouter import de fichiers au format JSON
-- [ANNULE] Ajouter import de fichiers au format XLS CIGAL
-- [ANNULE] Ajouter import de fichiers au format XLSX CIGAL
-- [ANNULE] Ajouter export de fichiers au format JSON 
-- [ANNULE] Ajouter export de fichiers au format XLSX CIGAL
+- [ANNULE] Ajouter import de fichiers au format JSON - intérêt?
+- [ANNULE] Ajouter import de fichiers au format XLS CIGAL - intérêt?
+- [ANNULE] Ajouter import de fichiers au format XLSX CIGAL - intérêt?
+- [ANNULE] Ajouter export de fichiers au format JSON - intérêt?
+- [ANNULE] Ajouter export de fichiers au format XLSX CIGAL - intérêt?
 
 
 ### Version 0.06:
