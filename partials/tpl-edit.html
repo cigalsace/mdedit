@@ -1,0 +1,1135 @@
+
+        <div id="content" class="container">
+            <div class="col col-sm-12 panel-group" id="accordion">
+            <form name="mdForm" novalidate>    
+                <!-- Panel 1 -->
+                <div class="panel panel-primary" ng-show="showAllFields">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Informations sur la fiche de métadonnées" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Informations sur la fiche de métadonnées
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="row">
+                                <!-- metadata.md_fileidentifier -->
+                                <div class="col-md-4 form-group">
+                                    <label for="{{fields.md_fileidentifier.id}}" tooltip="{{fields.md_fileidentifier.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/md_fileidentifier.md')">
+                                        {{fields.md_fileidentifier.label}}
+                                        <!--<span class="sr-only">Error:</span>-->
+                                    </label>
+                                    <input type="text" class="form-control input-sm" id="{{fields.md_fileidentifier.id}}" name="{{fields.md_fileidentifier.id}}" placeholder="{{fields.md_fileidentifier.placeholder}}" ng-model="metadata.md_fileidentifier" />
+                                </div>
+                                <!-- metadata.md_language -->
+                                <div class="col-md-4 form-group">
+                                    <label class="control-label" for="{{fields.md_language.id}}" tooltip="{{fields.md_language.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.md_language.label}}
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.md_language.id}}" id="{{fields.md_language.id}}" ng-options="language.id as language.value for language in codelists.MD_LanguageCode" ng-model="metadata.md_language">
+                                        <option value="">Sélectionnez une langue</option>
+                                    </select>
+                                </div>
+                                <!-- md_standardname -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="{{fields.md_standardname.id}}" tooltip="{{fields.md_standardname.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.md_standardname.label}}
+                                        </label>
+                                        <input type="text" class="form-control input-sm" name="{{fields.md_standardname.id}}" id="{{fields.md_standardname.id}}" placeholder="{{fields.md_standardname.placeholder}}" ng-model="metadata.md_standardname" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- md_hierarchylevel -->
+                                <div class="col-md-4 form-group">
+                                    <label class="control-label" for="{{fields.md_hierarchylevel.id}}" tooltip="{{fields.md_hierarchylevel.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.md_hierarchylevel.label}}
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.md_hierarchylevel.id}}" id="{{fields.md_hierarchylevel.id}}" ng-options="hierarchylevel.id as hierarchylevel.value for hierarchylevel in codelists.MD_ScopeCode" ng-model="metadata.md_hierarchylevel">
+                                        <option value="">Sélectionnez le type de ressource</option>
+                                    </select>
+                                </div>
+                                <!-- md_characterset -->
+                                <div class="col-md-4 form-group">
+                                    <label class="control-label" for="{{fields.md_characterset.id}}" tooltip="{{fields.md_characterset.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.md_characterset.label}}
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.md_characterset.id}}" id="{{fields.md_characterset.id}}" ng-options="characterset.id as characterset.value for characterset in codelists.MD_CharacterSetCode" ng-model="metadata.md_characterset" disabled>
+                                        <option value="">Sélectionnez un encodage</option>
+                                    </select>
+                                </div>
+                                <!-- md_standardversion -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="{{fields.md_standardversion.id}}" tooltip="{{fields.md_standardversion.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.md_standardversion.label}}
+                                        </label>
+                                        <input type="text" class="form-control input-sm" name="{{fields.md_standardversion.id}}" id="{{fields.md_standardversion.id}}" placeholder="{{fields.md_standardversion.placeholder}}" ng-model="metadata.md_standardversion" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- md_datestamp -->
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label for="{{fields.md_datestamp.id}}" tooltip="{{fields.md_datestamp.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.md_datestamp.label}}
+                                    </label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control input-sm" datepicker-popup="yyyy-MM-dd" is-open="datePicker['datestampOpened']" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="metadata.md_datestamp" name="{{fields.md_datestamp.id}}" id="{{fields.md_datestamp.id}}" />
+                                        <!--<input type="hidden" value="creation" ng-model="metadata.data_dates[0].type" />-->
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'datestampOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel 2 -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Informations relatives aux auteurs et contacts pour la fiche de métadonnées" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Auteurs et contacts pour la fiche de métadonnées
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <!--<span class="glyphicon glyphicon-info-sign" aria-hidden="true" tooltip="Informations relatives aux auteurs et contacts pour la fiche de métadonnées" tooltip-trigger="mouseenter" tooltip-placement="right"></span>-->
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <!-- md_contacts -->
+                            <div ng-repeat="md_contact in metadata.md_contacts">
+                                <div class="row">
+                                    <!-- md_contacts.role -->
+                                    <div class="col-md-5 form-group">
+                                        <label class="bt-doc control-label" for="{{fields.md_contacts.children.role.id}}" tooltip="{{fields.md_contacts.children.role.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.md_contacts.children.role.label}}
+                                        </label>
+                                        <select class="form-control input-sm selectpicker_" name="{{fields.md_contacts.children.role.id}}" id="{{fields.md_contacts.children.role.id}}" ng-options="role.id as role.value for role in codelists.CI_RoleCode" ng-model="md_contact.role">
+                                            <option value="">Sélectionnez un role</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-7 btn-toolbar">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeContact('md_contact', md_contact)"></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <!-- md_contacts.name -->
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.md_contacts.children.name.id}}" tooltip="{{fields.md_contacts.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.name.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.name.id}}" id="{{fields.md_contacts.children.name.id}}" placeholder="{{fields.md_contacts.children.name.placeholder}}" ng-model="md_contact.name" />
+                                        </div>
+                                        <!-- md_contacts.position -->
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.md_contacts.children.position.id}}" tooltip="{{fields.md_contacts.children.position.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.position.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.position.label}}" id="{{fields.md_contacts.children.position.id}}" placeholder="{{fields.md_contacts.children.position.placeholder}}" ng-model="md_contact.position" />
+                                        </div>
+                                        <!-- md_contacts.organisation -->
+                                        <div class="form-group _has-warning">
+                                            <label class="bt-doc control-label" for="{{fields.md_contacts.children.organisation.id}}" tooltip="{{fields.md_contacts.children.organisation.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.organisation.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.organisation.id}}" id="{{fields.md_contacts.children.organisation.id}}" placeholder="{{fields.md_contacts.children.organisation.placeholder}}" ng-model="md_contact.organisation" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <!-- md_contacts.address -->
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.md_contacts.children.address.id}}" tooltip="{{fields.md_contacts.children.address.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.address.label}}
+                                            </label>
+                                            <textarea class="form-control input-sm" id="{{fields.md_contacts.children.address.id}}" name="{{fields.md_contacts.children.address.id}}" placeholder="{{fields.md_contacts.children.address.placeholder}}" rows="3" ng-model="md_contact.address"></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <!-- md_contacts.cp -->
+                                            <div class="col-md-4 form-group">
+                                                <label class="bt-doc control-label" for="{{fields.md_contacts.children.cp.id}}" tooltip="{{fields.md_contacts.children.cp.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.md_contacts.children.cp.label}}
+                                                </label>
+                                                <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.cp.label}}" id="{{fields.md_contacts.children.cp.id}}" placeholder="{{fields.md_contacts.children.cp.placeholder}}" ng-model="md_contact.cp" />
+                                            </div>
+                                            <!-- md_contacts.city -->
+                                            <div class="col-md-8 form-group">
+                                                <label class="bt-doc control-label" for="{{fields.md_contacts.children.city.id}}" tooltip="{{fields.md_contacts.children.city.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.md_contacts.children.city.label}}
+                                                </label>
+                                                <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.city.label}}" id="{{fields.md_contacts.children.city.id}}" placeholder="{{fields.md_contacts.children.city.placeholder}}" ng-model="md_contact.city" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- md_contacts.tel -->
+                                    <div class="col-md-5 form-group">
+                                        <label class="bt-doc control-label" for="{{fields.md_contacts.children.tel.id}}" tooltip="{{fields.md_contacts.children.tel.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.md_contacts.children.tel.label}}
+                                        </label>
+                                        <input type="tel" class="form-control input-sm" name="{{fields.md_contacts.children.tel.label}}" id="{{fields.md_contacts.children.tel.id}}" placeholder="{{fields.md_contacts.children.tel.placeholder}}" ng-model="md_contact.tel" />
+                                    </div>
+                                    <!-- md_contacts.email -->
+                                    <div class="col-md-7 form-group _has-warning">
+                                        <label class="bt-doc control-label" for="{{fields.md_contacts.children.email.id}}" tooltip="{{fields.md_contacts.children.email.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.md_contacts.children.email.label}}
+                                        </label>
+                                        <input type="mail" class="form-control input-sm" name="{{fields.md_contacts.children.email.label}}" id="{{fields.md_contacts.children.email.id}}" placeholder="{{fields.md_contacts.children.email.placeholder}}" ng-model="md_contact.email" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- Logo -->
+                                    <!--
+                                    <div class="col-md-12">
+                                        <label for="{{fields.md_contacts.children.logo.id}}" tooltip="{{fields.md_contacts.children.logo.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                            {{fields.md_contacts.children.logo.label}}
+                                            <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                                        </label>
+                                    </div>
+                                    -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.data_browsegraphics.children.logo_url.id}}" tooltip="{{fields.md_contacts.children.logo_url.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.logo_url.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.logo_url.id}}" id="{{fields.md_contacts.children.logo_url.id}}" placeholder="{{fields.md_contacts.children.logo_url.placeholder}}" ng-model="md_contact.logo_url" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.md_contacts.children.logo_text.id}}" tooltip="{{fields.md_contacts.children.logo_text.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.logo_text.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.logo_text.label}}" id="{{fields.md_contacts.children.logo_text.id}}" placeholder="{{fields.md_contacts.children.logo_text.placeholder}}" ng-model="md_contact.logo_text" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 btn-toolbar">
+                                    <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addContact('md_contact')"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel 3 -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Informations relatives à la description des données" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Description des données
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <!-- data_title -->
+                            <div class="row">
+                                <div class="col-md-12 form-group" _ng-class="{'has-error': mdForm.data_title.$invalid }">
+                                    <label class="bt-doc control-label" for="{{fields.data_title.id}}" tooltip="{{fields.data_title.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/data_title.md')">
+                                        {{fields.data_title.label}}
+                                    </label>
+                                    <input type="text" class="form-control input-sm" id="{{fields.data_title.id}}" name="{{fields.data_title.id}}" placeholder="{{fields.data_title.placeholder}}" ng-model="metadata.data_title" _required />
+                                </div>
+                            </div>
+                            <!-- data_abstract -->
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_abstract.id}}" tooltip="{{fields.data_abstract.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/data_abstract.md')">
+                                        {{fields.data_abstract.label}}
+                                    </label>
+                                    <textarea class="form-control input-sm" id="{{fields.data_abstract.id}}" name="{{fields.data_abstract.id}}" placeholder="{{fields.data_abstract.placeholder}}" rows="3" ng-model="metadata.data_abstract"></textarea>
+                                </div>
+                            </div>
+                            <hr />
+                            <!-- data_browsegraphics -->
+                            <div class="row">
+                                <!-- Browsegraphics simple (1 ligne)
+                                <div class="col-md-12">
+                                    <label for="{{fields.data_browsegraphics.id}}" tooltip="{{fields.data_browsegraphics.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                        {{fields.data_browsegraphics.label}}
+                                        <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                                    </label>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="{{fields.data_browsegraphics.children.url.id}}" tooltip="{{fields.data_browsegraphics.children.url.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                            {{fields.data_browsegraphics.children.url.label}}
+                                            <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                                        </label>
+                                        <input type="text" class="form-control input-sm" name="{{fields.data_browsegraphics.children.url.id}}" id="{{fields.data_browsegraphics.children.url.id}}" placeholder="{{fields.data_browsegraphics.children.url.placeholder}}" ng-model="metadata.data_browsegraphics[0].url" />
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="{{fields.data_browsegraphics.children.description.id}}" tooltip="{{fields.data_browsegraphics.children.description.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                            {{fields.data_browsegraphics.children.description.label}}
+                                            <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                                        </label>
+                                        <textarea class="form-control input-sm" id="{{fields.data_browsegraphics.children.description.id}}" name="{{fields.data_browsegraphics.children.description.id}}" placeholder="{{fields.data_browsegraphics.children.description.placeholder}}" rows="3" ng-model="metadata.data_browsegraphics[0].description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label tooltip="{{fields.data_browsegraphics.children.image.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                        {{fields.data_browsegraphics.children.image.label}}
+                                        <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                                    </label>
+                                    <div>
+                                        <img class="img-thumbnail" ng-if="metadata.data_browsegraphics[0].url != ''" ng-src="{{metadata.data_browsegraphics[0].url}}" alt="{{metadata.data_browsegraphics[0].description}}" />
+                                    </div>
+                                </div>
+                                -->
+                                <!-- data_browsegraphics -->
+                                <div class="col-md-12">
+                                    <label>
+                                        <span class="bt-doc" tooltip="{{fields.data_browsegraphics.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_browsegraphics.label}}
+                                        </span>
+                                    </label>
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_browsegraphics.children.url.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_browsegraphics.children.url.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_browsegraphics.children.description.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_browsegraphics.children.description.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_browsegraphics.children.type.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_browsegraphics.children.type.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_browsegraphics.children.image.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_browsegraphics.children.image.label}}
+                                                </span>
+                                            </th>
+                                            <th ng-show="showAllFields">
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addBrowsegraphic()"></button>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="data_browsegraphic in metadata.data_browsegraphics">
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_browsegraphics.children.url.id}}" id="{{fields.data_browsegraphics.children.url.id}}" placeholder="{{fields.data_browsegraphics.children.url.placeholder}}" ng-model="data_browsegraphic.url" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_browsegraphics.children.description.id}}" id="{{fields.data_browsegraphics.children.description.id}}" placeholder="{{fields.data_browsegraphics.children.description.placeholder}}" ng-model="data_browsegraphic.description" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_browsegraphics.children.type.id}}" id="{{fields.data_browsegraphics.children.type.id}}" placeholder="{{fields.data_browsegraphics.children.type.placeholder}}" ng-model="data_browsegraphic.type" />
+                                            </td>
+                                            <td>
+                                                <img class="img-thumbnail" ng-if="data_browsegraphic.url != ''" ng-src="{{data_browsegraphic.url}}" alt="{{data_browsegraphic.description}}" />
+                                            </td>
+                                            <td ng-show="showAllFields">
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeBrowsegraphic(data_browsegraphic)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <!-- data_datecreation -->
+                                <div class="col-md-4 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_datecreation.id}}" tooltip="{{fields.data_datecreation.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_datecreation.label}}
+                                    </label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control input-sm" datepicker-popup="yyyy-MM-dd" is-open="datePicker['creationOpened']" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="metadata.data_datecreation" name="{{fields.data_datecreation.id}}" id="{{fields.data_datecreation.id}}" />
+                                        <!--<input type="hidden" value="creation" ng-model="metadata.data_dates[0].type" />-->
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'creationOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- data_daterevision -->
+                                <div class="col-md-4 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_daterevision.id}}" tooltip="{{fields.data_daterevision.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_daterevision.label}}
+                                    </label>
+                                    <div class="input-group date">
+                                        <input type="text" name="{{fields.data_daterevision.id}}" id="{{fields.data_daterevision.id}}" class="form-control input-sm" datepicker-popup="yyyy-MM-dd" is-open="datePicker['updatedOpened']" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="metadata.data_daterevision" name="{{fields.data_daterevision.id}}" />
+                                        <!--<input type="hidden" value="revision" ng-model="metadata.data_dates[2].type" />-->
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'updatedOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- data_datepublication -->
+                                <div class="col-md-4 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_datepublication.id}}" tooltip="{{fields.data_datepublication.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_datepublication.label}}
+                                    </label>
+                                    <div class="input-group date">
+                                        <input type="text" name="{{fields.data_datepublication.id}}" id="{{fields.data_datepublication.id}}" class="form-control input-sm" datepicker-popup="yyyy-MM-dd" is-open="datePicker['publicationOpened']" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="metadata.data_datepublication" name="{{fields.data_datepublication.id}}" />
+                                        <!--<input type="hidden" value="publication" ng-model="metadata.data_dates[3].type" />-->
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'publicationOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- data_maintenancefrequencycode -->
+                                <div class="col-md-4 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_maintenancefrequencycode.id}}" tooltip="{{fields.data_maintenancefrequencycode.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_maintenancefrequencycode.label}}
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.data_maintenancefrequencycode.id}}" ng-options="frequence.id as frequence.value for frequence in codelists.MD_MaintenanceFrequencyCode" ng-model="metadata.data_maintenancefrequencycode">
+                                        <option value="">Sélectionnez une fréquence</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row" ng-show="showAllFields">
+                                <!-- data_temporalextents -->
+                                <div class="col-md-12">
+                                    <label class="bt-doc control-label" for="{{fields.data_temporalextents.id}}" tooltip="{{fields.data_temporalextents.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_temporalextents.label}}
+                                    </label>
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_temporalextents.children.begin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_temporalextents.children.begin.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_temporalextents.children.end.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_temporalextents.children.end.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_temporalextents.children.description.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_temporalextents.children.description.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addTemporalextent()"></button>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="data_temporalextent in metadata.data_temporalextents">
+                                            <td>
+                                                <!--<input type="text" class="form-control input-sm" name="{{fields.data_temporalextents.children.url.id}}" id="{{fields.data_temporalextents.children.begin.id}}" placeholder="{{fields.data_temporalextents.children.begin.placeholder}}" ng-model="data_temporalextent.begin" />-->
+                                                <div class="input-group date">
+                                                    <input type="text" name="{{fields.data_temporalextents.children.begin.id}}" id="{{fields.data_temporalextents.children.begin.id}}" class="form-control input-sm" datepicker-popup="yyyy-MM-dd" is-open="datePicker['temporalExtentBeginOpened_'+$index]" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="data_temporalextent.begin" name="{{fields.data_temporalextents.children.begin.id}}" />
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'temporalExtentBeginOpened_'+$index)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!--<input type="text" class="form-control input-sm" name="{{fields.data_temporalextents.children.end.id}}" id="{{fields.data_temporalextents.children.end.id}}" placeholder="{{fields.data_temporalextents.children.end.placeholder}}" ng-model="data_temporalextent.end" />-->
+                                                <div class="input-group date">
+                                                    <input type="text" name="{{fields.data_temporalextents.children.end.id}}" id="{{fields.data_temporalextents.children.end.id}}" class="form-control input-sm" datepicker-popup="yyyy-MM-dd" is-open="datePicker['temporalExtentEndOpened_'+$index]" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="data_temporalextent.end" name="{{fields.data_temporalextents.children.end.id}}" />
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'temporalExtentEndOpened_'+$index)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!--<input type="text" class="form-control input-sm" name="{{fields.data_temporalextents.children.description.id}}" id="{{fields.data_temporalextents.children.description.id}}" placeholder="{{fields.data_temporalextents.children.description.placeholder}}" ng-model="data_temporalextent.description" />-->
+                                                <textarea class="form-control input-sm" id="{{fields.data_temporalextents.children.description.id}}" name="{{fields.data_temporalextents.children.description.id}}" placeholder="{{fields.data_temporalextents.children.description.placeholder}}" rows="3" ng-model="data_temporalextent.description"></textarea>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeTemporalextent(data_temporalextent)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr />
+                            <!-- data_languages -->
+                            <div class="row" ng-show="showAllFields">
+                                <!-- data_language[1] -->
+                                <div class="col-md-4 form-group" ng-repeat="key in [0, 1, 2]">
+                                    <label class="bt-doc control-label" for="{{fields.data_languages.id}}" tooltip="{{fields.data_languages.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_languages.label}} ({{key + 1}})
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.data_languages.id}}" id="{{fields.data_languages.id}}" ng-options="language.id as language.value for language in codelists.MD_LanguageCode" ng-model="metadata.data_languages[key]">
+                                        <option value="">Sélectionnez une langue</option>
+                                    </select>
+                                    <hr />
+                                </div>
+                            
+                            </div>
+                            <div class="row">
+                                <!-- data_topiccategories -->
+                                <div class="col-md-6 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_topiccategories.id}}" tooltip="{{fields.data_topiccategories.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_topiccategories.label}}
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.data_topiccategories.id}}" ng-options="category.id as category.value for category in codelists.MD_TopicCategoryCode" ng-model="metadata.data_topiccategories[0]">
+                                        <option value="">Sélectionnez une catégorie</option>
+                                    </select>
+                                </div>
+                                <!-- data_inspirekeywords -->
+                                <div class="col-md-6 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_inspirekeywords.id}}" tooltip="{{fields.data_inspirekeywords.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_inspirekeywords.label}}
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.data_inspirekeywords.id}}" ng-options="inspireCategory.id as inspireCategory.value for inspireCategory in codelists.MD_InspireTopicCategoryCode" ng-model="metadata.data_inspirekeywords[0].keyword">
+                                          <option value="">Sélectionnez un thème</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- data_keywords_list -->
+                                <div class="col-md-12 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_keywords_list.id}}" tooltip="{{fields.data_keywords_list.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_keywords_list.label}}
+                                    </label>
+                                    <textarea class="form-control input-sm" id="{{fields.data_keywords_list.id}}" name="{{fields.data_keywords_list.id}}" placeholder="{{fields.data_keywords_list.placeholder}}" rows="3" ng-model="metadata.data_keywords_list"></textarea>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="showAllFields">
+                                <!-- data_keywords -->
+                                <div class="col-md-12" ng-show="showAllFields">
+                                    <label class="bt-doc control-label" for="{{fields.data_keywords.id}}" tooltip="{{fields.data_keywords.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_keywords.label}}
+                                    </label>
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_keywords.children.keyword.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_keywords.children.keyword.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_keywords.children.type.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_keywords.children.type.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_keywords.children.thesaurus_name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_keywords.children.thesaurus_name.label}}
+                                                </span>
+                                            </th>
+                                            
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_keywords.children.thesaurus_datepublication.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_keywords.children.thesaurus_datepublication.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addKeyword()"></button>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="data_keyword in metadata.data_keywords">
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_keywords.children.keyword.id}}" id="{{fields.data_keywords.children.keyword.id}}" placeholder="{{fields.data_keywords.children.keyword.placeholder}}" ng-model="data_keyword.keyword" />
+                                            </td>
+                                            <td>
+                                                <select class="form-control input-sm selectpicker_" name="{{fields.data_keywords.children.type.id}}" id="{{fields.data_keywords.children.type.id}}" ng-options="type.id as type.value for type in codelists.MD_KeywordTypeCode" ng-model="data_keywords.type">
+                                                    <option value="">Sélectionnez</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_keywords.children.thesaurus_name.id}}" id="{{fields.data_keywords.children.thesaurus_name.id}}" placeholder="{{fields.data_keywords.children.thesaurus_name.placeholder}}" ng-model="data_keyword.thesaurus_name" />
+                                            </td>
+                                            <td>
+                                                <div class="input-group date">
+                                                    <input type="text" class="form-control input-sm" datepicker-popup="yyyy-MM-dd" is-open="datePicker['thesaurus_datepublicationOpened_'+$index]" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="data_keyword.thesaurus_dates[0].date" name="{{fields.data_keywords.children.thesaurus_datepublication.id}}" id="{{fields.data_keywords.children.thesaurus_datepublication.id}}" />
+                                                    <!--<input type="hidden" value="creation" ng-model="metadata.data_dates[0].type" />-->
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'thesaurus_datepublicationOpened_'+$index)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                    </span>
+                                                    <input type="hidden" class="form-control input-sm" name="{{fields.data_keywords.children.thesaurus_dates.children.type.id}}" id="{{fields.data_keywords.children.thesaurus_dates.children.type.id}}" ng-model="data_keyword.thesaurus_dates[0].type" value="publication"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeKeyword(data_keyword)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- panel 4 -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Informations relatives aux contacts pour la base de données" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Contacts pour la base de données
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <div ng-repeat="data_contact in metadata.data_contacts">
+                                <div class="row">
+                                    <div class="col-md-5 form-group">
+                                        <label class="bt-doc control-label" for="{{fields.data_contacts.children.role.id}}" tooltip="{{fields.data_contacts.children.role.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_contacts.children.role.label}}
+                                        </label>
+                                        <select class="form-control input-sm selectpicker_" name="{{fields.data_contacts.children.role.id}}" id="{{fields.data_contacts.children.role.id}}" ng-options="role.id as role.value for role in codelists.CI_RoleCode" ng-model="data_contact.role">
+                                            <option value="">Sélectionnez un role</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-7 btn-toolbar">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeContact('data_contact', data_contact)"></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.data_contacts.children.name.id}}" tooltip="{{fields.data_contacts.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_contacts.children.name.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.data_contacts.children.name.id}}" id="{{fields.data_contacts.children.name.id}}" placeholder="{{fields.data_contacts.children.name.placeholder}}" ng-model="data_contact.name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.data_contacts.children.position.id}}" tooltip="{{fields.data_contacts.children.position.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_contacts.children.position.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.data_contacts.children.position.label}}" id="{{fields.data_contacts.children.position.id}}" placeholder="{{fields.data_contacts.children.position.placeholder}}" ng-model="data_contact.position" />
+                                        </div>
+                                        <div class="form-group _has-warning">
+                                            <label class="bt-doc control-label" for="{{fields.data_contacts.children.organisation.id}}" tooltip="{{fields.data_contacts.children.organisation.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_contacts.children.organisation.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.data_contacts.children.organisation.id}}" id="{{fields.data_contacts.children.organisation.id}}" placeholder="{{fields.data_contacts.children.organisation.placeholder}}" ng-model="data_contact.organisation" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.data_contacts.children.address.id}}" tooltip="{{fields.data_contacts.children.address.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_contacts.children.address.label}}
+                                            </label>
+                                            <textarea class="form-control input-sm" id="{{fields.data_contacts.children.address.id}}" name="{{fields.data_contacts.children.address.id}}" placeholder="{{fields.data_contacts.children.address.placeholder}}" rows="3" ng-model="data_contact.address"></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 form-group">
+                                                <label class="bt-doc control-label" for="{{fields.data_contacts.children.cp.id}}" tooltip="{{fields.data_contacts.children.cp.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_contacts.children.cp.label}}
+                                                </label>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_contacts.children.cp.label}}" id="{{fields.data_contacts.children.cp.id}}" placeholder="{{fields.data_contacts.children.cp.placeholder}}" ng-model="data_contact.cp" />
+                                            </div>
+                                            <div class="col-md-8 form-group">
+                                                <label class="bt-doc control-label" for="{{fields.data_contacts.children.city.id}}" tooltip="{{fields.data_contacts.children.city.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_contacts.children.city.label}}
+                                                </label>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_contacts.children.city.label}}" id="{{fields.data_contacts.children.city.id}}" placeholder="{{fields.data_contacts.children.city.placeholder}}" ng-model="data_contact.city" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5 form-group">
+                                        <label class="bt-doc control-label" for="{{fields.data_contacts.children.tel.id}}" tooltip="{{fields.data_contacts.children.tel.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_contacts.children.tel.label}}
+                                        </label>
+                                        <input type="tel" class="form-control input-sm" name="{{fields.data_contacts.children.tel.label}}" id="{{fields.data_contacts.children.tel.id}}" placeholder="{{fields.data_contacts.children.tel.placeholder}}" ng-model="data_contact.tel" />
+                                    </div>
+                                    <div class="col-md-7 form-group _has-warning">
+                                        <label class="bt-doc control-label" for="{{fields.data_contacts.children.email.id}}" tooltip="{{fields.data_contacts.children.email.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_contacts.children.email.label}}
+                                        </label>
+                                        <input type="email" class="form-control input-sm" name="{{fields.data_contacts.children.email.label}}" id="{{fields.data_contacts.children.email.id}}" placeholder="{{fields.data_contacts.children.email.placeholder}}" ng-model="data_contact.email" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- Logo -->
+                                    <!--
+                                    <div class="col-md-12">
+                                        <label class="bt-doc control-label" for="{{fields.md_contacts.children.logo.id}}" tooltip="{{fields.md_contacts.children.logo.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.md_contacts.children.logo.label}}
+                                            <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                                        </label>
+                                    </div>
+                                    -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.data_browsegraphics.children.logo_url.id}}" tooltip="{{fields.md_contacts.children.logo_url.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.logo_url.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.logo_url.id}}" id="{{fields.md_contacts.children.logo_url.id}}" placeholder="{{fields.md_contacts.children.logo_url.placeholder}}" ng-model="md_contact.logo_url" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bt-doc control-label" for="{{fields.md_contacts.children.logo_text.id}}" tooltip="{{fields.md_contacts.children.logo_text.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.md_contacts.children.logo_text.label}}
+                                            </label>
+                                            <input type="text" class="form-control input-sm" name="{{fields.md_contacts.children.logo_text.label}}" id="{{fields.md_contacts.children.logo_text.id}}" placeholder="{{fields.md_contacts.children.logo_text.placeholder}}" ng-model="md_contact.logo_text" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 btn-toolbar">
+                                    <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addContact('data_contact')"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 5 -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Informations relatives aux références géographiques et à la qualité de la base de données" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Références géographiques et qualité des données
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bt-doc control-label" for="{{fields.data_spatialrepresentationtype.id}}" tooltip="{{fields.data_spatialrepresentationtype.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_spatialrepresentationtype.label}}
+                                        </label>
+                                        <select class="form-control input-sm selectpicker_" name="{{fields.data_spatialrepresentationtype.id}}" id="{{fields.data_spatialrepresentationtype.id}}" ng-options="spatialrepresentationtype.id as spatialrepresentationtype.value for spatialrepresentationtype in codelists.MD_SpatialRepresentationTypeCode" ng-model="metadata.data_spatialrepresentationtype">
+                                            <option value="">Sélectionnez un type</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- geographic extents -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="bt-doc control-label" for="{{fields.data_geographicextents.id}}" tooltip="{{fields.data_geographicextents.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_geographicextents.label}}
+                                    </label>
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_geographicextents.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_geographicextents.children.name.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_geographicextents.children.xmin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_geographicextents.children.xmin.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_geographicextents.children.xmax.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_geographicextents.children.xmax.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_geographicextents.children.ymin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_geographicextents.children.ymin.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_geographicextents.children.ymax.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_geographicextents.children.ymax.label}}
+                                                </span>
+                                            </th>
+                                            <th ng-show="showAllFields">
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addGeographicExtent()"></button>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="data_geographicextent in metadata.data_geographicextents">
+                                            <td>
+                                                <!--<input type="text" ng-model="ext" typeahead="extent as extent.name for extent in geographicExtents | filter:$viewValue | limitTo:8" class="form-control">
+                                                <input value="{{ext.name}}" /><input value="{{ext.north}}" />-->
+                                                <!--<input type="text" class="form-control input-sm" name="{{fields.data_geographicextents.children.name.id}}" id="{{fields.data_geographicextents.children.name.id}}" placeholder="{{fields.data_geographicextents.children.name.placeholder}}" ng-model="data_geographicextent.name" />-->
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_geographicextents.children.name.id}}" id="{{fields.data_geographicextents.children.name.id}}" placeholder="{{fields.data_geographicextents.children.name.placeholder}}" ng-model="data_geographicextent.name" typeahead="geographicextent as geographicextent.name+' ('+geographicextent.description+')' for geographicextent in geographicExtents | filter:$viewValue | limitTo:8" typeahead-on-select="onSelectGeographixExtent($item, $model, $label, $index)" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_geographicextents.children.xmin.id}}" id="{{fields.data_geographicextents.children.xmin.id}}" placeholder="{{fields.data_geographicextents.children.xmin.placeholder}}" ng-model="data_geographicextent.xmin" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_geographicextents.children.xmax.id}}" id="{{fields.data_geographicextents.children.xmax.id}}" placeholder="{{fields.data_geographicextents.children.xmax.placeholder}}" ng-model="data_geographicextent.xmax" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_geographicextents.children.ymin.id}}" id="{{fields.data_geographicextents.children.ymin.id}}" placeholder="{{fields.data_geographicextents.children.ymin.placeholder}}" ng-model="data_geographicextent.ymin" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_geographicextents.children.ymax.id}}" id="{{fields.data_geographicextents.children.ymax.id}}" placeholder="{{fields.data_geographicextents.children.ymax.placeholder}}" ng-model="data_geographicextent.ymax" />
+                                            </td>
+                                            <td ng-show="showAllFields">
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeGeographicExtent(data_geographicextent)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-condensed">
+                                        <th> 
+                                            <span class="bt-doc control-label" tooltip="{{fields.data_referencesystems.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_referencesystems.label}}
+                                            </span>
+                                        </th>
+                                        <th ng-show="showAllFields">
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addReferencesystem()"></button>
+                                        </th>
+                                        <tr ng-repeat="referencesystem in metadata.data_referencesystems track by $index">
+                                            <td>
+                                                <select class="form-control input-sm selectpicker_" name="{{fields.referencesystem.id}}" id="{{fields.referencesystem.id}}" ng-options="referencesystem.id as referencesystem.value for referencesystem in codelists.MD_ReferenceSystemCode" ng-model="referencesystem.code">
+                                                    <option value="">Sélectionnez un système de projection</option>
+                                                </select>
+                                                <input type="hidden" value="EPSG" ng-model="referencesystem.codespace" />
+                                            </td>
+                                            <td ng-show="showAllFields">
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeReferencesystem(referencesystem)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" _ng-class="{'has-error': mdForm.data_scaledenominator.$invalid }">
+                                        <label class="bt-doc control-label" for="{{fields.data_scaledenominator.id}}" tooltip="{{fields.data_scaledenominator.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_scaledenominator.label}}
+                                        </label>
+                                        <input type="text" class="form-control input-sm" name="{{fields.data_scaledenominator.id}}" id="{{fields.data_scaledenominator.id}}" placeholder="{{fields.data_scaledenominator.placeholder}}" ng-model="metadata.data_scaledenominator" _ng-required="!metadata.data_scaledistance" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" _ng-class="{'has-error': mdForm.data_scaledistance.$invalid }">
+                                        <label class="bt-doc control-label" for="{{fields.data_scaledistance.id}}" tooltip="{{fields.data_scaledistance.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_scaledistance.label}}
+                                        </label>
+                                        <input type="text" class="form-control input-sm" name="{{fields.data_scaledistance.id}}" id="{{fields.data_scaledistance.id}}" placeholder="{{fields.data_scaledistance.placeholder}}" ng-model="metadata.data_scaledistance" _ng-required="!metadata.data_scaledenominator" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bt-doc control-label" for="{{fields.data_li_statement.id}}" tooltip="{{fields.data_li_statement.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_li_statement.label}}
+                                        </label>
+                                        <textarea class="form-control input-sm" id="{{fields.data_li_statement.id}}" name="{{fields.data_li_statement.id}}" placeholder="{{fields.data_li_statement.placeholder}}" rows="3" ng-model="metadata.data_li_statement"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="showAllFields">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bt-doc control-label" for="{{fields.data_uselimitations.children.name.id}}" tooltip="{{fields.data_uselimitations.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_uselimitations.children.name.label}}
+                                        </label>
+                                        <textarea class="form-control input-sm" id="{{fields.data_uselimitations.children.name.id}}" name="{{fields.data_uselimitations.children.name.id}}" placeholder="{{fields.data_uselimitations.children.name.placeholder}}" rows="3" ng-model="metadata.data_li_statement"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="showAllFields">
+                                <div class="col-md-12 form-group">
+                                    <label class="bt-doc control-label" for="{{fields.data_characterset.id}}" tooltip="{{fields.data_characterset.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_characterset.label}}
+                                    </label>
+                                    <select class="form-control input-sm selectpicker_" name="{{fields.data_characterset.id}}" id="{{fields.data_characterset.id}}" ng-options="characterset.id as characterset.value for characterset in codelists.MD_CharacterSetCode" ng-model="metadata.data_characterset" disabled>
+                                        <option value="">Sélectionnez un encodage</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="bt-doc control-label" for="{{fields.data_distformats.id}}" tooltip="{{fields.data_distformats.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_distformats.label}}
+                                    </label>
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_distformats.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_distformats.children.name.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_distformats.children.version.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_distformats.children.version.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_distformats.children.specification.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_distformats.children.specification.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addFormat()"></button>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="data_distformat in metadata.data_distformats">
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_distformats.children.name.id}}" id="{{fields.data_distformats.children.name.id}}" placeholder="{{fields.data_distformats.children.name.placeholder}}" ng-model="data_distformat.name" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_distformats.children.version.id}}" id="{{fields.data_distformats.children.version.id}}" placeholder="{{fields.data_distformats.children.version.placeholder}}" ng-model="data_distformat.version" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_distformats.children.specification.id}}" id="{{fields.data_distformats.children.specification.id}}" placeholder="{{fields.data_distformats.children.specification.placeholder}}" ng-model="data_distformat.specification" />
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeFormat(data_distformat)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel 6 -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Informations relatives aux conditions légales d'accès et d'usage de la base de données" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Conditions légales d'accès et d'usage
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bt-doc control-label" for="{{fields.data_security_classification.id}}" tooltip="{{fields.data_security_classification.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                            {{fields.data_security_classification.label}}
+                                        </label>
+                                        <select class="form-control input-sm selectpicker_" name="{{fields.data_security_classification.id}}" id="{{fields.data_security_classification.id}}" ng-options="security_classification.id as security_classification.value for security_classification in codelists.MD_ClassificationCode" ng-model="metadata.data_security_classification">
+                                            <option value="">Sélectionnez un niveau de confidentialité</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-condensed">
+                                        <th> 
+                                            <span class="bt-doc control-label" tooltip="{{fields.data_legal_accessinspireconstraints.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_legal_accessinspireconstraints.label}}
+                                            </span>
+                                        </th>
+                                        <th ng-show="showAllFields">
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addInspireConstraint()"></button>
+                                        </th>
+                                        <tr ng-repeat="legal_accessinspireconstraint in metadata.data_legal_accessinspireconstraints track by $index">
+                                            <td>
+                                                <select class="form-control input-sm selectpicker_" name="{{fields.data_legal_accessinspireconstraints.id}}" id="{{fields.data_legal_accessinspireconstraints.id}}" ng-options="data_legal_accessinspireconstraints.id as data_legal_accessinspireconstraints.value for data_legal_accessinspireconstraints in codelists.MD_InspireRestrictionCode" ng-model="metadata.data_legal_accessinspireconstraints[$index]">
+                                                    <option value="">Sélectionnez une contrainte</option>
+                                                </select>
+                                                <input type="hidden" value="otherRestrictions" ng-model="metadata.legal_accessotherconstraints[9999]" />
+                                            </td>
+                                            <td ng-show="showAllFields">
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeInspireConstraint(legal_accessinspireconstraints)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-condensed">
+                                        <th> 
+                                            <span class="bt-doc control-label" tooltip="{{fields.data_legal_accessconstraints.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_legal_accessconstraints.label}}
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addAccessConstraint()"></button>
+                                        </th>
+                                        <tr ng-repeat="data_legal_accessconstraint in metadata.data_legal_accessconstraints track by $index">
+                                            <td>
+                                                <div class="form-group" _ng-class="{'has-error': mdForm.data_legal_accessconstraints.$invalid}">
+                                                    <select class="form-control input-sm selectpicker_" name="{{fields.data_legal_accessconstraints.id}}" id="{{fields.data_legal_accessconstraints.id}}" ng-options="legal_accessconstraint.id as legal_accessconstraint.value for legal_accessconstraint in codelists.MD_RestrictionCode" ng-model="metadata.data_legal_accessconstraints[$index]" _ng-required="required['data_legal_accessconstraints']" _ng-change="changeAccessconstraint()" >
+                                                    <option value="">Sélectionnez une contrainte</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeAccessConstraint(data_legal_accessconstraint)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-condensed">
+                                        <th> 
+                                            <span class="bt-doc control-label" tooltip="{{fields.data_legal_useconstraints.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_legal_useconstraints.label}}
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addUseConstraint()"></button>
+                                        </th>
+                                        <tr ng-repeat="legal_useconstraint in metadata.data_legal_useconstraints track by $index">
+                                            <td>
+                                                <select class="form-control input-sm selectpicker_" name="{{fields.data_legal_useconstraints.id}}" id="{{fields.data_legal_useconstraints.id}}" ng-options="legal_useconstraint.id as legal_useconstraint.value for legal_useconstraint in codelists.MD_RestrictionCode" ng-model="metadata.data_legal_useconstraints[$index]">
+                                                    <option value="">Sélectionnez une contrainte</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeUseConstraint(legal_useconstraint)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-condensed">
+                                        <th> 
+                                            <span class="bt-doc control-label" tooltip="{{fields.data_legal_uselimitations.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                {{fields.data_legal_uselimitations.label}}
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addUseLimitation()"></button>
+                                        </th>
+                                        <tr ng-repeat="legal_uselimitation in metadata.data_legal_uselimitations track by $index">
+                                            <td>
+                                                <textarea class="form-control input-sm" id="{{fields.data_legal_uselimitations.id}}" name="{{fields.data_legal_uselimitations.id}}" placeholder="{{fields.data_legal_uselimitations.placeholder}}" rows="3" ng-model="metadata.data_legal_uselimitations[$index]"></textarea>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeUseLimitation(legal_uselimitation)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel 7 -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Ressorces associées à la base de données" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Ressources associées
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSeven">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="bt-doc control-label" for="{{fields.data_linkages.id}}" tooltip="{{fields.data_linkages.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                        {{fields.data_linkages.label}}
+                                    </label>
+                                    <table class="table table-condensed">
+                                        <tr>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_linkages.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_linkages.children.name.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_linkages.children.description.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_linkages.children.description.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_linkages.children.url.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_linkages.children.url.label}}
+                                                </span>
+                                            </th>
+                                            <th> 
+                                                <span class="bt-doc control-label" tooltip="{{fields.data_linkages.children.protocol.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
+                                                    {{fields.data_linkages.children.protocol.label}}
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addLinkage()"></button>
+                                            </th>
+                                        </tr>
+                                        <tr ng-repeat="data_linkage in metadata.data_linkages track by $index">
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_linkages.children.name.id}}" id="{{fields.data_linkages.children.name.id}}" placeholder="{{fields.data_linkages.children.name.placeholder}}" ng-model="data_linkage.name" />
+                                            </td>
+                                            <td>
+                                                <textarea rows="2" class="form-control input-sm" id="{{fields.data_linkages.children.description.id}}" name="{{fields.data_linkages.children.description.id}}" placeholder="{{fields.data_linkages.children.description.placeholder}}" rows="3" ng-model="data_linkage.description"></textarea>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control input-sm" name="{{fields.data_linkages.children.url.id}}" id="{{fields.data_linkages.children.url.id}}" placeholder="{{fields.data_linkages.children.url.placeholder}}" ng-model="data_linkage.url" />
+                                            </td>
+                                            <td>
+                                                <select class="form-control input-sm selectpicker_" name="{{fields.data_linkages.id}}" id="{{fields.data_linkages.id}}" ng-options="linkage.id as linkage.value for linkage in codelists.MD_LinkageProtocolCode" ng-model="data_linkage.protocol">
+                                                    <option value="">Sélectionnez</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeLinkage(data_linkage)"></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel 8 -->
+                <div class="panel panel-primary" ng-show="showAllFields">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span tooltip="Conformité de la base de données" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                Conformités
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('documentation/md/empty.md')"></span>
+                            </span>
+                            <a role="button" data-toggle="collapse" data-parent="#accordion_" data-target="#collapseHeight" aria-expanded="true" aria-controls="collapseHeight">
+                                <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseHeight" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingHeight">
+                        <div class="panel-body">
+                            <div>                            
+                                TODO: conformité <br />
+                                - Spécifications Inspire <br />
+                                - Autres spécifications <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>

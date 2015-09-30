@@ -1,0 +1,376 @@
+    <div class="">
+        <h2 id="data_title" class="">{{metadata.data_title}}</h2>
+    </div>
+
+    <div class="">
+        <div id="page" class="col-md-8">
+            
+            <div class="panel panel-default">
+                <div id="data_abstract" class="pre panel-body">
+                    {{metadata.data_abstract}}
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div>
+                        <div ng-if="metadata.data_dates.datecreation">
+                            <strong>Date de création:</strong>
+                            <span class="pre">{{metadata.data_datecreation | date:'dd/MM/yyyy'}}</span><br />
+                        </div>
+                        <div ng-if="metadata.data_dates.datepublication">
+                            <strong>Date de création:</strong>
+                            <span class="pre">{{metadata.data_datepublication | date:'dd/MM/yyyy'}}</span><br />
+                        </div>
+                        <div ng-if="metadata.data_dates.daterevision">
+                            <strong>Date de création:</strong>
+                            <span class="pre">{{metadata.data_daterevision | date:'dd/MM/yyyy'}}</span><br />
+                        </div>
+                        <div ng-if="metadata.data_TemporalExtents">
+                            <div ng-repeat="data_temporalextent in metadata.data_temporalextents">
+                                <strong>{{data_temporalextent.description}}:</strong>
+                                <span class="pre">{{data_temporalextent.begin | date:'dd/MM/yyyy'}}</span> - 
+                                <span class="pre">{{data_temporalextent.end | date:'dd/MM/yyyy'}}</span>
+                            </div>
+                        </div>
+                        <div ng-if="metadata.data_maintenancefrequencycode">
+                            <p>
+                                <strong>Fréquence de mise à jour:</strong>
+                                <span class="pre">{{metadata.data_maintenancefrequencycode}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div>
+                        <p><strong>Format de diffusion:</strong></p>
+                        <ul>
+                            <div ng-if="metadata.data_distformats">
+                                <div ng-repeat="data_distformat in metadata.data_distformats">
+                                    <li class="">
+                                        {{data_distformat.name}} 
+                                        <span ng-if="data_distformat.version">
+                                            ({{data_distformat.version}})
+                                        </span>
+                                        <span ng-if="data_distformat.specification">    
+                                            - {{data_distformat.specification}}
+                                        </span>
+                                    </li>
+                                </div>
+                            </div>
+                            <div ng-if="!metadata.data_distformats">
+                                <li class="">Non précisé</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <hr />
+                    <div>
+                        <p><strong>Qualité des données:</strong></p>
+                        <div class="pre">
+                            <div ng-if="metadata.data_li_statement">
+                                {{metadata.data_li_statement}}
+                            </div>
+                            <div ng-if="!metadata.data_li_statement">
+                                Non précisé
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div>
+                        <p><strong>Limite technique d'usage:</strong></p>
+                        <ul>
+                            <div ng-if="metadata.data_uselimitations">
+                                <div ng-repeat="data_uselimitation in metadata.data_uselimitations">
+                                    <li class="pre">
+                                        {{data_uselimitation}} 
+                                    </li>
+                                </div>
+                            </div>
+                            <div ng-if="!metadata.data_uselimitations">
+                                <li class="">Aucune limite d'usage définie.</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <hr />
+                    <div>
+                        <p><strong>Droits d'accès et d'usage des données:</strong></p>
+                        <div ng-if="metadata.data_security_classification">
+                            <label>Classification:</label> {{metadata.data_security_classification}}<br />
+                        </div>
+                        <label>Contraintes d'accès Inspire:</label><br />
+                        <ul>
+                            <div ng-if="metadata.data_legal_accessinspireconstraints">
+                                <div ng-repeat="data_legal_accessinspireconstraint in metadata.data_legal_accessinspireconstraints">
+                                    <li class="pre">
+                                        {{data_legal_accessinspireconstraint}} 
+                                    </li>
+                                </div>
+                            </div>
+                            <div ng-if="!metadata.data_accessinspireconstraint">
+                                <li class="pre">Aucune contrainte d'accès Inspire définie.</li>
+                            </div>
+                        </ul>
+                        <label>Autres contraintes d'accès:</label><br />
+                        <ul>
+                            <div ng-if="metadata.data_legal_accessotherconstraints">
+                                <div ng-repeat="data_legal_accessotherconstraint in metadata.data_legal_accessotherconstraints">
+                                    <li class="pre">
+                                        {{data_legal_accessotherconstraint}} 
+                                    </li>
+                                </div>
+                            </div>
+                            <div ng-if="metadata.data_legal_accessconstraints">
+                                <div ng-repeat="data_legal_accessconstraint in metadata.data_legal_accessconstraints">
+                                    <li class="pre">
+                                        {{data_legal_accessconstraint}} 
+                                    </li>
+                                </div>
+                            </div>
+                            <div ng-if="!metadata.data_accessconstraints && !metadata.data_otherconstraints">
+                                <li class="pre">Aucune contrainte d'accès définie.</li>
+                            </div>
+                        </ul>
+                        <label>Contraintes légales d'usage:</label><br />
+                        <ul>
+                            <div ng-if="metadata.data_legal_uselimitations">
+                                <div ng-repeat="data_legal_uselimitation in metadata.data_legal_uselimitations">
+                                    <li class="pre">
+                                        {{data_legal_uselimitation.data_uselimitation}} 
+                                    </li>
+                                </div>
+                            </div>
+                            <div ng-if="metadata.data_legal_useconstraints">
+                                <div ng-repeat="data_legal_useconstraint in metadata.data_legal_useconstraints">
+                                    <li class="pre">
+                                        {{data_userestrictioncode.data_legal_useconstraint}} 
+                                    </li>
+                                </div>
+                            </div>
+                            <div ng-if="!metadata.data_legal_uselimitations && !metadata.data_useconstraints">
+                                <li class="pre">Aucune limite légale d'usage définie.</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div ng-if="metadata.data_contacts">
+                        <div ng-repeat="data_contact in metadata.data_contacts">
+                            <div ng-if="data_contact.role">
+                                <p><strong>{{data_contact.role}} des données:</strong></p>
+                            </div>
+                            <div ng-if="!data_contact.role">
+                                <p><strong>contact pour les données:</strong></p>
+                            </div>
+                            <div class="panel panel-default" style="margin-left: 20px;">
+                                <address class="panel-body">
+                                    <div class="col-md-2">
+                                        <div ng-if="data_contact.logo_url">
+                                            <img class="logo img-thumbnail" src="{{data_contact.logo_url}}" alt="{{data_contact.logo_text}}" title="{{data_contact.logo_text}}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div ng-if="data_contact.name">
+                                            <div>{{data_contact.name}}</div>
+                                        </div>
+                                        <div ng-if="data_contact.position">
+                                            <div>{{data_contact.position}}</div>
+                                        </div>
+                                        <div ng-if="data_contact.organisation">
+                                            <div><strong>{{data_contact.organisation}}</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5"> 
+                                        <div ng-if="data_contact.address">
+                                            <div>{{data_contact.address}}<br />{{data_contact.cp}} {{data_contact.city}}</div>
+                                        </div>
+                                        <div ng-if="data_contact.tel">
+                                            <div>Tél.: {{data_contact.tel}}</div>
+                                        </div>
+                                        <div ng-if="data_contact.email">
+                                            <div>Email: <a href="mailto:{{email}}">{{data_contact.email}}</a></div>
+                                        </div>
+                                        <!--
+                                        <div ng-if="data_contact.role">
+                                            <div>Rôle: {{data_contact.role}}</div>
+                                        </div>
+                                        -->
+                                    </div>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div ng-if="metadata.md_contacts">
+                        <div ng-repeat="md_contact in metadata.md_contacts">
+                            <div ng-if="md_contact.role">
+                                <p><strong>{{md_contact.role}} de la fiche de métadonnées:</strong></p>
+                            </div>
+                            <div ng-if="!md_contact.role">
+                                <p><strong>contact pour de la fiche de métadonnées:</strong></p>
+                            </div>
+                            <div class="panel panel-default" style="margin-left: 20px;">
+                                <address class="panel-body">
+                                    <div class="col-md-2">
+                                        <div ng-if="md_contact.logo_url">
+                                            <img class="logo img-thumbnail" src="{{md_contact.logo_url}}" alt="{{md_contact.logo}}" title="{{md_contact.logo}}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div ng-if="md_contact.name">
+                                            <div>{{md_contact.name}}</div>
+                                        </div>
+                                        <div ng-if="md_contact.position">
+                                            <div>{{md_contact.position}}</div>
+                                        </div>
+                                        <div ng-if="md_contact.organisation">
+                                            <div><strong>{{md_contact.organisation}}</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5"> 
+                                        <div ng-if="md_contact.address">
+                                            <div>{{md_contact.address}}<br />{{md_contact.cp}} {{md_contact.city}}</div>
+                                        </div>
+                                        <div ng-if="md_contact.tel">
+                                            <div>Tél.: {{md_contact.tel}}</div>
+                                        </div>
+                                        <div ng-if="md_contact.email">
+                                            <div>Email: <a href="mailto:{{email}}">{{md_contact.email}}</a></div>
+                                        </div>
+                                        <!--
+                                        <div ng-if="md_contact.role">
+                                            <div>Rôle: {{md_contact.role}}</div>
+                                        </div>
+                                        -->
+                                    </div>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="browsegraphic" class="col-md-4">
+            <div ng-if="metadata.data_spatialrepresentationtype">
+                <div id="spatial-representation-type-label" class="label label-success pull-right" title="{{metadata.data_spatialrepresentationtype}}">{{metadata.data_spatialrepresentationtype}}</div>
+            </div>
+            <div ng-if="metadata.data_browsegraphics">
+                <div class="">
+                    <a href="{{metadata.data_browsegraphics[0].url}}" target="_blanck"><img class="img-thumbnail" src="{{metadata.data_browsegraphics[0].url}}" alt="{{metadata.data_browsegraphics[0].data_description}}" title="{{metadata.data_browsegraphics[0].description}}"></a>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="">
+                        <a class="btn btn-xs btn-info" >
+                            <i class="glyphicon glyphicon-screenshot" title="Couverture territoriale"> </i>
+                        </a>
+                        <span ng-if="metadata.data_geographicextents">
+                            <span ng-repeat="data_geographicextent in metadata.data_geographicextents">
+                                <span class="pre" title="S:{{data_geographicextent.ymin}}, N:{{data_geographicextent.ymax}}, W:{{data_geographicextent.xmin}}, E:{{data_geographicextent.xmax}}">
+                                    <span ng-if="data_geographicextent.name">
+                                        {{data_geographicextent.name}}
+                                    </span>
+                                    <span ng-if="!data_geographicextent.name">
+                                        Emprise non définie.
+                                    </span>
+                                </span><br />
+                            </span>
+                        </span>
+                        <span ng-if="!metadata.data_geographicextent">
+                            <span class="pre" title="S:0.00, N:0.00, W:0.00, E:0.00">Couverture territoriale non précisée</span><br />
+                        </span>
+                        
+                        <a class="btn btn-xs btn-info" >
+                            <i class="glyphicon glyphicon-zoom-in" title="Echelle d'utilisation"> </i>
+                        </a>
+                        <span ng-if="metadata.data_scaledenominator">
+                            1/{{metadata.data_scaledenominator}}<br />
+                        </span>
+                        <span ng-if="metadata.data_scaledistance">
+                            {{metadata.data_scaledistance}} mètre(s)<br />
+                        </span>
+                        <span ng-if="!metadata.data_scaledenominator && !metadata.data_scaledistance">
+                            Echelle et résolution non définies.<br />
+                        </span>
+                        
+                        <span ng-if="metadata.data_referencesystems">
+                            <span ng-repeat="data_referencesystem in metadata.data_referencesystems">
+                                <a class="btn btn-xs btn-info" >
+                                    <i class="glyphicon glyphicon-globe" title="Système de projection"> </i>
+                                </a>
+                                {{data_referencesystem.code}}
+                                <span ng-if="data_referencesystem.codespace">
+                                    ({{data_referencesystem.codespace}})
+                                </span>
+                                <br />
+                            </span>
+                        </span>
+                        <span ng-if="!metadata.data_referencesystem">
+                            <a class="btn btn-xs btn-info" >
+                                <i class="glyphicon glyphicon-globe" title="Système de projection"> </i>
+                            </a>
+                            Aucun système de projection défini.<br />
+                        </span>
+                    </div>
+                    
+                    <hr />
+                    <div id="keywords" class="">
+                        <span ng-if="metadata.data_topiccategories">
+                            <span ng-repeat="data_topiccategory in metadata.data_topiccategories">
+                                <span title="{{data_topiccategory}}" class="label label-warning">{{data_topiccategory}}</span>
+                            </span>
+                        </span>
+                        <span ng-if="metadata.data_inspirekeywords">
+                            <span ng-repeat="data_inspirekeyword in metadata.data_inspirekeywords">
+                                <span title="{{data_inspirekeyword.keyword}}" class="label label-primary">{{data_inspirekeyword.keyword}}</span>
+                            </span>
+                        </span>
+                        <span ng-if="metadata.data_keywords">
+                            <span ng-repeat="data_keyword in metadata.data_keywords">
+                                <span title="{{data_keyword.keyword}}" class="label label-primary">{{data_keyword.keyword}}</span>
+                            </span>
+                        </span>
+                    </div>
+                    <hr />
+                    <div class="">
+                        <strong>Ressources associés:</strong>
+                        <ul>
+                            <span ng-if="metadata.data_linkages">
+                                <span ng-repeat="data_linkage in metadata.data_linkages">
+                                    <li><a href="{{data_linkage.url}}" target="_blanck" title="{{data_linkage.url}}">{{data_linkage.description}}</a></li>
+                                </span>
+                            </span>
+                            <span ng-if="!metadata.data_linkages">
+                                <li>Aucune ressource liée disponible.</li>
+                            </span>
+                        </ul>
+                    </div>
+                    <!--
+                    <hr />
+                    <div class="text-center">
+                        <span ng-if="metadata.csw_url">
+                            <a href="{{metadata.csw_url}}" target="_blank" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-download-alt"></i> Télécharger la fiche (XML)</a>
+                        </span>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <div id="modal-footer" class="">
+            <span class="glyphicon glyphicon-globe"></span>
+            <small>{{app.title}}
+             - <em class="text-info">Fiche {{metadata.md_fileidentifier}} ({{metadata.md_language}}) mise à jour le: {{metadata.md_datestamp | date:'dd/MM/yyyy'}}</em>
+            <span class="pull-right">{{metadata.app.name}} {{metadata.app.version}} - (c) Guillaume Ryckelynck / CIGAL 2014</span><small>
+        </div>
+    </div>
+

@@ -1,0 +1,34 @@
+<!--- Begin @md_fileidentifier.html --->
+<h1>Identifiant de la fiche</h1>
+<h2>Définition</h2>
+<p>Code permettant d’identifier de manière unique la fiche de description de la donnée.<br />
+Ce code n’est jamais modifié pour une fiche même lors de sa mise à jour.</p>
+<p>S'il n'est pas renseigné, cet identifiant est généré automatiquement par mdEdit sous la forme d'un code unique pseudo aléatoire. </p>
+<h2>Recommandations</h2>
+<p>Afin d’obtenir un code unique, il existe 2 possibilités:</p>
+<ul>
+<li>Construire cet identifiant en associant le code pays de l’organisme propriétaire de la donnée, son numéro SIREN, ainsi qu’un code unique définit par le propriétaire de la donnée (ex.: FR–#00019–1#3_004).</li>
+<li>Utiliser une URI, c'est à dire une adresse internet (URL) composée du nom de domaine du site internet de l'organisme propriétaire des données suivi d'un identifiant (ex.: <a href="http://www.cigalsace.org/FR–#00019–1#3_004">http://www.cigalsace.org/FR–#00019–1#3_004</a>). Cette adresse ne dit pas obligatoirement pointée vers une ressource particulière. </li>
+</ul>
+<p><strong>Structure recommandée de l’identifiant :</strong></p>
+<ul>
+<li>Code du pays : « FR »</li>
+<li>Séparateur   : « – »</li>
+<li>Code SIREN   : code à 9 chiffres</li>
+<li>Séparateur   : « – »</li>
+<li>Code unique  : choisi par l'administrateur des données</li>
+</ul>
+<h2>Exemples</h2>
+<p>Identifiant de la fiche : « FR–#00019–1#3_004 »</p>
+<ul>
+<li>FR : code pour la France</li>
+<li>00019 : numéro SIREN de la Région Alsace</li>
+<li>120426_004 : numéro unique établi en interne à la Région Alsace, composé de la date de création de la fiche de description (26/04/2012) suivi d’un numéro d’ordre de la fiche.</li>
+</ul>
+<p>Identifiant de la fiche : « FR–#00019–110#BdOCS2008-CIGAL-v2 »</p>
+<ul>
+<li>FR : code pour la France</li>
+<li>00019 : numéro SIREN de la Région Alsace</li>
+<li>BdOCS2008-CIGAL-v1 : code unique établi en interne à la Région Alsace pour le partenariat CIGAL, composé du nom abrégé officiel de la base de données.</li>
+</ul>
+<!--- End @md_fileidentifier.html --->

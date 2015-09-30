@@ -1,0 +1,1163 @@
+{
+    "_comments": "Les valeurs précédées d'un undescore '_' ne sont pas directments utilisées dans l'interface. Elles sont conservées pour mémoire ou pour l'ajout de commentaires.",
+    "ui": {
+        "bt_help": "Aide",
+        "bt_upload_xml": "Charger un XML",
+        "bt_download_xml": "Télécharger un XML",
+        "bt_view_mode": "Mode visualisation",
+        "bt_edit_mode": "Mode édition",
+        "bt_simple_view": "Vue simple",
+        "bt_complet_view": "Vue complète",
+        "modal_download": {
+            "no_server": "Serveur de téléchargement non configuré ou non disponible: pour créer un fichier XML, copiez (Ctrl+c) le contenu de la zone de texte ci-dessus, collez-le (Ctrl+v) dans un fichier text et enregistrez le avec l'extention '.xml'. Si vous êtes sous FireFox ou Chrome, vous pouvez essayer d'enregistrer le fichier à partir du lien ci-dessous (renommer le fichier avec l'extention '.xml'."
+        }
+    },
+    "fields": {
+        "md_fileidentifier": {
+            "id": "md_fileidentifier",
+            "label": "Identifiant de la fiche",
+            "placeholder": "FR-SIREN-Idenfifiant",
+            "description": "Identifiant de la fiche descriptive des données.",
+            "_keywords": "identifiant, métadonnées"
+        },
+        "md_language": {
+            "id": "md_language",
+            "label": "Langue",
+            "placeholder": "",
+            "description": "Langue de la fiche descriptive des données.",
+            "_keywords": "langue, métadonnées"
+        },
+        "md_characterset": {
+            "id": "md_characterset",
+            "label": "Jeu de caractères",
+            "placeholder": "",
+            "description": "Jeu de caractère (encodage) de la fiche descriptive des données.",
+            "_keywords": "encodage, jeu de caractères, métadonnées"
+        },
+        "md_hierarchylevel": {
+            "id": "md_hierarchylevel",
+            "label": "Type de données",
+            "placeholder": "",
+            "description": "Type de données décrites.",
+            "_keywords": "niveau, type, métadonnées"
+        },
+        "md_contacts": {
+            "id": "md_contacts",
+            "label": "Contacts pour les métadonnées",
+            "placeholder": "",
+            "description": "Contacts pour les métadonnées.",
+            "_keywords": "contacts, métadonnées",
+            "children": {
+                "name": {
+                    "id": "md_contact_name",
+                    "label": "Nom et prénom",
+                    "placeholder": "Nom et prénom",
+                    "description": "Nom et prénom du contact.",
+                    "_keywords": "nom, prénom, contact, métadonnées"
+                },
+                "position": {
+                    "id": "md_contact_position",
+                    "label": "Fonction",
+                    "placeholder": "Fonction",
+                    "description": "Fonction du contact.",
+                    "_keywords": "fonction, contact, métadonnées"
+                },
+                "organisation": {
+                    "id": "md_contact_organisation",
+                    "label": "Organisme",
+                    "placeholder": "Organisme",
+                    "description": "Organisme à contacter.",
+                    "_keywords": "organisme, contact, métadonnées"
+                },
+                "tel": {
+                    "id": "md_contact_tel",
+                    "label": "Téléphone",
+                    "placeholder": "Téléphone",
+                    "description": "Numéro de téléphone du contact.",
+                    "_keywords": "téléphone, contact, métadonnées"
+                },
+                "email": {
+                    "id": "md_contact_email",
+                    "label": "Email",
+                    "placeholder": "Email",
+                    "description": "Email du contact.",
+                    "_keywords": "email, contact, métadonnées"
+                },
+                "address": {
+                    "id": "md_contact_address",
+                    "label": "Addresse",
+                    "placeholder": "Addresse",
+                    "description": "Addresse du contact.",
+                    "_keywords": "adresse, contact, métadonnées"
+                },
+                "cp": {
+                    "id": "md_contact_cp",
+                    "label": "Code postal",
+                    "placeholder": "00000",
+                    "description": "Code postal.",
+                    "_keywords": "code postal, contact, métadonnées"
+                },
+                "city": {
+                    "id": "md_contact_city",
+                    "label": "Ville",
+                    "placeholder": "Ville",
+                    "description": "Ville.",
+                    "_keywords": "ville, identifiant, métadonnées"
+                },
+                "logo": {
+                    "id": "data_contact_logo",
+                    "label": "Logo",
+                    "placeholder": "",
+                    "description": "Logo de l'organisme.",
+                    "_keywords": "logo, identifiant, données"
+                },
+                "logo_url": {
+                    "id": "data_contact_logo_url",
+                    "label": "URL du logo",
+                    "placeholder": "http://...",
+                    "description": "URL du logo de l'organisme.",
+                    "_keywords": "logo, identifiant, données"
+                },
+                "logo_text": {
+                    "id": "data_contact_logo_text",
+                    "label": "Description du logo",
+                    "placeholder": "ex.: Logo du partenariat CIGAL",
+                    "description": "Description du logo de l'organisme.",
+                    "_keywords": "logo, identifiant, données"
+                },
+                "role": {
+                    "id": "md_contact_role",
+                    "label": "Rôle",
+                    "placeholder": "Rôle",
+                    "description": "Rôle de ce contact.",
+                    "_keywords": "rôle, contact, métadonnées"
+                }
+            }
+        },
+        "md_datestamp": {
+            "id": "md_datestamp",
+            "label": "Date de création/mise à jour de la fiche",
+            "placeholder": "",
+            "description": "Date de création ou dernière mise à jour de la fiche descriptive des données.",
+            "_keywords": "date, métadonnées"
+        },
+        "md_standardname": {
+            "id": "md_standardname",
+            "label": "Nom du standard",
+            "placeholder": "",
+            "description": "Nom du standard de description des données.",
+            "_keywords": "nom, standard, métadonnées"
+        },
+        "md_standardversion": {
+            "id": "md_standardversion",
+            "label": "Version du standard",
+            "placeholder": "",
+            "description": "Version du standard de description des données.",
+            "_keywords": "standard, version, métadonnées"
+        },
+        "data_title": {
+            "id": "data_title",
+            "label": "Titre",
+            "placeholder": "DONNEES: ...",
+            "description": "Titre de la base de données",
+            "_keywords": "titre, données"
+        },
+        "data_datecreation": {
+            "id": "data_datecreation",
+            "label": "Date de création",
+            "placeholder": "",
+            "description": "Date de création de la base de données",
+            "_keywords": "date, creation, données"
+        },
+        "data_daterevision": {
+            "id": "data_daterevision",
+            "label": "Date de mise à jour",
+            "placeholder": "",
+            "description": "Date de dernière mise à jour de la base de données",
+            "_keywords": "date, mise à jour, révision, données"
+        },
+        "data_datepublication": {
+            "id": "data_datepublication",
+            "label": "Date de publication",
+            "placeholder": "",
+            "description": "Date de publication de la base de données",
+            "_keywords": "date, publication, données"
+        },
+        
+        
+        "_data_dates": {
+            "id": "md_dates",
+            "label": "Dates",
+            "placeholder": "",
+            "description": "Dates relatives à la création, mise à jour et publication des données.",
+            "_keywords": "dates, données",
+            "children": {
+                "type": {
+                    "id": "type",
+                    "label": "Type",
+                    "placeholder": "",
+                    "description": "Type de date relative aux données.",
+                    "_keywords": "date, type, données"
+                },
+                "date": {
+                    "id": "date",
+                    "label": "Date",
+                    "placeholder": "",
+                    "description": "Date relative à la création, mise à jour et publication des données.",
+                    "_keywords": "date, données"
+                }
+            }
+        },
+        
+        
+        "data_identifiers": {
+            "id": "data_identifiers",
+            "label": "Identifiant",
+            "placeholder": "",
+            "description": "Identifiant de la base de données.",
+            "_keywords": "identifiant, code, données",
+            "children": {
+                "code": {
+                    "id": "code",
+                    "label": "Identifiant",
+                    "placeholder": "",
+                    "description": "Identifiant de la base de données.",
+                    "_keywords": "identifiant, code, données"
+                },
+                "codespace": {
+                    "id": "codespace",
+                    "label": "Espace de nommage",
+                    "placeholder": "",
+                    "description": "Espace de nommage pour les identifiants de la base de données.",
+                    "_keywords": "identifiant, espace de nommage, données"
+                }
+            }
+        },
+        "data_abstract": {
+            "id": "data_abstract",
+            "label": "Résumé",
+            "placeholder": "...",
+            "description": "Description de la base de données",
+            "_keywords": "résulé, données"
+        },
+        "data_browsegraphics": {
+            "id": "data_browsegraphics",
+            "label": "Miniature d'illustration",
+            "placeholder": "",
+            "description": "Lien vers une image illustrant la base de données.",
+            "_keywords": "miniature, données",
+            "children": {
+                "url": {
+                    "id": "url",
+                    "label": "URL",
+                    "placeholder": "http://...",
+                    "description": "URL vers le fichier image illustrant la base de données.",
+                    "_keywords": "miniature, image, url, données"
+                },
+                "description": {
+                    "id": "description",
+                    "label": "Description",
+                    "placeholder": "Description",
+                    "description": "Description de l'image.",
+                    "_keywords": "descrption, miniature, image, données"
+                },
+                "type": {
+                    "id": "type",
+                    "label": "Type de fichier",
+                    "placeholder": ".jpg",
+                    "description": "Type de fichier image.",
+                    "_keywords": "type, image, miniature, données"
+                },
+                "image": {
+                    "id": "image",
+                    "label": "Aperçu",
+                    "placeholder": "",
+                    "description": "Aperçu du fichier image.",
+                    "_keywords": "aperçu, image, miniature, données"
+                }
+            }
+        },
+        "data_maintenancefrequencycode": {
+            "id": "data_maintenancefrequencycode",
+            "label": "Rythme de mise à jour",
+            "placeholder": "unknown",
+            "description": "Fréquence de mise à jour des données.",
+            "_keywords": "fréquence, rythme, données"
+        },
+        "data_temporalextents": {
+            "id": "data_temporalextents",
+            "label": "Etendues temporelles",
+            "placeholder": "",
+            "description": "Etendues temporelles des des données.",
+            "_keywords": "étendues temporelles, données",
+            "children": {
+                "begin": {
+                    "id": "begin",
+                    "label": "Début",
+                    "placeholder": "",
+                    "description": "Date de début de l'étendue temporelle.",
+                    "_keywords": "date, début, étendues temporelles, données"
+                },
+                "end": {
+                    "id": "end",
+                    "label": "Fin",
+                    "placeholder": "",
+                    "description": "Date de fin de l'étendue temporelle.",
+                    "_keywords": "date, fin, étendues, temporelles, données"
+                },
+                "description": {
+                    "id": "description",
+                    "label": "Description",
+                    "placeholder": "",
+                    "description": "Description de l'étendue temporelle.",
+                    "_keywords": "description, étendue, temporelle, données"
+                }
+            }
+        },
+        "data_languages": {
+            "id": "data_languages",
+            "label": "Langues des données",
+            "placeholder": "",
+            "description": "Langues utilisées pour les données (notament attributaires).",
+            "_keywords": "langues, données"
+        },
+        "data_topiccategories": {
+            "id": "data_topiccategories",
+            "label": "Categorie internationale",
+            "placeholder": "",
+            "description": "Thème ISO auquel se rapporte la base de données.",
+            "_keywords": "ISO, thème, catégorie, internationale, données"
+        },
+        "data_inspirekeywords": {
+            "id": "data_inspirekeywords",
+            "label": "Thème européen",
+            "placeholder": "",
+            "description": "Thème de la directive européenne Inspire auquel se rapporte la base de données.",
+            "_keywords": "thème, inspire, européen, données"
+        },
+        "data_keywords_list": {
+            "id": "data_keywords_list",
+            "label": "Mots-clés",
+            "placeholder": "ex.: routes, Géoportail, données ouvertes, ...",
+            "description": "Liste des mots-clés descriptifs de la base de données.",
+            "_keywords": "mot-clés, données"
+        },        
+        "data_keywords": {
+            "id": "data_keywords",
+            "label": "Mots-clés",
+            "placeholder": "",
+            "description": "Mots-clés descriptifs des données.",
+            "_keywords": "mots-clés, données",
+            "children": {
+                "keyword": {
+                    "id": "keyword",
+                    "label": "Intitulé",
+                    "placeholder": "",
+                    "description": "Intitulé du mot-clé.",
+                    "_keywords": "intitulé, mots-clés, données"
+                },
+                "type": {
+                    "id": "type",
+                    "label": "Type",
+                    "placeholder": "",
+                    "description": "Type de mot-clé.",
+                    "_keywords": "type, mots-clés, données"
+                },
+                "thesaurus_name": {
+                    "id": "thesaurus_name",
+                    "label": "Thesaurus",
+                    "placeholder": "",
+                    "description": "Nom du thésaurus.",
+                    "_keywords": "nom, thésaurus, données"
+                },
+                "thesaurus_datepublication": {
+                    "id": "thesaurus_datepublication",
+                    "label": "Date de publication",
+                    "placeholder": "",
+                    "description": "Date de publication du thésaurus.",
+                    "_keywords": "date, publication, thésaurus, données"
+                },
+                "thesaurus_dates": {
+                    "id": "thesaurus_dates",
+                    "label": "Dates",
+                    "placeholder": "",
+                    "description": "Dates relatives au thesaurus.",
+                    "_keywords": "dates, thésaurus, données",
+                    "children": {
+                        "type": {
+                            "id": "type",
+                            "label": "Type",
+                            "placeholder": "",
+                            "description": "Type de date.",
+                            "_keywords": "type de date, métadonnées"
+                        },
+                        "date": {
+                            "id": "date",
+                            "label": "date",
+                            "placeholder": "ex.: 2015-03-05",
+                            "description": "Date.",
+                            "_keywords": "date, métadonnées"
+                        }
+                    }
+                }
+            }
+        },
+        "data_contacts": {
+            "id": "data_contacts",
+            "label": "Contacts pour les données",
+            "placeholder": "",
+            "description": "Contacts pour les données.",
+            "_keywords": "contacts, données",
+            "children": {
+                "name": {
+                    "id": "data_contact_name",
+                    "label": "Nom et prénom",
+                    "placeholder": "Nom et prénom",
+                    "description": "Nom et prénom du contact.",
+                    "_keywords": "nom, prénom, contact, données"
+                },
+                "position": {
+                    "id": "data_contact_position",
+                    "label": "Fonction",
+                    "placeholder": "Fonction",
+                    "description": "Fonction du contact.",
+                    "_keywords": "fonction, contact, données"
+                },
+                "organisation": {
+                    "id": "data_contact_organisation",
+                    "label": "Organisme",
+                    "placeholder": "Organisme",
+                    "description": "Organisme à contacter.",
+                    "_keywords": "organisme, contact, données"
+                },
+                "tel": {
+                    "id": "data_contact_tel",
+                    "label": "Téléphone",
+                    "placeholder": "Téléphone",
+                    "description": "Numéro de téléphone du contact.",
+                    "_keywords": "téléphone, contact, données"
+                },
+                "email": {
+                    "id": "data_contact_email",
+                    "label": "Email",
+                    "placeholder": "Email",
+                    "description": "Email du contact.",
+                    "_keywords": "email, contact, données"
+                },
+                "address": {
+                    "id": "data_contact_address",
+                    "label": "Addresse",
+                    "placeholder": "Addresse",
+                    "description": "Addresse du contact.",
+                    "_keywords": "adresse, contact, données"
+                },
+                "cp": {
+                    "id": "data_contact_cp",
+                    "label": "Code postal",
+                    "placeholder": "00000",
+                    "description": "Code postal.",
+                    "_keywords": "code postal, contact, données"
+                },
+                "city": {
+                    "id": "data_contact_city",
+                    "label": "Ville",
+                    "placeholder": "Ville",
+                    "description": "Ville.",
+                    "_keywords": "ville, identifiant, données"
+                },
+                "logo": {
+                    "id": "data_contact_logo",
+                    "label": "Logo",
+                    "placeholder": "",
+                    "description": "Logo de l'organisme.",
+                    "_keywords": "logo, identifiant, données"
+                },
+                "logo_url": {
+                    "id": "data_contact_logo_url",
+                    "label": "URL du logo",
+                    "placeholder": "http://...",
+                    "description": "URL du logo de l'organisme.",
+                    "_keywords": "logo, identifiant, données"
+                },
+                "logo_text": {
+                    "id": "data_contact_logo_text",
+                    "label": "Description du logo",
+                    "placeholder": "ex.: Logo du partenariat CIGAL",
+                    "description": "Description du logo de l'organisme.",
+                    "_keywords": "logo, identifiant, données"
+                },
+                "role": {
+                    "id": "data_contact_role",
+                    "label": "Rôle",
+                    "placeholder": "Rôle",
+                    "description": "Rôle de ce contact.",
+                    "_keywords": "rôle, contact, données"
+                }
+            }
+        },
+        "data_geographicextents": {
+            "id": "data_geographicextents",
+            "label": "Emprise géographique de la base de données",
+            "placeholder": "",
+            "description": "Emprise géographique de la base de données (format WGS84).",
+            "_keywords": "emprise géographique, données",
+            "children": {
+                "name": {
+                    "id": "name",
+                    "label": "Nom de l'emprise géographique",
+                    "placeholder": "ex.: Alsace",
+                    "description": "Nom de l'emprise géographique de la base de données.",
+                    "_keywords": "nom, emprise géographique, données"
+                },
+                "xmin": {
+                    "id": "xmin",
+                    "label": "Long. Ouest",
+                    "placeholder": "6.8410134649126",
+                    "description": "Longitude ouest WGS84 du rectangle d'emprise (Xmin).",
+                    "_keywords": "longitude ouest, emprise géographique, données"
+                },
+                "xmax": {
+                    "id": "xmax",
+                    "label": "Long. Est",
+                    "placeholder": "8.23351958950571",
+                    "description": "Longitude est WGS84 du rectangle d'emprise (Xmax).",
+                    "_keywords": "longitude est, emprise géographique, données"
+                },
+                "ymin": {
+                    "id": "ymin",
+                    "label": "Lat. Sud",
+                    "placeholder": "47.4202517758332",
+                    "description": "Latitude sud WGS84 du rectangle d'emprise (Ymin).",
+                    "_keywords": "latitude sud, emprise géographique, données"
+                },
+                "ymax": {
+                    "id": "ymax",
+                    "label": "Lat. Nord",
+                    "placeholder": "49.0778319799915",
+                    "description": "Latitude nord WGS84 du rectangle d'emprise (Ymax).",
+                    "_keywords": "latitude nord, emprise géographique, données"
+                }
+            }
+        },
+        "data_referencesystems": {
+            "id": "data_referencesystems",
+            "label": "Système de projection",
+            "placeholder": "",
+            "description": "Système de projection de la base de données.",
+            "_keywords": "système de projection, données",
+            "children": {
+                "code": {
+                    "id": "code",
+                    "label": "Système de projection",
+                    "placeholder": "",
+                    "description": "Nom du système de projection de la base de données.",
+                    "_keywords": "nom, système de projection, données"
+                },
+                "codespace": {
+                    "id": "",
+                    "label": "codespace",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "système de projection, données"
+                }
+            }
+        },
+        "data_presentationform": {
+            "id": "",
+            "label": "Identifiant",
+            "placeholder": "FR-SIREN-Idenfifiant",
+            "description": "Identifiant de la fiche descriptive des données.",
+            "_keywords": "identifiant, métadonnées"
+        },
+        "data_spatialrepresentationtype": {
+            "id": "data_spatialrepresentationtype",
+            "label": "Type de données",
+            "placeholder": "ex.: vecteurs",
+            "description": "Type de données: vecteur ou raster (image).",
+            "_keywords": "type, vecteur, raster, données"
+        },
+        "data_scaledenominator": {
+            "id": "data_scaledenominator",
+            "label": "Echelle optimale d'utilisation",
+            "placeholder": "ex.: 25000",
+            "description": "Dénominateur de l'échelle optimale d'utilisation (ex.: 25000).",
+            "_keywords": "échelle, données"
+        },
+        "data_scaledistance": {
+            "id": "data_scaledistance",
+            "label": "Résolution (mètre/pixel)",
+            "placeholder": "ex.: 0,5",
+            "description": "Résolution en mètre/pixel (ex. 0.2 pour 20cm par pixel).",
+            "_keywords": "résolution, données"
+        },
+        "_data_dq_level": {
+            "id": "data_dq_level",
+            "label": "Identifiant",
+            "placeholder": "FR-SIREN-Idenfifiant",
+            "description": "Identifiant de la fiche descriptive des données.",
+            "_keywords": "identifiant, données"
+        },
+        "data_li_statement": {
+            "id": "data_li_statement",
+            "label": "Qualité des données",
+            "placeholder": "ex.: précision, exaustivité, limites techniques d'exploitation, etc.",
+            "description": "Texte sur la qualité des données.",
+            "_keywords": "qualité, données"
+        },
+        "data_characterset": {	
+            "id": "",
+            "label": "Identifiant",
+            "placeholder": "FR-SIREN-Idenfifiant",
+            "description": "Identifiant de la fiche descriptive des données.",
+            "_keywords": "identifiant, métadonnées"
+        },
+        "data_distformats": {
+            "id": "data_distformats",
+            "label": "Formats de diffusion",
+            "placeholder": "",
+            "description": "Formats de diffusion des données.",
+            "_keywords": "formats, diffusion, données",
+            "children": {
+                "name": {
+                    "id": "name",
+                    "label": "Nom",
+                    "placeholder": "ex.: shapefile (SHP)",
+                    "description": "Nom du formats de diffusion des données.",
+                    "_keywords": "nom, formats, diffusion, données"
+                },
+                "version": {
+                    "id": "version",
+                    "label": "Version",
+                    "placeholder": "ex.: 1.0",
+                    "description": "Version du formats de diffusion des données.",
+                    "_keywords": "version, formats, diffusion, données"
+                },
+                "specification": {
+                    "id": "specification",
+                    "label": "Description",
+                    "placeholder": "Fichier de forme ESRI Shapefile (2,7 Mo)",
+                    "description": "Description du formats de diffusion des données.",
+                    "_keywords": "description, formats, diffusion, données"
+                }
+            }
+        },
+        "data_uselimitations": {
+            "id": "data_uselimitations",
+            "label": "Limites techniques d'usage",
+            "placeholder": "ex.: données non adaptées à de la géolocalisation d'adresse.",
+            "description": "Limites techniques d'usage de la base de données.",
+            "_keywords": "limites techniques, données",
+            "children": {
+                "name": {
+                    "id": "data_uselimitation",
+                    "label": "Limites techniques d'usage",
+                    "placeholder": "ex.: données non adaptées à de la géolocalisation d'adresse.",
+                    "description": "Limites techniques d'usage de la base de données.",
+                    "_keywords": "limites techniques, données"
+                }
+            }
+        },
+        "data_legal_uselimitations": {
+            "id": "data_legal_uselimitations",
+            "label": "Mentions et conditions légales d'utilisation",
+            "placeholder": "",
+            "description": "Mentions et conditions légales d'utilisation des données.",
+            "_keywords": "conditions, utilisation, données",
+            "_children": {
+                "name": {
+                    "id": "",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                }
+            }
+        },
+        "data_legal_useconstraints": {
+            "id": "data_legal_useconstraints",
+            "label": "Contraintes légales d'usage",
+            "placeholder": "",
+            "description": "Contraintes légales d'usage des données.",
+            "_keywords": "contraintes, légales, usage, données",
+            "_children": {
+                "name": {
+                    "id": "",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                }
+            }
+        },
+        "data_legal_accessconstraints": {
+            "id": "data_legal_accessconstraints",
+            "label": "Autres contraintes légales d'accès",
+            "placeholder": "",
+            "description": "Autres contraintes légales d'accès des données.",
+            "_keywords": "contraintes, légales, accès, données",
+            "_children": {
+                "name": {
+                    "id": "name",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                }
+            }
+        },
+        "data_legal_accessinspireconstraints": {
+            "id": "data_legal_accessinspireconstraints",
+            "label": "Contraintes d'accès liées à Inspire",
+            "placeholder": "",
+            "description": "Contraintes légales d'accès des données liées à Inspire.",
+            "_keywords": "contraintes, légales, inspire, données",
+            "_children": {
+                "name": {
+                    "id": "name",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                }
+            }
+        },
+        "_data_legal_accessotherconstraints": {
+            "id": "data_legal_accessotherconstraints",
+            "label": "Autres contraintes légales d'accès",
+            "placeholder": "",
+            "description": "Autres contraintes légales d'accès des données.",
+            "_keywords": "contraintes, légales, données",
+            "_children": {
+                "name": {
+                    "id": "name",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                }
+            }
+        },
+        "data_security_uselimitations": {
+            "id": "",
+            "label": "Identifiant",
+            "placeholder": "FR-SIREN-Idenfifiant",
+            "description": "Identifiant de la fiche descriptive des données.",
+            "_keywords": "identifiant, métadonnées",
+            "children": {
+                "name": {
+                    "id": "",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                }
+            }
+        },
+        "data_security_classification": {
+            "id": "data_security_classification",
+            "label": "Niveau de confidentialité",
+            "placeholder": "ex.: Non classifié",
+            "description": "Niveau de confidentialité des données.",
+            "_keywords": "confidentialité, données"
+        },
+        "data_linkages": {
+            "id": "data_linkages",
+            "label": "Ressources",
+            "placeholder": "",
+            "description": "Ressources relatives à la base de données.",
+            "_keywords": "ressources, données",
+            "children": {
+                "name": {
+                    "id": "name",
+                    "label": "Nom de la ressource",
+                    "placeholder": "ex.: Guide d'utilisation de la BdOCS 2008 CIGAL v2. ",
+                    "description": "Nom de la ressource.",
+                    "_keywords": "ressource, données"
+                },
+                "description": {
+                    "id": "description",
+                    "label": "Description",
+                    "placeholder": "ex.: Document décrivant l'ensemble des limites techniques et légales d'utilisation de la base de données.",
+                    "description": "Description de la ressource.",
+                    "_keywords": "ressource, données"
+                },
+                "url": {
+                    "id": "url",
+                    "label": "URL",
+                    "placeholder": "ex.: http://...",
+                    "description": "Lien vers la ressource.",
+                    "_keywords": "ressource, données"
+                },
+                "protocol": {
+                    "id": "protocol",
+                    "label": "Type",
+                    "placeholder": "",
+                    "description": "Type de ressource.",
+                    "_keywords": "ressource, données"
+                }
+            }
+        },
+        "data_dq_inspireconformities": {
+            "id": "",
+            "label": "Identifiant",
+            "placeholder": "FR-SIREN-Idenfifiant",
+            "description": "Identifiant de la fiche descriptive des données.",
+            "_keywords": "identifiant, métadonnées",
+            "children": {
+                "specification": {
+                    "id": "",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                },
+                "explaination": {
+                    "id": "",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                },
+                "pass": {
+                    "id": "",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées"
+                },
+                "dates": {
+                    "id": "",
+                    "label": "Identifiant",
+                    "placeholder": "FR-SIREN-Idenfifiant",
+                    "description": "Identifiant de la fiche descriptive des données.",
+                    "_keywords": "identifiant, métadonnées",
+                    "children": {
+                        "type": {
+                            "id": "",
+                            "label": "Identifiant",
+                            "placeholder": "FR-SIREN-Idenfifiant",
+                            "description": "Identifiant de la fiche descriptive des données.",
+                            "_keywords": "identifiant, métadonnées"
+                        },
+                        "date": {
+                            "id": "",
+                            "label": "Identifiant",
+                            "placeholder": "FR-SIREN-Idenfifiant",
+                            "description": "Identifiant de la fiche descriptive des données.",
+                            "_keywords": "identifiant, métadonnées"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "codelists": {
+        "CI_DateTypeCode": [
+            { "id": "creation", "value": "Création" }, 
+            { "id": "publication", "value": "Publication" }, 
+            { "id": "revision", "value": "Révision" }
+        ],
+        "MD_TopicCategoryCode" : [
+            { "id": "farming", "value": "Agriculture" },
+            { "id": "biota", "value": "Flore et faune" }, 
+            { "id": "boundaries", "value": "Limites politiques et administratives" }, 
+            { "id": "climatologyMeteorologyAtmosphere", "value": "Climatologie, météorologie" }, 
+            { "id": "economy", "value": "Economie" }, 
+            { "id": "elevation", "value": "Topographie" }, 
+            { "id": "environment", "value": "Ressources et gestion de l’environnement" }, 
+            { "id": "geoscientificInformation", "value": "Géosciences" }, 
+            { "id": "health", "value": "Santé" }, 
+            { "id": "imageryBaseMapsEarthCover", "value": "Carte de référence de la couverture terrestre" }, 
+            { "id": "intelligenceMilitary", "value": "Infrastructures militaires" }, 
+            { "id": "inlandWaters", "value": "Hydrographie" }, 
+            { "id": "location", "value": "Localisant" }, 
+            { "id": "oceans", "value": "Océans" }, 
+            { "id": "planningCadastre", "value": "Planification et aménagement du territoire" }, 
+            { "id": "society", "value": "Société" }, 
+            { "id": "structure", "value": "Aménagements urbains" }, 
+            { "id": "transportation", "value": "Infrastructures de transport" }, 
+            { "id": "utilitiesCommunication", "value": "Réseaux de télécommunication, d’énergie" }
+        ],    
+        "MD_CharacterSetCode" : [
+            { "id": "ucs2", "value": "ucs2" }, 
+            { "id": "ucs4", "value": "ucs4" }, 
+            { "id": "utf7", "value": "utf7" }, 
+            { "id": "8859part16", "value": "8859part16" },
+            { "id": "8859part15", "value": "8859part15" }, 
+            { "id": "8859part1", "value": "8859part1" }, 
+            { "id": "utf16", "value": "utf16" }, 
+            { "id": "utf8", "value": "utf-8" },
+            { "id": "8859part2", "value": "8859part2" }, 
+            { "id": "8859part3", "value": "8859part3" }, 
+            { "id": "8859part4", "value": "8859part4" }, 
+            { "id": "8859part5", "value": "8859part5" }, 
+            { "id": "8859part6", "value": "8859part6" }, 
+            { "id": "8859part7", "value": "8859part7" }, 
+            { "id": "8859part8", "value": "8859part8" }, 
+            { "id": "8859part9", "value": "8859part9" }, 
+            { "id": "8859part10", "value": "8859part10" }, 
+            { "id": "8859part11", "value": "8859part11" }, 
+            { "id": "8859part13", "value": "8859part13" }, 
+            { "id": "8859part14", "value": "8859part14" }, 
+            { "id": "jis", "value": "jis" }, 
+            { "id": "shiftJIS", "value": "shiftJIS" }, 
+            { "id": "eucJP", "value": "eucJP" }, 
+            { "id": "usAscii", "value": "usAscii" }, 
+            { "id": "ebcdic", "value": "ebcdic" }, 
+            { "id": "eucKR", "value": "eucKR" }, 
+            { "id": "big5", "value": "big5" }, 
+            { "id": "GB2312", "value": "GB2312" }
+        ],
+
+        "CI_RoleCode": [
+            { "id": "resourceProvider", "value": "Fournisseur" },
+            { "id": "custodian", "value": "Gestionnaire" },
+            { "id": "owner", "value": "Propriétaire" },
+            { "id": "author", "value": "Auteur" },
+            { "id": "pointOfContact", "value": "Point de contact" },
+            { "id": "user", "value": "Utilisateur" },
+            { "id": "distributor", "value": "Distributeur" },
+            { "id": "originator", "value": "Commanditaire" }, 
+            { "id": "principalInvestigator", "value": "Producteur / Maître d’œuvre principal ou d'ensemble" },
+            { "id": "processor", "value": "Intégrateur / Exécutant secondaire" },
+            { "id": "publisher", "value": "Editeur" }
+        ],
+
+        "MD_ClassificationCode" : [
+            { "id": "topSecret", "value": "Top secret" },
+            { "id": "secret", "value": "Secret" }, 
+            { "id": "confidential", "value": "Confidentiel" }, 
+            { "id": "restricted", "value": "Restreint" }, 
+            { "id": "unclassified", "value": "Non classifié" }
+        ],
+
+        "MD_InspireRestrictionCode": [
+            { "id":"L124-4-I-1 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.a)", 
+              "value": "La confidentialité des travaux des autorités publiques, lorsque cette confidentialité est prévue par la loi." },
+            { "id":"L124-5-II-1 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.b)", 
+              "value": "Les relations internationales, la sécurité publique ou la défense nationale." },
+            { "id":"L124-5-II-2 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.c)", 
+              "value": "La bonne marche de la justice, la possibilité pour toute personne d’être jugée équitablement ou la capacité d’une autorité publique d’effectuer une enquête d’ordre pénal ou disciplinaire." },
+            { "id":"L124-4-I-1 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.d)", 
+              "value": "La confidentialité des informations commerciales ou industrielles, lorsque cette confidentialité est prévue par la législation nationale ou communautaire afin de protéger un intérêt économique légitime, notamment l’intérêt public lié à la préservation de la confidentialité des statistiques et du secret fiscal." },
+            { "id":"L124-5-II-3 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.e)", 
+              "value": "Les droits de propriété intellectuelle." },
+            { "id":"L124-4-I-1 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.f)", 
+              "value": "La confidentialité des données à caractère personnel et/ou des fichiers concernant une personne physique lorsque cette personne n’a pas consenti à la divulgation de ces informations au public, lorsque la confidentialité de ce type d’information est prévue par la législation nationale ou communautaire." },
+            { "id":"L124-4-I-3 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.g)", 
+              "value": "Les intérêts ou la protection de toute personne qui a fourni les informations demandées sur une base volontaire sans y être contrainte par la loi ou sans que la loi puisse l’y contraindre, à moins que cette personne n’ait consenti à la divulgation de ces données." },
+            { "id":"L124-4-I-2 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.h)", 
+              "value": "La protection de l’environnement auquel ces informations ont trait, comme par exemple la localisation d’espèces rares." },
+            { "id": "Pas de restriction d'accès public", 
+              "value": "Aucun des articles de la loi ne peut être invoqué pour justifier d’une restriction d’accès public." }
+        ],
+
+        "MD_InspireTopicCategoryCode" : [
+            { "id": "Coordinate reference systems", "value": "Référentiels de coordonnées" }, 
+            { "id": "Geographical grid systems", "value": "Systèmes de maillage géographique" }, 
+            { "id": "Geographical names", "value": "Dénominations géographiques" }, 
+            { "id": "Administrative units", "value": "Unités administratives" }, 
+            { "id": "Addresses", "value": "Adresses" }, 
+            { "id": "Cadastral parcels", "value": "Parcelles cadastrales" }, 
+            { "id": "Transport networks", "value": "Réseaux de transport" }, 
+            { "id": "Hydrography", "value": "Hydrographie" }, 
+            { "id": "Protected sites", "value": "Sites protégés" },
+            { "id": "Elevation", "value": "Altitude" }, 
+            { "id": "Land cover", "value": "Occupation des terres" }, 
+            { "id": "Orthoimagery", "value": "Ortho-imagerie" }, 
+            { "id": "Geology", "value": "Géologie" }, 
+            { "id": "Statistical units", "value": "Unités statistiques" }, 
+            { "id": "Buildings", "value": "Bâtiments" }, 
+            { "id": "Soil", "value": "Sols" }, 
+            { "id": "Land use", "value": "Usage des sols" }, 
+            { "id": "Human health and safety", "value": "Santé et sécurité des personnes" }, 
+            { "id": "Utility and governmental services", "value": "Services d'utilité publique et services publics" }, 
+            { "id": "Environmental monitoring facilities", "value": "Installations de suivi environnemental" }, 
+            { "id": "Production and industrial facilities", "value": "Lieux de production et sites industriels" }, 
+            { "id": "Agricultural and aquaculture facilities", "value": "Installations agricoles et aquacoles" }, 
+            { "id": "Population distribution — demography", "value": "Répartition de la population – démographie" }, 
+            { "id": "Area management/restriction/regulation zones and reporting units", "value": "Zones de gestion, de restriction ou de réglementation et unités de déclaration" }, 
+            { "id": "Natural risk zones", "value": "Zones à risque naturel" }, 
+            { "id": "Atmospheric conditions", "value": "Conditions atmosphériques" }, 
+            { "id": "Meteorological geographical features", "value": "Caractéristiques géographiques météorologiques" }, 
+            { "id": "Oceanographic geographical features", "value": "Caractéristiques géographiques océanographiques" }, 
+            { "id": "Sea regions", "value": "Régions maritimes" }, 
+            { "id": "Bio-geographical regions", "value": "Régions biogéographiques" }, 
+            { "id": "Habitats and biotopes", "value": "Habitats et biotopes" }, 
+            { "id": "Species distribution", "value": "Répartition des espèces" }, 
+            { "id": "Energy resources", "value": "Sources d'énergie" }, 
+            { "id": "Mineral resources", "value": "Ressources minérales" }
+        ],
+        
+        "MD_InspireSpecificationCode" : [
+            { "id": "COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata", "value": "COMMISSION REGULATION (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata", "date": "2008-12-03" }, 
+            { "id": "Corrigendum to INSPIRE Metadata Regulation published in the Official Journal of the European Union, L 328, page 83", "value": "Corrigendum to INSPIRE Metadata Regulation published in the Official Journal of the European Union, L 328, page 83" , "date": "2009-12-15" }, 
+            { "id": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services", "value": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services" , "date": "2010-12-08" }, 
+            { "id": "COMMISSION REGULATION (EU) No 1088/2010 of 23 November 2010 amending Regulation (EC) No 976/2009 as regards download services and transformation services", "value": "COMMISSION REGULATION (EU) No 1088/2010 of 23 November 2010 amending Regulation (EC) No 976/2009 as regards download services and transformation services", "date": "2010-12-08" }, 
+            { "id": "COMMISSION REGULATION (EC) No 976/2009 of 19 October 2009 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards the Network Services", "value": "COMMISSION REGULATION (EC) No 976/2009 of 19 October 2009 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards the Network Services" , "date": "2009-10-20" },
+            { "id": "COMMISSION REGULATION (EU) No 268/2010 of 29 March 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards the access to spatial data sets and services of the Member States by Community institutions and bodies under harmonised conditions", "value": "COMMISSION REGULATION (EU) No 268/2010 of 29 March 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards the access to spatial data sets and services of the Member States by Community institutions and bodies under harmonised conditions" , "date": "2010-03-30" }, 
+            { "id": "Commission Decision of 5 June 2009 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards monitoring and reporting (notified under document number C(2009) 4199) (2009/442/EC)", "value": "Commission Decision of 5 June 2009 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards monitoring and reporting (notified under document number C(2009) 4199) (2009/442/EC)" , "date": "2009-06-11" }
+        ],
+        
+        "MD_KeywordTypeCode" : [
+            { "id": "discipline", "value": "Discipline" },
+            { "id": "place", "value": "Localisation" }, 
+            { "id": "stratum", "value": "Strate" }, 
+            { "id": "temporal", "value": "Temps" }, 
+            { "id": "theme", "value": "Thème" }
+        ],
+
+        "MD_LanguageCode" : [
+            { "id": "ger", "value": "Allemand" },
+            { "id": "eng", "value": "Anglais" },
+            { "id": "fre", "value": "Français" } 
+        ],
+
+        "MD_PassCode" : [
+            { "id": "true", "value": "Conforme" }, 
+            { "id": "false", "value": "Non conforme" }, 
+            { "id": "empty", "value": "Non évalué" }
+        ],
+
+        "MD_MaintenanceFrequencyCode" : [
+            { "id": "continual", "value": "en continu" },
+            { "id": "daily", "value": "quotidienne" },
+            { "id": "weekly", "value": "hebdomadaire" },
+            { "id": "fortnightly", "value": "tous les 15 jours" },
+            { "id": "monthly", "value": "mensuelle" },
+            { "id": "quaterly", "value": "trimestrielle" },
+            { "id": "biannually", "value": "semestrielle" },
+            { "id": "annually", "value": "annuelle" },
+            { "id": "asNeeded", "value": "quand nécessaire" },
+            { "id": "irregular", "value": "irrégulierère" },
+            { "id": "notPlanned", "value": "non plannifiée" }, 
+            { "id": "unknown", "value": "inconnue" }
+        ],
+
+        "MD_RestrictionCode" : [
+            { "id": "copyright", "value": "Droit d’auteur / Droit moral (copyright)" }, 
+            { "id": "patent", "value": "Brevet" }, 
+            { "id": "patentPending", "value": "Brevet en instance" }, 
+            { "id": "trademark", "value": "Marque de commerce" }, 
+            { "id": "license", "value": "Licence" }, 
+            { "id": "intellectualPropertyRights", "value": "Droit de propriété intellectuelle / Droit patrimonial" }, 
+            { "id": "restricted", "value": "Restreint" },
+            { "id": "otherRestrictions", "value": "Autres restrictions" }
+        ],
+
+        "MD_ScopeCode" : [
+            { "id": "attribute", "value": "Attribut" }, 
+            { "id": "attributeType", "value": "Type d’attribut" }, 
+            { "id": "collectionHardware", "value": "Collection matérielle" }, 
+            { "id": "collectionSession", "value": "Collection de session" }, 
+            { "id": "series", "value": "Collection de données" }, 
+            { "id": "dataset", "value": "Jeu de données" },
+            { "id": "nonGeographicDataset", "value": "Jeu de données non géographique" }, 
+            { "id": "dimensionGroup", "value": "Dimension d’un groupe" }, 
+            { "id": "feature", "value": "Entité" }, 
+            { "id": "featureType", "value": "Type d’entité" }, 
+            { "id": "propertyType", "value": "Type de propriété" }, 
+            { "id": "software", "value": "Logiciel" }, 
+            { "id": "fieldSession", "value": "Champ de Session" }, 
+            { "id": "service", "value": "Service" }, 
+            { "id": "model", "value": "Modèle" }, 
+            { "id": "tile", "value": "Sous-ensemble de données" }, 
+            { "id": "fieldCampaign", "value": "Campagne de mesures" }
+        ],
+
+        "MD_SpatialRepresentationTypeCode" : [
+            { "id": "grid", "value": "Rasteur" },
+            { "id": "vector", "value": "Vecteur" },
+            { "id": "textTable", "value": "Table texte" }, 
+            { "id": "tin", "value": "Tin" }, 
+            { "id": "stereoModel", "value": "Vue 3D" }, 
+            { "id": "video", "value": "Vidéo" },
+            { "id": "undefined", "value": "Non définie" }
+        ],
+
+        "MD_LinkageProtocolCode" : [
+            { "id": "OGC:WMS", "value": "WMS" },
+            { "id": "OGC:WFS", "value": "WFS" },
+            { "id": "WWW:DOWNLOAD-1.0-http--download", "value": "ZIP" }
+        ],
+        
+        "MD_ReferenceSystemCode" : [
+            { "id": "2154", "value": "RGF93 – Lambert 93 (EPSG:2154)" }, 
+            { "id": "3948", "value": "RGF93 – Lambert 93 CC48 (EPSG:3948)" }, 
+            { "id": "3949", "value": "RGF93 – Lambert 93 CC49 (EPSG:3949)" }, 
+            { "id": "27572", "value": "NTF Paris – Lambert zone II (EPSG:27572)" }, 
+            { "id": "27571", "value": "NTF Paris – Lambert zone I (EPSG:27571)" }, 
+            { "id": "27561", "value": "NTF Paris – Lambert Nord (EPSG:27561)" }, 
+            { "id": "32632", "value": "WGS84 – UTM Zone 32N (EPSG:32632)" }, 
+            { "id": "4326", "value": "WGS84 – 2D (EPSG:4326)" }, 
+            { "id": "4979", "value": "WGS84 – 3D (EPSG:4979)" }
+        ]
+    },
+    "md_errors": {
+        "_comment": "Si le message d'erreur est vide, l'erreur est désactivée (elle n'apparaît pas dasn mdEdit)",
+        "md_fileidentifier": "Info: l'identifiant de la fiche doit être renseigné. Un identifiant a été généré automatiquement.",
+        "md_language": "Info: la langue de description de la fiche doit être renseigné. Par défaut, la langue du navigateur internet est utilisée.",
+        "md_characterset": "Info: l'encodage de la fiche de métadonnées doit être renseigné. Par défaut, cette valeur est fixée à 'UTF-8'.",
+        "md_hierarchylevel": "Info: le niveau hiérarchique de la fiche de métadonnées doit être renseigné. Par défaut, cette valeur est fixée à 'dataset'.",
+        "md_contacts": "Erreur: au moins un auteur ou contact pour la fiche descriptive des données doit être renseigné.",
+        "md_contact_organisation": "Erreur: un organisme doit être renseigné pour chaque contact.",
+        "md_contact_name": "",
+        "md_contact_position": "",
+        "md_contact_address": "",
+        "md_contact_cp": "",
+        "md_contact_city": "",
+        "md_contact_tel": "",
+        "md_contact_email": "Erreur: une adresse email doit être renseigné pour chaque contact.",
+        "md_contact_role": "Info: un rôle doit être défini pour chaque contatc. La valeur par défaut est fixée à 'Point de contact'.",
+        "md_datestamp": "Info: date de création ou mise à jour de la fiche obligatoire. la date d'aujourd'hui est utilisée par défaut.",
+        "md_standardname": "Info: le nom du standard de métadonnées doit être renseigné. Par défaut, cette valeur est 'ISO 19115/19139'.",
+        "md_standardversion": "Info: la version du standard de métadonnées doit être renseigné. Par défaut, cette valeur est 'Cor 1:2006'",
+        "data_referencesystems": "Erreur: le système de projection de la base de données doit être renseigné.",
+        "data_title": "Erreur: le titre de la base de données doit être renseigné.",
+        "data_dates": "Erreur: au moins une date pour la base de données doit être renseigné (création, révision ou pblication).",
+        "data_identifiers": "Info: au moins un identifiant de la base de données doit être renseigné. Par défaut, cette valeur est fixée à la valeur de l'identifiant de la fiche (md_fileidentifier).",
+        "data_abstract": "Erreur: le réumé descriptif de la base de données doit être renseigné.",
+        "data_browsegraphics": "Info: au moins une illustration (miniature) de la base de données devrait être renseigné.",
+        "data_maintenancefrequencycode": "",
+        "data_temporalextents": "",
+        "data_languages": "Info: au moins une langue pour la base de donnéesdoit être renseigné. Par défaut, la langue du navigateur internet est utilisée.",
+        "data_topiccategories": "Erreur: au moins une catégorie internationale (ISO) doit-être renseignée.",
+        "data_inspirekeywords": "Erreur: au moins un thème européen (Inspire) doit-être renseigné.",
+        "data_keywords_list": "",
+        "data_keywords": "Info: pensez à renseigner quelques mots-clés.",
+        "data_contacts": "Erreur: au moins un contact pour la base de données doit être renseigné.",
+        "data_contact_organisation": "Erreur: un organisme doit être renseigné pour chaque contact.",
+        "data_contact_name": "",
+        "data_contact_position": "",
+        "data_contact_address": "",
+        "data_contact_cp": "",
+        "data_contact_city": "",
+        "data_contact_tel": "",
+        "data_contact_email": "Erreur: une adresse email doit être renseigné pour chaque contact.",
+        "data_contact_role": "Info: un rôle doit être défini pour chaque contatc. La valeur par défaut est fixée à 'Point de contact'.",
+        "data_geographicextents": "Erreur: au moins une emprise géographique de la base de données doit-être renseignée (système WGS84).",
+        "data_referencesystems": "Erreur: au moins un système de projection pour la base de données doit-être renseigné.",
+        "data_presentationform": "",
+        "data_spatialrepresentationtype": "Info: le type de données (vecteur ou raster) doit être renseigné. Par défaut, cette valeur est fixée à 'vecteur'.",
+        "data_scales": "Erreur: au moins une échelle optimale d'utilisation ou résolution des données doit-être renseignée.",
+        "data_scaledenominator": "",
+        "data_scaledistance": "",
+        "data_dq_level": "Info: le niveau de description pour la qualité des données doit-être renseigné. Par défaut, la valeur utilisée est celle définie pour l'ensemble de la fiche.",
+        "data_li_statement": "Erreur: un texte descriptif de la qualité des données doit être renseigné.",
+        "data_li_processstep": "",
+        "data_li_source": "",
+        "data_characterset": "Info: l'encodage de la base de données doit être renseigné. Par défaut, cette valeur est fixée à 'UTF-8'.",
+        "data_distformats": "Erreur: au moins un format de diffusion doit être renseigné.",
+        "data_uselimitations": "",
+        "data_legal_uselimitations": "",
+        "data_legal_useconstraints": "",
+        "data_legal_accessconstraints": "",
+        "data_legal_accessinspireconstraints": "Info: au moins une contrainte légale Inspire doit être renseignée. La valeur utilisée par défaut est 'Aucune contrainte Inspire ne s'applique'.",
+        "data_legal_accessotherconstraints": "",
+        "data_security_uselimitations": "",
+        "data_security_classification": "Info: un niveau de classification doit être renseigné. La valeur utilisée par défaut est 'Aucune restriction'.",
+        "data_linkages": "Info: pensez à saisir des lien vers des ressources associées, si nécessaire (guide d'utilisation, cartes utilisant les données, téléchargement des données, visuisation des données, etc.) ",
+        "data_dq_conformities": "",
+        "data_dq_inspireconformities": ""
+    }
+}
