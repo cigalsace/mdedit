@@ -1,8 +1,7 @@
 # mdedit
 
 Outil simple et ouvert de saisie, modification et consultation de fiches de métadonnées conforme au format ISO 19139 INSPIRE.
-La version master est la version en cours de développement (cf. verson.txt).
-La version alpha correspond à une maquette réalisée en 2015. Elle n'est plus maitenue.
+Version alpha: maquette réalisée en 2015 (dernière version = v0.09).
 
 
 ## Fonctionnalités principales:

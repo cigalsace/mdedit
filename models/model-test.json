@@ -1,163 +1,211 @@
 {
-    "mdFileidentifier": "file_id",
-    "mdLanguage": "fre",
-    "mdCharacterSset": "utf8",
-    "mdHierarchyLevel": "dataset",
-    "mdContacts": [
+    "md_fileidentifier": "FR-123456789-Test",
+    "md_language": "fre",
+    "md_characterset": "utf8",
+    "md_hierarchylevel": "dataset",
+    "md_contacts": [
         {
-            "individualName": "name1",
-            "positionName": "position1",
-            "organisationName": "organisation1",
-            "phoneVoice": "tel1",
-            "email": "email1",
-            "deliveryPoints": "address1",
-            "postalCode": "cp1",
-            "city": "city1",
-            "logoUrl": "logoUrl1",
-            "logoDescription": "logoDescription1",
+            "name": "Nom 1",
+            "position": "Position 1",
+            "organisation": "Organisation 1",
+            "tel": "01234567890",
+            "email": "mail1@test.dom",
+            "address": "Adresse de test",
+            "cp": "12345",
+            "city": "City 1",
+            "logo_url": "",
+            "logo_text": "",
             "role": "author"
-        }, {
-            "individualName": "name2",
-            "positionName": "position2",
-            "organisationName": "organisation2",
-            "phoneVoice": "tel2",
-            "email": "email2",
-            "deliveryPoints": "address2",
-            "postalCode": "cp2",
-            "city": "city2",
-            "logoUrl": "logoUrl2",
-            "logoDescription": "logoDescription2",
-            "role": "pointofcontact"
+        },
+        {
+            "name": "Nom 2",
+            "position": "Position 2",
+            "organisation": "Organisation 2",
+            "tel": "11234567890",
+            "email": "mail2@test.dom",
+            "address": "Adresse de test 2",
+            "cp": "22345",
+            "city": "City 2",
+            "logo_url": "https://www.cigalsace.org/metadata/cigal/logo/cigal_logo.jpg",
+            "logo_text": "logo cigal",
+            "role": "pointOfContact"
         }
     ],
-    "mdDateStamp": "",
-    "mdStandardName": "ISO 19115/19139",
-    "mdStandardVersion": "Cor 1:2006",
-    "dataTitle": "Titre de test",
-    "dataDates": [
+    "md_datestamp": "2015-06-29",
+    "md_standardname": "ISO 19115/19139",
+    "md_standardversion": "Cor 1:2006",
+    "data_title": "DONNEES: Titre e test",
+    "data_dates": [
         {
-            "dateType": "",
+            "type": "",
             "date": ""
         }
     ],
-    "dataDatecreation": "2016-01-01",
-    "dataDatepublication": "2016-01-02",
-    "dataDaterevision": "2016-01-02",
-    "dataIdentifiers": [
+    "data_datecreation": "2015-06-01",
+    "data_datepublication": "2015-06-02",
+    "data_daterevision": "2015-06-03",
+    "data_identifiers": [
         {
-            "code": "data_id1",
-            "codeSpace": "data_codeSpace1"
-        }, {
-            "code": "data_id1",
-            "codeSpace": "data_codeSpace1"
+            "code": "DATA_Test_01",
+            "codespace": "CodeSpace1"
+        },
+        {
+            "code": "DATA_Test_02",
+            "codespace": "CodeSpace2"
         }
     ],
-    "dataAbstract": "Test datat abstract",
-    "dataBrowseGraphics": [
+    "data_abstract": "Résumé des données",
+    "data_browsegraphics": [
         {
-            "url": "",
-            "description": "",
-            "type": ""
+            "url": "https://www.cigalsace.org/metadata/cigal/logo/cigal_logo.jpg",
+            "description": "Logo CIGAL",
+            "type": "JPG"
+        },
+        {
+            "url": "https://www.cigalsace.org/metadata/cigal/logo/cigal_logo.jpg",
+            "description": "Logo CIGAL 2",
+            "type": "JPG"
         }
     ],
-    "dataMaintenanceFrequency": "unknown",
-    "dataTemporalExtents": [
+    "data_maintenancefrequencycode": "unknown",
+    "data_temporalextents": [
         {
-            "begin": "",
-            "end": "",
-            "description": ""
+            "begin": "2015-01-01",
+            "end": "2015-01-02",
+            "description": "Période 1"
+        },{
+            "begin": "2015-02-01",
+            "end": "2015-02-02",
+            "description": "Période 2"
         }
     ],
-    "dataLanguages": ["fre", "eng"],
-    "dataTopicCategories": [""],
-    "dataInspireKeywords": [
+    "data_languages": ["fre", "eng"],
+    "data_topiccategories": [""],
+    "data_inspirekeywords": [
         {
-            "keyword": "soils",
-            "keywordType": "",
-            "thesaurusName": "GEMET - INSPIRE themes, version 1.0",
-            "thesaurusDates": [
+            "keyword": "sols",
+            "type": "theme",
+            "thesaurus_name": "GEMET - INSPIRE themes, version 1.0",
+            "thesaurus_dates": [
                 {
-                    "dateType": "publication",
+                    "type": "publication",
                     "date": "2008-06-01"
                 }
             ]
         }
     ],
-    "dataKeywordsList": "",
-    "dataKeywords": [
+    "data_keywords_list": "word 1, word 2, word 3",
+    "data_keywords": [
         {
-            "keyword": "",
-            "kaywordType": "theme",
-            "thesaurusName": "",
-            "thesaurusDates": [
+            "keyword": "données ouvertes",
+            "type": "theme",
+            "thesaurus_name": "",
+            "thesaurus_dates": [
                 {
-                    "dateType": "",
+                    "type": "",
                     "date": ""
                 }
             ]
         }
     ],
-    "dataContacts": [
+    "data_contacts": [
         {
-            "individualName": "",
-            "positionName": "",
-            "organisationName": "",
-            "phoneVoice": "",
-            "email": "",
-            "deliveryPoints": "",
-            "postalCode": "",
-            "city": "",
-            "logoUrl": "",
-            "logoDescription": "",
+            "name": "Nom 3",
+            "position": "Position 3",
+            "organisation": "Organisation 3",
+            "tel": "31234567890",
+            "email": "mail3@test.dom",
+            "address": "Adresse de test 3",
+            "cp": "32345",
+            "city": "City 3",
+            "logo_url": "",
+            "logo_text": "",
+            "role": "author"
+        },
+        {
+            "name": "Nom 4",
+            "position": "Position 4",
+            "organisation": "Organisation 4",
+            "tel": "41234567890",
+            "email": "mail4@test.dom",
+            "address": "Adresse de test 4",
+            "cp": "42345",
+            "city": "City 4",
+            "logo_url": "",
+            "logo_text": "",
             "role": ""
         }
     ],
-    "dataGeographicExtents": [
+    "data_geographicextents": [
         {
-            "name": "",
-            "xmin": "",
-            "xmax": "",
-            "ymin": "",
-            "ymax": ""
+            "name": "zone 1",
+            "xmin": "1",
+            "xmax": "2",
+            "ymin": "3",
+            "ymax": "4"
+        },
+        {
+            "name": "zone 2",
+            "xmin": "12",
+            "xmax": "22",
+            "ymin": "32",
+            "ymax": "42"
         }
     ],
-    "dataReferenceSystems": [
+    "data_referencesystems": [
         {
-            "code": "",
-            "codeSpace": ""
+            "code": "2154",
+            "codespace": "EPSG"
         }
     ],
-    "dataPresentationForm": "",
-    "dataSpatialrePresentationType": "vector",
-    "dataScaleDenominator": "",
-    "dataScaleDistance": "",
-    "dataDqLlevel": "dataset",
-    "dataLiStatement": "",
-    "dataCharacterSet": "utf8",
-    "dataDistributionFormats": [
+    "data_presentationform": "",
+    "data_spatialrepresentationtype": "vector",
+    "data_scaledenominator": "25000",
+    "data_scaledistance": "0,5",
+    "data_dq_level": "dataset",
+    "data_li_statement": "Qualité des données...",
+    "data_characterset": "utf8",
+    "data_distformats": [
         {
-            "name": "",
-            "version": "",
-            "specification": ""
+            "name": "SHP",
+            "version": "1",
+            "specification": "Shapefile"
+        },
+        {
+            "name": "TAB",
+            "version": "2",
+            "specification": "Mapinfo"
         }
     ],
-    "dataUseLimitations": [""],
-    "dataLegalUseLimitations": [""],
-    "dataLegalUseConstraints": [""],
-    "dataLegalAccessConstraints": [""],
-    "dataLegalAccessInspireConstraints": ["Pas de restriction d'accès public"],
-    "dataLegalAccessOtherConstraints": [""],
-    "dataSecurityUseLimitations": [""],
-    "dataSecurityClassification": "unclassified",
-    "dataLinkages": [
+    "data_uselimitations": ["ul1", "ul2"],
+    "data_legal_uselimitations": ["Licence Etalab 2011 (http://ddata.over-blog.com/xxxyyy/4/37/99/26/licence/Licence-Ouverte-Open-Licence.pdf)", "l_ul2"],
+    "data_legal_useconstraints": ["license", "otherRestrictions", "otherRestrictions"],
+    "data_legal_accessconstraints": ["copyright", "otherRestrictions"],
+    "data_legal_accessinspireconstraints": ["Pas de restriction d'accès public"],
+    "data_legal_accessotherconstraints": ["Other access constraints"],
+    "data_security_uselimitations": ["s_ul1", "s_ul2"],
+    "data_security_classification": "unclassified",
+    "data_linkages": [
         {
-            "name": "",
-            "description": "",
-            "url": "",
+            "name": "fichier 1",
+            "description": "Fichier n°1",
+            "url": "http://lien.fr",
             "protocol": ""
+        },
+        {
+            "name": "fichier 2",
+            "description": "Fichier n°2",
+            "url": "http://lien2.fr",
+            "protocol": "DATA:ZIP"
+        },
+        {
+            "name": "fichier 3",
+            "description": "Fichier n°3",
+            "url": "http://lien3.fr",
+            "protocol": "OGC:WMS"
         }
     ],
-    "dataDqInspireConformities": [
+    "data_dq_inspireconformities": [
         {
             "specification": "",
             "explaination": "",
@@ -170,7 +218,7 @@
             ]
         }
     ],
-    "dataDqConformities": [
+    "data_dq_conformities": [
         {
             "specification": "",
             "explaination": "",
@@ -182,5 +230,5 @@
                 }
             ]
         }
-    ]
+    ]    
 }

@@ -1,7 +1,0 @@
-{
-    "defaultLanguage": "fr",
-    "server_url_getxml": "php/index.php?act=getXML",
-    "views_file": "views/views.json",
-    "models_file": "models/models.json",
-    "locales_path": "locales/"
-}

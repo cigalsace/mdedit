@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink">
+<gmd:fileIdentifier><gco:CharacterString>FR-341142131-ARAA_BDSol-Alsace_250000_2011_extrait_Opendata</gco:CharacterString></gmd:fileIdentifier>
+<gmd:language><gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre">fre</gmd:LanguageCode></gmd:language>
+<gmd:contact>
+<gmd:CI_ResponsibleParty>
+<gmd:individualName><gco:CharacterString>Joëlle SAUTER</gco:CharacterString></gmd:individualName>
+<gmd:organisationName><gco:CharacterString>ARAA</gco:CharacterString></gmd:organisationName>
+<gmd:positionName><gco:CharacterString>Chargée de mission sols</gco:CharacterString></gmd:positionName>
+<gmd:contactInfo><gmd:CI_Contact>
+<gmd:phone><gmd:CI_Telephone><gmd:voice><gco:CharacterString>03 88 19 16 72</gco:CharacterString></gmd:voice></gmd:CI_Telephone></gmd:phone>
+<gmd:address><gmd:CI_Address>
+<gmd:deliveryPoint><gco:CharacterString>Espace Européen de l'Entreprise
+2, rue de Rome - BP 30022
+STRASBOURG CEDEX</gco:CharacterString></gmd:deliveryPoint>
+<gmd:city><gco:CharacterString>SCHILTIGHEIM</gco:CharacterString></gmd:city>
+<gmd:postalCode><gco:CharacterString>67013</gco:CharacterString></gmd:postalCode>
+<gmd:electronicMailAddress><gco:CharacterString>j.sauter@alsace.chambagri.fr</gco:CharacterString></gmd:electronicMailAddress>
+</gmd:CI_Address></gmd:address>
+</gmd:CI_Contact></gmd:contactInfo>
+<gmd:role><gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode></gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:contact>
+<gmd:dateStamp><gco:Date>2015-11-23</gco:Date></gmd:dateStamp>
+<gmd:referenceSystemInfo><gmd:MD_ReferenceSystem>
+<gmd:referenceSystemIdentifier><gmd:RS_Identifier>
+<gmd:code><gco:CharacterString>2154</gco:CharacterString></gmd:code>
+</gmd:RS_Identifier></gmd:referenceSystemIdentifier>
+</gmd:MD_ReferenceSystem></gmd:referenceSystemInfo>
+<gmd:identificationInfo><gmd:MD_DataIdentification>
+<gmd:citation><gmd:CI_Citation>
+<gmd:title><gco:CharacterString>DONNEES OUVERTES- Extrait base de données régionale des sols d'Alsace - Référentiel Régional Pédologique (RRP) Alsace au 1/250 000ème - 2011 </gco:CharacterString></gmd:title>
+<gmd:date><gmd:CI_Date>
+<gmd:date><gco:Date>2009-10-01</gco:Date></gmd:date>
+<gmd:dateType><gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode></gmd:dateType>
+</gmd:CI_Date></gmd:date>
+<gmd:date><gmd:CI_Date>
+<gmd:date><gco:Date>2011-12-01</gco:Date></gmd:date>
+<gmd:dateType><gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode></gmd:dateType>
+</gmd:CI_Date></gmd:date>
+<gmd:identifier><gmd:RS_Identifier>
+<gmd:code><gco:CharacterString>FR-341142131-ARAA_BDSol-Alsace_250000_2011_extrait_Opendata</gco:CharacterString></gmd:code>
+<gmd:codeSpace><gco:CharacterString></gco:CharacterString></gmd:codeSpace>
+</gmd:RS_Identifier></gmd:identifier>
+</gmd:CI_Citation></gmd:citation>
+<gmd:abstract><gco:CharacterString>Les données concernent les sols, produits de l'altération, du remaniement et de l'organisation des couches supérieures de la croûte terrestre sous l'action de la vie, de l'atmosphère et des échanges d'énergie qui s'y manifestent (Aubert et Boulaine). L'épaisseur du milieu décrit dépasse rarement 2m. 
+Ces données peuvent être utiles à toute étude nécessitant des informations spatialisées sur les sols (production de biomasse agricole ou forestière, gestion qualitatitive et quantitative des eaux, biodiversité, stockage du carbone, risque érosion, aménagement du territoire, analyse paysagère, archéologie, etc...)
+Plusieurs informations représentées par unités cartographiques de sols sont disponibles avec une valeur dominante et une valeur secondaire proposée par unité cartographique (le sol pouvant présenter une variabilité spatiale importante). Liste des paramètres représentés : matériau parental, pierrosité en surface, texture en surface, profondeur du sol, caractéristique de circulation de l'eau dans le sol...Cette liste pourra s'enrichir progressivement.
+Ces données en libre accès proviennent par extraction et traitement de la base de données sur les sols d'Alsace au 1/250 000ème plus complète et détaillée gérée par l'Association pour la Relance Agronomique en Alsace (ARAA). Cette base de données est par ailleurs accessible selon diverses modalités (voir ressources associées et fiche métadonnées DONNEES - Base de données régionale des sols d'Alsace - Référentiel Régional Pédologique (RRP) Alsace au 1/250 000ème - 2011)</gco:CharacterString></gmd:abstract>
+<gmd:pointOfContact>
+<gmd:CI_ResponsibleParty>
+<gmd:organisationName><gco:CharacterString>ARAA</gco:CharacterString></gmd:organisationName>
+<gmd:contactInfo><gmd:CI_Contact>
+<gmd:phone><gmd:CI_Telephone><gmd:voice><gco:CharacterString>03 88 19 17 52</gco:CharacterString></gmd:voice></gmd:CI_Telephone></gmd:phone>
+<gmd:address><gmd:CI_Address>
+<gmd:deliveryPoint><gco:CharacterString>Espace Européen de l'Entreprise
+2, rue de Rome - B.P. 30022
+STRASBOURG CEDEX</gco:CharacterString></gmd:deliveryPoint>
+<gmd:city><gco:CharacterString>SCHILTIGHEIM</gco:CharacterString></gmd:city>
+<gmd:postalCode><gco:CharacterString>67013</gco:CharacterString></gmd:postalCode>
+<gmd:electronicMailAddress><gco:CharacterString>araa@alsace.chambagri.fr</gco:CharacterString></gmd:electronicMailAddress>
+</gmd:CI_Address></gmd:address>
+</gmd:CI_Contact></gmd:contactInfo>
+<gmd:role><gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="owner">owner</gmd:CI_RoleCode></gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:pointOfContact>
+<gmd:pointOfContact>
+<gmd:CI_ResponsibleParty>
+<gmd:individualName><gco:CharacterString>Joëlle SAUTER</gco:CharacterString></gmd:individualName>
+<gmd:organisationName><gco:CharacterString>ARAA</gco:CharacterString></gmd:organisationName>
+<gmd:positionName><gco:CharacterString>Chargée de mission sols</gco:CharacterString></gmd:positionName>
+<gmd:contactInfo><gmd:CI_Contact>
+<gmd:phone><gmd:CI_Telephone><gmd:voice><gco:CharacterString>03 88 19 16 72</gco:CharacterString></gmd:voice></gmd:CI_Telephone></gmd:phone>
+<gmd:address><gmd:CI_Address>
+<gmd:deliveryPoint><gco:CharacterString>Espace Européen de l'Entreprise
+2, rue de Rome - B.P. 30022
+STRASBOURG CEDEX</gco:CharacterString></gmd:deliveryPoint>
+<gmd:city><gco:CharacterString>SCHILTIGHEIM</gco:CharacterString></gmd:city>
+<gmd:postalCode><gco:CharacterString>67013</gco:CharacterString></gmd:postalCode>
+<gmd:electronicMailAddress><gco:CharacterString>j.sauter@alsace.chambagri.fr</gco:CharacterString></gmd:electronicMailAddress>
+</gmd:CI_Address></gmd:address>
+</gmd:CI_Contact></gmd:contactInfo>
+<gmd:role><gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode></gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:pointOfContact>
+<gmd:pointOfContact>
+<gmd:CI_ResponsibleParty>
+<gmd:organisationName><gco:CharacterString>CIGAL</gco:CharacterString></gmd:organisationName>
+<gmd:contactInfo><gmd:CI_Contact>
+<gmd:address><gmd:CI_Address>
+<gmd:deliveryPoint><gco:CharacterString>Région Alsace
+1, place Adrien Zeller</gco:CharacterString></gmd:deliveryPoint>
+<gmd:city><gco:CharacterString>STRASBOURG</gco:CharacterString></gmd:city>
+<gmd:postalCode><gco:CharacterString>67000</gco:CharacterString></gmd:postalCode>
+<gmd:electronicMailAddress><gco:CharacterString>contact@cigalsace.org</gco:CharacterString></gmd:electronicMailAddress>
+</gmd:CI_Address></gmd:address>
+</gmd:CI_Contact></gmd:contactInfo>
+<gmd:role><gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="resourceProvider">resourceProvider</gmd:CI_RoleCode></gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:pointOfContact>
+<gmd:graphicOverview>
+<gmd:MD_BrowseGraphic>
+<gmd:fileName>
+<gco:CharacterString>https://cigalsace.org/metadata/ARAA/FR-341142131-ARAA_BDSol-Alsace_250000_2011/FR-341142131-ARAA_BDSol-Alsace_250000_2011.jpg</gco:CharacterString>
+</gmd:fileName>
+<gmd:fileDescription>
+<gco:CharacterString></gco:CharacterString>
+</gmd:fileDescription>
+<gmd:fileType>
+<gco:CharacterString>jpg</gco:CharacterString>
+</gmd:fileType>
+</gmd:MD_BrowseGraphic>
+</gmd:graphicOverview>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>Soil</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+<gmd:thesaurusName><gmd:CI_Citation>
+<gmd:title><gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString></gmd:title>
+<gmd:date><gmd:CI_Date>
+<gmd:date><gco:Date>2008-06-01</gco:Date></gmd:date>
+<gmd:dateType><gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">creation</gmd:CI_DateTypeCode></gmd:dateType>
+</gmd:CI_Date></gmd:date>
+</gmd:CI_Citation></gmd:thesaurusName>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>Référentiel Régional Pédologique</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>RRP</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>pédologie</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>Donesol</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>Inventaire Gestion et Conservation des Sols</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>IGCS</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>données ouvertes</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>Géoportail</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>circulation des eaux</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords><gmd:MD_Keywords>
+<gmd:keyword><gco:CharacterString>Alsace</gco:CharacterString></gmd:keyword>
+<gmd:type><gmd:MD_KeywordTypeCode codeListValue="place" codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_KeywordTypeCode" /></gmd:type>
+</gmd:MD_Keywords></gmd:descriptiveKeywords>
+<gmd:resourceConstraints><gmd:MD_Constraints>
+<gmd:useLimitation><gco:CharacterString>Limites d'utilisation liée à l'échelle de production des données (1:250000).</gco:CharacterString></gmd:useLimitation>
+</gmd:MD_Constraints></gmd:resourceConstraints>
+<gmd:resourceConstraints><gmd:MD_LegalConstraints>
+<gmd:accessConstraints>
+<gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#md_RestrictionCode" codeListValue="license">license</gmd:MD_RestrictionCode>
+</gmd:accessConstraints>
+<gmd:otherConstraints><gco:CharacterString>Pas de restriction d'accès public selon INSPIRE</gco:CharacterString></gmd:otherConstraints>
+<gmd:otherConstraints><gco:CharacterString>Pas de restriction d'accès public selon INSPIRE</gco:CharacterString></gmd:otherConstraints>
+<gmd:otherConstraints><gco:CharacterString>L124-5-II-2 du code de l'environnement (Directive 2007/2/CE (INSPIRE), Article 13.1.c)</gco:CharacterString></gmd:otherConstraints>
+</gmd:MD_LegalConstraints></gmd:resourceConstraints>
+<gmd:resourceConstraints><gmd:MD_SecurityConstraints><gmd:classification>
+<gmd:MD_ClassificationCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#md_ClassificationCode" codeListValue="unclassified">unclassified</gmd:MD_ClassificationCode>
+</gmd:classification></gmd:MD_SecurityConstraints></gmd:resourceConstraints>
+<gmd:spatialResolution><gmd:MD_Resolution>
+<gmd:equivalentScale><gmd:MD_RepresentativeFraction>
+<gmd:denominator><gco:Integer>250000</gco:Integer></gmd:denominator>
+</gmd:MD_RepresentativeFraction></gmd:equivalentScale>
+</gmd:MD_Resolution></gmd:spatialResolution>
+<gmd:language>
+<gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre">fre</gmd:LanguageCode>
+</gmd:language>
+<gmd:spatialRepresentationType>
+<gmd:MD_SpatialRepresentationTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#md_SpatialRepresentationTypeCode" codeListValue="utf8">utf8</gmd:MD_SpatialRepresentationTypeCode>
+</gmd:spatialRepresentationType>
+<gmd:topicCategory><gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode></gmd:topicCategory>
+<gmd:extent><gmd:EX_Extent>
+<gmd:description><gco:CharacterString>Alsace</gco:CharacterString></gmd:description>
+<gmd:geographicElement><gmd:EX_GeographicBoundingBox>
+<gmd:westBoundLongitude><gco:Decimal>6.8410134649126</gco:Decimal></gmd:westBoundLongitude>
+<gmd:eastBoundLongitude><gco:Decimal>8.23351958950571</gco:Decimal></gmd:eastBoundLongitude>
+<gmd:southBoundLatitude><gco:Decimal>47.4202517758332</gco:Decimal></gmd:southBoundLatitude>
+<gmd:northBoundLatitude><gco:Decimal>49.0778319799915</gco:Decimal></gmd:northBoundLatitude>
+</gmd:EX_GeographicBoundingBox></gmd:geographicElement>
+</gmd:EX_Extent></gmd:extent>
+</gmd:MD_DataIdentification></gmd:identificationInfo>
+<gmd:distributionInfo><gmd:MD_Distribution>
+<gmd:distributionFormat><gmd:MD_Format>
+<gmd:name><gco:CharacterString>SHP</gco:CharacterString></gmd:name>
+<gmd:version><gco:CharacterString></gco:CharacterString></gmd:version>
+<gmd:specification><gco:CharacterString></gco:CharacterString></gmd:specification>
+</gmd:MD_Format></gmd:distributionFormat>
+<gmd:transferOptions><gmd:MD_DigitalTransferOptions>
+<gmd:onLine><gmd:CI_OnlineResource>
+<gmd:linkage><gmd:URL>https://dw3.gissol.fr/login</gmd:URL></gmd:linkage>
+<gmd:protocol><gco:CharacterString>undefined</gco:CharacterString></gmd:protocol>
+<gmd:name><gco:CharacterString>Dictionnaire des données DoneSol</gco:CharacterString></gmd:name>
+<gmd:description><gco:CharacterString>Téléchargement du dictionnaire des données DoneSol et du modèle conceptuel de la base de données (en haut de page, ne nécessite pas de login ni de mot de passe). Il décrit le modèle conceptuel d'une base de données sols établie dans le cadre du programme Inventaire Gestion et Conservation des Sols (I.G.C.S.). Il précise la signification des champs codés. Initialement conçu pour les opérateurs chargés de la saisie de la base de données, il est également utile aux utilisateurs de cette base de données.</gco:CharacterString></gmd:description>
+</gmd:CI_OnlineResource></gmd:onLine>
+<gmd:onLine><gmd:CI_OnlineResource>
+<gmd:linkage><gmd:URL>https://alsace.websol.fr/</gmd:URL></gmd:linkage>
+<gmd:protocol><gco:CharacterString>undefined</gco:CharacterString></gmd:protocol>
+<gmd:name><gco:CharacterString>Interrogation de la BDDsols via la plateforme Websol Alsace</gco:CharacterString></gmd:name>
+<gmd:description><gco:CharacterString>Accès par le portail Websol Alsace à des données sur les sols détaillées par le biais de requêtes sur les types de sols et-ou sur les strates composant chaque type de sols. Restitution cartographique ou exportation des résultats des requêtes avec deux méthodes d'agrégation à l'unité cartographique de sol.</gco:CharacterString></gmd:description>
+</gmd:CI_OnlineResource></gmd:onLine>
+<gmd:onLine><gmd:CI_OnlineResource>
+<gmd:linkage><gmd:URL>http://www.gissol.fr/le-gis/programmes/inventaire-gestion-et-conservation-des-sols-igcs-67</gmd:URL></gmd:linkage>
+<gmd:protocol><gco:CharacterString>undefined</gco:CharacterString></gmd:protocol>
+<gmd:name><gco:CharacterString>Cadre du programme Inventaire Gestion et Conservation des Sols</gco:CharacterString></gmd:name>
+<gmd:description><gco:CharacterString>Description du programme national Inventaire gestion et Conservation des Sols (I.G.C.S.) dans le cadre duquel le RRP Alsace a été élaboré.</gco:CharacterString></gmd:description>
+</gmd:CI_OnlineResource></gmd:onLine>
+<gmd:onLine><gmd:CI_OnlineResource>
+<gmd:linkage><gmd:URL>http://www.sols-et-territoires.org/</gmd:URL></gmd:linkage>
+<gmd:protocol><gco:CharacterString>undefined</gco:CharacterString></gmd:protocol>
+<gmd:name><gco:CharacterString>Valorisation des bases de données sur les sols</gco:CharacterString></gmd:name>
+<gmd:description><gco:CharacterString>Site internet du Réseau Mixte Technologique Sols et Territoires qui vise à mieux connaître les sols et donner accès à la connaissance des sols dans les territoires agricoles et ruraux, à mieux faire prendre en compte les sols dans différentes politiques, projets et programmes d’action agricoles, environnementaux et ruraux.</gco:CharacterString></gmd:description>
+</gmd:CI_OnlineResource></gmd:onLine>
+<gmd:onLine><gmd:CI_OnlineResource>
+<gmd:linkage><gmd:URL>http://www.afes.fr/index.php</gmd:URL></gmd:linkage>
+<gmd:protocol><gco:CharacterString>undefined</gco:CharacterString></gmd:protocol>
+<gmd:name><gco:CharacterString>Informations sur les sols</gco:CharacterString></gmd:name>
+<gmd:description><gco:CharacterString>Site internet de l'Association Française pour l'Etude du Sol (AFES). De nombreuses ressources documentaires sur les sols y sont téléchargeables.</gco:CharacterString></gmd:description>
+</gmd:CI_OnlineResource></gmd:onLine>
+<gmd:onLine><gmd:CI_OnlineResource>
+<gmd:linkage><gmd:URL>https://www.cigalsace.org/geoserver/ARAA/wms</gmd:URL></gmd:linkage>
+<gmd:protocol><gco:CharacterString>undefined</gco:CharacterString></gmd:protocol>
+<gmd:name><gco:CharacterString>ARAA_BDSols-Alsace_250000_SHP_L93</gco:CharacterString></gmd:name>
+<gmd:description><gco:CharacterString>Visualisation et  simple consultation des unités cartographiques de sols au 1/250 000ème et de leur composition en types de sols. Visualisation et consultation d'une sélection d'informations agrégées à l'unité cartographique, à vocation pédagogique et illustrative (texture des sols en surface, classe de matériau parental, profondeur, pierrosité en surface, drainage naturel, famille de sols) -  Mise en place progressive des différentes entrées thématiques à compter de 2015.</gco:CharacterString></gmd:description>
+</gmd:CI_OnlineResource></gmd:onLine>
+<gmd:onLine><gmd:CI_OnlineResource>
+<gmd:linkage><gmd:URL>https://www.cigalsace.org/geoserver/ARAA/wfs</gmd:URL></gmd:linkage>
+<gmd:protocol><gco:CharacterString>undefined</gco:CharacterString></gmd:protocol>
+<gmd:name><gco:CharacterString>ARAA_BDSols-Alsace_250000_SHP_L93</gco:CharacterString></gmd:name>
+<gmd:description><gco:CharacterString>Flux WFS de téléchargement des données</gco:CharacterString></gmd:description>
+</gmd:CI_OnlineResource></gmd:onLine>
+</gmd:MD_DigitalTransferOptions></gmd:transferOptions>
+</gmd:MD_Distribution></gmd:distributionInfo>
+<gmd:dataQualityInfo><gmd:DQ_DataQuality>
+<gmd:scope><gmd:DQ_Scope>
+<gmd:level><gmd:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#md_ScopeCode">dataset</gmd:MD_ScopeCode></gmd:level>
+</gmd:DQ_Scope></gmd:scope>
+<gmd:lineage><gmd:LI_Lineage>
+<gmd:statement><gco:CharacterString>Données sources et processus de production :
+(1) Données extraites de la base de données sur les sols d’Alsace -Référentiel Régional Pédologique (RRP) Alsace au 1/250 000ème - 2011. La constitution de cette base de données a été faite conformément au cahier des charges du programme national Inventaire Gestion et Conservation des Sols (IGCS) avec le dictionnaire des données Donesol (cf. ressources associées à la fiche), s'appuyant sur la norme X31-560 cartographie des sols (acquisition et gestion informatique de données pédologiques en vue de leur utilisation en cartographie des sols). 
+Une unité cartographique de sol (UCS) peut être pure et composée d'un seul type de sol (UTS), ou complexe et composée de plusieurs types de sols dont on peut décrire les caractéristiques et dont on peut estimer le % de surface de présence dans l'unité cartographique.
+(2) Pour aboutir à une couche d'information représentant un paramètre par unité cartographique de sol, le processus de traitement de données suivant a été appliqué :
+-extraction du paramètre pour l'ensemble des types de sols (UTS) et extraction du % de surface que représente chaque type de sol dans une unité cartographique(UCS)
+-calcul de la valeur dominante du paramètre pour une unité cartographique et du % de surface associé
+-calcul de la valeur secondaire du paramètre dans une unité cartographique et du % de surface associé
+par exemple pour la Pierrosité : PIERRO_1 (classe dominante de pierrosité), PIERRO_1_T (texte en clair de classe dominante de pierrosité), PIERRO_1_P (% de surface de cette classe dominante dans l'unité cartographique), PIERRO_2 (classe secondaire de pierrosité), PIERRO_2_T (texte en clair de classe secondaire de pierrosité), PIERRO_2_P (% de surface de cette classe secondaire dans l'unité cartographique)
+les autres paramètres sont : CL_PRO (classe de profondeur), CL_MAT (matériau parental), DN (drainage naturel, circulation de l'eau dans le sol), TEXT (texture en surface)
+(3) Remarques complémentaires sur la qualité des données :
+Suite à ce travail, la fiabilité attendue des données est en adéquation avec l’échelle d’utilisation annoncée (1/250 000ème). Toute interprétation des données à un niveau de précision supérieur à celui indiqué dans la désignation du fichier est déconseillée sans observations de terrains complémentaires. En particulier, la base de données n’ayant pas la précision requise pour une expertise à l’échelle cadastrale, un utilisateur reste responsable de toute transposition à l’échelle cadastrale.</gco:CharacterString></gmd:statement>
+</gmd:LI_Lineage></gmd:lineage>
+</gmd:DQ_DataQuality></gmd:dataQualityInfo>
+</gmd:MD_Metadata>
