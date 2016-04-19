@@ -1,0 +1,24 @@
+{
+    "description": "List of vews",
+    "list": [{
+        "path": "views/tpl-edit.html",
+        "values": {
+            "fr": "Edition",
+            "en": "Edit"
+        },
+        "locales": {
+            "fr": "views/tpl-edit_fr.json",
+            "en": "views/tpl-edit_en.json"
+        }
+    }, {
+        "path": "views/tpl-view.html",
+        "values": {
+            "fr": "Vue",
+            "en": "View"
+        },
+        "locales": {
+            "fr": "views/tpl-view_fr.json",
+            "en": "views/tpl-view_en.json"
+        }
+    }]
+}

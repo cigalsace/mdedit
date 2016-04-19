@@ -1,0 +1,9 @@
+Liste des fichiers JSON:
+
+- md-test.json: modèle de métadonnées (format json).
+- md-opendata.json: modèle de métadonnées (format json).
+- md-empty.json: modèle de métadonnées (format json).
+- md-bdocs_cigal.json: modèle de métadonnées (format json).
+- locales-fr.json: traduction française de l'application.
+- lst_geographicextents.json: liste des emprises proposée à la sélection.
+

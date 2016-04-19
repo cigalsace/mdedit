@@ -1,0 +1,171 @@
+{
+    "mdFileidentifier": "",
+    "mdLanguage": "fre",
+    "mdCharacterSset": "utf8",
+    "mdHierarchyLevel": "dataset",
+    "mdContacts": [
+        {
+            "individualName": "",
+            "positionName": "",
+            "organisationName": "",
+            "phoneVoice": "",
+            "email": "",
+            "deliveryPoints": "",
+            "postalCode": "",
+            "city": "",
+            "logoUrl": "",
+            "logoDescription": "",
+            "role": ""
+        }
+    ],
+    "mdDateStamp": "",
+    "mdStandardName": "ISO 19115/19139",
+    "mdStandardVersion": "Cor 1:2006",
+    "dataTitle": "DONNEES: ...",
+    "dataDates": [
+        {
+            "dateType": "",
+            "date": ""
+        }
+    ],
+    "dataDatecreation": "",
+    "dataDatepublication": "",
+    "dataDaterevision": "",
+    "dataIdentifiers": [
+        {
+            "code": "",
+            "codeSpace": ""
+        }
+    ],
+    "dataAbstract": "",
+    "dataBrowseGraphics": [
+        {
+            "url": "",
+            "description": "",
+            "type": ""
+        }
+    ],
+    "dataMaintenanceFrequency": "unknown",
+    "dataTemporalExtents": [
+        {
+            "begin": "",
+            "end": "",
+            "description": ""
+        }
+    ],
+    "dataLanguages": ["fre"],
+    "dataTopicCategories": [""],
+    "dataInspireKeywords": [
+        {
+            "keyword": "",
+            "keywordType": "",
+            "thesaurusName": "GEMET - INSPIRE themes, version 1.0",
+            "thesaurusDates": [
+                {
+                    "dateType": "publication",
+                    "date": "2008-06-01"
+                }
+            ]
+        }
+    ],
+    "dataKeywordsList": "",
+    "dataKeywords": [
+        {
+            "keyword": "",
+            "kaywordType": "theme",
+            "thesaurusName": "",
+            "thesaurusDates": [
+                {
+                    "dateType": "",
+                    "date": ""
+                }
+            ]
+        }
+    ],
+    "dataPointOfContacts": [
+        {
+            "individualName": "",
+            "positionName": "",
+            "organisationName": "",
+            "phoneVoice": "",
+            "email": "",
+            "deliveryPoints": "",
+            "postalCode": "",
+            "city": "",
+            "logoUrl": "",
+            "logoDescription": "",
+            "role": ""
+        }
+    ],
+    "dataGeographicExtents": [
+        {
+            "name": "",
+            "xmin": "",
+            "xmax": "",
+            "ymin": "",
+            "ymax": ""
+        }
+    ],
+    "dataReferenceSystems": [
+        {
+            "code": "",
+            "codeSpace": ""
+        }
+    ],
+    "dataPresentationForm": "",
+    "dataSpatialrePresentationType": "vector",
+    "dataScaleDenominator": "",
+    "dataScaleDistance": "",
+    "dataDqLlevel": "dataset",
+    "dataLiStatement": "",
+    "dataCharacterSet": "utf8",
+    "dataDistributionFormats": [
+        {
+            "name": "",
+            "version": "",
+            "specification": ""
+        }
+    ],
+    "dataUseLimitations": [""],
+    "dataLegalUseLimitations": [""],
+    "dataLegalUseConstraints": [""],
+    "dataLegalAccessConstraints": [""],
+    "dataLegalAccessInspireConstraints": ["Pas de restriction d'accès public"],
+    "dataLegalAccessOtherConstraints": [""],
+    "dataSecurityUseLimitations": [""],
+    "dataSecurityClassification": "unclassified",
+    "dataLinkages": [
+        {
+            "name": "",
+            "description": "",
+            "url": "",
+            "protocol": ""
+        }
+    ],
+    "dataDqInspireConformities": [
+        {
+            "specification": "",
+            "explaination": "",
+            "pass": "",
+            "dates": [
+                {
+                    "type": "",
+                    "date": ""
+                }
+            ]
+        }
+    ],
+    "dataDqConformities": [
+        {
+            "specification": "",
+            "explaination": "",
+            "pass": "",
+            "dates": [
+                {
+                    "type": "",
+                    "date": ""
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,900 @@
+<div id="content" class="container">
+    <div uib-accordion close-others="false" class="col col-sm-12 panel-group" id="accordion1">
+        <form name="mdForm" novalidate>
+            <!-- Panel 1 -->
+            <div uib-accordion-group is-open="true" panel-class="panel-primary" ng-show="showAllFields">
+                <div uib-accordion-heading>
+                    <span uib-tooltip="Informations sur la fiche de métadonnées" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Informations sur la fiche de métadonnées
+                    </span>
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                    <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                </div>
+                <div>
+                    <div class="row">
+                        <!-- metadata.mdFileIdentifier -->
+                        <div class="col-md-4 form-group">
+                            <label for="{{fields.mdFileIdentifier.id}}" uib-tooltip="{{fields.mdFileIdentifier.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('mdFileIdentifier', $event)">
+                                {{fields.mdFileIdentifier.label}}
+                                <!--<span class="sr-only">Error:</span>-->
+                            </label>
+                            <input type="text" class="form-control input-sm" id="{{fields.mdFileIdentifier.id}}" name="{{fields.mdFileIdentifier.id}}" placeholder="{{fields.mdFileIdentifier.placeholder}}" ng-model="metadata.mdFileIdentifier" />
+                        </div>
+                        <!-- metadata.mdLanguage -->
+                        <div class="col-md-4 form-group">
+                            <label class="control-label" for="{{fields.mdLanguage.id}}" uib-tooltip="{{fields.mdLanguage.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.mdLanguage.label}}
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.mdLanguage.id}}" id="{{fields.mdLanguage.id}}" ng-options="language.id as language.value for language in codelists.MD_LanguageCode" ng-model="metadata.mdLanguage">
+                                <option value="">Sélectionnez une langue</option>
+                            </select>
+                        </div>
+                        <!-- mdStandardName -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="{{fields.mdStandardName.id}}" uib-tooltip="{{fields.mdStandardName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.mdStandardName.label}}
+                                </label>
+                                <input type="text" class="form-control input-sm" name="{{fields.mdStandardName.id}}" id="{{fields.mdStandardName.id}}" placeholder="{{fields.mdStandardName.placeholder}}" ng-model="metadata.mdStandardName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--mdHierarchyLevel -->
+                        <div class="col-md-4 form-group">
+                            <label class="control-label" for="{{fields.mdHierarchyLevel.id}}" uib-tooltip="{{fields.mdHierarchyLevel.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.mdHierarchyLevel.label}}
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.mdHierarchyLevel.id}}" id="{{fields.mdHierarchyLevel.id}}" ng-options="hierarchyLevel.id as hierarchyLevel.value for hierarchyLevel in codelists.MD_ScopeCode" ng-model="metadata.mdHierarchyLevel">
+                                <option value="">Sélectionnez le type de ressource</option>
+                            </select>
+                        </div>
+                        <!-- mdCharacterSet -->
+                        <div class="col-md-4 form-group">
+                            <label class="control-label" for="{{fields.mdCharacterSet.id}}" uib-tooltip="{{fields.mdCharacterSet.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.mdCharacterSet.label}}
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.mdCharacterSet.id}}" id="{{fields.mdCharacterSet.id}}" ng-options="characterset.id as characterset.value for characterset in codelists.MD_CharacterSetCode" ng-model="metadata.mdCharacterSet"
+                                disabled>
+                                <option value="">Sélectionnez un encodage</option>
+                            </select>
+                        </div>
+                        <!-- mdStandardVersion -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="{{fields.mdStandardVersion.id}}" uib-tooltip="{{fields.mdStandardVersion.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.mdStandardVersion.label}}
+                                </label>
+                                <input type="text" class="form-control input-sm" name="{{fields.mdStandardVersion.id}}" id="{{fields.mdStandardVersion.id}}" placeholder="{{fields.mdStandardVersion.placeholder}}" ng-model="metadata.mdStandardVersion" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- mdDateStamp -->
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label for="{{fields.mdDateStamp.id}}" uib-tooltip="{{fields.mdDateStamp.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.mdDateStamp.label}}
+                            </label>
+                            <div class="input-group date">
+                                <input type="text" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['datestampOpened']" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="metadata.mdDateStamp" name="{{fields.mdDateStamp.id}}" id="{{fields.mdDateStamp.id}}"
+                                />
+                                <!--<input type="hidden" value="creation" ng-model="metadata.dataDates[0].type" />-->
+                                <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'datestampOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 2 -->
+            <div uib-accordion-group is-open="true" panel-class="panel-primary">
+                <div uib-accordion-heading>
+                    <span uib-tooltip="Informations relatives aux auteurs et contacts pour la fiche de métadonnées" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Auteurs et contacts pour la fiche de métadonnées
+                    </span>
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                    <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                </div>
+                <div>
+                    <!-- directive editContact: mdContacts -->
+                    <div edit-contacts cnt-type="mdContacts"></div>
+                </div>
+            </div>
+
+            <!-- Panel 3 -->
+            <div uib-accordion-group is-open="true" panel-class="panel-primary">
+                <div uib-accordion-heading>
+                    <span uib-tooltip="Informations relatives à la description des données" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Description des données
+                    </span>
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                    <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                </div>
+                <div>
+                    <!-- dataTitle -->
+                    <div class="row">
+                        <div edit-data-title label="Title:" description="null" placeholder="Titre" id=""></div>
+                    </div>
+                    <!-- dataAbstract -->
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataAbstract.id}}" uib-tooltip="{{fields.dataAbstract.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('dataAbstract', $event)">
+                                {{fields.dataAbstract.label}}
+                            </label>
+                            <textarea class="form-control input-sm" id="{{fields.dataAbstract.id}}" name="{{fields.dataAbstract.id}}" placeholder="{{fields.dataAbstract.placeholder}}" rows="3" ng-model="metadata.dataAbstract"></textarea>
+                        </div>
+                    </div>
+                    <hr /> TODO : dataIdentifiers
+                    <br />
+                    <!-- dataBrowseGraphics -->
+                    <div class="row">
+                        <!-- Browsegraphics simple (1 ligne)
+                        <div class="col-md-12">
+                            <label for="{{fields.dataBrowseGraphics.id}}" uib-tooltip="{{fields.dataBrowseGraphics.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                {{fields.dataBrowseGraphics.label}}
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                            </label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="{{fields.dataBrowseGraphics.children.url.id}}" uib-tooltip="{{fields.dataBrowseGraphics.children.url.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                    {{fields.dataBrowseGraphics.children.url.label}}
+                                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                                </label>
+                                <input type="text" class="form-control input-sm" name="{{fields.dataBrowseGraphics.children.url.id}}" id="{{fields.dataBrowseGraphics.children.url.id}}" placeholder="{{fields.dataBrowseGraphics.children.url.placeholder}}" ng-model="metadata.dataBrowseGraphics[0].url" />
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="{{fields.dataBrowseGraphics.children.description.id}}" uib-tooltip="{{fields.dataBrowseGraphics.children.description.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                    {{fields.dataBrowseGraphics.children.description.label}}
+                                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                                </label>
+                                <textarea class="form-control input-sm" id="{{fields.dataBrowseGraphics.children.description.id}}" name="{{fields.dataBrowseGraphics.children.description.id}}" placeholder="{{fields.dataBrowseGraphics.children.description.placeholder}}" rows="3" ng-model="metadata.dataBrowseGraphics[0].description"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label uib-tooltip="{{fields.dataBrowseGraphics.children.image.description}}" tooltip-trigger="mouseenter" tooltip-placement="right">
+                                {{fields.dataBrowseGraphics.children.image.label}}
+                                <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                            </label>
+                            <div>
+                                <img class="img-thumbnail" ng-if="metadata.dataBrowseGraphics[0].url != ''" ng-src="{{metadata.dataBrowseGraphics[0].url}}" alt="{{metadata.dataBrowseGraphics[0].description}}" />
+                            </div>
+                        </div>
+                        -->
+                        <!-- dataBrowseGraphics -->
+                        <div class="col-md-12">
+                            <label>
+                                <span class="bt-doc" uib-tooltip="{{fields.dataBrowseGraphics.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty.md')" ng-click="modalDoc('documentation/md/empty', $event)">
+                                    {{fields.dataBrowseGraphics.label}}
+                                </span>
+                            </label>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataBrowseGraphics.children.fileName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataBrowseGraphics.children.fileName.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataBrowseGraphics.children.fileDescription.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataBrowseGraphics.children.fileDescription.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataBrowseGraphics.children.fileType.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataBrowseGraphics.children.fileType.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataBrowseGraphics.children.image.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataBrowseGraphics.children.image.label}}
+                                        </span>
+                                    </th>
+                                    <th ng-show="showAllFields">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addBrowsegraphic()"></button>
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="dataBrowseGraphic in metadata.dataBrowseGraphics track by $index">
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataBrowseGraphics.children.fileName.id}}" id="{{fields.dataBrowseGraphics.children.fileName.id}}" placeholder="{{fields.dataBrowseGraphics.children.fileName.placeholder}}" ng-model="dataBrowseGraphic.fileName"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataBrowseGraphics.children.fileDescription.id}}" id="{{fields.dataBrowseGraphics.children.fileDescription.id}}" placeholder="{{fields.dataBrowseGraphics.children.fileDescription.placeholder}}"
+                                            ng-model="dataBrowseGraphic.fileDescription" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataBrowseGraphics.children.fileType.id}}" id="{{fields.dataBrowseGraphics.children.fileType.id}}" placeholder="{{fields.dataBrowseGraphics.children.fileType.placeholder}}" ng-model="dataBrowseGraphic.fileType"
+                                        />
+                                    </td>
+                                    <td>
+                                        <img class="img-thumbnail" ng-if="dataBrowseGraphic.fileName != ''" ng-src="{{dataBrowseGraphic.fileName}}" alt="{{dataBrowseGraphic.fileDescription}}" />
+                                    </td>
+                                    <td ng-show="showAllFields">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeBrowsegraphic(dataBrowseGraphic)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <!-- dataDateCreation -->
+                        <div class="col-md-4 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataDateCreation.id}}" uib-tooltip="{{fields.dataDateCreation.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataDateCreation.label}}
+                            </label>
+                            <div class="input-group date">
+                                <input type="text" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['creationOpened']" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="metadata.dataDateCreation" name="{{fields.dataDateCreation.id}}"
+                                    id="{{fields.dataDateCreation.id}}" />
+                                <!--<input type="hidden" value="creation" ng-model="metadata.dataDates[0].type" />-->
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'creationOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- dataDateRevision -->
+                        <div class="col-md-4 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataDateRevision.id}}" uib-tooltip="{{fields.dataDateRevision.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataDateRevision.label}}
+                            </label>
+                            <div class="input-group date">
+                                <input type="text" name="{{fields.dataDateRevision.id}}" id="{{fields.dataDateRevision.id}}" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['updatedOpened']" datepicker-options="{startingDay: 1}" close-text="Close"
+                                    ng-model="metadata.dataDateRevision" name="{{fields.dataDateRevision.id}}" />
+                                <!--<input type="hidden" value="revision" ng-model="metadata.dataDates[2].type" />-->
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'updatedOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- dataDatePublication -->
+                        <div class="col-md-4 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataDatePublication.id}}" uib-tooltip="{{fields.dataDatePublication.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataDatePublication.label}}
+                            </label>
+                            <div class="input-group date">
+                                <input type="text" name="{{fields.dataDatePublication.id}}" id="{{fields.dataDatePublication.id}}" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['publicationOpened']" datepicker-options="{startingDay: 1}" close-text="Close"
+                                    ng-model="metadata.dataDatePublication" name="{{fields.dataDatePublication.id}}" />
+                                <!--<input type="hidden" value="publication" ng-model="metadata.dataDates[3].type" />-->
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'publicationOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- dataMaintenanceFrequencyCode -->
+                        <div class="col-md-4 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataMaintenanceFrequencyCode.id}}" uib-tooltip="{{fields.dataMaintenanceFrequencyCode.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataMaintenanceFrequencyCode.label}}
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.dataMaintenanceFrequencyCode.id}}" ng-options="frequence.id as frequence.value for frequence in codelists.MD_MaintenanceFrequencyCode" ng-model="metadata.dataMaintenanceFrequencyCode">
+                                <option value="">Sélectionnez une fréquence</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row" ng-show="showAllFields">
+                        <!-- dataTemporalExtents -->
+                        <div class="col-md-12">
+                            <label class="bt-doc control-label" for="{{fields.dataTemporalExtents.id}}" uib-tooltip="{{fields.dataTemporalExtents.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataTemporalExtents.label}}
+                            </label>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataTemporalExtents.children.begin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataTemporalExtents.children.begin.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataTemporalExtents.children.end.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataTemporalExtents.children.end.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataTemporalExtents.children.description.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataTemporalExtents.children.description.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addTemporalextent()"></button>
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="dataTemporalExtent in metadata.dataTemporalExtents track by $index">
+                                    <td>
+                                        <!--<input type="text" class="form-control input-sm" name="{{fields.dataTemporalExtents.children.url.id}}" id="{{fields.dataTemporalExtents.children.begin.id}}" placeholder="{{fields.dataTemporalExtents.children.begin.placeholder}}" ng-model="dataTemporalExtent.begin" />-->
+                                        <div class="input-group date">
+                                            <input type="text" name="{{fields.dataTemporalExtents.children.begin.id}}" id="{{fields.dataTemporalExtents.children.begin.id}}" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['temporalExtentBeginOpened_'+$index]"
+                                                datepicker-options="{startingDay: 1}" close-text="Close" ng-model="dataTemporalExtent.begin" name="{{fields.dataTemporalExtents.children.begin.id}}" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'temporalExtentBeginOpened_'+$index)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!--<input type="text" class="form-control input-sm" name="{{fields.dataTemporalExtents.children.end.id}}" id="{{fields.dataTemporalExtents.children.end.id}}" placeholder="{{fields.dataTemporalExtents.children.end.placeholder}}" ng-model="dataTemporalExtent.end" />-->
+                                        <div class="input-group date">
+                                            <input type="text" name="{{fields.dataTemporalExtents.children.end.id}}" id="{{fields.dataTemporalExtents.children.end.id}}" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['temporalExtentEndOpened_'+$index]" datepicker-options="{startingDay: 1}"
+                                                close-text="Close" ng-model="dataTemporalExtent.end" name="{{fields.dataTemporalExtents.children.end.id}}" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'temporalExtentEndOpened_'+$index)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <!--<input type="text" class="form-control input-sm" name="{{fields.dataTemporalExtents.children.description.id}}" id="{{fields.dataTemporalExtents.children.description.id}}" placeholder="{{fields.dataTemporalExtents.children.description.placeholder}}" ng-model="dataTemporalExtent.description" />-->
+                                        <textarea class="form-control input-sm" id="{{fields.dataTemporalExtents.children.description.id}}" name="{{fields.dataTemporalExtents.children.description.id}}" placeholder="{{fields.dataTemporalExtents.children.description.placeholder}}" rows="3" ng-model="dataTemporalExtent.description"></textarea>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeTemporalextent(dataTemporalExtent)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <hr />
+                    </div>
+                    <!-- dataLanguages -->
+                    <div class="row" ng-show="showAllFields">
+                        <!-- dataLanguages -->
+                        <div class="col-md-4 form-group" ng-repeat="key in [0, 1, 2] track by $index">
+                            <label class="bt-doc control-label" for="{{fields.dataLanguages.id}}" uib-tooltip="{{fields.dataLanguages.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataLanguages.label}} ({{key + 1}})
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.dataLanguages.id}}" id="{{fields.dataLanguages.id}}" ng-options="language.id as language.value for language in codelists.MD_LanguageCode" ng-model="metadata.dataLanguages[key]">
+                                <option value="">Sélectionnez une langue</option>
+                            </select>
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- dataTopicCategories -->
+                        <div class="col-md-6 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataTopicCategories.id}}" uib-tooltip="{{fields.dataTopicCategories.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataTopicCategories.label}}
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.dataTopicCategories.id}}" ng-options="category.id as category.value for category in codelists.MD_TopicCategoryCode" ng-model="metadata.dataTopicCategories[0]">
+                                <option value="">Sélectionnez une catégorie</option>
+                            </select>
+                        </div>
+                        <!-- dataInspireKeywords -->
+                        <div class="col-md-6 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataInspireKeywords.id}}" uib-tooltip="{{fields.dataInspireKeywords.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataInspireKeywords.label}}
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.dataInspireKeywords.id}}" ng-options="inspireCategory.id as inspireCategory.value for inspireCategory in codelists.MD_InspireTopicCategoryCode" ng-model="metadata.dataInspireKeywords[0].keyword">
+                                <option value="">Sélectionnez un thème</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- dataKeywordsList -->
+                    <!--
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataKeywordsList.id}}" uib-tooltip="{{fields.dataKeywordsList.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataKeywordsList.label}}
+                            </label>
+                            <textarea class="form-control input-sm" id="{{fields.dataKeywordsList.id}}" name="{{fields.dataKeywordsList.id}}" placeholder="{{fields.dataKeywordsList.placeholder}}" rows="3" ng-model="metadata.dataKeywordsList"></textarea>
+                        </div>
+                    </div>
+                    -->
+                    <!--<div class="row" ng-show="showAllFields">-->
+                    <div class="row">
+                        <!-- dataKeywords -->
+                        <div class="col-md-12">
+                            <label class="bt-doc control-label" for="{{fields.dataKeywords.id}}" uib-tooltip="{{fields.dataKeywords.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataKeywords.label}}
+                            </label>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataKeywords.children.keyword.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataKeywords.children.keyword.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataKeywords.children.type.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataKeywords.children.type.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataKeywords.children.thesaurusName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataKeywords.children.thesaurusName.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataKeywords.children.thesaurusDatepublication.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataKeywords.children.thesaurusDatepublication.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addKeyword()"></button>
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="dataKeyword in metadata.dataKeywords track by $index">
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataKeywords.children.keyword.id}}" id="{{fields.dataKeywords.children.keyword.id}}" placeholder="{{fields.dataKeywords.children.keyword.placeholder}}" ng-model="dataKeyword.keyword" />
+                                    </td>
+                                    <td>
+                                        <select class="form-control input-sm selectpicker_" name="{{fields.dataKeywords.children.type.id}}" id="{{fields.dataKeywords.children.type.id}}" ng-options="type.id as type.value for type in codelists.MD_KeywordTypeCode" ng-model="dataKeyword.type">
+                                            <option value="">Sélectionnez</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataKeywords.children.thesaurusName.id}}" id="{{fields.dataKeywords.children.thesaurusName.id}}" placeholder="{{fields.dataKeywords.children.thesaurusName.placeholder}}" ng-model="dataKeyword.thesaurusName"
+                                        />
+                                    </td>
+                                    <td>
+                                        <!--<input type="hidden" value="creation" ng-model="metadata.dataDates[0].type" />-->
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['thesaurus_datepublicationOpened_'+$index]" datepicker-options="{startingDay: 1}" close-text="Close" ng-model="dataKeyword.thesaurusDates[0].date" name="{{fields.dataKeywords.children.thesaurusDatepublication.id}}"
+                                                id="{{fields.dataKeywords.children.thesaurusDatepublication.id}}" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'thesaurus_datepublicationOpened_'+$index)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                            <input type="hidden" class="form-control input-sm" name="{{fields.dataKeywords.children.thesaurusDates.children.type.id}}" id="{{fields.dataKeywords.children.thesaurusDates.children.type.id}}" ng-model="dataKeyword.thesaurusDates[0].type" value="publication"
+                                            />
+                                        </div>
+                                        <!--
+                                        <div ng-repeat="date in dataKeyword.thesaurusDates | filter:'publication' | limitTo:1 as result">
+                                            {{$index + 1}} - {{date.type}}
+                                        </div>
+                                        -->
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeKeyword(dataKeyword)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 4 -->
+            <div uib-accordion-group is-open="true" panel-class="panel-primary">
+                <div uib-accordion-heading>
+                    <span uib-tooltip="Informations relatives aux contacts pour la base de données" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Contacts pour la base de données
+                    </span>
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                    <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                </div>
+                <!-- directive editContact: dataPointOfContacts -->
+                <div>
+                    <div edit-contacts cnt-type="dataPointOfContacts"></div>
+                </div>
+            </div>
+
+            <!-- Panel 5 -->
+            <div uib-accordion-group is-open="true" panel-class="panel-primary">
+                <div uib-accordion-heading>
+                    <span uib-tooltip="Informations relatives aux références géographiques et à la qualité de la base de données" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Références géographiques et qualité des données
+                    </span>
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                    <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="bt-doc control-label" for="{{fields.dataSpatialRepresentationType.id}}" uib-tooltip="{{fields.dataSpatialRepresentationType.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.dataSpatialRepresentationType.label}}
+                                </label>
+                                <select class="form-control input-sm selectpicker_" name="{{fields.dataSpatialRepresentationType.id}}" id="{{fields.dataSpatialRepresentationType.id}}" ng-options="spatialrepresentationtype.id as spatialrepresentationtype.value for spatialrepresentationtype in codelists.MD_SpatialRepresentationTypeCode"
+                                    ng-model="metadata.dataSpatialRepresentationType">
+                                    <option value="">Sélectionnez un type</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- geographic extents -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="bt-doc control-label" for="{{fields.dataGeographicExtents.id}}" uib-tooltip="{{fields.dataGeographicExtents.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataGeographicExtents.label}}
+                            </label>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataGeographicExtents.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataGeographicExtents.children.name.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataGeographicExtents.children.xmin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataGeographicExtents.children.xmin.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataGeographicExtents.children.xmax.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataGeographicExtents.children.xmax.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataGeographicExtents.children.ymin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataGeographicExtents.children.ymin.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataGeographicExtents.children.ymax.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataGeographicExtents.children.ymax.label}}
+                                        </span>
+                                    </th>
+                                    <th ng-show="showAllFields">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addGeographicExtent()"></button>
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="dataGeographicExtent in metadata.dataGeographicExtents track by $index">
+                                    <td>
+                                        <!--<input type="text" ng-model="ext" uib-typeahead="extent as extent.name for extent in geographicExtents | filter:$viewValue | limitTo:8" class="form-control">
+                                        <input value="{{ext.name}}" /><input value="{{ext.north}}" />-->
+                                        <!--<input type="text" class="form-control input-sm" name="{{fields.dataGeographicExtents.children.name.id}}" id="{{fields.dataGeographicExtents.children.name.id}}" placeholder="{{fields.dataGeographicExtents.children.name.placeholder}}" ng-model="dataGeographicExtent.name" />-->
+                                        <input type="text" class="form-control input-sm" autocomplete="off" name="{{fields.dataGeographicExtents.children.name.id}}" id="{{fields.dataGeographicExtents.children.name.id}}" placeholder="{{fields.dataGeographicExtents.children.name.placeholder}}"
+                                            ng-model="dataGeographicExtent.name" uib-typeahead="geographicextent as geographicextent.name+' ('+geographicextent.description+')' for geographicextent in geographicExtents | filter:$viewValue | limitTo:8" typeahead-on-select="onSelectGeographixExtent($item, $model, $label, $index)"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataGeographicExtents.children.xmin.id}}" id="{{fields.dataGeographicExtents.children.xmin.id}}" placeholder="{{fields.dataGeographicExtents.children.xmin.placeholder}}" ng-model="dataGeographicExtent.xmin"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataGeographicExtents.children.xmax.id}}" id="{{fields.dataGeographicExtents.children.xmax.id}}" placeholder="{{fields.dataGeographicExtents.children.xmax.placeholder}}" ng-model="dataGeographicExtent.xmax"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataGeographicExtents.children.ymin.id}}" id="{{fields.dataGeographicExtents.children.ymin.id}}" placeholder="{{fields.dataGeographicExtents.children.ymin.placeholder}}" ng-model="dataGeographicExtent.ymin"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataGeographicExtents.children.ymax.id}}" id="{{fields.dataGeographicExtents.children.ymax.id}}" placeholder="{{fields.dataGeographicExtents.children.ymax.placeholder}}" ng-model="dataGeographicExtent.ymax"
+                                        />
+                                    </td>
+                                    <td ng-show="showAllFields">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeGeographicExtent(dataGeographicExtent)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-condensed">
+                                <th>
+                                    <span class="bt-doc control-label" uib-tooltip="{{fields.dataReferenceSystems.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataReferenceSystems.label}}
+                                    </span>
+                                </th>
+                                <th ng-show="showAllFields">
+                                    <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addReferencesystem()"></button>
+                                </th>
+                                <tr ng-repeat="referenceSystem in metadata.dataReferenceSystems track by $index">
+                                    <td>
+                                        <select class="form-control input-sm selectpicker_" name="{{fields.referenceSystem.id}}" id="{{fields.referenceSystem.id}}" ng-options="referenceSystem.id as referenceSystem.value for referenceSystem in codelists.MD_ReferenceSystemCode" ng-model="referenceSystem.code">
+                                            <option value="">Sélectionnez un système de projection</option>
+                                        </select>
+                                        <input type="hidden" value="EPSG" ng-model="referenceSystem.codeSpace" />
+                                    </td>
+                                    <td ng-show="showAllFields">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeReferencesystem(referenceSystem)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group" _ng-class="{'has-error': mdForm.dataScaleDenominator.$invalid }">
+                                <label class="bt-doc control-label" for="{{fields.dataScaleDenominator.id}}" uib-tooltip="{{fields.dataScaleDenominator.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.dataScaleDenominator.label}}
+                                </label>
+                                <input type="text" class="form-control input-sm" name="{{fields.dataScaleDenominator.id}}" id="{{fields.dataScaleDenominator.id}}" placeholder="{{fields.dataScaleDenominator.placeholder}}" ng-model="metadata.dataScaleDenominator" _ng-required="!metadata.dataScaleDistance"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group" _ng-class="{'has-error': mdForm.dataScaleDistance.$invalid }">
+                                <label class="bt-doc control-label" for="{{fields.dataScaleDistance.id}}" uib-tooltip="{{fields.dataScaleDistance.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.dataScaleDistance.label}}
+                                </label>
+                                <input type="text" class="form-control input-sm" name="{{fields.dataScaleDistance.id}}" id="{{fields.dataScaleDistance.id}}" placeholder="{{fields.dataScaleDistance.placeholder}}" ng-model="metadata.dataScaleDistance" _ng-required="!metadata.dataScaleDenominator"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bt-doc control-label" for="{{fields.dataLiStatement.id}}" uib-tooltip="{{fields.dataLiStatement.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.dataLiStatement.label}}
+                                </label>
+                                <textarea class="form-control input-sm" id="{{fields.dataLiStatement.id}}" name="{{fields.dataLiStatement.id}}" placeholder="{{fields.dataLiStatement.placeholder}}" rows="3" ng-model="metadata.dataLiStatement"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="showAllFields">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bt-doc control-label" for="{{fields.dataUseLimitations.children.name.id}}" uib-tooltip="{{fields.dataUseLimitations.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.dataUseLimitations.children.name.label}}
+                                </label>
+                                <textarea class="form-control input-sm" id="{{fields.dataUseLimitations.children.name.id}}" name="{{fields.dataUseLimitations.children.name.id}}" placeholder="{{fields.dataUseLimitations.children.name.placeholder}}" rows="3" ng-model="metadata.dataUseLimitations"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="showAllFields">
+                        <div class="col-md-12 form-group">
+                            <label class="bt-doc control-label" for="{{fields.dataCharacterSet.id}}" uib-tooltip="{{fields.dataCharacterSet.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataCharacterSet.label}}
+                            </label>
+                            <select class="form-control input-sm selectpicker_" name="{{fields.dataCharacterSet.id}}" id="{{fields.dataCharacterSet.id}}" ng-options="characterset.id as characterset.value for characterset in codelists.MD_CharacterSetCode" ng-model="metadata.dataCharacterSet"
+                                disabled>
+                                <option value="">Sélectionnez un encodage</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="bt-doc control-label" for="{{fields.dataDistributionFormats.id}}" uib-tooltip="{{fields.dataDistributionFormats.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                {{fields.dataDistributionFormats.label}}
+                            </label>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataDistributionFormats.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataDistributionFormats.children.name.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataDistributionFormats.children.version.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataDistributionFormats.children.version.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataDistributionFormats.children.specification.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                            {{fields.dataDistributionFormats.children.specification.label}}
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addFormat()"></button>
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="dataDistributionFormat in metadata.dataDistributionFormats track by $index">
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataDistributionFormats.children.name.id}}" id="{{fields.dataDistributionFormats.children.name.id}}" placeholder="{{fields.dataDistributionFormats.children.name.placeholder}}" ng-model="dataDistributionFormat.name"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataDistributionFormats.children.version.id}}" id="{{fields.dataDistributionFormats.children.version.id}}" placeholder="{{fields.dataDistributionFormats.children.version.placeholder}}" ng-model="dataDistributionFormat.version"
+                                        />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" name="{{fields.dataDistributionFormats.children.specification.id}}" id="{{fields.dataDistributionFormats.children.specification.id}}" placeholder="{{fields.dataDistributionFormats.children.specification.placeholder}}"
+                                            ng-model="dataDistributionFormat.specification" />
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeFormat(dataDistributionFormat)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 6 -->
+            <div uib-accordion-group is-open="true" panel-class="panel-primary">
+                <div uib-accordion-heading>
+                    <span uib-tooltip="Informations relatives aux conditions légales d'accès et d'usage de la base de données" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Conditions légales d'accès et d'usage
+                    </span>
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                    <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bt-doc control-label" for="{{fields.dataSecurityClassification.id}}" uib-tooltip="{{fields.dataSecurityClassification.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.dataSecurityClassification.label}}
+                                </label>
+                                <select class="form-control input-sm selectpicker_" name="{{fields.dataSecurityClassification.id}}" id="{{fields.dataSecurityClassification.id}}" ng-options="security_classification.id as security_classification.value for security_classification in codelists.MD_ClassificationCode"
+                                    ng-model="metadata.dataSecurityClassification">
+                                    <option value="">Sélectionnez un niveau de confidentialité</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-condensed">
+                                <th>
+                                    <span class="bt-doc control-label" uib-tooltip="{{fields.dataLegalAccessInspireConstraints.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLegalAccessInspireConstraints.label}}
+                                    </span>
+                                </th>
+                                <th ng-show="showAllFields">
+                                    <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addInspireConstraint()"></button>
+                                </th>
+                                <tr ng-repeat="legalAccessInspireConstraint in metadata.dataLegalAccessInspireConstraints track by $index">
+                                    <td>
+                                        <select class="form-control input-sm selectpicker_" name="{{fields.dataLegalAccessInspireConstraints.id}}" id="{{fields.dataLegalAccessInspireConstraints.id}}" ng-options="dataLegalAccessInspireConstraints.id as dataLegalAccessInspireConstraints.value for dataLegalAccessInspireConstraints in codelists.MD_InspireRestrictionCode"
+                                            ng-model="metadata.dataLegalAccessInspireConstraints[$index]">
+                                            <option value="">Sélectionnez une contrainte</option>
+                                        </select>
+                                        <input type="hidden" value="otherRestrictions" ng-model="metadata.legal_accessotherconstraints[9999]" />
+                                    </td>
+                                    <td ng-show="showAllFields">
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeInspireConstraint(legalAccessInspireConstraint)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-condensed">
+                                <th>
+                                    <span class="bt-doc control-label" uib-tooltip="{{fields.dataLegalAccessConstraints.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLegalAccessConstraints.label}}
+                                    </span>
+                                </th>
+                                <th>
+                                    <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addAccessConstraint()"></button>
+                                </th>
+                                <tr ng-repeat="dataLegalAccessConstraint in metadata.dataLegalAccessConstraints track by $index">
+                                    <td>
+                                        <div class="form-group" _ng-class="{'has-error': mdForm.dataLegalAccessConstraints.$invalid}">
+                                            <select class="form-control input-sm selectpicker_" name="{{fields.dataLegalAccessConstraints.id}}" id="{{fields.dataLegalAccessConstraints.id}}" ng-options="legalAccessConstraint.id as legalAccessConstraint.value for legalAccessConstraint in codelists.MD_RestrictionCode"
+                                                ng-model="metadata.dataLegalAccessConstraints[$index]" _ng-required="required['dataLegalAccessConstraints']" _ng-change="changeAccessconstraint()">
+                                                <option value="">Sélectionnez une contrainte</option>
+                                            </select>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeAccessConstraint(dataLegalAccessConstraint)"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-condensed">
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataLegalUseConstraints.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLegalUseConstraints.label}}
+                                    </span>
+                                    </th>
+                                    <th>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addUseConstraint()"></button>
+                                    </th>
+                                    <tr ng-repeat="legalUseConstraint in metadata.dataLegalUseConstraints track by $index">
+                                        <td>
+                                            <select class="form-control input-sm selectpicker_" name="{{fields.dataLegalUseConstraints.id}}" id="{{fields.dataLegalUseConstraints.id}}" ng-options="legalUseConstraint.id as legalUseConstraint.value for legalUseConstraint in codelists.MD_RestrictionCode"
+                                                ng-model="metadata.dataLegalUseConstraints[$index]">
+                                                <option value="">Sélectionnez une contrainte</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeUseConstraint(legalUseConstraint)"></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-condensed">
+                                    <th>
+                                        <span class="bt-doc control-label" uib-tooltip="{{fields.dataLegalUseLimitations.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLegalUseLimitations.label}}
+                                    </span>
+                                    </th>
+                                    <th>
+                                        <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addUseLimitation()"></button>
+                                    </th>
+                                    <tr ng-repeat="legalUseLimitation in metadata.dataLegalUseLimitations track by $index">
+                                        <td>
+                                            <textarea class="form-control input-sm" id="{{fields.dataLegalUseLimitations.id}}" name="{{fields.dataLegalUseLimitations.id}}" placeholder="{{fields.dataLegalUseLimitations.placeholder}}" rows="3" ng-model="metadata.dataLegalUseLimitations[$index]"></textarea>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeUseLimitation(legalUseLimitation)"></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 7 -->
+                <div uib-accordion-group is-open="true" panel-class="panel-primary">
+                    <div uib-accordion-heading>
+                        <span uib-tooltip="Ressorces associées à la base de données" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Ressources associées
+                    </span>
+                        <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                        <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="bt-doc control-label" for="{{fields.dataLinkages.id}}" uib-tooltip="{{fields.dataLinkages.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                    {{fields.dataLinkages.label}}
+                                </label>
+                                <table class="table table-condensed">
+                                    <tr>
+                                        <th>
+                                            <span class="bt-doc control-label" uib-tooltip="{{fields.dataLinkages.children.name.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLinkages.children.name.label}}
+                                    </span>
+                                        </th>
+                                        <th>
+                                            <span class="bt-doc control-label" uib-tooltip="{{fields.dataLinkages.children.description.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLinkages.children.description.label}}
+                                    </span>
+                                        </th>
+                                        <th>
+                                            <span class="bt-doc control-label" uib-tooltip="{{fields.dataLinkages.children.url.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLinkages.children.url.label}}
+                                    </span>
+                                        </th>
+                                        <th>
+                                            <span class="bt-doc control-label" uib-tooltip="{{fields.dataLinkages.children.protocol.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('empty', $event)">
+                                        {{fields.dataLinkages.children.protocol.label}}
+                                    </span>
+                                        </th>
+                                        <th>
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addLinkage()"></button>
+                                        </th>
+                                    </tr>
+                                    <tr ng-repeat="dataLinkage in metadata.dataLinkages track by $index">
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="{{fields.dataLinkages.children.name.id}}" id="{{fields.dataLinkages.children.name.id}}" placeholder="{{fields.dataLinkages.children.name.placeholder}}" ng-model="dataLinkage.name" />
+                                        </td>
+                                        <td>
+                                            <textarea rows="2" class="form-control input-sm" id="{{fields.dataLinkages.children.description.id}}" name="{{fields.dataLinkages.children.description.id}}" placeholder="{{fields.dataLinkages.children.description.placeholder}}" rows="3" ng-model="dataLinkage.description"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control input-sm" name="{{fields.dataLinkages.children.url.id}}" id="{{fields.dataLinkages.children.url.id}}" placeholder="{{fields.dataLinkages.children.url.placeholder}}" ng-model="dataLinkage.url" />
+                                        </td>
+                                        <td>
+                                            <select class="form-control input-sm selectpicker_" name="{{fields.dataLinkages.id}}" id="{{fields.dataLinkages.id}}" ng-options="linkage.id as linkage.value for linkage in codelists.MD_LinkageProtocolCode" ng-model="dataLinkage.protocol">
+                                                <option value="">Sélectionnez</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeLinkage(dataLinkage)"></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Panel 8 -->
+                <div uib-accordion-group is-open="true" panel-class="panel-primary">
+                    <div uib-accordion-heading>
+                        <span uib-tooltip="Conformité de la base de données" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                        Conformités
+                    </span>
+                        <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="modalDoc('empty', $event)"></span>
+                        <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+                    </div>
+                    <div>
+                        TODO: conformité
+                        <br /> - Spécifications Inspire
+                        <br /> - Autres spécifications
+                        <br />
+                    </div>
+                </div>
+
+        </form>
+        </div>
+    </div>

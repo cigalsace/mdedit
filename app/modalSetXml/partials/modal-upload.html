@@ -1,0 +1,33 @@
+    <form id="modal-edit-form">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="close()" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Upload file</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="bt-doc control-label" for="" uib-tooltip="model" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('doc/html/empty.html')">
+                    Charger un modèle de fiche prérempli
+                </label>
+                <select class="form-control input-sm" name="models" ng-options="model.path as model[modelValue] for model in scopeParent.models" ng-model="model_path" ng-change="getMetadataModel(model_path)">
+                    <option value="">Sélectionnez un modèle</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="file_input" uib-tooltip="Fichier XML à charger" tooltip-trigger="mouseenter" tooltip-placement="right">
+                    Charger une fiche à partir d'un fichier (XML, <strike>JSON</strike>, <strike>XLS</strike>, <strike>XLSX</strike>)
+                </label>
+                <input type="file" id="file_input" class="" ng-model="file_input" onchange="angular.element(this).scope().getFileContent(this)" />
+                <div id="file_content" ng-model="file_content"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="url_input" uib-tooltip="URL à charger" tooltip-trigger="mouseenter" tooltip-placement="right">
+                    Charger une fcihe à partir d'un URL
+                </label>
+                <input class="form-control input-sm" type="text" id="url_input" ng-model="url_input" disabled />
+            </div>
+		</div>
+		<div class="modal-footer">
+			<button type="submit" class="btn btn-primary" ng-click="upload()" disabled><span class="glyphicon glyphicon-floppy-save"></span> Download URL</button>
+			<button type="submit" class="btn btn-primary" ng-click="close()"><span class="glyphicon glyphicon-close"></span> Close</button>
+		</div>
+    </form>
