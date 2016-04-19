@@ -77,3 +77,5 @@ mdEdit repose sur les choix suivants:
     
 - [x] Ajout des différents formats d'import dans le bouton "Download file" de "partials/modal-download.html".
 - [x] Ajout de la documentation. Cf. fichier doc.md. (génération des fichiers html avec "md_to_html.php")
+
+test
