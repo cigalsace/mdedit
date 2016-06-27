@@ -280,7 +280,7 @@
         </div>
         <div ng-if="metadata.dataBrowseGraphics">
             <div class="">
-                <a href="{{metadata.dataBrowseGraphics[0].url}}" target="_blanck"><img class="img-thumbnail" ng-src="{{metadata.dataBrowseGraphics[0].url}}" alt="{{metadata.dataBrowseGraphics[0].dataDescription}}" title="{{metadata.dataBrowseGraphics[0].description}}"></a>
+                <a href="{{metadata.dataBrowseGraphics[0].fileName}}" target="_blanck"><img class="img-thumbnail" ng-src="{{metadata.dataBrowseGraphics[0].fileName}}" alt="{{metadata.dataBrowseGraphics[0].fileDescription}}" title="{{metadata.dataBrowseGraphics[0].fileDescription}}"></a>
             </div>
         </div>
     </div>
@@ -295,14 +295,14 @@
                                 </a>
                                 <span class="" title="S:{{dataGeographicExtent.dataGeographicExtentSouthBound}}, N:{{dataGeographicExtent.dataGeographicExtentNorthBound}}, W:{{dataGeographicExtent.dataGeographicExtentWestBound}}, E:{{dataGeographicExtent.dataGeographicExtentEastBound}}">
                                     <span ng-if="dataGeographicExtent.dataExtentName">
-                                        {{dataGeographicExtent.dataExtentName}},
+                                        {{dataGeographicExtent.dataExtentName}} (S:{{dataGeographicExtent.dataGeographicExtentSouthBound}}, N:{{dataGeographicExtent.dataGeographicExtentNorthBound}}, W:{{dataGeographicExtent.dataGeographicExtentWestBound}}, E:{{dataGeographicExtent.dataGeographicExtentEastBound}}),
                                     </span>
-                    <span ng-if="!dataGeographicExtent.dataGeographicExtentWestBound">
-                                        Emprise non définie
+                                    <span ng-if="!dataGeographicExtent.dataExtentName">
+                                        Nom inconnu (S:{{dataGeographicExtent.dataGeographicExtentSouthBound}}, N:{{dataGeographicExtent.dataGeographicExtentNorthBound}}, W:{{dataGeographicExtent.dataGeographicExtentWestBound}}, E:{{dataGeographicExtent.dataGeographicExtentEastBound}})
                                     </span>
-                    </span>
-                    <br />
-                    </span>
+                                </span>
+                                <br />
+                            </span>
                     </span>
                     <span ng-if="!metadata.dataGeographicExtents">
                             <a class="btn btn-xs btn-info" >
