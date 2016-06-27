@@ -1,7 +1,8 @@
-// (function() {
-// "use strict";
-
-// Service
+/**
+ * [module description]
+ * @param  {[type]} 'modalDoc' [description]
+ * @return {[type]}            [description]
+ */
 angular.module('modalDoc')
     .factory('modalDocSrv', modalDocSrv);
 
@@ -37,5 +38,3 @@ function modalDocSrv($http) {
     }
 
 }
-
-// })();

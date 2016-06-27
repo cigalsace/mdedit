@@ -1,206 +1,200 @@
-// (function(mdjs, undefined) {
-    // "use strict";
+/**
+ * empty_json main object
+ * lends mdjs
+ * @type {Object}
+ */
+mdjs.empty_json = {};
 
-    /**
-     * empty_json main object
-     * lends mdjs
-     * @type {Object}
-     */
-    mdjs.empty_json = {};
+/**
+ * Empty contact object
+ * lends mdjs.empty_json
+ * @type {Array}
+ */
+mdjs.empty_json.contact = {
+    "individualName": "",
+    "positionName": "",
+    "organisationName": "",
+    "deliveryPoints": "",
+    "postalCode": "",
+    "city": "",
+    "phoneVoices": "",
+    "emails": "",
+    "role": "",
+    "logoDescription": "",
+    "logoUrl": ""
+};
 
-    /**
-     * Empty contact object
-     * lends mdjs.empty_json
-     * @type {Array}
-     */
-    mdjs.empty_json.contact = {
-        "individualName": "",
-        "positionName": "",
-        "organisationName": "",
-        "deliveryPoints": "",
-        "postalCode": "",
-        "city": "",
-        "phoneVoices": "",
-        "emails": "",
-        "role": "",
-        "logoDescription": "",
-        "logoUrl": ""
-    };
+/**
+ * Empty date object
+ * lends mdjs.empty_json
+ * @type {Array}
+ */
+mdjs.empty_json.date = {
+    "dateType": "",
+    "date": ""
+};
 
-    /**
-     * Empty date object
-     * lends mdjs.empty_json
-     * @type {Array}
-     */
-    mdjs.empty_json.date = {
+/**
+ * Empty resource identifier object
+ * @type {Array}
+ */
+mdjs.empty_json.identifier = {
+    "code": "",
+    "codeSpace": ""
+};
+
+/**
+ * Empty geographic extent object
+ * @type {Array}
+ */
+mdjs.empty_json.geographicextent = {
+    "dataExtentName": "",
+    "dataGeographicExtentWestBound": "",
+    "dataGeographicExtentEastBound": "",
+    "dataGeographicExtentSouthBound": "",
+    "dataGeographicExtentNorthBound": ""
+};
+
+/**
+ * Empty browse graphic object
+ * @type {Array}
+ */
+mdjs.empty_json.browsegraphic = {
+    "fileName": "",
+    "fileDescription": "",
+    "fileType": ""
+};
+
+/**
+ * Empty temporal extent object
+ * @type {Array}
+ */
+mdjs.empty_json.temporalextent = {
+    "dataTemporalExtentBegin": "",
+    "dataTemporalExtentEnd": "",
+    "dataExtentName": ""
+};
+
+/**
+ * Empty keyword object
+ * @type {Array}
+ */
+mdjs.empty_json.keyword = {
+    "keywords": '',
+    "type": "",
+    "thesaurusName": "",
+    "thesaurusDates": [{
         "dateType": "",
         "date": ""
-    };
+    }]
+};
 
-    /**
-     * Empty resource identifier object
-     * @type {Array}
-     */
-    mdjs.empty_json.identifier = {
-        "code": "",
-        "codeSpace": ""
-    };
+/**
+ * Empty inspire keyword object
+ * @type {Array}
+ */
+mdjs.empty_json.inspirekeywords = {
+    "keywords": [],
+    "keywordType": "theme",
+    "thesaurusName": "GEMET - INSPIRE themes, version 1.0",
+    "thesaurusDates": [{
+        "type": "publication",
+        "date": "2008-06-01"
+    }]
+};
 
-    /**
-     * Empty geographic extent object
-     * @type {Array}
-     */
-    mdjs.empty_json.geographicextent = {
-        "name": "",
-        "xmin": "",
-        "xmax": "",
-        "ymin": "",
-        "ymax": ""
-    };
+/**
+ * Empty reference system object
+ * @type {Array}
+ */
+mdjs.empty_json.referencesystem = {
+    "code": "",
+    "codeSpace": ""
+};
 
-    /**
-     * Empty browse graphic object
-     * @type {Array}
-     */
-    mdjs.empty_json.browsegraphic = {
-        "fileName": "",
-        "fileDescription": "",
-        "fileType": ""
-    };
+/**
+ * Empty data format object
+ * @type {Array}
+ */
+mdjs.empty_json.distributionformat = {
+    "formatName": "",
+    "formatVersion": "",
+    "formatSpecification": ""
+};
 
-    /**
-     * Empty temporal extent object
-     * @type {Array}
-     */
-    mdjs.empty_json.temporalextent = {
-        "begin": "",
-        "end": "",
-        "description": ""
-    };
+/**
+ * Empty linkage object
+ * @type {Array}
+ */
+mdjs.empty_json.linkage = {
+    "name": "",
+    "description": "",
+    "url": "",
+    "protocol": ""
+};
 
-    /**
-     * Empty keyword object
-     * @type {Array}
-     */
-    mdjs.empty_json.keyword = {
-        "keyword": "",
+/**
+ * Empty data quality conformity object
+ * @type {Array}
+ */
+mdjs.empty_json.dq_conformity = {
+    "specification": "",
+    "explaination": "",
+    "pass": "",
+    "dates": [{
         "type": "",
-        "thesaurusName": "",
-        "thesaurusDates": [{
-            "dateType": "",
-            "date": ""
-        }]
-    };
+        "date": ""
+    }]
+};
 
-    /**
-     * Empty inspire keyword object
-     * @type {Array}
-     */
-    mdjs.empty_json.inspirekeyword = {
-        "keyword": "",
-        "type": "",
-        "thesaurusName": "GEMET - INSPIRE themes, version 1.0",
-        "thesaurusDates": [{
-            "type": "publication",
-            "date": "2008-06-01"
-        }]
-    };
-
-    /**
-     * Empty reference system object
-     * @type {Array}
-     */
-    mdjs.empty_json.referencesystem = {
-        "code": "",
-        "codeSpace": ""
-    };
-
-    /**
-     * Empty data format object
-     * @type {Array}
-     */
-    mdjs.empty_json.distributionformat = {
-        "name": "",
-        "version": "",
-        "specification": ""
-    };
-
-    /**
-     * Empty linkage object
-     * @type {Array}
-     */
-    mdjs.empty_json.linkage = {
-        "name": "",
-        "description": "",
-        "url": "",
-        "protocol": ""
-    };
-
-    /**
-     * Empty data quality conformity object
-     * @type {Array}
-     */
-    mdjs.empty_json.dq_conformity = {
-        "specification": "",
-        "explaination": "",
-        "pass": "",
-        "dates": [{
-            "type": "",
-            "date": ""
-        }]
-    };
-
-    /**
-     * Empty metdata object
-     * @type {Array}
-     */
-    mdjs.empty_json.metadata = {
-        "mdFileidentifier": "",
-        "mdLanguage": "",
-        "mdCharacterSet": "",
-        "mdHierarchyLevel": "",
-        "mdContacts": [],
-        "mdDateStamp": "",
-        "mdStandardName": "",
-        "mdStandardVersion": "",
-        "dataTitle": "",
-        "dataDates": [],
-        "dataDateCreation": "",
-        "dataDatePublication": "",
-        "dataDateRevision": "",
-        "dataIdentifiers": [],
-        "dataAbstract": "",
-        "dataBrowsegraphics": [],
-        "dataMaintenanceFrequency": "",
-        "dataTemporalExtents": [],
-        "dataLanguages": [],
-        "dataTopicCategories": [],
-        "dataKeywords": [],
-        "dataInspireKeywords": [],
-        "dataKeywordsList": "",
-        "dataPointOfContacts": [],
-        "data_geographicextents": [],
-        "dataReferenceSystems": [],
-        "dataPresentationForm": "",
-        "dataSpatialRepresentationType": "",
-        "dataScaleDenominator": "",
-        "dataScaleDistance": "",
-        "dataDqLevel": "",
-        "dataLiStatement": "",
-        "dataCharacterSet": "",
-        "dataDistributionFormats": [],
-        "dataUseLimitations": [],
-        "dataLegalUseLimitations": [],
-        "dataLegalUseConstraints": [],
-        "dataLegalAccessConstraints": [],
-        "dataLegalAccessInspireConstraints": [],
-        "dataLegalAccessotherConstraints": [],
-        "dataSecurityClassification": "",
-        "dataSecurityUseLimitations": [],
-        "dataLinkages": [],
-        "dataDqInspireConformities": [],
-        "dataDqConformities": []
-    };
-
-
-// }(window.mdjs = window.mdjs || {}));
+/**
+ * Empty metdata object
+ * @type {Array}
+ */
+mdjs.empty_json.metadata = {
+    "mdFileidentifier": "",
+    "mdLanguage": "",
+    "mdCharacterSet": "",
+    "mdHierarchyLevel": "",
+    "mdContacts": [],
+    "mdDateStamp": "",
+    "mdStandardName": "",
+    "mdStandardVersion": "",
+    "dataTitle": "",
+    "dataDates": [],
+    "dataDateCreation": "",
+    "dataDatePublication": "",
+    "dataDateRevision": "",
+    "dataIdentifiers": [],
+    "dataAbstract": "",
+    "dataBrowsegraphics": [],
+    "dataMaintenanceFrequency": "",
+    "dataTemporalExtents": [],
+    "dataLanguages": [],
+    "dataTopicCategories": [],
+    "dataKeywords": [],
+    "dataInspireKeywords": [],
+    "dataKeywordsList": "",
+    "dataPointOfContacts": [],
+    "data_geographicextents": [],
+    "dataReferenceSystems": [],
+    "dataPresentationForm": "",
+    "dataSpatialRepresentationType": "",
+    "dataScaleDenominator": "",
+    "dataScaleDistance": "",
+    "dataDqLevel": "",
+    "dataLiStatement": "",
+    "dataCharacterSet": "",
+    "dataDistributionFormats": [],
+    "dataUseLimitations": [],
+    "dataLegalUseLimitations": [],
+    "dataLegalUseConstraints": [],
+    "dataLegalAccessConstraints": [],
+    "dataLegalAccessInspireConstraints": [],
+    "dataLegalAccessotherConstraints": [],
+    "dataSecurityClassification": "",
+    "dataSecurityUseLimitations": [],
+    "dataLinkages": [],
+    "dataDqInspireConformities": [],
+    "dataDqConformities": []
+};

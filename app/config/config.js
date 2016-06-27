@@ -1,6 +1,9 @@
-// (function() {
-// "use strict";
-
+/**
+ * [module description]
+ * @param  {[type]} 'config' [description]
+ * @param  {[type]} []       [description]
+ * @return {[type]}          [description]
+ */
 angular.module('config', []);
 
 angular.module('config').factory('configSrv', configSrv);
@@ -32,5 +35,3 @@ function configSrv($http) {
         }
 
     }
-
-// })();

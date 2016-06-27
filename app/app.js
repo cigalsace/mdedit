@@ -1,5 +1,3 @@
-// (function() {
-// "use strict";
 
 /**
  * Déclaration de l'application Angular JS mdEditApp
@@ -7,7 +5,7 @@
 angular.module('mdEditApp', ['ui.bootstrap', 'mdEdit']);
 
 // Déclaration du module mdEdit
-angular.module('mdEdit', ['config', 'locales', 'models', 'views', 'mdjs', 'modalDoc', 'modalGetXml', 'modalSetXml']);
+angular.module('mdEdit', ['config', 'locales', 'models', 'views', 'mdjs', 'modalDoc', 'modalGetXml', 'modalSetXml', 'extents', 'jsonConverter', 'checkValues']);
 
 angular.module('mdEdit').config(function($locationProvider) {
     $locationProvider.html5Mode(true);
@@ -30,7 +28,6 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
                   $rootScope.userLanguage = localesSrv.getLanguage('fr');
                   getLocales($rootScope.userLanguage);
                   getViews($rootScope.userLanguage);
-                  getModels();
               });
       }
 
@@ -50,8 +47,10 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
                   $rootScope.models = data;
               })
               .then(function() {
-                  modelsSrv.getModel($rootScope.models, function(model) {
-                      $rootScope.metadata = model;
+                  modelsSrv.getModel($rootScope.models, false, function(model) {
+                    //   $rootScope.metadata = model.data;
+                    //   $rootScope.model = model.path;
+                      $rootScope.$broadcast('configLoaded');
                   });
               });
       }
@@ -66,8 +65,8 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
                   viewsSrv.getViewLocales(false, $rootScope.views, userLanguage, function(data) {
                       $rootScope.fields = data.fields;
                       $rootScope.codelists = data.codelists;
-                      $rootScope.$broadcast('configLoaded');
                   });
+                  getModels();
               });
       }
 });

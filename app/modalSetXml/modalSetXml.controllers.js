@@ -1,13 +1,16 @@
-// (function() {
-// "use strict";
-
 // Controller
-angular.module('modalSetXml')
+/**
+ * [module description]
+ * @param  {[type]} 'modalSetXml' [description]
+ * @param  {[type]} []            [description]
+ * @return {[type]}               [description]
+ */
+angular.module('modalSetXml', [])
     .controller('modalSetXmlCtrl', modalSetXmlCtrl);
 
-modalSetXmlCtrl.$inject = ['$http', '$scope', '$uibModalInstance', 'scopeParent', 'localesSrv'];
+modalSetXmlCtrl.$inject = ['$http', '$scope', '$rootScope', '$uibModalInstance', 'scopeParent', 'localesSrv', 'modelsSrv', 'mdjsSrv', 'jsonConverterSrv'];
 
-function modalSetXmlCtrl($http, $scope, $uibModalInstance, scopeParent, localesSrv) {
+function modalSetXmlCtrl($http, $scope, $rootScope, $uibModalInstance, scopeParent, localesSrv, modelsSrv, mdjsSrv, jsonConverterSrv) {
 
     var userLanguage = localesSrv.getLanguage();
     $scope.modelValue = 'value_' + userLanguage;
@@ -29,11 +32,10 @@ function modalSetXmlCtrl($http, $scope, $uibModalInstance, scopeParent, localesS
     }
 
     function getMetadataModel(model_path) {
-        // TODO: A convertir en service
-        $http.get(model_path)
-            .success(function(data) {
-                scopeParent.metadata = data;
-            });
+        modelsSrv.getModel($rootScope.models, model_path, function(model) {
+            // $rootScope.metadata = jsonConverterSrv.modelToForm(model.data);
+            // $rootScope.model = model.path;
+        });
         $uibModalInstance.close();
     }
 
@@ -44,14 +46,16 @@ function modalSetXmlCtrl($http, $scope, $uibModalInstance, scopeParent, localesS
         reader.onload = function(e) {
             scopeParent.xml = reader.result;
             scopeParent.loadXml();
+            // console.log(11111111);
+            // $rootScope.metadata = 'test4444';
         };
         reader.readAsText(file);
         //console.log('upload');
-        scopeParent.template_url = 'views/tpl-view.html';
+        // console.log(scopeParent.models[1].path);
+        scopeParent.template_url = scopeParent.views[1].path;
+        // scopeParent.changeView(1);
         //Fermeture de la fenêtre modale
         $uibModalInstance.close();
     }
 
 }
-
-// })();

@@ -1,14 +1,17 @@
-// (function() {
-// "use strict";
-
-angular.module('models', []);
+/**
+ * [module description]
+ * @param  {[type]} 'models'          [description]
+ * @param  {[type]} ['jsonConverter'] [description]
+ * @return {[type]}                   [description]
+ */
+angular.module('models', ['jsonConverter']);
 
 angular.module('models')
     .factory('modelsSrv', modelsSrv);
 
-modelsSrv.$inject = ['$http', '$location'];
+modelsSrv.$inject = ['$http', '$location', '$rootScope', 'jsonConverterSrv'];
 
-function modelsSrv($http, $location) {
+function modelsSrv($http, $location, $rootScope, jsonConverterSrv) {
 
     // var url = 'models/models.json';
     var modelsSrv = {
@@ -31,18 +34,30 @@ function modelsSrv($http, $location) {
             });
     }
 
-    function getModel(modelsList, callback) {
-        var modelPath;
-        var urlModelPath = $location.search()
-            .model;
-        if (urlModelPath) {
-            modelPath = urlModelPath;
-        } else {
-            modelPath = modelsList[0].path;
+    function getModel(modelsList, modelPath, callback) {
+        modelPath = modelPath || false;
+        var urlModelPath = $location.search().model;
+        if (!modelPath) {
+            if (urlModelPath) {
+                modelPath = urlModelPath;
+            } else {
+                modelPath = modelsList[0].path;
+            }
         }
         $http.get(modelPath)
             .success(function(data) {
-                callback(data);
+                // TODO: à mettre dans un service à part pour réutilisation lors du chargement dynamique d'un model
+                var model = {};
+                console.log('jsonConverterSrv.modelToForm(data)');
+                $rootScope.metadata = jsonConverterSrv.modelToForm(data);
+                // console.log('jsonConverterSrv.formToView(data)');
+                // $rootScope.metadata = jsonConverterSrv.formToView(data);
+                // model.data = jsonConverterSrv.modelToForm(data);
+                // model.path = modelPath;
+                // $rootScope.metadata = jsonConverterSrv.modelToForm(data);
+                console.log($rootScope.metadata);
+                $rootScope.model = modelPath;
+                callback(model);
             })
             .error(function(data, status) {
                 console.log("Error: can't get " + modelPath + " file (status: " + status + ").");
@@ -50,5 +65,3 @@ function modelsSrv($http, $location) {
     }
 
 }
-
-// })();

@@ -1,7 +1,9 @@
-// (function() {
-// "use strict";
-
 // Controller
+/**
+ * [module description]
+ * @param  {[type]} 'modalDoc' [description]
+ * @return {[type]}            [description]
+ */
 angular.module('modalDoc')
     .controller('modalDocCtrl', modalDocCtrl);
 
@@ -30,5 +32,3 @@ function modalDocCtrl($sce, $scope, $uibModalInstance, modalDocSrv, localesSrv, 
     }
 
 }
-
-// })();

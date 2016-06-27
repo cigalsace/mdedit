@@ -1,6 +1,9 @@
-// (function() {
-// "use strict";
-
+/**
+ * [module description]
+ * @param  {[type]} 'locales' [description]
+ * @param  {[type]} []        [description]
+ * @return {[type]}           [description]
+ */
 angular.module('locales', []);
 
 angular.module('locales')
@@ -48,5 +51,3 @@ function localesSrv($http, $location) {
     }
 
 }
-
-// })();

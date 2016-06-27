@@ -1,7 +1,8 @@
-// (function() {
-// "use strict";
-
-// Controller
+/**
+ * [module description]
+ * @param  {[type]} 'modalGetXml' [description]
+ * @return {[type]}               [description]
+ */
 angular.module('modalGetXml').controller('modalGetXmlCtrl', modalGetXmlCtrl);
 modalGetXmlCtrl.$inject = ['$scope', '$uibModalInstance', 'scopeParent', 'md'];
 
@@ -34,5 +35,3 @@ function modalGetXmlCtrl($scope, $uibModalInstance, scopeParent, md) {
     }
 
 }
-
-// })();

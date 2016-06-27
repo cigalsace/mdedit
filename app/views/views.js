@@ -1,6 +1,9 @@
-// (function() {
-// "use strict";
-
+/**
+ * [module description]
+ * @param  {[type]} 'views' [description]
+ * @param  {[type]} []      [description]
+ * @return {[type]}         [description]
+ */
 angular.module('views', []);
 
 angular.module('views')
@@ -51,5 +54,3 @@ function viewsSrv($http, $location) {
     }
 
 }
-
-// })();

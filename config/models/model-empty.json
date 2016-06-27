@@ -1,0 +1,173 @@
+{
+    "mdFileidentifier": "",
+    "mdLanguage": "fre",
+    "mdCharacterSset": "utf8",
+    "mdHierarchyLevel": "dataset",
+    "mdContacts": [
+        {
+            "individualName": "",
+            "positionName": "",
+            "organisationName": "",
+            "phoneVoice": "",
+            "email": "",
+            "deliveryPoint": "",
+            "postalCode": "",
+            "city": "",
+            "logoUrl": "",
+            "logoDescription": "",
+            "role": ""
+        }
+    ],
+    "mdDateStamp": "",
+    "mdStandardName": "ISO 19115/19139",
+    "mdStandardVersion": "Cor 1:2006",
+    "dataTitle": "Title get from model",
+    "dataDates": [
+        {
+            "dateType": "",
+            "date": ""
+        }
+    ],
+    "dataDateCreation": "",
+    "dataDatePublication": "",
+    "dataDateRevision": "",
+    "dataIdentifiers": [
+        {
+            "code": "",
+            "codeSpace": ""
+        }
+    ],
+    "dataAbstract": "",
+    "dataBrowseGraphics": [
+        {
+            "fileName": "",
+            "fileDescription": "",
+            "fileType": ""
+        }
+    ],
+    "dataMaintenanceFrequency": "unknown",
+    "dataTemporalExtents": [
+        {
+            "dataTemporalExtentBegin": "",
+            "dataTemporalExtentEnd": "",
+            "dataExtentName": ""
+        }
+    ],
+    "dataLanguages": ["fre"],
+    "dataTopicCategories": [""],
+    "dataInspireKeywords": [""],
+    "_dataInspireKeywords": [
+        {
+            "keywords": [],
+            "keywordType": "theme",
+            "thesaurusName": "GEMET - INSPIRE themes, version 1.0",
+            "thesaurusDates": [
+                {
+                    "dateType": "publication",
+                    "date": "2008-06-01"
+                }
+            ]
+        }
+    ],
+    "dataKeywordsList": "",
+    "dataKeywords": [
+        {
+            "keywords": [""],
+            "keyword": "test, test2",
+            "keywordType": "theme",
+            "thesaurusName": "tt",
+            "thesaurusDates": [
+                {
+                    "dateType": "publication",
+                    "date": "2015-03-25"
+                }
+            ]
+        }
+    ],
+    "dataPointOfContacts": [
+        {
+            "individualName": "",
+            "positionName": "",
+            "organisationName": "",
+            "phoneVoice": "",
+            "email": "",
+            "deliveryPoint": "",
+            "postalCode": "",
+            "city": "",
+            "logoUrl": "",
+            "logoDescription": "",
+            "role": ""
+        }
+    ],
+    "dataGeographicExtents": [
+        {
+            "dataExtentName": "",
+            "dataGeographicExtentWestBound": "",
+            "dataGeographicExtentEastBound": "",
+            "dataGeographicExtentSouthBound": "",
+            "dataGeographicExtentNorthBound": ""
+        }
+    ],
+    "dataReferenceSystems": [
+        {
+            "code": "",
+            "codeSpace": ""
+        }
+    ],
+    "dataPresentationForm": "",
+    "dataSpatialrePresentationType": "vector",
+    "dataScaleDenominator": "",
+    "dataScaleDistance": "",
+    "dataDqLlevel": "dataset",
+    "dataLiStatement": "",
+    "dataCharacterSet": "utf8",
+    "dataDistributionFormats": [
+        {
+            "formatName": "",
+            "formatVersion": "",
+            "formatSpecification": ""
+        }
+    ],
+    "dataUseLimitations": [""],
+    "dataLegalUseLimitations": [""],
+    "dataLegalUseConstraints": [""],
+    "dataLegalAccessConstraints": [""],
+    "dataLegalAccessInspireConstraints": ["Pas de restriction d'accès public"],
+    "dataLegalAccessOtherConstraints": [""],
+    "dataSecurityUseLimitations": [""],
+    "dataSecurityClassification": "unclassified",
+    "dataLinkages": [
+        {
+            "name": "",
+            "description": "",
+            "url": "",
+            "protocol": ""
+        }
+    ],
+    "dataDqInspireConformities": [
+        {
+            "specification": "",
+            "explaination": "",
+            "pass": "",
+            "dates": [
+                {
+                    "type": "",
+                    "date": ""
+                }
+            ]
+        }
+    ],
+    "dataDqConformities": [
+        {
+            "specification": "",
+            "explaination": "",
+            "pass": "",
+            "dates": [
+                {
+                    "type": "",
+                    "date": ""
+                }
+            ]
+        }
+    ]
+}
