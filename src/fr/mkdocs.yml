@@ -5,7 +5,7 @@ pages:
     - 'Installation': 'use/install.md'
     - 'Configuration': 'use/configuration.md'
     - 'Usage': 'use/use.md'
-- About:
+- A propos:
     - 'Licence': 'about/license.md'
     - 'Notes de version': 'about/release-notes.md'
 theme: mkdocs
