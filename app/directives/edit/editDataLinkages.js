@@ -54,7 +54,7 @@ function editDataLinkagesDirective(editDataLinkagesTemplateurl) {
             if (attrs.multi === 'true') {
                 scope.multi = true;
             }
-            var properties = ['id', 'label', 'description', 'placeholder'];
+            var properties = ['id', 'label', 'desc', 'placeholder'];
             var params = ['name', 'description', 'url', 'protocol'];
             for (var i = 0; i < properties.length; i++) {
                 var p = properties[i];
