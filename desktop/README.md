@@ -28,10 +28,10 @@ Le même comportement peut-être obtenu en utilisant la version web de mdEdit et
 Pour cela:
 
 - Téléchargez PHP à partir de la page http://php.net/downloads.php (version 5.6 ou 7.0 "x64 Thread Safe" pour les utilisateur de Windows)
-- Décompressez l'archive sur votre ordinateur
-- Télécharger le code de mdEdit (via "git clone" ou par téléchargement direct: https://github.com/cigalsace/mdedit/archive/master.zip)
+- Décompressez l'archive sur votre ordinateur à l'endroit qui vous va bien
+- Télécharger le code de mdEdit (via "git clone" ou par téléchargement direct: https://github.com/cigalsace/mdedit/archive/master.zip et décompressez le où vous souhaitez)
 - Créer un fichier "mdedit.bat" à la racine du dossier mdedit
-- Ajouter dans le fichier mdedit.bat le code suivant:
+- Ajouter dans le fichier mdedit.bat le code suivant (en adpatant le chemin vers php.exe):
 
 ```
 REM Lancement du navigateur internet sur http://localhost:8080
