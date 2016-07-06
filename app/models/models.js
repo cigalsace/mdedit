@@ -34,33 +34,29 @@ function modelsSrv($http, $location, $rootScope, jsonConverterSrv) {
             });
     }
 
-    function getModel(modelsList, modelPath, callback) {
-        modelPath = modelPath || false;
-        var urlModelPath = $location.search().model;
-        if (!modelPath) {
-            if (urlModelPath) {
-                modelPath = urlModelPath;
+    function getModel(modelsList, modelId, callback) {
+        model = modelId || false;
+        var modelParam = $location.search().model;
+        if (!model) {
+            if (modelParam) {
+                model = modelParam;
             } else {
-                modelPath = modelsList[0].path;
+                model = 1;
             }
         }
-        $http.get(modelPath)
+        model -= 1;
+        $http.get(modelsList[model].path)
             .success(function(data) {
                 // TODO: à mettre dans un service à part pour réutilisation lors du chargement dynamique d'un model
                 var model = {};
                 console.log('jsonConverterSrv.modelToForm(data)');
                 $rootScope.metadata = jsonConverterSrv.modelToForm(data);
-                // console.log('jsonConverterSrv.formToView(data)');
-                // $rootScope.metadata = jsonConverterSrv.formToView(data);
-                // model.data = jsonConverterSrv.modelToForm(data);
-                // model.path = modelPath;
-                // $rootScope.metadata = jsonConverterSrv.modelToForm(data);
                 console.log($rootScope.metadata);
-                $rootScope.model = modelPath;
+                $rootScope.model = model;
                 callback(model);
             })
             .error(function(data, status) {
-                console.log("Error: can't get " + modelPath + " file (status: " + status + ").");
+                console.log("Error: can't get " + model + " file (status: " + status + ").");
             });
     }
 

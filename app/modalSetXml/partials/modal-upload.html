@@ -8,7 +8,7 @@
                 <label class="bt-doc control-label" for="" uib-tooltip="model" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('doc/html/empty.html')">
                     Charger un modèle de fiche prérempli
                 </label>
-                <select class="form-control input-sm" name="models" ng-options="model.path as model[modelValue] for model in scopeParent.models" ng-model="model_path" ng-change="getMetadataModel(model_path)">
+                <select class="form-control input-sm" name="models" ng-options="scopeParent.models.indexOf(model)+1 as model.value for model in scopeParent.models" ng-model="model_id" ng-change="getMetadataModel(model_id)">
                     <option value="">Sélectionnez un modèle</option>
                 </select>
             </div>
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label class="control-label" for="url_input" uib-tooltip="URL à charger" tooltip-trigger="mouseenter" tooltip-placement="right">
-                    Charger une fcihe à partir d'un URL
+                    Charger une fiche à partir d'un URL
                 </label>
                 <input class="form-control input-sm" type="text" id="url_input" ng-model="url_input" disabled />
             </div>

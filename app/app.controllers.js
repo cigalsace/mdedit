@@ -28,20 +28,12 @@ function mdEditCtrl($scope, $rootScope, $http, $sce, $uibModal, $log, configSrv,
             console.log('jsonConverterSrv.mdjsToForm(data)');
             $rootScope.metadata = jsonConverterSrv.mdjsToForm(data);
             console.log('form', $rootScope.metadata);
-            // console.log('jsonConverterSrv.formToView(data)');
-            // data = jsonConverterSrv.formToView(data);
-            // console.log('view', data);
-            // $rootScope.metadata = data;
         };
 
         // console.log($scope.views[0].path);
-        $scope.template_url = $scope.views[0].path;
+        $scope.template_url = $scope.views[$rootScope.view].path;
         $scope.changeView = function(view) {
             $scope.template_url = $scope.views[view].path;
-            // console.log('jsonConverterSrv.formToView($rootScope.metadata)');
-            // $rootScope.metadata = jsonConverterSrv.formToView($rootScope.metadata);
-            // console.log('view', $rootScope.metadata);
-            // Todo: load locales de la view
         };
 
         // Modal to generate and get XML file

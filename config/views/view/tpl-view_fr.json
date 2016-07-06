@@ -274,21 +274,21 @@
             "description": "Etendues temporelles des des données.",
             "_keywords": "étendues temporelles, données",
             "children": {
-                "begin": {
+                "dataTemporalExtentBegin": {
                     "id": "begin",
                     "label": "Début",
                     "placeholder": "",
                     "description": "Date de début de l'étendue temporelle.",
                     "_keywords": "date, début, étendues temporelles, données"
                 },
-                "end": {
+                "dataTemporalExtentEnd": {
                     "id": "end",
                     "label": "Fin",
                     "placeholder": "",
                     "description": "Date de fin de l'étendue temporelle.",
                     "_keywords": "date, fin, étendues, temporelles, données"
                 },
-                "description": {
+                "dataExtentName": {
                     "id": "description",
                     "label": "Description",
                     "placeholder": "",
@@ -332,7 +332,7 @@
             "description": "Mots-clés descriptifs des données.",
             "_keywords": "mots-clés, données",
             "children": {
-                "keywords": {
+                "keyword": {
                     "id": "keywords",
                     "label": "Intitulé",
                     "placeholder": "",
@@ -485,35 +485,35 @@
             "description": "Emprise géographique de la base de données (format WGS84).",
             "_keywords": "emprise géographique, données",
             "children": {
-                "name": {
+                "dataExtentName": {
                     "id": "name",
                     "label": "Nom de l'emprise géographique",
                     "placeholder": "ex.: Alsace",
                     "description": "Nom de l'emprise géographique de la base de données.",
                     "_keywords": "nom, emprise géographique, données"
                 },
-                "xmin": {
+                "dataGeographicExtentWestBound": {
                     "id": "xmin",
                     "label": "Long. Ouest",
                     "placeholder": "6.8410134649126",
                     "description": "Longitude ouest WGS84 du rectangle d'emprise (Xmin).",
                     "_keywords": "longitude ouest, emprise géographique, données"
                 },
-                "xmax": {
+                "dataGeographicExtentEastBound": {
                     "id": "xmax",
                     "label": "Long. Est",
                     "placeholder": "8.23351958950571",
                     "description": "Longitude est WGS84 du rectangle d'emprise (Xmax).",
                     "_keywords": "longitude est, emprise géographique, données"
                 },
-                "ymin": {
+                "dataGeographicExtentSouthBound": {
                     "id": "ymin",
                     "label": "Lat. Sud",
                     "placeholder": "47.4202517758332",
                     "description": "Latitude sud WGS84 du rectangle d'emprise (Ymin).",
                     "_keywords": "latitude sud, emprise géographique, données"
                 },
-                "ymax": {
+                "dataGeographicExtentNorthBound": {
                     "id": "ymax",
                     "label": "Lat. Nord",
                     "placeholder": "49.0778319799915",
@@ -601,21 +601,21 @@
             "description": "Formats de diffusion des données.",
             "_keywords": "formats, diffusion, données",
             "children": {
-                "name": {
+                "formatName": {
                     "id": "name",
                     "label": "Nom",
                     "placeholder": "ex.: shapefile (SHP)",
                     "description": "Nom du formats de diffusion des données.",
                     "_keywords": "nom, formats, diffusion, données"
                 },
-                "version": {
+                "formatVersion": {
                     "id": "version",
                     "label": "Version",
                     "placeholder": "ex.: 1.0",
                     "description": "Version du formats de diffusion des données.",
                     "_keywords": "version, formats, diffusion, données"
                 },
-                "specification": {
+                "formatSpecification": {
                     "id": "specification",
                     "label": "Description",
                     "placeholder": "Fichier de forme ESRI Shapefile (2,7 Mo)",

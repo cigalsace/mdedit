@@ -24,8 +24,8 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
           configSrv.getFile(config_file)
               .then(function(data) {
                   $rootScope.config = data;
-                  // console.log(config);
-                  $rootScope.userLanguage = localesSrv.getLanguage('fr');
+                  // console.log(data);
+                  $rootScope.userLanguage = localesSrv.getLanguage(data.defaultLanguage);
                   getLocales($rootScope.userLanguage);
                   getViews($rootScope.userLanguage);
               });
@@ -62,7 +62,9 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
                   $rootScope.views = data;
               })
               .then(function() {
-                  viewsSrv.getViewLocales(false, $rootScope.views, userLanguage, function(data) {
+                  viewsSrv.getViewLocales(false, $rootScope.views, userLanguage, function(view, data) {
+                      //console.log(view);
+                      $rootScope.view = view;
                       $rootScope.fields = data.fields;
                       $rootScope.codelists = data.codelists;
                   });

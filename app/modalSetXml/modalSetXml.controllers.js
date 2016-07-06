@@ -46,12 +46,8 @@ function modalSetXmlCtrl($http, $scope, $rootScope, $uibModalInstance, scopePare
         reader.onload = function(e) {
             scopeParent.xml = reader.result;
             scopeParent.loadXml();
-            // console.log(11111111);
-            // $rootScope.metadata = 'test4444';
         };
         reader.readAsText(file);
-        //console.log('upload');
-        // console.log(scopeParent.models[1].path);
         scopeParent.template_url = scopeParent.views[1].path;
         // scopeParent.changeView(1);
         //Fermeture de la fenêtre modale

@@ -34,19 +34,20 @@ function viewsSrv($http, $location) {
     }
 
     function getViewLocales(viewId, viewsList, userLanguage, callback) {
+        view = viewId || false;
         var viewParam = $location.search().view;
-        if (viewParam) {
-            view = viewParam;
-        } else if (viewId) {
-            view = viewId;
-        } else {
-            view = 0;
+        if (!view) {
+            if (viewParam) {
+                view = viewParam;
+            } else {
+                view = 1;
+            }
         }
-        // console.log(viewsList, view);
+        view -= 1;
         viewLocales = viewsList[view].locales[userLanguage];
         $http.get(viewLocales)
             .success(function(data) {
-                callback(data);
+                callback(view, data);
             })
             .error(function(data, status) {
                 console.log("Error: can't get " + viewLocales + " file (status: " + status + ").");
