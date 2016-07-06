@@ -413,15 +413,15 @@
                     "description": "Organisme à contacter.",
                     "_keywords": "organisme, contact, données"
                 },
-                "phoneVoices": {
-                    "id": "phoneVoices",
+                "phoneVoice": {
+                    "id": "phoneVoice",
                     "label": "Téléphone",
                     "placeholder": "Téléphone",
                     "description": "Numéro de téléphone du contact.",
                     "_keywords": "téléphone, contact, données"
                 },
-                "emails": {
-                    "id": "emails",
+                "email": {
+                    "id": "email",
                     "label": "Email",
                     "placeholder": "Email",
                     "description": "Email du contact.",

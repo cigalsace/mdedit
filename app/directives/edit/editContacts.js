@@ -46,20 +46,7 @@ function editContactsDirective(editContactsTemplateurl) {
 
         function init() {
             scope.cnt_type = attrs.cntType;
-            // console.log(scope.cnt_type);
-            // console.log(scope.metadata);
-            // console.log(scope.fields);
-
-            // Define values from attributes or use default fields.Contact properties values
-            // var properties = ['id', 'label', 'description', 'placeholder'];
-            // for (var i = 0; i < properties.length; i++) {
-            //     var p = properties[i];
-            //     scope[p] = scope.fields[scope.cnt_type][p];
-            //     if (attrs[p] || attrs[p] === '') {
-            //         scope[p] = attrs[p];
-            //     }
-            // }
-
+            
             // Add / remove contacts
             scope.removeContact = function(contact) {
                 scope.metadata[scope.cnt_type].splice(scope.metadata[scope.cnt_type].indexOf(contact), 1);
