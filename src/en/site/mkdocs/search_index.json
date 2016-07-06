@@ -1,0 +1,64 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to mdEdit\n\n\nVisiter la \nversion fran\u00e7aise\n.\n\n\n...", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-mdedit", 
+            "text": "Visiter la  version fran\u00e7aise .  ...", 
+            "title": "Welcome to mdEdit"
+        }, 
+        {
+            "location": "/use/install/", 
+            "text": "Installation [en]\n\n\n...", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/use/install/#installation-en", 
+            "text": "...", 
+            "title": "Installation [en]"
+        }, 
+        {
+            "location": "/use/configuration/", 
+            "text": "Configuration [en]\n\n\n...", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/use/configuration/#configuration-en", 
+            "text": "...", 
+            "title": "Configuration [en]"
+        }, 
+        {
+            "location": "/use/use/", 
+            "text": "Use [en]\n\n\n...", 
+            "title": "Use"
+        }, 
+        {
+            "location": "/use/use/#use-en", 
+            "text": "...", 
+            "title": "Use [en]"
+        }, 
+        {
+            "location": "/about/license/", 
+            "text": "License [en]\n\n\n...", 
+            "title": "License"
+        }, 
+        {
+            "location": "/about/license/#license-en", 
+            "text": "...", 
+            "title": "License [en]"
+        }, 
+        {
+            "location": "/about/release-notes/", 
+            "text": "Release notes [en]\n\n\n...", 
+            "title": "Release Notes"
+        }, 
+        {
+            "location": "/about/release-notes/#release-notes-en", 
+            "text": "...", 
+            "title": "Release notes [en]"
+        }
+    ]
+}

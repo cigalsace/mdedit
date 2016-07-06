@@ -1,0 +1,11 @@
+site_name: mdEdit [fr]
+pages:
+- Accueil: 'index.md'
+- Guide utilisateur:
+    - 'Installation': 'use/install.md'
+    - 'Configuration': 'use/configuration.md'
+    - 'Usage': 'use/use.md'
+- About:
+    - 'Licence': 'about/license.md'
+    - 'Notes de version': 'about/release-notes.md'
+theme: mkdocs

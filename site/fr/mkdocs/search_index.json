@@ -1,0 +1,64 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Bienvenue sur mdEdit\n\n\nGo to \nenglish version\n.\n\n\n...", 
+            "title": "Accueil"
+        }, 
+        {
+            "location": "/#bienvenue-sur-mdedit", 
+            "text": "Go to  english version .  ...", 
+            "title": "Bienvenue sur mdEdit"
+        }, 
+        {
+            "location": "/use/install/", 
+            "text": "Installation [fr]\n\n\n...", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/use/install/#installation-fr", 
+            "text": "...", 
+            "title": "Installation [fr]"
+        }, 
+        {
+            "location": "/use/configuration/", 
+            "text": "Configuration [fr]\n\n\n...", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/use/configuration/#configuration-fr", 
+            "text": "...", 
+            "title": "Configuration [fr]"
+        }, 
+        {
+            "location": "/use/use/", 
+            "text": "Utilisation [fr]\n\n\n...", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/use/use/#utilisation-fr", 
+            "text": "...", 
+            "title": "Utilisation [fr]"
+        }, 
+        {
+            "location": "/about/license/", 
+            "text": "Licence [fr]\n\n\n...", 
+            "title": "Licence"
+        }, 
+        {
+            "location": "/about/license/#licence-fr", 
+            "text": "...", 
+            "title": "Licence [fr]"
+        }, 
+        {
+            "location": "/about/release-notes/", 
+            "text": "Notes de version [fr]\n\n\n...", 
+            "title": "Notes de version"
+        }, 
+        {
+            "location": "/about/release-notes/#notes-de-version-fr", 
+            "text": "...", 
+            "title": "Notes de version [fr]"
+        }
+    ]
+}
