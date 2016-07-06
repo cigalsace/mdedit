@@ -1,0 +1,408 @@
+<div class="">
+    <h2 id="dataTitle" class="">{{metadata.dataTitle}}</h2>
+</div>
+
+<div class="">
+    <div id="page" class="col-md-8">
+
+        <div class="panel panel-default">
+            <div id="dataAbstract" class="pre panel-body" ng-bind-html="metadata.dataAbstract | nl2br:true"></div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div>
+                    <div ng-if="metadata.dataDateCreation">
+                        <strong>Date de création:</strong>
+                        <span class="pre">{{metadata.dataDateCreation | date:'dd/MM/yyyy'}}</span>
+                        <br />
+                    </div>
+                    <div ng-if="metadata.dataDatePublication">
+                        <strong>Date de publication:</strong>
+                        <span class="pre">{{metadata.dataDatePublication | date:'dd/MM/yyyy'}}</span>
+                        <br />
+                    </div>
+                    <div ng-if="metadata.dataDateRevision">
+                        <strong>Date de révision:</strong>
+                        <span class="pre">{{metadata.dataDateRevision | date:'dd/MM/yyyy'}}</span>
+                        <br />
+                    </div>
+                    <div ng-if="metadata.dataTemporalExtents">
+                        <div ng-repeat="dataTemporalExtent in metadata.dataTemporalExtents track by $index">
+                            <strong>{{dataTemporalExtent.dataExtentName}}:</strong>
+                            <span class="pre">{{dataTemporalExtent.dataTemporalExtentBegin | date:'dd/MM/yyyy'}}</span>
+                            <span class="pre" ng-if="dataTemporalExtent.dataTemporalExtentEnd"> - {{dataTemporalExtent.dataTemporalExtentEnd | date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </div>
+                    <div ng-if="metadata.dataMaintenanceFrequencyValues">
+                        <p>
+                            <strong>Fréquence de mise à jour:</strong>
+                            <span class="pre">{{metadata.dataMaintenanceFrequencyValues}}</span>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    <p><strong>Format de diffusion:</strong></p>
+                    <ul>
+                        <div ng-if="metadata.dataDistributionFormats">
+                            <div ng-repeat="dataDistributionFormat in metadata.dataDistributionFormats track by $index">
+                                <li class="">
+                                    {{dataDistributionFormat.formatName}}
+                                    <span ng-if="dataDistributionFormat.formatVersion">
+                                            ({{dataDistributionFormat.formatVersion}})
+                                        </span>
+                                    <span ng-if="dataDistributionFormat.formatSpecification">
+                                            - {{dataDistributionFormat.formatSpecification}}
+                                        </span>
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="!metadata.dataDistributionFormats">
+                            <li class="">Non précisé</li>
+                        </div>
+                    </ul>
+                </div>
+                <hr />
+                <div>
+                    <p><strong>Qualité des données:</strong></p>
+                    <div class="pre">
+                        <div ng-if="metadata.dataLiStatement" ng-bind-html="metadata.dataLiStatement | nl2br:true"></div>
+                        <div ng-if="!metadata.dataLiStatement">
+                            Non précisé
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    <p><strong>Limite technique d'usage:</strong></p>
+                    <ul>
+                        <div ng-if="metadata.dataUseLimitations">
+                            <div ng-repeat="dataUseLimitation in metadata.dataUseLimitations track by $index">
+                                <li class="pre">
+                                    {{dataUseLimitation}}
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="!metadata.dataUseLimitations">
+                            <li class="">Aucune limite d'usage définie.</li>
+                        </div>
+                    </ul>
+                </div>
+                <hr />
+                <div>
+                    <p><strong>Droits d'accès et d'usage des données:</strong></p>
+                    <div ng-if="metadata.dataSecurityClassification">
+                        <label>Classification:</label> {{metadata.dataSecurityClassificationValues}}
+                        <br />
+                    </div>
+                    <label>Contraintes d'accès Inspire:</label>
+                    <br />
+                    <ul>
+                        <div ng-if="metadata.dataLegalAccessInspireConstraintsValues">
+                            <div ng-repeat="dataLegalAccessInspireConstraint in metadata.dataLegalAccessInspireConstraintsValues track by $index">
+                                <li class="pre">
+                                    {{dataLegalAccessInspireConstraint}}
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="!metadata.dataLegalAccessInspireConstraintsValues">
+                            <li class="pre">Aucune contrainte d'accès Inspire définie.</li>
+                        </div>
+                    </ul>
+                    <label>Autres contraintes d'accès:</label>
+                    <br />
+                    <ul>
+                        <div ng-if="metadata.dataLegalAccessConstraintsValues">
+                            <div ng-repeat="dataLegalAccessConstraint in metadata.dataLegalAccessConstraintsValues track by $index">
+                                <li class="pre">
+                                    {{dataLegalAccessConstraint}}
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="metadata.dataLegalAccessOtherConstraints">
+                            <div ng-repeat="dataLegalAccessOtherConstraint in metadata.dataLegalAccessOtherConstraints track by $index">
+                                <li class="pre" ng-if="dataLegalAccessOtherConstraint">
+                                    {{dataLegalAccessOtherConstraint}}
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="!metadata.dataLegalAccessConstraints && !metadata.dataLegalAccessOtherConstraintsValues">
+                            <li class="pre">Aucune contrainte d'accès définie.</li>
+                        </div>
+                    </ul>
+                    <label>Contraintes légales d'usage:</label>
+                    <br />
+                    <ul>
+                        <div ng-if="metadata.dataLegalUseConstraintsValues">
+                            <div ng-repeat="dataLegalUseConstraint in metadata.dataLegalUseConstraintsValues track by $index">
+                                <li class="pre">
+                                    {{dataLegalUseConstraint}}
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="metadata.dataLegalUseLimitations">
+                            <div ng-repeat="dataLegalUseLimitation in metadata.dataLegalUseLimitations track by $index">
+                                <li class="pre">
+                                    {{dataLegalUseLimitation}}
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="!metadata.dataLegalUseLimitations && !metadata.dataLegalUseConstraintsValues">
+                            <li class="pre">Aucune limite légale d'usage définie.</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div ng-if="metadata.dataPointOfContacts">
+                    <div ng-repeat="dataPointOfContact in metadata.dataPointOfContacts track by $index">
+                        <div ng-if="metadata.dataPointOfContactsValues[$index].role">
+                            <p><strong>{{metadata.dataPointOfContactsValues[$index].role}} des données:</strong></p>
+                        </div>
+                        <div ng-if="!metadata.dataPointOfContactsValues[$index].role">
+                            <p><strong>Contact pour les données:</strong></p>
+                        </div>
+                        <div class="panel panel-default" style="margin-left: 20px;">
+                            <address class="panel-body">
+                                    <div class="col-md-2">
+                                        <div ng-if="dataPointOfContact.logoUrl">
+                                            <img class="logo img-thumbnail" ng-src="{{dataPointOfContact.logoUrl}}" alt="{{data_contact.logoDescription}}" title="{{dataPointOfContact.logoDescription}}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div ng-if="dataPointOfContact.individualName">
+                                            <div>{{dataPointOfContact.individualName}}</div>
+                                        </div>
+                                        <div ng-if="dataPointOfContact.positionName">
+                                            <div>{{dataPointOfContact.positionName}}</div>
+                                        </div>
+                                        <div ng-if="dataPointOfContact.organisationName">
+                                            <div><strong>{{dataPointOfContact.organisationName}}</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div ng-if="dataPointOfContact.city">
+                                            <div>
+                                                <span ng-bind-html="dataPointOfContact.deliveryPoint | nl2br:true"></span>
+                                                </br>
+                                                {{dataPointOfContact.postalCode}} {{dataPointOfContact.city}}
+                                            </div>
+                                        </div>
+                                        <div ng-if="dataPointOfContact.phoneVoice">
+                                                <!-- <div>Tél.: {{dataPointOfContact.phoneVoices}}</div> -->
+                                                <!-- TODO: spliter les tél. dans une directive -->
+                                                <div>Tél.:
+                                                <span ng-bind-html="dataPointOfContact.phoneVoice | nl2br:true"></span></div>
+                                        </div>
+                                        <div ng-if="dataPointOfContact.email">
+                                            <div>
+                                                <!-- TODO: spliter les emails dans une directive -->
+                                                <strong>Email: <span>{{dataPointOfContact.email}}</span></strong>
+                                            </div>
+                                        </div>
+                                        <!--
+                                        <div ng-if="dataPointOfContact.role">
+                                            <div>Rôle: {{dataPointOfContact.role}}</div>
+                                        </div>
+                                        -->
+                                    </div>
+                                </address>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="metadata.mdContacts">
+                    <div ng-repeat="mdContact in metadata.mdContacts track by $index">
+                        <div ng-if="metadata.mdContactsValues[$index].role">
+                            <p><strong>{{metadata.mdContactsValues[$index].role}} de la fiche de métadonnées:</strong></p>
+                        </div>
+                        <div ng-if="!metadata.mdContactsValues[$index].role">
+                            <p><strong>Contact pour de la fiche de métadonnées:</strong></p>
+                        </div>
+                        <div class="panel panel-default" style="margin-left: 20px;">
+                            <address class="panel-body">
+                                    <div class="col-md-2">
+                                        <div ng-if="mdContact.logoUrl">
+                                            <img class="logo img-thumbnail" ng-src="{{mdContact.logoUrl}}" alt="{{mdContact.logoDescription}}" title="{{mdContact.logoDescription}}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div ng-if="mdContact.individualName">
+                                            <div>{{mdContact.individualName}}</div>
+                                        </div>
+                                        <div ng-if="mdContact.positionName">
+                                            <div>{{mdContact.positionName}}</div>
+                                        </div>
+                                        <div ng-if="mdContact.organisationName">
+                                            <div><strong>{{mdContact.organisationName}}</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div ng-if="mdContact.city">
+                                            <div>
+                                                <span ng-bind-html="mdContact.deliveryPoint | nl2br:true"></span>
+                                                </br>
+                                                {{mdContact.postalCode}} {{mdContact.city}}
+                                            </div>
+                                        </div>
+                                        <div ng-if="mdContact.phoneVoice">
+                                                <!-- <div>Tél.: {{mdContact.phoneVoices}}</div> -->
+                                                <!-- TODO: spliter les tél. dans une directive -->
+                                                <div>Tél.:
+                                                <span ng-bind-html="mdContact.phoneVoice | nl2br:true"></span></div>
+                                        </div>
+                                        <div ng-if="mdContact.email">
+                                            <div>
+                                                <!-- TODO: spliter les emails dans une directive -->
+                                                <strong>Email: <span>{{mdContact.email}}</span></strong>
+                                            </div>
+                                        </div>
+                                        <!--
+                                        <div ng-if="mdContact.role">
+                                            <div>Rôle: {{mdContact.role}}</div>
+                                        </div>
+                                        -->
+                                    </div>
+                                </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="browsegraphic" class="col-md-4">
+        <div ng-if="metadata.dataSpatialRepresentationTypeValues">
+            <div id="spatial-representation-type-label" class="label label-success pull-right" title="{{metadata.dataSpatialRepresentationTypeValues}}">{{metadata.dataSpatialRepresentationTypeValues}}</div>
+        </div>
+        <div ng-if="metadata.dataBrowseGraphics">
+            <div class="">
+                <a href="{{metadata.dataBrowseGraphics[0].fileName}}" target="_blanck"><img class="img-thumbnail" ng-src="{{metadata.dataBrowseGraphics[0].fileName}}" alt="{{metadata.dataBrowseGraphics[0].fileDescription}}" title="{{metadata.dataBrowseGraphics[0].fileDescription}}"></a>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar" class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p class="">
+                    <span ng-if="metadata.dataGeographicExtents">
+                            <span ng-repeat="dataGeographicExtent in metadata.dataGeographicExtents track by $index">
+                                <a class="btn btn-xs btn-info" >
+                                    <i class="glyphicon glyphicon-screenshot" title="Couverture territoriale"> </i>
+                                </a>
+                                <span class="" title="S:{{dataGeographicExtent.dataGeographicExtentSouthBound}}, N:{{dataGeographicExtent.dataGeographicExtentNorthBound}}, W:{{dataGeographicExtent.dataGeographicExtentWestBound}}, E:{{dataGeographicExtent.dataGeographicExtentEastBound}}">
+                                    <span ng-if="dataGeographicExtent.dataExtentName">
+                                        {{dataGeographicExtent.dataExtentName}} (S:{{dataGeographicExtent.dataGeographicExtentSouthBound}}, N:{{dataGeographicExtent.dataGeographicExtentNorthBound}}, W:{{dataGeographicExtent.dataGeographicExtentWestBound}}, E:{{dataGeographicExtent.dataGeographicExtentEastBound}}),
+                                    </span>
+                                    <span ng-if="!dataGeographicExtent.dataExtentName">
+                                        Nom inconnu (S:{{dataGeographicExtent.dataGeographicExtentSouthBound}}, N:{{dataGeographicExtent.dataGeographicExtentNorthBound}}, W:{{dataGeographicExtent.dataGeographicExtentWestBound}}, E:{{dataGeographicExtent.dataGeographicExtentEastBound}})
+                                    </span>
+                                </span>
+                                <br />
+                            </span>
+                    </span>
+                    <span ng-if="!metadata.dataGeographicExtents">
+                            <a class="btn btn-xs btn-info" >
+                                <i class="glyphicon glyphicon-screenshot" title="Couverture territoriale"> </i>
+                            </a>
+                            <span class="pre" title="S:0.00, N:0.00, W:0.00, E:0.00">Couverture territoriale non précisée</span>
+                    <br />
+                    </span>
+                </p>
+                <p class="">
+                    <a class="btn btn-xs btn-info">
+                        <i class="glyphicon glyphicon-zoom-in" title="Echelle d'utilisation"> </i>
+                    </a>
+                    <span ng-if="metadata.dataScaleDenominator">
+                            1/{{metadata.dataScaleDenominator}}
+                        </span>
+                    <span ng-if="metadata.dataScaleDistance">
+                            {{metadata.dataScaleDistance}} mètre(s)
+                        </span>
+                    <span ng-if="!metadata.dataScaleDenominator && !metadata.dataScaleDistance">
+                            Echelle et résolution non définies.
+                        </span>
+                </p>
+                <p class="">
+                    <span ng-if="metadata.dataReferenceSystemsValues">
+                            <span ng-repeat="dataReferenceSystem in metadata.dataReferenceSystemsValues track by $index">
+                                <a class="btn btn-xs btn-info" >
+                                    <i class="glyphicon glyphicon-globe" title="Système de projection"> </i>
+                                </a>
+                                {{dataReferenceSystem.code}}
+                                <span ng-if="dataReferenceSystem.codespace">
+                                    ({{dataReferenceSystem.codespace}})
+                                </span>
+                    <br />
+                    </span>
+                    </span>
+                    <span ng-if="!metadata.dataReferenceSystemsValues">
+                            <a class="btn btn-xs btn-info" >
+                                <i class="glyphicon glyphicon-globe" title="Système de projection"> </i>
+                            </a>
+                            Aucun système de projection défini.
+                        </span>
+                </p>
+
+                <hr />
+                <div id="keywords" class="">
+                    <span ng-if="metadata.dataTopicCategoriesValues">
+                            <span ng-repeat="dataTopicCategory in metadata.dataTopicCategoriesValues track by $index">
+                                <span title="{{dataTopicCategory}}" class="label label-warning">{{dataTopicCategory}}</span>
+                    </span>
+                    </span>
+                    <span ng-if="metadata.dataInspireKeywordsValues">
+                            <span ng-repeat="dataInspireKeyword in metadata.dataInspireKeywordsValues track by $index">
+                                <span title="{{dataInspireKeyword}}" class="label label-primary">{{dataInspireKeyword}}</span>
+                    </span>
+                    </span>
+                    <span ng-if="metadata.dataKeywords">
+                            <span ng-repeat="dataKeywords in metadata.dataKeywords track by $index">
+                                <span ng-repeat="keyword in dataKeywords.keywords track by $index">
+                                <span title="{{dataKeywords.keywordType}} - {{dataKeywords.thesaurusName}}" class="label label-primary">{{keyword}}</span>
+                    </span>
+                    </span>
+                </div>
+                <hr />
+                <div class="">
+                    <strong>Ressources associés:</strong>
+                    <ul>
+                        <span ng-if="metadata.dataLinkages">
+                                <span ng-repeat="dataLinkage in metadata.dataLinkages track by $index">
+                                    <li><a href="{{dataLinkage.url}}" target="_blanck" title="{{dataLinkage.url}}">{{dataLinkage.description}}</a></li>
+                                </span>
+                        </span>
+                        <span ng-if="!metadata.dataLinkages">
+                                <li>Aucune ressource liée disponible.</li>
+                            </span>
+                    </ul>
+                </div>
+                <!--
+                    <hr />
+                    <div class="text-center">
+                        <span ng-if="metadata.csw_url">
+                            <a href="{{metadata.csw_url}}" target="_blank" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-download-alt"></i> Télécharger la fiche (XML)</a>
+                        </span>
+                    </div>
+                    -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div id="modal-footer" class="">
+        <small>
+            <span class="pull-left">
+                <span class="glyphicon glyphicon-globe"></span>
+                {{config.app_name}} {{config.app_version}} - {{config.app_copyrights}}
+            </span>
+            <span class="pull-right">
+                <em class="text-info">Fiche {{metadata.mdFileIdentifier}} ({{metadata.mdLanguage}}) mise à jour le: {{metadata.mdDateStamp | date:'dd/MM/yyyy'}}</em>
+            </span>
+         </small>
+    </div>
+</div>

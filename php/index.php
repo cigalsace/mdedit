@@ -1,5 +1,10 @@
 <?php
 
+    $file_path = 'files/';
+    if (!file_exists($file_path)) {
+        mkdir($file_path, 0777, true);
+    }
+
     $response['success'] = False;
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -11,18 +16,10 @@
     if ($act == 'getXML') {
         $inputJSON = file_get_contents('php://input');
         $data = json_decode( $inputJSON, TRUE );
-        //$url = 'files/'.$data['filename'];
         $filename = uniqid().'.xml';
-        $url = 'files/'.$filename;
+        $url = $file_path.$filename;
         file_put_contents($url, $data['filecontent']);
-        /*
-        header('Content-Type: application/octet-stream');
-        header("Content-Transfer-Encoding: Binary"); 
-        header("Content-disposition: attachment; filename=\"" . basename($filename) . "\""); 
-        readfile($filename);
-        */
         $response['success'] = True;
-        //$response['url'] = 'php'.$url;
         $response['url'] = $url;
         $response['filename'] = $filename;
         echo json_encode($response);

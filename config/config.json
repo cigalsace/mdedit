@@ -1,0 +1,13 @@
+{
+    "app_name": "mdEdit",
+    "app_title": "mdEdit",
+    "app_version": "2.0.12",
+    "app_copyrights": "(c) CIGAL 2016",
+    "defaultLanguage": "fr",
+    "server_url_getxml": "php/index.php?act=getXML",
+    "views_file": "config/views/views.json",
+    "models_file": "config/models/models.json",
+    "locales_path": "config/locales/",
+    "geographicextents_list": "config/list_geographicextents.json",
+    "referencesystems_list": "config/list_referencesystems.json"
+}
