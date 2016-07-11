@@ -129,9 +129,9 @@ function jsonConverterSrv($rootScope) {
     }
 
     /**
-     * formToMdjs function
-     * @param  {[type]} json [description]
-     * @return {[type]}      [description]
+     * formToMdjs function: prepare json metadata to export to XML
+     * @param  {Object} json JSON metadata object to convert before export to XML
+     * @return {Object}      Result JSON metadata object to convert to XML
      */
     function formToMdjs(md) {
 
@@ -321,9 +321,9 @@ function jsonConverterSrv($rootScope) {
     }
 
     /**
-     * modelToForm function
-     * @param  {[type]} json [description]
-     * @return {[type]}      [description]
+     * modelToForm function: prepare JSON metadata object model to display in mdEdit form
+     * @param  {Object} json JSON metadata object from model before converting to form JSON object
+     * @return {Object}      Resulting JSON metadata object to display in mdEdit form 
      */
     function modelToForm(json) {
 
@@ -369,9 +369,9 @@ function jsonConverterSrv($rootScope) {
 
 
     /**
-     * mdjsToForm function
-     * @param  {[type]} json [description]
-     * @return {[type]}      [description]
+     * mdjsToForm function: convert mdjs JSON metadata object to display in mdEdit form
+     * @param  {Object} json origin JSON metadata object from mdjs
+     * @return {Object}      result JSON metadata object to display in mdEdit form
      */
     function mdjsToForm(json) {
 
@@ -498,6 +498,33 @@ function jsonConverterSrv($rootScope) {
             // dataSecurityUseLimitations
             json.dataSecurityUseLimitations = json.dataSecurityConstraints[0].dataSecurityUseLimitations;
         }
+        
+        // dataRsIdentifiers and dataMdIdentifiers to dataIdentifiers
+        if (!json.dataIdentifiers) {
+            json.dataIdentifiers = [];
+        }
+        if (json.dataRsIdentifiers) {
+            for (var rsId = 0; rsId < json.dataRsIdentifiers.length; rsId++) {
+                if (json.dataRsIdentifiers[rsId].code && json.dataRsIdentifiers[rsId].code != '') {
+                    var dataRsIdentifier = {
+                        code: json.dataRsIdentifiers[rsId].code,
+                        codeSpace: json.dataRsIdentifiers[rsId].codeSpace
+                    };
+                    json.dataIdentifiers.push(dataRsIdentifier);
+                }
+            }
+        }
+        if (json.dataMdIdentifiers) {
+            for (var mdId = 0; mdId < json.dataMdIdentifiers.length; mdId++) {
+                if (json.dataMdIdentifiers[mdId].code && json.dataMdIdentifiers[mdId].code != '') {
+                    var dataMdIdentifier = {
+                        code: json.dataMdIdentifiers[mdId].code,
+                    };
+                    json.dataIdentifiers.push(dataMdIdentifier);
+                }
+            }
+        }        
+        
 
         // console.log('mdjsToForm', json);
         return translate(json);
