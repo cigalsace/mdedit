@@ -506,7 +506,7 @@ function jsonConverterSrv($rootScope) {
         }
         if (json.dataRsIdentifiers) {
             for (var rsId = 0; rsId < json.dataRsIdentifiers.length; rsId++) {
-                if (json.dataRsIdentifiers[rsId].code && json.dataRsIdentifiers[rsId].code != '') {
+                if (json.dataRsIdentifiers[rsId].code && json.dataRsIdentifiers[rsId].code !== '') {
                     var dataRsIdentifier = {
                         code: json.dataRsIdentifiers[rsId].code,
                         codeSpace: json.dataRsIdentifiers[rsId].codeSpace
@@ -517,7 +517,7 @@ function jsonConverterSrv($rootScope) {
         }
         if (json.dataMdIdentifiers) {
             for (var mdId = 0; mdId < json.dataMdIdentifiers.length; mdId++) {
-                if (json.dataMdIdentifiers[mdId].code && json.dataMdIdentifiers[mdId].code != '') {
+                if (json.dataMdIdentifiers[mdId].code && json.dataMdIdentifiers[mdId].code !== '') {
                     var dataMdIdentifier = {
                         code: json.dataMdIdentifiers[mdId].code,
                     };
