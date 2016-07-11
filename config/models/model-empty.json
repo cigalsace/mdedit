@@ -21,7 +21,7 @@
     "mdDateStamp": "",
     "mdStandardName": "ISO 19115/19139",
     "mdStandardVersion": "Cor 1:2006",
-    "dataTitle": "Title get from model",
+    "dataTitle": "",
     "dataDates": [
         {
             "dateType": "",
@@ -73,13 +73,13 @@
     "dataKeywords": [
         {
             "keywords": [""],
-            "keyword": "test, test2",
+            "keyword": "",
             "keywordType": "theme",
-            "thesaurusName": "tt",
+            "thesaurusName": "",
             "thesaurusDates": [
                 {
-                    "dateType": "publication",
-                    "date": "2015-03-25"
+                    "dateType": "",
+                    "date": ""
                 }
             ]
         }

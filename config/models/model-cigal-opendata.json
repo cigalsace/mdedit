@@ -80,6 +80,16 @@
                     "date": ""
                 }
             ]
+        }, {
+            "keyword": "Géoportail",
+            "type": "theme",
+            "thesaurus_name": "",
+            "thesaurus_dates": [
+                {
+                    "type": "",
+                    "date": ""
+                }
+            ]
         }
     ],
     "data_contacts": [
@@ -126,13 +136,13 @@
             "specification": ""
         }
     ],
-    "data_uselimitations": ["ul1", "ul2"],
-    "data_legal_uselimitations": ["Licence Etalab 2011 (http://ddata.over-blog.com/xxxyyy/4/37/99/26/licence/Licence-Ouverte-Open-Licence.pdf)", "l_ul2"],
-    "data_legal_useconstraints": ["license", "otherRestrictions", "otherRestrictions"],
+    "data_uselimitations": [""],
+    "data_legal_uselimitations": ["Licence Etalab 2011 (https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence-Ouverte.pdf)", ""],
+    "data_legal_useconstraints": ["license", "otherRestrictions"],
     "data_legal_accessconstraints": ["copyright", "otherRestrictions"],
     "data_legal_accessinspireconstraints": ["Pas de restriction d'accès public"],
     "data_legal_accessotherconstraints": [""],
-    "data_security_uselimitations": ["s_ul1", "s_ul2"],
+    "data_security_uselimitations": [""],
     "data_security_classification": "unclassified",
     "data_linkages": [
         {
@@ -168,6 +178,5 @@
             ]
         }
     ]
-    
-}
 
+}

@@ -1,0 +1,185 @@
+{
+    "mdFileIdentifier": "FR-236700019-BdOCS20112012-CIGAL-V2",
+    "mdLanguage": "fre",
+    "mdCharacterSet": "utf8",
+    "mdHierarchyLevel": "dataset",
+    "mdContacts": [{
+        "individualName": "Lionel Méquignon",
+        "organisationName": "SIRS",
+        "positionName": "Chef de projets",
+        "phoneVoices": ["+33(3)20725364"],
+        "deliveryPoints": ["27, rue du carrousel - Parc de la Cimaise"],
+        "city": "VILLENEUVE-D'ASCQ",
+        "postalCode": "59650",
+        "emails": ["Lionel.mequignon@sirs-fr,com"],
+        "role": "author",
+        "deliveryPoint": "27, rue du carrousel - Parc de la Cimaise",
+        "phoneVoice": "+33(3)20725364",
+        "email": "Lionel.mequignon@sirs-fr,com"
+    }, {
+        "individualName": "Guillaume RYCKELYNCK",
+        "organisationName": "CIGAL",
+        "positionName": "Chargé de mission CIGAL",
+        "phoneVoices": ["03 88 15 65 48"],
+        "deliveryPoints": ["1, place Adrien ZELLER"],
+        "city": "STRASBOURG",
+        "postalCode": "67070",
+        "emails": ["guillaume.ryckelynck@region-alsace.eu"],
+        "role": "pointOfContact",
+        "deliveryPoint": "1, place Adrien ZELLER",
+        "phoneVoice": "03 88 15 65 48",
+        "email": "guillaume.ryckelynck@region-alsace.eu"
+    }],
+    "mdDateStamp": "2013-06-04T00:00:00.000Z",
+    "mdStandardName": "ISO 19115/19139",
+    "mdStandardVersion": "Cor 1:2006",
+    "dataReferenceSystems": [{
+        "code": "3948"
+    }],
+    "dataTitle": "DONNEES - Base de données d'occupation du sol CIGAL 2011/2012 v2 (BdOCS20112012-CIGAL v2) - Alsace",
+    "dataDates": [{
+        "date": "2013-05-17",
+        "dateType": "creation"
+    }],
+    "dataAbstract": "La base de données géographiques de l'occupation du sol CIGAL 20112012 v2 est issue de la mise à jour de la base de donnée d'occuaption du sol CIGAL 2008 v2 réalisée par photointerprétation sur la région Alsace au niveau 3 et 4 de nomenclature. Les images de référence thématique et  géométrique sont la les orthophotographies CIGAL de résolution 20cm de 2011 pour le Bas-Rhin et 2012 pour le Haut-Rhin.\nLa création de la BdOCS20112012-CIGAL v2 s'appuie sur les limites existantes de la BdOCS2008-CIGAL v2. Seuls les contours et/ou  codes des zones de changement d'occupation du sol entre les 2 dates ont été modifiés . Ce lot de données  a été produit pour permettre une exploitation optimale à l'échelle 1/10 000.  L'aire d'étude représente une superficie de 8330 km² et couvre l'Alsace.\nLes couches d’information ont également été généralisées et sont disponibles pour une exploitation au 1/50 000ème (niveau 2 de la nomenclature) et au 1/250 000ème (niveau 1 de la nomenclature).",
+    "dataPointOfContacts": [{
+        "individualName": "Guillaume RYCKELYNCK",
+        "organisationName": "CIGAL",
+        "positionName": "Chargé de mission",
+        "phoneVoices": ["03 88 15 65 48"],
+        "deliveryPoints": ["1, place Adrien Zeller"],
+        "city": "Strasbourg",
+        "postalCode": "67070",
+        "emails": ["guillaume.ryckelynck@region-alsace.eu"],
+        "role": "pointOfContact",
+        "deliveryPoint": "1, place Adrien Zeller",
+        "phoneVoice": "03 88 15 65 48",
+        "email": "guillaume.ryckelynck@region-alsace.eu"
+    }, {
+        "organisationName": "CIGAL",
+        "phoneVoices": ["03 88 15 68 67"],
+        "deliveryPoints": ["1, place Adrien Zeller\nBP 91006"],
+        "city": "STRASBOURG Cedex",
+        "postalCode": "67070",
+        "emails": ["contact@cigalsace.org"],
+        "logoUrl": "https://www.cigalsace.org/metadata/CIGAL/Logo/Logo_CIGAL.jpg",
+        "logoDescription": "Logo",
+        "role": "owner",
+        "deliveryPoint": "1, place Adrien Zeller\nBP 91006",
+        "phoneVoice": "03 88 15 68 67",
+        "email": "contact@cigalsace.org"
+    }, {
+        "individualName": "Lionel Méquignon",
+        "organisationName": "SIRS",
+        "positionName": "Chef de projets",
+        "phoneVoices": ["+33 (0)3 20 72 53 64"],
+        "deliveryPoints": ["27 rue du carrousel\nParc de la Cimaise"],
+        "city": "Villeneuve d'Ascq",
+        "postalCode": "59650",
+        "emails": ["Lionel.mequignon@sirs-fr.com"],
+        "logoUrl": "https://www.cigalsace.org/metadata/CIGAL/Logo/Logo_SIRS.jpg",
+        "logoDescription": "Logo",
+        "role": "author",
+        "deliveryPoint": "27 rue du carrousel\nParc de la Cimaise",
+        "phoneVoice": "+33 (0)3 20 72 53 64",
+        "email": "Lionel.mequignon@sirs-fr.com"
+    }],
+    "dataMaintenanceFrequency": "unknown",
+    "dataBrowseGraphics": [{
+        "fileName": "https://www.cigalsace.org/metadata/CIGAL/FR-236700019-BdOCS20112012-CIGAL-V2/FR-236700019-BdOCS20112012-CIGAL-V2.jpg",
+        "fileDescription": "BdOCS CIGAL v2",
+        "fileType": ".jpg"
+    }],
+    "dataKeywords": [{
+        "keywords": ["aménagement du territoire"],
+        "keywordType": "theme",
+        "keyword": "aménagement du territoire"
+    }, {
+        "keywords": ["occupation du sol"],
+        "keywordType": "theme",
+        "keyword": "occupation du sol"
+    }, {
+        "keywords": ["Alsace"],
+        "keywordType": "place",
+        "keyword": "Alsace"
+    }, {
+        "keywords": ["données"],
+        "keywordType": "theme",
+        "keyword": "données"
+    }, {
+        "keywords": ["environnement"],
+        "keywordType": "theme",
+        "keyword": "environnement"
+    }, {
+        "keywords": ["données ouvertes"],
+        "keywordType": "theme",
+        "keyword": "données ouvertes"
+    }, {
+        "keywords": ["Géoportail"],
+        "keywordType": "theme",
+        "keyword": "Géoportail"
+    }],
+    "dataUseLimitations": ["Licence ouverte Etalab.", "Mentions: \"Source : BdOCS CIGAL v2 (www.cigalsace.org)\".", "Se référer au guide d'utilisation de la base de données pour plus d'information."],
+    "dataLegalConstraints": [{
+        "dataLegalAccessConstraints": ["otherRestrictions"],
+        "dataLegalUseConstraints": ["license"],
+        "dataLegalOtherConstraints": ["Pas de restriction d’accès public selon INSPIRE"]
+    }],
+    "dataSecurityConstraints": [{
+        "dataSecurityClassification": "unclassified"
+    }],
+    "dataSpatialRepresentationType": "vector",
+    "dataScaleDenominator": "10000",
+    "dataLanguages": ["fre"],
+    "dataCharacterSet": "utf8",
+    "dataTopicCategories": ["environment"],
+    "dataDistributionFormats": [{
+        "formatName": "Shapefiles (shp)",
+        "formatVersion": "1.0",
+        "formatSpecification": "Fichier de formes ESRI"
+    }],
+    "dataLinkages": [{
+        "url": "https://www.cigalsace.org/metadata/CIGAL/FR-236700019-BdOCS20112012-CIGAL-V2/CIGAL_BdOCSv2_RapportMethodologique_v130614.pdf",
+        "name": "Rapport méthodologique",
+        "description": "Rapport méthodologique de production de la BdOCS CIGAL v2"
+    }, {
+        "url": "https://www.cigalsace.org/metadata/CIGAL/FR-236700019-BdOCS20112012-CIGAL-V2/CIGAL_BdOCSv2_GuideUtilisateur_v131122.pdf",
+        "name": "Guide utilisateur",
+        "description": "Guide d'utilisation de la BdOCS CIGAL v2"
+    }, {
+        "url": "https://www.cigalsace.org/metadata/CIGAL/FR-236700019-BdOCS20112012-CIGAL-V2/Etalab_Licence-Ouverte-Open-Licence.pdf",
+        "name": "Licence",
+        "description": "Licence ouverte Etalab"
+    }, {
+        "url": "https://www.cigalsace.org/geoserver/cigal/wms",
+        "protocol": "OGC:WMS",
+        "name": "CIGAL_BD_OCS_V2_2011_2012_ALSACE",
+        "description": "BdOCS 2011-12 CIGAL v2 (WMS)"
+    }, {
+        "url": "https://www.cigalsace.org/metadata/CIGAL/FR-236700019-BdOCS20112012-CIGAL-V2/FR-236700019-BdOCS20112012-CIGAL-V2.zip",
+        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+        "description": "Télécharger la BdOCS 2011-12 CIGAL v2 (SHP)"
+    }],
+    "dataGeographicExtents": [{
+        "dataExtentName": "Alsace",
+        "dataGeographicExtentWestBound": "6.84",
+        "dataGeographicExtentEastBound": "8.23",
+        "dataGeographicExtentSouthBound": "47.42",
+        "dataGeographicExtentNorthBound": "49.08"
+    }],
+    "dataDateCreation": "2013-05-17T00:00:00.000Z",
+    "dataLiStatement": "La base de données géographiques de l'occupation du sol  CIGAL 2011/2012 v2 a été produite par Photo-Interprétation Assistée par Ordinateur (PIAO), c'est-à-dire directement à l'écran par numérisation des objets de l'occupation du sol sur les différentes photographies aériennes à 20 cm composant l’aire d’étude, suivant la nomenclature BdOCS établie par le partenariat CIGAL. La PIAO s’appuie sur les nombreuses données exogènes préexistantes et mises à disposition. La nomenclature dite emboîtée, de type CORINE Land Cover, comprend 4 niveaux hiérarchiques, comprenant 4 thèmes au niveau général et 55 postes de typologie d'occupation du sol au niveau le plus détaillé. L'échelle de numérisation et d’interprétation est 1/8 500 pour une exploitation recommandée à une échelle inférieure ou égale à 1/10 000. La largeur minimale d’interprétation des objets linéaires est de 12 mètres .Pour assurer une bonne fiabilité de la BdOCS20112012-CIGAL v2, deux contrôles qualité ont été établis. L’un en interne (CQI) effectué par SIRS, producteur de la base de données, et l’autre en externe (CQE). De plus, des matrices de confusion par département ont été effectuées.\nLe taux de fiabilité est qualifié dans l’attribut «Fiabilité» de la donnée SIG. Le taux de fiabilité global est de 85 % sur l’ensemble du territoire.\nLes couches d’information ont également été généralisées et sont disponibles pour une exploitation au 1/50 000ème (niveau 2 de la nomenclature - 11 postes) et au 1/250 000ème (niveau 1 de la nomenclature - 4 postes).",
+    "dataDqLevel": "dataset",
+    "dataInspireKeywords": ["Occupation des terres"],
+    "dataLegalAccessInspireConstraints": ["Pas de restriction d'accès public selon INSPIRE"],
+    "dataLegalOtherConstraints": [],
+    "dataLegalAccessConstraints": ["otherRestrictions"],
+    "dataLegalUseConstraints": ["license"],
+    "dataSecurityClassification": "unclassified",
+    "dataIdentifiers": [{
+        "code": "FR-236700019-BdOCS20112012-CIGAL-V2",
+        "codeSpace": "MD_URI"
+    }, {
+        "code": "FR-236700019-130530-BdOCS20112012-CIGAL-V2"
+    }]
+}
