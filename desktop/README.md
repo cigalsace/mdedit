@@ -27,7 +27,7 @@ Prérequis: Python 2 et virtualenv installé + connexion internet pour l'utilisa
 
 Mode opératoire:
 
-'''
+```
 cd ./mdEdit_desktop
 
 # Create a new python virtualenv
@@ -54,7 +54,7 @@ cd .\dist\www
 # Rename and zip .\dist directory
 rename dist mdEdit_desktop
 # (...) zip directory
-'''
+```
 
 
 ## Solution alternative:
