@@ -323,7 +323,7 @@ function jsonConverterSrv($rootScope) {
     /**
      * modelToForm function: prepare JSON metadata object model to display in mdEdit form
      * @param  {Object} json JSON metadata object from model before converting to form JSON object
-     * @return {Object}      Resulting JSON metadata object to display in mdEdit form 
+     * @return {Object}      Resulting JSON metadata object to display in mdEdit form
      */
     function modelToForm(json) {
 
@@ -499,7 +499,7 @@ function jsonConverterSrv($rootScope) {
             // dataSecurityUseLimitations
             json.dataSecurityUseLimitations = json.dataSecurityConstraints[0].dataSecurityUseLimitations;
         }
-        
+
         // dataRsIdentifiers and dataMdIdentifiers to dataIdentifiers
         if (!json.dataIdentifiers) {
             json.dataIdentifiers = [];
@@ -524,10 +524,11 @@ function jsonConverterSrv($rootScope) {
                     json.dataIdentifiers.push(dataMdIdentifier);
                 }
             }
-        }        
-        
+        }
+
 
         // console.log('mdjsToForm', json);
+        console.log(JSON.stringify(json));
         return translate(json);
     }
 
@@ -587,6 +588,58 @@ function jsonConverterSrv($rootScope) {
                 }
             }
         }
+
+        /**
+         * translateValues function
+         * @param  {[type]} dataname [description]
+         * @param  {[type]} listname [description]
+         * @param  {[type]} field    [description]
+         * @return {[type]}          [description]
+         */
+        function translateValues(dataname, listname, field) {
+            field = field || false;
+            if (json[dataname]) {
+                var type;
+                type = typeof(json[dataname]);
+                if (Array.isArray(json[dataname])) {
+                    type = 'array';
+                }
+                var list = $rootScope.codelists[listname];
+                var item, option;
+                if (type == 'string') {
+                    code = json[dataname];
+                    for (option in list) {
+                        if (code.toLowerCase() == list[option].value.toLowerCase()) {
+                            json[dataname] = list[option].id;
+                        }
+                    }
+                } else {
+                    for (item in json[dataname]) {
+                        if (typeof(json[dataname][item]) == 'string') {
+                            code = json[dataname][item];
+                            for (option in list) {
+                                if (code.toLowerCase() == list[option].value.toLowerCase()) {
+                                    json[dataname][item] = list[option].id;
+                                }
+                            }
+                        } else {
+                            code = json[dataname][item][field];
+                            for (option in list) {
+                                if (code.toLowerCase() == list[option].value.toLowerCase()) {
+                                    json[dataname][item] = {};
+                                    json[dataname][item][field] = list[option].id;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Convert Inspire keywords to code value (english)
+        translateValues('dataInspireKeywords', 'MD_InspireTopicCategoryCode');
+
+        // Translate fields for display in user friendly view
         translateCodes('dataSpatialRepresentationType', 'dataSpatialRepresentationTypeValues', 'MD_SpatialRepresentationTypeCode');
         translateCodes('dataMaintenanceFrequency', 'dataMaintenanceFrequencyValues', 'MD_MaintenanceFrequencyCode');
         translateCodes('dataLegalAccessInspireConstraints', 'dataLegalAccessInspireConstraintsValues', 'MD_InspireRestrictionCode');
