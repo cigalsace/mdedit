@@ -439,12 +439,13 @@ function jsonConverterSrv($rootScope) {
             for (var kw = 0; kw < json.dataKeywords.length; kw++) {
                 json.dataKeywords[kw].keyword = json.dataKeywords[kw].keywords.join(', ');
                 if (json.dataKeywords[kw].thesaurusName) {
-                    if (json.dataKeywords[kw].thesaurusName.toLowerCase()
-                        .indexOf('inspire') > -1) {
+                    if (json.dataKeywords[kw].thesaurusName.toLowerCase().indexOf('inspire') > -1) {
                         json.dataInspireKeywords = json.dataInspireKeywords.concat(json.dataKeywords[kw].keywords);
                     } else {
                         dataKeywords.push(json.dataKeywords[kw]);
                     }
+                } else {
+                    dataKeywords.push(json.dataKeywords[kw]);
                 }
             }
             json.dataKeywords = dataKeywords;
