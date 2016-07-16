@@ -14,8 +14,9 @@ localesSrv.$inject = ['$http', '$location'];
 function localesSrv($http, $location) {
 
     var localesSrv = {
+        getLocales: getLocales,
         getLanguage: getLanguage,
-        getLocales: getLocales
+        getLocale: getLocale
     };
 
     return localesSrv;
@@ -39,7 +40,7 @@ function localesSrv($http, $location) {
         return userLanguage;
     }
 
-    function getLocales(locales_path, lg) {
+    function getLocale(locales_path, lg) {
         return $http
             .get(locales_path + lg + '/locales.json')
             .then(function(response) {
@@ -47,6 +48,17 @@ function localesSrv($http, $location) {
             })
             .catch(function(reason) {
                 console.log("Error: can't get locales file for " + lg + " (reason: " + reason + ").");
+            });
+    }
+
+    function getLocales(locales_path) {
+        return $http
+            .get(locales_path + '/locales.json')
+            .then(function(response) {
+                return response.data;
+            })
+            .catch(function(reason) {
+                console.log("Error: can't get locales list (reason: " + reason + ").");
             });
     }
 

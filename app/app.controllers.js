@@ -9,14 +9,14 @@ mdEditCtrl.$inject = ['$scope', '$rootScope', '$http', '$sce', '$uibModal', '$lo
 
 function mdEditCtrl($scope, $rootScope, $http, $sce, $uibModal, $log, configSrv, localesSrv, modelsSrv, viewsSrv, mdjsSrv, jsonConverterSrv) {
 
+    $scope.pageLoaded = false;
+
     $scope.$on('configLoaded', function() {
         loadPage();
         $scope.pageLoaded = true;
     });
 
     function loadPage() {
-
-        $scope.showAllFields = false;
 
         $scope.clearSearch = function() {
             $scope.fieldSearch = '';

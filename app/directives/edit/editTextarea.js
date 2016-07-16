@@ -40,8 +40,9 @@ function editTextareaDirective(editTextareaTemplateurl) {
      * @return {[type]}         [description]
      */
     function link(scope, element, attrs) {
-        scope.$watch('pageLoaded', function(newVal) {
-            if (newVal) {init();}
+        // scope.$watch('pageLoaded', function(newVal) {
+        scope.$watchGroup(['pageLoaded', 'userLanguage'], function(newValue, oldValue) {
+            if (newValue[0] || newValue[1] !== oldValue[1]) {init();}
         });
 
         function init() {

@@ -1,135 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app="mdEditApp">
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="noindex,nofollow" />
-	<title>MD Edit</title>
-	<link rel="stylesheet" href="./lib/bootstrap/3.3.6/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="./css/mdedit.css" />
-	<style type="text/css">
-	</style>
-	<base href=".">
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex,nofollow" />
+		<title>MD Edit</title>
+		<link rel="stylesheet" href="./lib/bootstrap/3.3.6/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/mdedit.css" />
+		<style type="text/css">
 
-<body ng-controller="mdEditCtrl">
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">mdedit</a>
-			</div>
-			<div class="collapse navbar-collapse" id="navbar-menu">
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group has-feedback">
-						<div class="input-group input-group-sm">
-							<input type="text" class="form-control" id="txt-search" placeholder="Search" ng-model="fieldSearch" disabled>
-							<div class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="clearSearch()" disabled>
-									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-								</button>
+		</style>
+		<base href=".">
+	</head>
+
+	<body ng-controller="mdEditCtrl">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">mdedit</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group has-feedback">
+							<div class="input-group input-group-sm">
+								<input type="text" class="form-control" id="txt-search" placeholder="Search" ng-model="fieldSearch" disabled>
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="clearSearch()" disabled>
+										<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									</button>
+								</div>
 							</div>
 						</div>
-					</div>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="" uib-tooltip="Aide" tooltip-trigger="mouseenter" tooltip-placement="bottom">
-						<a href="#" role="button" class="glyphicon glyphicon-info-sign" ng-click="modalDoc('doc/html/mdEdit.html')"><span class="visible-xs-inline"> {{ui.bt_help}}</span></a>
-					</li>
-					<li class="" uib-tooltip="Importer un XML" tooltip-trigger="mouseenter" tooltip-placement="bottom">
-						<a href="#" role="button" class="glyphicon glyphicon-import" ng-click="modalUpload()"><span class="visible-xs-inline"> {{ui.bt_upload_xml}}</span></a>
-					</li>
-					<li class="" uib-tooltip="Générer un XML" tooltip-trigger="mouseenter" tooltip-placement="bottom">
-						<a href="#" role="button" class="glyphicon glyphicon-export" ng-click="modalGetXML()"><span class="visible-xs-inline"> {{ui.bt_download_xml}}</span></a>
-					</li>
-					<li class="" uib-tooltip="Permuter entre les modes 'Edition' et 'Visualisation'" tooltip-trigger="mouseenter" tooltip-placement="bottom">
-						<!--<a href="#" role="button" ng-click="modalViewMD()">{{ui.bt_view_xml}}</a>-->
-						<a href="#" role="button" class="glyphicon glyphicon-pencil" ng-click="changeView(0)" ng-show="template_url == views[1].path"><span class="visible-xs-inline"> {{ui.bt_view_mode}}</span></a>
-						<a href="#" role="button" class="glyphicon glyphicon-eye-open" ng-click="changeView(1)" ng-show="template_url == views[0].path"><span class="visible-xs-inline"> {{ui.bt_edit_mode}}</span></a>
-					</li>
-					<li ng-show="template_url == views[0].path" uib-tooltip="Permuter entre l'affichage 'simple' et 'complet'" tooltip-trigger="mouseenter" tooltip-placement="bottom">
-						<!--<a href="#" role="button" ng-click="modalViewMD()">{{ui.bt_view_xml}}</a>-->
-						<a href="#" role="button" class="glyphicon glyphicon-th" ng-init="showAllFields=False" ng-click="showAllFields = !showAllFields" ng-show="!showAllFields"><span class="visible-xs-inline"> {{ui.bt_simple_view}}</span></a>
-						<a href="#" role="button" class="glyphicon glyphicon-th-large" ng-click="showAllFields = !showAllFields" ng-show="showAllFields"><span class="visible-xs-inline"> {{ui.bt_complet_view}}</span></a>
-					</li>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="" uib-tooltip="Aide" tooltip-trigger="mouseenter" tooltip-placement="bottom">
+							<a href="#" role="button" class="glyphicon glyphicon-info-sign" ng-click="modalDoc('doc/html/mdEdit.html')"><span class="visible-xs-inline"> {{ui.bt_help}}</span></a>
+						</li>
+						<li class="" uib-tooltip="Importer un XML" tooltip-trigger="mouseenter" tooltip-placement="bottom">
+							<a href="#" role="button" class="glyphicon glyphicon-import" ng-click="modalUpload()"><span class="visible-xs-inline"> {{ui.bt_upload_xml}}</span></a>
+						</li>
+						<li class="" uib-tooltip="Générer un XML" tooltip-trigger="mouseenter" tooltip-placement="bottom">
+							<a href="#" role="button" class="glyphicon glyphicon-export" ng-click="modalGetXML()"><span class="visible-xs-inline"> {{ui.bt_download_xml}}</span></a>
+						</li>
+						<li class="" uib-tooltip="Permuter entre les modes 'Edition' et 'Visualisation'" tooltip-trigger="mouseenter" tooltip-placement="bottom">
+							<!--<a href="#" role="button" ng-click="modalViewMD()">{{ui.bt_view_xml}}</a>-->
+							<a href="#" role="button" class="glyphicon glyphicon-pencil" ng-click="changeView(0)" ng-show="template_url == views[1].path"><span class="visible-xs-inline"> {{ui.bt_view_mode}}</span></a>
+							<a href="#" role="button" class="glyphicon glyphicon-eye-open" ng-click="changeView(1)" ng-show="template_url == views[0].path"><span class="visible-xs-inline"> {{ui.bt_edit_mode}}</span></a>
+						</li>
+						<li ng-show="template_url == views[0].path" uib-tooltip="Permuter entre l'affichage 'simple' et 'complet'" tooltip-trigger="mouseenter" tooltip-placement="bottom">
+							<!--<a href="#" role="button" ng-click="modalViewMD()">{{ui.bt_view_xml}}</a>-->
+							<a href="#" role="button" class="glyphicon glyphicon-th" ng-init="showAllFields=False" ng-click="showAllFields = !showAllFields" ng-show="!showAllFields"><span class="visible-xs-inline"> {{ui.bt_simple_view}}</span></a>
+							<a href="#" role="button" class="glyphicon glyphicon-th-large" ng-click="showAllFields = !showAllFields" ng-show="showAllFields"><span class="visible-xs-inline"> {{ui.bt_complet_view}}</span></a>
+						</li>
 
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<div id="content" class="container" ng-include="template_url">
-	</div>
-
-	<footer id="footer">
-		<nav class="navbar navbar-default navbar-fixed-bottom">
-			<div class="container-fluid">
-				<p class="navbar-text navbar-left">Copyright © 2016 - <a href="https://www.cigalsace.org" class="navbar-link">CIGAL</a></p>
-				<p class="navbar-text navbar-right">
-					<a href="" ng-click="modalDoc('mentions', $event)" class="navbar-link">Mentions légales</a></p>
+					</ul>
+				</div>
 			</div>
 		</nav>
-	</footer>
 
-	<!-- JS Scripts -->
-	<script src="./lib/showdown/showdown.js"></script>
-	<script src="./lib/jquery/jquery-2.2.4.min.js"></script>
-	<script src="./lib/angular/1.5.3/angular.js"></script>
-	<script src="./lib/angular/1.5.3/i18n/angular-locale_fr-fr.js"></script>
-	<script src="./lib/ui-bootstrap/ui-bootstrap-tpls-1.3.0.js"></script>
-	<script src="./lib/moment/moment-with-locales.js"></script>
-	<script src="./lib/vkbeautify/vkbeautify.js"></script>
-	<script src="./lib/mdjs/mdjs.js"></script>
-	<script src="./app/config/config.js"></script>
-	<script src="./app/modalDoc/modalDoc.js"></script>
-	<script src="./app/modalDoc/modalDoc.controllers.js"></script>
-	<script src="./app/modalDoc/modalDoc.services.js"></script>
-    <script src="./app/modalGetXml/modalGetXml.js"></script>
-    <script src="./app/modalGetXml/modalGetXml.controllers.js"></script>
-    <!-- <script src="./app/modalGetXml/modalGetXml.services.js"></script> -->
-    <script src="./app/modalSetXml/modalSetXml.js"></script>
-    <script src="./app/modalSetXml/modalSetXml.controllers.js"></script>
-    <!-- <script src="./app/modalSetXml/modalSetXml.services.js"></script> -->
-    <script src="./app/locales/locales.js"></script>
-	<script src="./app/models/models.js"></script>
-	<script src="./app/jsonConverter/jsonConverter.js"></script>
-	<script src="./app/views/views.js"></script>
-	<script src="./app/mdjs/mdjs.js"></script>
-	<script src="./app/mdjs/empty-json.js"></script>
-	<script src="./app/extents/extents.js"></script>
-	<script src="./app/checkValues/checkValues.js"></script>
-	<!-- <script src="./js/mdedit.js"></script> -->
-	<script src="./app/app.js"></script>
-	<script src="./app/app.filters.js"></script>
-	<script src="./app/app.controllers.js"></script>
-	<script src="./app/app.services.js"></script>
-	<script src="./app/directives/edit/editAccordionHeader.js"></script>
-	<script src="./app/directives/edit/editInput.js"></script>
-	<script src="./app/directives/edit/editTextarea.js"></script>
-	<script src="./app/directives/edit/editSelect.js"></script>
-	<script src="./app/directives/edit/editMultiSelect.js"></script>
-	<script src="./app/directives/edit/editMultiTextarea.js"></script>
-	<script src="./app/directives/edit/editDate.js"></script>
-	<!-- <script src="./app/directives/edit/editReferenceSystems.js"></script> -->
-	<script src="./app/directives/edit/editDataTitle.js"></script>
-	<script src="./app/directives/edit/editContacts.js"></script>
-	<script src="./app/directives/edit/editDataIdentifiers.js"></script>
-	<script src="./app/directives/edit/editDataBrowsegraphics.js"></script>
-	<script src="./app/directives/edit/editDataTemporalExtents.js"></script>
-	<script src="./app/directives/edit/editDataGeographicExtents.js"></script>
-	<script src="./app/directives/edit/editDataLinkages.js"></script>
-	<script src="./app/directives/edit/editDataReferenceSystems.js"></script>
-	<script src="./app/directives/edit/editDataDistributionFormats.js"></script>
-	<script src="./app/directives/edit/editDataKeywords.js"></script>
-	<script language="javascript" type="text/javascript">
-		// console.log(mdjs.empty_json.contact);
-	</script>
-</body>
+		<div id="content" class="container" ng-include="template_url">
+		</div>
+
+		<footer id="footer">
+			<nav class="navbar navbar-default navbar-fixed-bottom">
+				<div class="container-fluid">
+					<div class="navbar-text navbar-left">
+						Copyright © 2016 - <a href="https://www.cigalsace.org" class="navbar-link">CIGAL</a>
+					</div>
+					<div class="navbar-text navbar-right">
+						<a href="" ng-click="modalDoc('mentions', $event)" class="navbar-link">Mentions légales</a>
+						-
+						<!-- changeLocales directive -->
+						<span change-locales></span>
+					</div>
+				</div>
+			</nav>
+		</footer>
+
+		<!-- JS Scripts -->
+		<script src="./lib/showdown/showdown.js"></script>
+		<script src="./lib/jquery/jquery-2.2.4.min.js"></script>
+		<script src="./lib/angular/1.5.3/angular.js"></script>
+		<script src="./lib/angular/1.5.3/i18n/angular-locale_fr-fr.js"></script>
+		<script src="./lib/ui-bootstrap/ui-bootstrap-tpls-1.3.0.js"></script>
+		<script src="./lib/moment/moment-with-locales.js"></script>
+		<script src="./lib/vkbeautify/vkbeautify.js"></script>
+		<script src="./lib/mdjs/mdjs.js"></script>
+		<script src="./app/config/config.js"></script>
+		<script src="./app/modalDoc/modalDoc.js"></script>
+		<script src="./app/modalDoc/modalDoc.controllers.js"></script>
+		<script src="./app/modalDoc/modalDoc.services.js"></script>
+		<script src="./app/modalGetXml/modalGetXml.js"></script>
+		<script src="./app/modalGetXml/modalGetXml.controllers.js"></script>
+		<!-- <script src="./app/modalGetXml/modalGetXml.services.js"></script> -->
+		<script src="./app/modalSetXml/modalSetXml.js"></script>
+		<script src="./app/modalSetXml/modalSetXml.controllers.js"></script>
+		<!-- <script src="./app/modalSetXml/modalSetXml.services.js"></script> -->
+		<script src="./app/locales/locales.js"></script>
+		<script src="./app/models/models.js"></script>
+		<script src="./app/jsonConverter/jsonConverter.js"></script>
+		<script src="./app/views/views.js"></script>
+		<script src="./app/mdjs/mdjs.js"></script>
+		<script src="./app/mdjs/empty-json.js"></script>
+		<script src="./app/extents/extents.js"></script>
+		<script src="./app/checkValues/checkValues.js"></script>
+		<!-- <script src="./js/mdedit.js"></script> -->
+		<script src="./app/app.js"></script>
+		<script src="./app/app.filters.js"></script>
+		<script src="./app/app.controllers.js"></script>
+		<script src="./app/app.services.js"></script>
+		<script src="./app/directives/changeLocales/changeLocales.js"></script>
+		<script src="./app/directives/edit/editAccordionHeader.js"></script>
+		<script src="./app/directives/edit/editInput.js"></script>
+		<script src="./app/directives/edit/editTextarea.js"></script>
+		<script src="./app/directives/edit/editSelect.js"></script>
+		<script src="./app/directives/edit/editMultiSelect.js"></script>
+		<script src="./app/directives/edit/editMultiTextarea.js"></script>
+		<script src="./app/directives/edit/editDate.js"></script>
+		<!-- <script src="./app/directives/edit/editReferenceSystems.js"></script> -->
+		<script src="./app/directives/edit/editDataTitle.js"></script>
+		<script src="./app/directives/edit/editContacts.js"></script>
+		<script src="./app/directives/edit/editDataIdentifiers.js"></script>
+		<script src="./app/directives/edit/editDataBrowsegraphics.js"></script>
+		<script src="./app/directives/edit/editDataTemporalExtents.js"></script>
+		<script src="./app/directives/edit/editDataGeographicExtents.js"></script>
+		<script src="./app/directives/edit/editDataLinkages.js"></script>
+		<script src="./app/directives/edit/editDataReferenceSystems.js"></script>
+		<script src="./app/directives/edit/editDataDistributionFormats.js"></script>
+		<script src="./app/directives/edit/editDataKeywords.js"></script>
+		<script language="javascript" type="text/javascript">
+			// console.log(mdjs.empty_json.contact);
+		</script>
+	</body>
 
 </html>

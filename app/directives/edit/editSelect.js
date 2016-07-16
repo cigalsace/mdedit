@@ -40,8 +40,9 @@ function editSelectDirective(editSelectTemplateurl, checkValuesSrv, $rootScope) 
      * @return {[type]}         [description]
      */
     function link(scope, element, attrs) {
-        scope.$watch('pageLoaded', function(newVal) {
-            if (newVal) {init();}
+        // scope.$watch('pageLoaded', function(newVal) {
+        scope.$watchGroup(['pageLoaded', 'userLanguage'], function(newValue, oldValue) {
+            if (newValue[0] || newValue[1] !== oldValue[1]) {init();}
         });
 
         function init() {
@@ -64,7 +65,7 @@ function editSelectDirective(editSelectTemplateurl, checkValuesSrv, $rootScope) 
                     // console.log(attrs.onChange, attrs.field, 'Values', scope.list);
                     // $rootScope.metadata = checkValuesSrv[attrs.onChange]($rootScope.metadata, attrs.field, attrs.field + 'Values', attrs.list);
                     $rootScope.metadata = checkValuesSrv[attrs.onChange]($rootScope.metadata);
-                }
+                };
             }
         }
     }

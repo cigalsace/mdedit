@@ -159,7 +159,7 @@
         },
         "dataTitle": {
             "id": "dataTitle",
-            "label": "Titre",
+            "label": "Title",
             "placeholder": "DONNEES: ...",
             "description": "Titre de la base de données",
             "_keywords": "titre, données"
@@ -760,15 +760,15 @@
         },
         "dataLinkages": {
             "id": "dataLinkages",
-            "label": "Ressources",
+            "label": "Resources",
             "placeholder": "",
             "description": "Ressources relatives à la base de données.",
             "_keywords": "ressources, données",
             "children": {
                 "name": {
                     "id": "name",
-                    "label": "Nom de la ressource",
-                    "placeholder": "ex.: Guide d'utilisation de la BdOCS 2008 CIGAL v2. ",
+                    "label": "Ressource name",
+                    "placeholder": "ex.: User guide of BdOCS 2008 CIGAL v2. ",
                     "description": "Nom de la ressource.",
                     "_keywords": "ressource, données"
                 },

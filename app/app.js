@@ -25,15 +25,24 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
               .then(function(data) {
                   $rootScope.config = data;
                   // console.log(data);
+                  getLocales();
                   $rootScope.userLanguage = localesSrv.getLanguage(data.defaultLanguage);
-                  getLocales($rootScope.userLanguage);
+                  getLocale($rootScope.userLanguage);
                   getViews($rootScope.userLanguage);
               });
       }
 
+      // Get locales list from translate service
+      function getLocales() {
+          localesSrv.getLocales($rootScope.config.locales_path)
+              .then(function(data) {
+                  $rootScope.locales = data.locales;
+              });
+      }
+
       // Get locales from translate service
-      function getLocales(userLanguage) {
-          localesSrv.getLocales($rootScope.config.locales_path, userLanguage)
+      function getLocale(userLanguage) {
+          localesSrv.getLocale($rootScope.config.locales_path, userLanguage)
               .then(function(data) {
                   $rootScope.ui = data.ui;
                   $rootScope.md_errors = data.md_errors;

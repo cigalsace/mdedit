@@ -56,17 +56,17 @@
                     "description": "Organisme à contacter.",
                     "_keywords": "organisme, contact, métadonnées"
                 },
-                "phoneVoices": {
+                "phoneVoice": {
                     "id": "phoneVoices",
-                    "label": "Téléphone",
-                    "placeholder": "Téléphone",
+                    "label": "Voice",
+                    "placeholder": "0123456789",
                     "description": "Numéro de téléphone du contact.",
                     "_keywords": "téléphone, contact, métadonnées"
                 },
-                "emails": {
+                "email": {
                     "id": "emails",
                     "label": "Email",
-                    "placeholder": "Email",
+                    "placeholder": "me@org.dom",
                     "description": "Email du contact.",
                     "_keywords": "email, contact, métadonnées"
                 },
@@ -145,7 +145,7 @@
         "dataTitle": {
             "id": "dataTitle",
             "label": "Title",
-            "placeholder": "DONNEES: ...",
+            "placeholder": "DATA: ...",
             "description": "Titre de la base de données",
             "_keywords": "titre, données"
         },
@@ -262,7 +262,7 @@
         },
         "dataMaintenanceFrequencyCode": {
             "id": "dataMaintenanceFrequencyCode",
-            "label": "Rythme de mise à jour",
+            "label": "Update rythm",
             "placeholder": "unknown",
             "description": "Fréquence de mise à jour des données.",
             "_keywords": "fréquence, rythme, données"
