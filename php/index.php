@@ -12,7 +12,7 @@
     if (isset($_GET['url'])) {
         $url = $_GET['url'];
     }
-    
+
     if ($act == 'getXML') {
         $inputJSON = file_get_contents('php://input');
         $data = json_decode( $inputJSON, TRUE );
@@ -26,9 +26,14 @@
     } elseif ($act == 'downloadXML') {
         if ($url) {
             header('Content-Type: application/octet-stream');
-            header("Content-Transfer-Encoding: Binary"); 
-            header("Content-disposition: attachment; filename=\"" . basename($url) . "\""); 
+            header("Content-Transfer-Encoding: Binary");
+            header("Content-disposition: attachment; filename=\"" . basename($url) . "\"");
             readfile($url);
+        }
+    } elseif ($act == 'getURL') {
+        if ($url) {
+            $data = file_get_contents($url);
+            echo $data;
         }
     } else {
         echo json_encode($response);

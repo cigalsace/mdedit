@@ -8,9 +8,9 @@
 angular.module('modalSetXml', [])
     .controller('modalSetXmlCtrl', modalSetXmlCtrl);
 
-modalSetXmlCtrl.$inject = ['$http', '$scope', '$rootScope', '$uibModalInstance', 'scopeParent', 'localesSrv', 'modelsSrv', 'mdjsSrv', 'jsonConverterSrv'];
+modalSetXmlCtrl.$inject = ['$http', '$scope', '$rootScope', '$uibModalInstance', 'scopeParent', 'localesSrv', 'modelsSrv', 'mdjsSrv', 'jsonConverterSrv', 'xmlSrv'];
 
-function modalSetXmlCtrl($http, $scope, $rootScope, $uibModalInstance, scopeParent, localesSrv, modelsSrv, mdjsSrv, jsonConverterSrv) {
+function modalSetXmlCtrl($http, $scope, $rootScope, $uibModalInstance, scopeParent, localesSrv, modelsSrv, mdjsSrv, jsonConverterSrv, xmlSrv) {
 
     var userLanguage = localesSrv.getLanguage();
     $scope.modelValue = 'value_' + userLanguage;
@@ -23,6 +23,8 @@ function modalSetXmlCtrl($http, $scope, $rootScope, $uibModalInstance, scopePare
     $scope.getMetadataModel = getMetadataModel;
 
     $scope.getFileContent = getFileContent;
+
+    $scope.getUrl = getUrl;
 
     ////////////////////////////////////////////////////////////////////////////
 
@@ -44,13 +46,23 @@ function modalSetXmlCtrl($http, $scope, $rootScope, $uibModalInstance, scopePare
         var file = $('#file_input').prop('files')[0];
         var reader = new FileReader();
         reader.onload = function(e) {
-            scopeParent.xml = reader.result;
-            scopeParent.loadXml();
+            xmlSrv.loadXml(reader.result);
         };
         reader.readAsText(file);
-        scopeParent.template_url = scopeParent.views[1].path;
-        // scopeParent.changeView(1);
+        // TODO: Use service to change view
+        scopeParent.changeView(1);
         //Fermeture de la fenêtre modale
+        $uibModalInstance.close();
+    }
+
+    function getUrl(url_xml) {
+        xmlSrv.getFile(url_xml, function(data) {
+            // scopeParent.xml = data;
+            xmlSrv.loadXml(data);
+        });
+        // TODO: Use service to change view
+        scopeParent.changeView(1);
+        // scopeParent.template_url = scopeParent.views[1].path;
         $uibModalInstance.close();
     }
 

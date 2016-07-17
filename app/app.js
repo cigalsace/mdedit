@@ -5,13 +5,13 @@
 angular.module('mdEditApp', ['ui.bootstrap', 'mdEdit']);
 
 // Déclaration du module mdEdit
-angular.module('mdEdit', ['config', 'locales', 'models', 'views', 'mdjs', 'modalDoc', 'modalGetXml', 'modalSetXml', 'extents', 'jsonConverter', 'checkValues']);
+angular.module('mdEdit', ['config', 'locales', 'models', 'views', 'mdjs', 'modalDoc', 'modalGetXml', 'modalSetXml', 'extents', 'jsonConverter', 'checkValues', 'xml']);
 
 angular.module('mdEdit').config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
-angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, viewsSrv, localesSrv){
+angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv){
 
       // Config file URL
       var config_file = 'config/config.json';
@@ -69,15 +69,20 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
       // Get list of models from models service
       // Get model from models service (get URL param or the first item of models list)
       function getModels() {
-          modelsSrv.getList($rootScope.config.models_file, function(data) {
-              $rootScope.models = data;
-          })
-          .then(function() {
-              modelsSrv.getModel($rootScope.models, false, function(model) {
-                  //   $rootScope.metadata = model.data;
-                  //   $rootScope.model = model.path;
-                  $rootScope.$broadcast('configLoaded');
-              });
+            modelsSrv.getList($rootScope.config.models_file, function(data) {
+                $rootScope.models = data;
+            })
+            .then(function() {
+                // If 'xml' query parameters is defined, load XML else load model (from query parameter 'model' or default model)
+                if (xmlSrv.getXml()) {
+                    // Send configLoaded signal to start mdEdit controller
+                    $rootScope.$broadcast('configLoaded');
+                } else {
+                  modelsSrv.getModel($rootScope.models, false, function(model) {
+                      // Send configLoaded signal to start mdEdit controller
+                      $rootScope.$broadcast('configLoaded');
+                  });
+              }
           });
       }
 });

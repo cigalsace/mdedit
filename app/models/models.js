@@ -47,10 +47,9 @@ function modelsSrv($http, $location, $rootScope, jsonConverterSrv) {
         model -= 1;
         $http.get(modelsList[model].path)
             .success(function(data) {
-                //var model = {};
                 console.log('jsonConverterSrv.modelToForm(data)');
                 $rootScope.metadata = jsonConverterSrv.modelToForm(data);
-                console.log($rootScope.metadata);
+                // console.log($rootScope.metadata);
                 $rootScope.model = model;
                 callback(model);
             })

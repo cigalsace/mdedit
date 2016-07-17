@@ -22,13 +22,13 @@ function mdEditCtrl($scope, $rootScope, $http, $sce, $uibModal, $log, configSrv,
             $scope.fieldSearch = '';
         };
 
-        $scope.loadXml = function() {
-            var data = mdjsSrv.toJson($scope.xml);
-            console.log('data', data);
-            console.log('jsonConverterSrv.mdjsToForm(data)');
-            $rootScope.metadata = jsonConverterSrv.mdjsToForm(data);
-            console.log('form', $rootScope.metadata);
-        };
+        // $scope.loadXml = function() {
+        //     var data = mdjsSrv.toJson($scope.xml);
+        //     console.log('data', data);
+        //     console.log('jsonConverterSrv.mdjsToForm(data)');
+        //     $rootScope.metadata = jsonConverterSrv.mdjsToForm(data);
+        //     console.log('form', $rootScope.metadata);
+        // };
 
         // console.log($scope.views[0].path);
         $scope.template_url = $scope.views[$rootScope.view].path;

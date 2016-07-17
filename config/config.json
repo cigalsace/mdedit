@@ -5,6 +5,7 @@
     "app_copyrights": "(c) CIGAL 2016",
     "defaultLanguage": "fr",
     "server_url_getxml": "php/index.php?act=getXML",
+    "server_url_geturl": "php/index.php?act=getURL",
     "views_file": "config/views/views.json",
     "models_file": "config/models/models.json",
     "locales_path": "config/locales/",

@@ -21,13 +21,13 @@
             </div>
             <div class="form-group">
                 <label class="control-label" for="url_input" uib-tooltip="URL à charger" tooltip-trigger="mouseenter" tooltip-placement="right">
-                    Charger une fiche à partir d'un URL
+                    Charger une fiche à partir d'un URL (XML)
                 </label>
-                <input class="form-control input-sm" type="text" id="url_input" ng-model="url_input" disabled />
+                <input class="form-control input-sm" type="text" id="url_input" ng-model="url_input" />
             </div>
 		</div>
 		<div class="modal-footer">
-			<button type="submit" class="btn btn-primary" ng-click="upload()" disabled><span class="glyphicon glyphicon-floppy-save"></span> Download URL</button>
+			<button type="submit" class="btn btn-primary" ng-click="getUrl(url_input)"><span class="glyphicon glyphicon-floppy-save"></span> Download URL</button>
 			<button type="submit" class="btn btn-primary" ng-click="close()"><span class="glyphicon glyphicon-close"></span> Close</button>
 		</div>
     </form>
