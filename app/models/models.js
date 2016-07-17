@@ -47,8 +47,7 @@ function modelsSrv($http, $location, $rootScope, jsonConverterSrv) {
         model -= 1;
         $http.get(modelsList[model].path)
             .success(function(data) {
-                // TODO: à mettre dans un service à part pour réutilisation lors du chargement dynamique d'un model
-                var model = {};
+                //var model = {};
                 console.log('jsonConverterSrv.modelToForm(data)');
                 $rootScope.metadata = jsonConverterSrv.modelToForm(data);
                 console.log($rootScope.metadata);

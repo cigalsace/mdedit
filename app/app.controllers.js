@@ -33,6 +33,7 @@ function mdEditCtrl($scope, $rootScope, $http, $sce, $uibModal, $log, configSrv,
         // console.log($scope.views[0].path);
         $scope.template_url = $scope.views[$rootScope.view].path;
         $scope.changeView = function(view) {
+            $rootScope.view = view;
             $scope.template_url = $scope.views[view].path;
         };
 

@@ -46,7 +46,7 @@ function changeLocalesDirective($rootScope, changeLocalesTemplateurl, localesSrv
         });
 
         function init() {
-            
+
             scope.changeLocale = function(userLanguage) {
                 console.log(userLanguage);
                 localesSrv.getLocale($rootScope.config.locales_path, userLanguage)
@@ -65,6 +65,7 @@ function changeLocalesDirective($rootScope, changeLocalesTemplateurl, localesSrv
     }
 }
 
+changeLocalesDirective.$inject = ['$rootScope', 'changeLocalesTemplateurl', 'localesSrv', 'viewsSrv'];
 /**
  * [module description]
  * @param  {[type]} 'mdEdit' [description]
@@ -72,5 +73,3 @@ function changeLocalesDirective($rootScope, changeLocalesTemplateurl, localesSrv
  */
 angular.module('mdEdit')
     .directive('changeLocales', changeLocalesDirective);
-
-changeLocales.$inject = ['$rootScope', 'changeLocalesTemplateurl', 'localesSrv', 'viewsSrv'];

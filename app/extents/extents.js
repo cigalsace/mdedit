@@ -29,6 +29,7 @@ function extentsSrv($http) {
             })
             .catch(function(reason) {
                 console.log("Error: can't get extents file for " + geographicextents_file + " (reason: " + reason + ").");
+                console.log(reason);
             });
     }
 

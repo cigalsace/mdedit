@@ -75,10 +75,11 @@
 						Copyright © 2016 - <a href="https://www.cigalsace.org" class="navbar-link">CIGAL</a>
 					</div>
 					<div class="navbar-text navbar-right">
-						<a href="" ng-click="modalDoc('mentions', $event)" class="navbar-link">Mentions légales</a>
-						-
+						<a href="" ng-click="modalDoc('mentions', $event)" class="navbar-link">Mentions légales</a> -
 						<!-- changeLocales directive -->
-						<span change-locales></span>
+						<span change-locales></span> -
+						<!-- permalink -->
+						<a ng-href="/index.html?lang={{userLanguage}}&model={{model + 1}}&view={{view + 1}}" target="_blank" role="button" class="navbar-link glyphicon glyphicon-link"></a>
 					</div>
 				</div>
 			</nav>

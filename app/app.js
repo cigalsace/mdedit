@@ -49,21 +49,6 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
               });
       }
 
-      // Get list of models from models service
-      // Get model from models service (get URL param or the first item of models list)
-      function getModels() {
-          modelsSrv.getList($rootScope.config.models_file, function(data) {
-                  $rootScope.models = data;
-              })
-              .then(function() {
-                  modelsSrv.getModel($rootScope.models, false, function(model) {
-                    //   $rootScope.metadata = model.data;
-                    //   $rootScope.model = model.path;
-                      $rootScope.$broadcast('configLoaded');
-                  });
-              });
-      }
-
       // Get list of view from views service
       // Get locales from views service (get URL param or the first item of models list)
       function getViews(userLanguage) {
@@ -79,6 +64,21 @@ angular.module('mdEdit').run(function($http, $rootScope, configSrv, modelsSrv, v
                   });
                   getModels();
               });
+      }
+
+      // Get list of models from models service
+      // Get model from models service (get URL param or the first item of models list)
+      function getModels() {
+          modelsSrv.getList($rootScope.config.models_file, function(data) {
+              $rootScope.models = data;
+          })
+          .then(function() {
+              modelsSrv.getModel($rootScope.models, false, function(model) {
+                  //   $rootScope.metadata = model.data;
+                  //   $rootScope.model = model.path;
+                  $rootScope.$broadcast('configLoaded');
+              });
+          });
       }
 });
 
