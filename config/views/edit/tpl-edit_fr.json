@@ -427,7 +427,7 @@
                     "description": "Email du contact.",
                     "_keywords": "email, contact, données"
                 },
-                "deliveryPoints": {
+                "deliveryPoint": {
                     "id": "deliveryPoints",
                     "label": "Addresse",
                     "placeholder": "Addresse",

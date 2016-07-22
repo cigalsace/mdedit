@@ -68,6 +68,9 @@ function editMultiSelectDirective(editMultiSelectTemplateurl) {
                 scope.metadata[attrs.field].splice(scope.metadata[attrs.field].indexOf(item), 1);
             };
             scope.addItem = function() {
+                if (!scope.metadata[attrs.field]) {
+                    scope.metadata[attrs.field] = [];
+                }
                 scope.metadata[attrs.field].push('');
             };
         }

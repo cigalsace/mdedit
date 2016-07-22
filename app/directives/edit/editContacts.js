@@ -53,6 +53,9 @@ function editContactsDirective(editContactsTemplateurl) {
                 scope.metadata[scope.cnt_type].splice(scope.metadata[scope.cnt_type].indexOf(contact), 1);
             };
             scope.addContact = function() {
+                if (!scope.metadata[scope.cnt_type]) {
+                    scope.metadata[scope.cnt_type] = [];
+                }
                 scope.metadata[scope.cnt_type].push(angular.copy(mdjs.empty_json.contact));
             };
         }

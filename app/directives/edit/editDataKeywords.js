@@ -83,6 +83,9 @@ function editDataKeywordsDirective(editDataKeywordsTemplateurl, $rootScope) {
                 scope.metadata[scope.field].splice(scope.metadata[scope.field].indexOf(item), 1);
             };
             scope.addItem = function() {
+                if (!scope.metadata[scope.field]) {
+                    scope.metadata[scope.field] = [];
+                }
                 scope.metadata[scope.field].push(angular.copy(mdjs.empty_json.keyword));
             };
 

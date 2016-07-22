@@ -68,6 +68,9 @@ function editMultiTextareaDirective(editMultiTextareaTemplateurl) {
                 scope.metadata[attrs.field].splice(scope.metadata[attrs.field].indexOf(item), 1);
             };
             scope.addItem = function() {
+                if (!scope.metadata[scope.attrs]) {
+                    scope.metadata[scope.attrs] = [];
+                }
                 scope.metadata[attrs.field].push('');
             };
         }
