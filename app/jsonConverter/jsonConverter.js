@@ -593,13 +593,15 @@ function jsonConverterSrv($rootScope) {
                                 }
                             }
                         } else {
-                            code = json[dataname][item][field];
-                            // console.log(code);
-                            for (option in list) {
-                                // console.log(list, option, list[option].id, list[option].value);
-                                if (code.toLowerCase() == list[option].id.toLowerCase()) {
-                                    json[newname][item] = {};
-                                    json[newname][item][field] = list[option].value;
+                            if (json[dataname][item][field]) {
+                                code = json[dataname][item][field];
+                                // console.log(code);
+                                for (option in list) {
+                                    // console.log(list, option, list[option].id, list[option].value);
+                                    if (code.toLowerCase() == list[option].id.toLowerCase()) {
+                                        json[newname][item] = {};
+                                        json[newname][item][field] = list[option].value;
+                                    }
                                 }
                             }
                         }
