@@ -526,6 +526,25 @@ function jsonConverterSrv($rootScope) {
             }
         }
 
+        // dataLinkages
+        if (json.dataLinkages) {
+            for (var lk = 0; lk < json.dataLinkages.length; lk++) {
+                if (!json.dataLinkages[lk].description) {
+                    if (json.dataLinkages[lk].name) {
+                        json.dataLinkages[lk].description = json.dataLinkages[lk].name;
+                    } else if (json.dataLinkages[lk].url)  {
+                        json.dataLinkages[lk].description = json.dataLinkages[lk].url;
+                    }
+                }
+                if (!json.dataLinkages[lk].name) {
+                    if (json.dataLinkages[lk].url) {
+                        json.dataLinkages[lk].name = json.dataLinkages[lk].url;
+                    } else if (json.dataLinkages[lk].description)  {
+                        json.dataLinkages[lk].name = json.dataLinkages[lk].description;
+                    }
+                }
+            }
+        }
 
         // console.log('mdjsToForm', json);
         console.log(JSON.stringify(json));
