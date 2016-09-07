@@ -18,7 +18,21 @@ function checkValuesSrv($rootScope) {
         checkCode: checkCode,
         translateCode: translateCode,
         dataSpatialRepresentationType: dataSpatialRepresentationType,
-        dataMaintenanceFrequency: dataMaintenanceFrequency
+        dataMaintenanceFrequency: dataMaintenanceFrequency,
+        dataReferenceSystems: dataReferenceSystems,
+        dataLegalAccessInspireConstraints: dataLegalAccessInspireConstraints,
+        dataLegalAccessConstraints: dataLegalAccessConstraints,
+        // dataPointOfContacts: dataPointOfContacts,
+        // mdContacts: mdContacts,
+        contacts: contacts,
+        dataInspireKeywords: dataInspireKeywords,
+        dataTopicCategories: dataTopicCategories,
+        dataLegalUseConstraints: dataLegalUseConstraints,
+        dataLanguages: dataLanguages,
+        mdLanguage: mdLanguage,
+        dataSecurityClassificationValue: dataSecurityClassificationValue,
+        mdHierarchyLevel: mdHierarchyLevel,
+        mdCharacterSet: mdCharacterSet
     };
 
     return checkValuesSrv;
@@ -166,9 +180,7 @@ function checkValuesSrv($rootScope) {
                         }
                     } else {
                         code = json[dataname][item][field];
-                        // console.log(code);
                         for (option in list) {
-                            // console.log(list, option, list[option].id, list[option].value);
                             if (code.toLowerCase() == list[option].id.toLowerCase()) {
                                 json[newname][item] = {};
                                 json[newname][item][field] = list[option].value;
@@ -178,7 +190,7 @@ function checkValuesSrv($rootScope) {
                 }
             }
         }
-        console.log(json);
+        // console.log(json);
         return json;
     }
 
@@ -197,11 +209,14 @@ function checkValuesSrv($rootScope) {
     function dataLegalAccessConstraints(json) {
         return translateCode(json, 'dataLegalAccessConstraints', 'dataLegalAccessConstraintsValues', 'MD_RestrictionCode');
     }
-    function dataPointOfContacts(json) {
-        return translateCode(json, 'dataPointOfContacts', 'dataPointOfContactsValues', 'CI_RoleCode', 'role');
-    }
-    function mdContacts(json) {
-        return translateCode(json, 'mdContacts', 'mdContactsValues', 'CI_RoleCode', 'role');
+    // function dataPointOfContacts(json) {
+    //     return translateCode(json, 'dataPointOfContacts', 'dataPointOfContactsValues', 'CI_RoleCode', 'role');
+    // }
+    // function mdContacts(json) {
+    //     return translateCode(json, 'mdContacts', 'mdContactsValues', 'CI_RoleCode', 'role');
+    // }
+    function contacts(json, cntType) {
+        return translateCode(json, cntType, cntType+'Values', 'CI_RoleCode', 'role');
     }
     function dataReferenceSystems(json) {
         return translateCode(json, 'dataReferenceSystems', 'dataReferenceSystemsValues', 'MD_ReferenceSystemCode', 'code');
@@ -215,5 +230,19 @@ function checkValuesSrv($rootScope) {
     function dataLegalUseConstraints(json) {
         return translateCode(json, 'dataLegalUseConstraints', 'dataLegalUseConstraintsValues', 'MD_RestrictionCode');
     }
-
+    function dataLanguages(json) {
+        return translateCode(json, 'dataLanguages', 'dataLanguagesValues', 'MD_LanguageCode');
+    }
+    function mdLanguage(json) {
+        return translateCode(json, 'mdLanguage', 'mdLanguageValue', 'MD_LanguageCode');
+    }
+    function dataSecurityClassificationValue(json) {
+        return translateCode(json, 'dataSecurityClassification', 'dataSecurityClassificationValue', 'MD_ClassificationCode');
+    }
+    function mdHierarchyLevel(json) {
+        return translateCode(json, 'mdHierarchyLevel', 'mdHierarchyLevelValue', 'MD_ScopeCode');
+    }
+    function mdCharacterSet(json) {
+        return mdCharacterSet(json, 'mdCharacterSet', 'mdCharacterSetValue', 'MD_CharacterSetCode');
+    }
 }

@@ -23,7 +23,7 @@ angular.module('mdEdit')
  * @param  {[type]} mdeditDataReferenceSystemsTemplateurl [description]
  * @return {[type]}                            [description]
  */
-function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl) {
+function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl, checkValuesSrv, $rootScope) {
     return {
         restrict: 'EA',
         templateUrl: editDataReferenceSystemsTemplateurl,
@@ -69,6 +69,13 @@ function editDataReferenceSystemsDirective(editDataReferenceSystemsTemplateurl) 
                         scope[param][p] = attrs[param+'_'+p];
                     }
                 }
+            }
+
+            if (attrs.onChange) {
+                scope.change = function() {
+                    $rootScope.metadata = checkValuesSrv[attrs.onChange]($rootScope.metadata);
+                };
+                scope.change();
             }
 
             // Add / remove item

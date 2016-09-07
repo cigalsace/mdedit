@@ -10,7 +10,7 @@
         </th>
         <tr ng-repeat="item in metadata[field] track by $index">
             <td>
-                <select class="form-control input-sm" name="{{code.id}}" id="{{code.id}}" ng-options="referenceSystem.id as referenceSystem.value for referenceSystem in list" ng-model="item.code">
+                <select class="form-control input-sm" name="{{code.id}}" id="{{code.id}}" ng-options="referenceSystem.id as referenceSystem.value for referenceSystem in list" ng-model="item.code" ng-change="change()">
                     <option value="">Sélectionnez un système de projection</option>
                 </select>
                 <input type="hidden" value="EPSG" ng-model="item.codeSpace" />

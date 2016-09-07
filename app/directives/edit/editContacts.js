@@ -23,7 +23,7 @@ angular.module('mdEdit')
  * @param  {[type]} mdeditContactsTemplateurl [description]
  * @return {[type]}                            [description]
  */
-function editContactsDirective(editContactsTemplateurl) {
+function editContactsDirective(editContactsTemplateurl, checkValuesSrv, $rootScope) {
     return {
         restrict: 'EA',
         templateUrl: editContactsTemplateurl,
@@ -47,6 +47,11 @@ function editContactsDirective(editContactsTemplateurl) {
 
         function init() {
             scope.cnt_type = attrs.cntType;
+
+            scope.change = function() {
+                $rootScope.metadata = checkValuesSrv.contacts($rootScope.metadata, attrs.cntType);
+            };
+            scope.change();
 
             // Add / remove contacts
             scope.removeContact = function(contact) {

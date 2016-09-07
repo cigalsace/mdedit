@@ -26,7 +26,7 @@
                         </div>
                         <!-- metadata.mdLanguage -->
                         <div class="col-md-4 form-group">
-                            <div edit-select field="mdLanguage" list="MD_LanguageCode"></div>
+                            <div edit-select field="mdLanguage" list="MD_LanguageCode" on-change="mdLanguage"></div>
                         </div>
                         <!-- mdStandardName -->
                         <div class="col-md-4 form-group">
@@ -36,7 +36,7 @@
                     <div class="row">
                         <!--mdHierarchyLevel -->
                         <div class="col-md-4 form-group">
-                            <div edit-select field="mdHierarchyLevel" list="MD_ScopeCode"></div>
+                            <div edit-select field="mdHierarchyLevel" list="MD_ScopeCode" on-change="mdHierarchyLevel"></div>
                         </div>
                         <!-- mdCharacterSet -->
                         <div class="col-md-4 form-group">
@@ -140,18 +140,18 @@
                         <hr />
                         <!-- dataLanguages -->
                         <div class="col-md-6 form-group">
-                            <div edit-multi-select field="dataLanguages" list="MD_LanguageCode" multi="true"></div>
+                            <div edit-multi-select field="dataLanguages" list="MD_LanguageCode" multi="true" on-change="dataLanguages"></div>
                         </div>
                     </div>
                     <div class="row">
                         <hr />
                         <!-- dataTopicCategories -->
                         <div class="col-md-6 form-group">
-                            <div edit-multi-select field="dataTopicCategories" list="MD_TopicCategoryCode" multi="true"></div>
+                            <div edit-multi-select field="dataTopicCategories" list="MD_TopicCategoryCode" multi="true" on-change="dataTopicCategories"></div>
                         </div>
                         <!-- dataInspireKeywords -->
                         <div class="col-md-6 form-group">
-                            <div edit-multi-select field="dataInspireKeywords" list="MD_InspireTopicCategoryCode" multi="true"></div>
+                            <div edit-multi-select field="dataInspireKeywords" list="MD_InspireTopicCategoryCode" multi="true" on-change="dataInspireKeywords"></div>
                         </div>
                     </div>
                     <!-- dataKeywordsList -->
@@ -222,7 +222,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-data-reference-systems field="dataReferenceSystems" multi="true"></div>
+                            <div edit-data-reference-systems field="dataReferenceSystems" on-change="dataReferenceSystems" multi="true"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -273,23 +273,23 @@
                 <div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-select field="dataSecurityClassification" list="MD_ClassificationCode"></div>
+                            <div edit-select field="dataSecurityClassification" list="MD_ClassificationCode" on-change="dataSecurityClassificationValue"></div>
                         </div>
                     </div>
                     <!-- dataLegalAccessInspireConstraints -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-multi-select field="dataLegalAccessInspireConstraints" list="MD_InspireRestrictionCode" multi="true"></div>
+                            <div edit-multi-select field="dataLegalAccessInspireConstraints" list="MD_InspireRestrictionCode" multi="true" on-change="dataLegalAccessInspireConstraints"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-multi-select field="dataLegalAccessConstraints" list="MD_RestrictionCode" multi="true"></div>
+                            <div edit-multi-select field="dataLegalAccessConstraints" list="MD_RestrictionCode" multi="true" on-change="dataLegalAccessConstraints"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-multi-select field="dataLegalUseConstraints" list="MD_RestrictionCode" multi="true"></div>
+                            <div edit-multi-select field="dataLegalUseConstraints" list="MD_RestrictionCode" multi="true" on-change="dataLegalUseConstraints"></div>
                         </div>
                     </div>
                     <div class="row">

@@ -69,15 +69,6 @@ function editDataBrowsegraphicsDirective(editDataBrowsegraphicsTemplateurl) {
                     }
                 }
             }
-            // TODO: remplacer par un service/factory
-            // scope.getExt = function(url) {
-            //     url = url || '';
-            //     var ext = url.substr(url.lastIndexOf('.')+1);
-            //     if (ext == url) {
-            //         return "";
-            //     }
-            //     return ext.toLowerCase();
-            // };
 
             // Add / remove item
             scope.removeItem = function(item) {

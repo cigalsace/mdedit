@@ -134,6 +134,7 @@ function jsonConverterSrv($rootScope) {
      * @return {Object}      Result JSON metadata object to convert to XML
      */
     function formToMdjs(md) {
+        console.log('formToMdjs');
 
         json = angular.copy(md);
         // console.log(json);
@@ -142,7 +143,10 @@ function jsonConverterSrv($rootScope) {
         json = checkMdFileIdentifier(json, json.mdFileIdentifier, json.dataIdentifiers);
 
         // mdDateStamp
-        json.mdDateStamp = formatDate(json.mdDateStamp, true);
+        // json.mdDateStamp = formatDate(json.mdDateStamp, true);
+        json.mdDateStamp = {
+            date: formatDate(json.mdDateStamp, true)
+        };
         // Put json.dataDateRevision, json.dataDateCreation and json.dataDatePublication in dataDate object (date/dateType format)
         var dataDates = [{
             date: formatDate(json.dataDateRevision),
@@ -184,9 +188,10 @@ function jsonConverterSrv($rootScope) {
         }
 
         // dataExtents
-        if (!json.hasOwnProperty('dataExtents')) {
-            json.dataExtents = [];
-        }
+        json.dataExtents = [];
+        // if (!json.hasOwnProperty('dataExtents')) {
+        //     json.dataExtents = [];
+        // }
         // temporalExtents
         if (json.dataTemporalExtents) {
             for (var t = 0; t < json.dataTemporalExtents.length; t++) {
@@ -217,9 +222,10 @@ function jsonConverterSrv($rootScope) {
         }
 
         // dataLegalConstraints
-        if (!json.dataLegalConstraints) {
-            json.dataLegalConstraints = [];
-        }
+        json.dataLegalConstraints = [];
+        // if (!json.dataLegalConstraints) {
+        //     json.dataLegalConstraints = [];
+        // }
         // dataLegalUseLimitations
         // dataLegalUseConstraints
         // dataLegalAccessConstraints
@@ -238,9 +244,10 @@ function jsonConverterSrv($rootScope) {
         json.dataLegalConstraints.push(dataLegalConstraints);
 
         // dataSecurityConstraints
-        if (!json.hasOwnProperty('dataSecurityConstraints')) {
-            json.dataSecurityConstraints = [];
-        }
+        json.dataSecurityConstraints = [];
+        // if (!json.hasOwnProperty('dataSecurityConstraints')) {
+        //     json.dataSecurityConstraints = [];
+        // }
         // dataSecurityClassification
         if (json.dataSecurityClassification) {
             var dataSecurityClassification = {
@@ -284,12 +291,14 @@ function jsonConverterSrv($rootScope) {
 
         // dataIdentifiers
         if (json.dataIdentifiers) {
-            if (!json.hasOwnProperty('dataRsIdentifiers')) {
-                json.dataRsIdentifiers = [];
-            }
-            if (!json.hasOwnProperty('dataMdIdentifiers')) {
-                json.dataMdIdentifiers = [];
-            }
+            json.dataRsIdentifiers = [];
+            // if (!json.hasOwnProperty('dataRsIdentifiers')) {
+            //     json.dataRsIdentifiers = [];
+            // }
+            json.dataMdIdentifiers = [];
+            // if (!json.hasOwnProperty('dataMdIdentifiers')) {
+            //     json.dataMdIdentifiers = [];
+            // }
             for (var id = 0; id < json.dataIdentifiers.length; id++) {
                 var identifier = json.dataIdentifiers[id];
                 if (!identifier.codeSpace || identifier.codeSpace === '') {
@@ -301,9 +310,10 @@ function jsonConverterSrv($rootScope) {
         }
 
         // dataQualityInfo
-        if (!json.dataQualityInfo) {
-            json.dataQualityInfo = [];
-        }
+        json.dataQualityInfo = [];
+        // if (!json.dataQualityInfo) {
+        //     json.dataQualityInfo = [];
+        // }
         var dq = {};
         if (json.dataDqLevel) {
             dq.dataDqLevel = json.dataDqLevel;
@@ -314,6 +324,8 @@ function jsonConverterSrv($rootScope) {
             dq.dataLiStatement = json.dataLiStatement;
         }
         json.dataQualityInfo.push(dq);
+
+        // json.dataTransferOptions = undefined;
 
         console.log('formToMdjs', json);
 
@@ -326,6 +338,8 @@ function jsonConverterSrv($rootScope) {
      * @return {Object}      Resulting JSON metadata object to display in mdEdit form
      */
     function modelToForm(json) {
+        console.log('modelToForm');
+
 
         // Change date in YYYY-MM-DD format to javascript date object
         if (json.mdDateStamp) {
@@ -374,19 +388,43 @@ function jsonConverterSrv($rootScope) {
      * @return {Object}      result JSON metadata object to display in mdEdit form
      */
     function mdjsToForm(json) {
+        console.log('mdjsToForm');
 
         // Dates
-        json.mdDateStamp = new Date(json.mdDateStamp);
+        function getDate(json, fieldName) {
+            var formats = ['date', 'dateTime'];
+            for (var f in formats) {
+                if (json[fieldName][formats[f]]) {
+                    json[fieldName] = new Date(json[fieldName][formats[f]]);
+                }
+            }
+        }
+        getDate(json, 'mdDateStamp');
+
         if (json.dataDates) {
+            var formats = ['date', 'dateTime'];
             for (var d = 0; d < json.dataDates.length; d++) {
-                if (json.dataDates[d].dateType == 'revision') {
-                    json.dataDateRevision = new Date(json.dataDates[d].date);
-                }
-                if (json.dataDates[d].dateType == 'publication') {
-                    json.dataDatePublication = new Date(json.dataDates[d].date);
-                }
-                if (json.dataDates[d].dateType == 'creation') {
-                    json.dataDateCreation = new Date(json.dataDates[d].date);
+                for (var f in formats) {
+                    if (json.dataDates[d].dateType == 'revision') {
+                        // json.dataDateRevision = new Date(json.dataDates[d].date);
+                        if (json.dataDates[d][formats[f]]) {
+                            json.dataDateRevision = new Date(json.dataDates[d][formats[f]]);
+                        }
+                    }
+                    if (json.dataDates[d].dateType == 'publication') {
+                        // json.dataDatePublication = new Date(json.dataDates[d].date);
+                        if (json.dataDates[d][formats[f]]) {
+                            json.dataDatePublication = new Date(json.dataDates[d][formats[f]]);
+                        }
+
+                    }
+                    if (json.dataDates[d].dateType == 'creation') {
+                        // json.dataDateCreation = new Date(json.dataDates[d].date);
+                        if (json.dataDates[d][formats[f]]) {
+                            json.dataDateCreation = new Date(json.dataDates[d][formats[f]]);
+                        }
+
+                    }
                 }
             }
         }
@@ -532,14 +570,14 @@ function jsonConverterSrv($rootScope) {
                 if (!json.dataLinkages[lk].description) {
                     if (json.dataLinkages[lk].name) {
                         json.dataLinkages[lk].description = json.dataLinkages[lk].name;
-                    } else if (json.dataLinkages[lk].url)  {
+                    } else if (json.dataLinkages[lk].url) {
                         json.dataLinkages[lk].description = json.dataLinkages[lk].url;
                     }
                 }
                 if (!json.dataLinkages[lk].name) {
                     if (json.dataLinkages[lk].url) {
                         json.dataLinkages[lk].name = json.dataLinkages[lk].url;
-                    } else if (json.dataLinkages[lk].description)  {
+                    } else if (json.dataLinkages[lk].description) {
                         json.dataLinkages[lk].name = json.dataLinkages[lk].description;
                     }
                 }
@@ -662,11 +700,11 @@ function jsonConverterSrv($rootScope) {
 
         // Translate fields for display in user friendly view
         translateCodes('dataSpatialRepresentationType', 'dataSpatialRepresentationTypeValues', 'MD_SpatialRepresentationTypeCode');
-        translateCodes('dataMaintenanceFrequency', 'dataMaintenanceFrequencyValues', 'MD_MaintenanceFrequencyCode');
+        // translateCodes('dataMaintenanceFrequency', 'dataMaintenanceFrequencyValues', 'MD_MaintenanceFrequencyCode');
         translateCodes('dataLegalAccessInspireConstraints', 'dataLegalAccessInspireConstraintsValues', 'MD_InspireRestrictionCode');
         translateCodes('dataLegalAccessConstraints', 'dataLegalAccessConstraintsValues', 'MD_RestrictionCode');
         translateCodes('dataLegalUseConstraints', 'dataLegalUseConstraintsValues', 'MD_RestrictionCode');
-        translateCodes('dataSecurityClassification', 'dataSecurityClassificationValues', 'MD_ClassificationCode');
+        translateCodes('dataSecurityClassification', 'dataSecurityClassificationValue', 'MD_ClassificationCode');
         translateCodes('dataTopicCategories', 'dataTopicCategoriesValues', 'MD_TopicCategoryCode');
         translateCodes('dataInspireKeywords', 'dataInspireKeywordsValues', 'MD_InspireTopicCategoryCode');
         translateCodes('dataReferenceSystems', 'dataReferenceSystemsValues', 'MD_ReferenceSystemCode', 'code');

@@ -78,7 +78,7 @@ function editDataLinkagesDirective(editDataLinkagesTemplateurl) {
                 if (!scope.metadata[scope.field]) {
                     scope.metadata[scope.field] = [];
                 }
-                scope.metadata[scope.field].push(angular.copy(mdjs.empty_json.temporalextent));
+                scope.metadata[scope.field].push(angular.copy(mdjs.empty_json.linkage));
             };
         }
     }

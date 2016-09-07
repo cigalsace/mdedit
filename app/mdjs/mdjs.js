@@ -21,7 +21,9 @@ function mdjsSrv() {
     ////////////////////////////////////////////////////////////////////////
 
     function toXml(json) {
+        
         var metadata = new mdjs.Metadata();
+        console.log(222, metadata);
 
         // md = angular.copy(json);
         // console.log(md);
@@ -29,6 +31,7 @@ function mdjsSrv() {
         return metadata.toXmlString({
             beautifier: true
         }, json);
+        // return false;
     }
 
     function toJson(xml) {

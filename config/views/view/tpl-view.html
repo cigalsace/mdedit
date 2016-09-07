@@ -43,6 +43,22 @@
                 </div>
                 <hr />
                 <div>
+                    <p><strong>Langue des données:</strong></p>
+                    <ul>
+                        <div ng-if="metadata.dataLanguagesValues">
+                            <div ng-repeat="dataLanguage in metadata.dataLanguagesValues track by $index">
+                                <li class="">
+                                    {{dataLanguage}}
+                                </li>
+                            </div>
+                        </div>
+                        <div ng-if="!metadata.dataLanguagesValues">
+                            <li class="">Non précisé</li>
+                        </div>
+                    </ul>
+                </div>
+                <hr />
+                <div>
                     <p><strong>Format de diffusion:</strong></p>
                     <ul>
                         <div ng-if="metadata.dataDistributionFormats">
@@ -93,7 +109,7 @@
                 <div>
                     <p><strong>Droits d'accès et d'usage des données:</strong></p>
                     <div ng-if="metadata.dataSecurityClassification">
-                        <label>Classification:</label> {{metadata.dataSecurityClassificationValues}}
+                        <label>Classification:</label> {{metadata.dataSecurityClassificationValue}}
                         <br />
                     </div>
                     <label>Contraintes d'accès Inspire:</label>
@@ -401,7 +417,7 @@
                 {{config.app_name}} {{config.app_version}} - {{config.app_copyrights}}
             </span>
             <span class="pull-right">
-                <em class="text-info">Fiche {{metadata.mdFileIdentifier}} ({{metadata.mdLanguage}}) mise à jour le: {{metadata.mdDateStamp | date:'dd/MM/yyyy'}}</em>
+                <em class="text-info">Fiche {{metadata.mdFileIdentifier}} ({{metadata.mdLanguageValue}}) mise à jour le: {{metadata.mdDateStamp | date:'dd/MM/yyyy'}}</em>
             </span>
          </small>
     </div>

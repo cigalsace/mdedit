@@ -10,7 +10,7 @@
         </th>
         <tr ng-repeat="item in metadata[field] track by $index">
             <td>
-                <select class="form-control input-sm selectpicker_" name="{{id}}" id="{{id}}" ng-options="item.id as item.value for item in list" ng-model="metadata[field][$index]">
+                <select class="form-control input-sm selectpicker_" name="{{id}}" id="{{id}}" ng-options="item.id as item.value for item in list" ng-model="metadata[field][$index]" ng-change="change()">
                     <option value="">{{placeholder}}</option>
                 </select>
                 <!-- <input type="hidden" value="EPSG" ng-model="referenceSystem.codeSpace" /> -->

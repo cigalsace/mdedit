@@ -60,12 +60,10 @@ function editSelectDirective(editSelectTemplateurl, checkValuesSrv, $rootScope) 
             }
 
             if (attrs.onChange) {
-                // console.log(attrs.onChange);
                 scope.change = function() {
-                    // console.log(attrs.onChange, attrs.field, 'Values', scope.list);
-                    // $rootScope.metadata = checkValuesSrv[attrs.onChange]($rootScope.metadata, attrs.field, attrs.field + 'Values', attrs.list);
                     $rootScope.metadata = checkValuesSrv[attrs.onChange]($rootScope.metadata);
                 };
+                scope.change();
             }
         }
     }

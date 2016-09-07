@@ -46,10 +46,12 @@ function mdEditCtrl($scope, $rootScope, $http, $sce, $uibModal, $log, configSrv,
                 resolve: {
                     md: function() {
                         $scope.md = {};
+                        $scope.md.xml = '';
                         // $scope.md.xml = mdjsSrv.toXml($scope.metadata);
                         console.log('jsonConverterSrv.formToMdjs($rootScope.metadata)');
-                        console.log('convert', $rootScope.metadata, jsonConverterSrv.formToMdjs($rootScope.metadata));
+                        // console.log('convert', $rootScope.metadata, jsonConverterSrv.formToMdjs($rootScope.metadata));
                         $scope.md.xml = mdjsSrv.toXml(jsonConverterSrv.formToMdjs($rootScope.metadata));
+                        console.log('result', $scope.md.xml);
                         $scope.md.errors = {};
                         var file = {
                             'filecontent': $scope.md.xml

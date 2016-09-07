@@ -7,7 +7,7 @@
                 <label class="bt-doc control-label" for="{{fields[cnt_type].children.role.id}}" uib-tooltip="{{fields[cnt_type].children.role.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc('documentation/md/empty.md')">
                     {{fields[cnt_type].children.role.label}}
                 </label>
-                <select class="form-control input-sm selectpicker_" name="{{fields[cnt_type].children.role.id}}" id="{{fields[cnt_type].children.role.id}}" ng-options="role.id as role.value for role in codelists.CI_RoleCode" ng-model="contact.role">
+                <select class="form-control input-sm selectpicker_" name="{{fields[cnt_type].children.role.id}}" id="{{fields[cnt_type].children.role.id}}" ng-options="role.id as role.value for role in codelists.CI_RoleCode" ng-model="contact.role" ng-change="change()">
                     <option value="">Sélectionnez un role</option>
                 </select>
             </div>

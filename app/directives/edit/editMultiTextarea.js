@@ -62,6 +62,9 @@ function editMultiTextareaDirective(editMultiTextareaTemplateurl) {
                     scope[p] = attrs[p];
                 }
             }
+            if (!scope.metadata[attrs.field]) {
+                scope.metadata[attrs.field] = [''];
+            }
 
             // Add / remove item
             scope.removeItem = function(item) {

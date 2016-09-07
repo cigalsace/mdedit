@@ -23,7 +23,7 @@ angular.module('mdEdit')
  * @param  {[type]} mdeditMultiSelectTemplateurl [description]
  * @return {[type]}                            [description]
  */
-function editMultiSelectDirective(editMultiSelectTemplateurl) {
+function editMultiSelectDirective(editMultiSelectTemplateurl, checkValuesSrv, $rootScope) {
     return {
         restrict: 'EA',
         templateUrl: editMultiSelectTemplateurl,
@@ -61,6 +61,13 @@ function editMultiSelectDirective(editMultiSelectTemplateurl) {
                 if (attrs[p] || attrs[p] === '') {
                     scope[p] = attrs[p];
                 }
+            }
+
+            if (attrs.onChange) {
+                scope.change = function() {
+                    $rootScope.metadata = checkValuesSrv[attrs.onChange]($rootScope.metadata);
+                };
+                scope.change();
             }
 
             // Add / remove item
