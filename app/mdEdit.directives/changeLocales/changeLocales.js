@@ -60,7 +60,6 @@ function changeLocalesDirective(AppDataSrv, changeLocalesTemplateurl, localesSrv
                         vm.data.ui = data.ui;
                     });
                 viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
-                    vm.data.view = data.view;
                     vm.data.fields = data.fields;
                     vm.data.codelists = data.codelists;
                     vm.data.userLanguage = userLanguage;
