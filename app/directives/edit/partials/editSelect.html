@@ -1,8 +1,0 @@
-<div class="">
-    <label class="control-label" for="{{id}}" uib-tooltip="{{description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="modalDoc(field, $event)">
-        {{label}}
-    </label>
-    <select class="form-control input-sm" name="{{id}}" id="{{id}}" ng-options="item.id as item.value for item in list" ng-model="metadata[field]" ng-disabled="disabled" ng-change="change()">
-        <option value="">{{placeholder}}</option>
-    </select>
-</div>

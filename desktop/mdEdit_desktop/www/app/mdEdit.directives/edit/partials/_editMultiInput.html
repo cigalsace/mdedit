@@ -1,0 +1,20 @@
+<div class="">
+    <table class="table table-condensed">
+        <th>
+            <span class="bt-doc control-label" uib-tooltip="{{description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('empty', $event)">
+                {{label}}
+            </span>
+        </th>
+        <th ng-show="multi">
+            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addItem()"></button>
+        </th>
+        <tr ng-repeat="item in metadata[field] track by $index">
+            <td>
+                <input type="text" class="form-control input-sm" name="{{id}}" id="{{id}}" placeholder="{{placeholder}}" ng-model="metadata[field][$index]" />
+            </td>
+            <td ng-show="multi">
+                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeItem(item)"></button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,8 @@
+{
+    "description": "List of locales",
+    "locales": [
+        "fr",
+        "en",
+        "de"
+    ]
+}

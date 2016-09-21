@@ -1,0 +1,11 @@
+[
+    { "code": "2154", "codespace": "EPSG", "value": "RGF93 – Lambert 93 (EPSG:2154)" }, 
+    { "code": "3948", "codespace": "EPSG", "value": "RGF93 – Lambert 93 CC48 (EPSG:3948)" }, 
+    { "code": "3949", "codespace": "EPSG", "value": "RGF93 – Lambert 93 CC49 (EPSG:3949)" }, 
+    { "code": "27572", "codespace": "EPSG", "value": "NTF Paris – Lambert zone II (EPSG:27572)" }, 
+    { "code": "27571", "codespace": "EPSG", "value": "NTF Paris – Lambert zone I (EPSG:27571)" }, 
+    { "code": "27561", "codespace": "EPSG", "value": "NTF Paris – Lambert Nord (EPSG:27561)" }, 
+    { "code": "32632", "codespace": "EPSG", "value": "WGS84 – UTM Zone 32N (EPSG:32632)" }, 
+    { "code": "4326", "codespace": "EPSG", "value": "WGS84 – 2D (EPSG:4326)" }, 
+    { "code": "4979", "codespace": "EPSG", "value": "WGS84 – 3D (EPSG:4979)" }
+]

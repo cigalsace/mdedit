@@ -1,0 +1,50 @@
+<!-- Modal edit-->
+<form id="modal-edit-form">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="modal.close()" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Get XML</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <textarea class="form-control" id="xml-content" name="xml-content" placeholder="XML content" ng-model="modal.md.xml"></textarea>
+            <!--<input type="hidden" class="" id="txt-note-id" name="txt-note-id" ng-model="note">-->
+        </div>
+        <ul ng-show="modal.errors">
+            <li ng-repeat="error in modal.errors" ng-if="modal.md_errors[error] != ''">[{{error}}] - {{modal.md_errors[error]}}</li>
+        </ul>
+        <div ng-show="!modal.md.url">
+            {{modal.ui.modal_download.no_server}}
+        </div>
+        <div ng-show="modal.md.sec_username">
+            Vous êtes connecté en tant que {{modal.md.sec_username}} ({{modal.md.sec_email}}) sur la plateforme. Vous pouvez envoyer directement le fichier XML ({{modal.md.filename}}.xml) dans votre dossier de métadonnées (metadata/{{modal.md.sec_org}}/{{modal.md.filename}}/).
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="btn-group" uib-dropdown ng-show="modal.md.url">
+            <button type="button" class="btn btn-primary" uib-dropdown-toggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-floppy-save"></span> Download file
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                <li><a href="php/index.php?act=downloadXML&url={{modal.md.url}}" target="_blank">Format XML</a></li>
+                <li ng-show="modal.md.sec_username"><a href="php/index.php?act=sendXML&filename={{modal.md.filename}}" target="_blank">Envoyer XML</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="disabled"><a href="php/index.php?act=downloadJSON&url={{modal.md.url}}" target="_blank">Format JSON</a></li>
+                <li class="disabled"><a href="php/index.php?act=downloadXLSX&url={{modal.md.url}}" target="_blank">Format XLSX</a></li>
+            </ul>
+        </div>
+        <div class="btn-group" uib-dropdown ng-hide="modal.md.url">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" uib-dropdown-toggle>
+                <span class="glyphicon glyphicon-floppy-save"></span> Download file
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" >
+                <li><a href="#" ng-click="modal.downloadXML()" target="_blank">Format XML</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="disabled"><a href="#" ng-click="modal.downloadJSON()" target="_blank">Format JSON</a></li>
+                <li class="disabled"><a href="#" ng-click="modal.downloadXLSX()" target="_blank">Format XLSX</a></li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="modal.close()"><span class="glyphicon glyphicon-close"></span> Close</button>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+<div ng-show="showFields">
+    <div uib-accordion-group is-open="true" panel-class="panel-primary" style="margin-top:10px;">
+        <div uib-accordion-heading>
+            <span uib-tooltip="{{tooltip}}" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
+                {{header}}
+            </span>
+            <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="openModalDoc(doc, $event)"></span>
+            <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
+        </div>
+        <div ng-transclude>
+        </div>
+    </div>
+</div>

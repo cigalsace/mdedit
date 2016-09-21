@@ -1,0 +1,12 @@
+<!-- ModalDoc -->
+
+<!-- <div class="modal-header">
+    <button type="button" class="close" ng-click="modal.close()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h3 class="modal-title" id="modal-title">{{modal.title}}</h3>
+</div> -->
+<div class="modal-body" id="modal-body">
+    <div id="content" class="container-fluid" ng-bind-html="modal.doc_md"></div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="modal.close()">OK</button>
+</div>

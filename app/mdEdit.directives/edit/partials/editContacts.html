@@ -1,0 +1,114 @@
+<div>
+    <!-- Contacts -->
+    <div ng-repeat="contact in vm.data.metadata[cnt_type] track by $index">
+        <div class="row">
+            <!-- contacts.role -->
+            <div class="col-md-5 form-group">
+                <label class="bt-doc control-label" for="{{fields.children.role.id}}" uib-tooltip="{{fields.children.role.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('empty')">
+                    {{fields.children.role.label}}
+                </label>
+                <select class="form-control input-sm selectpicker_" name="{{fields.children.role.id}}" id="{{fields.children.role.id}}" ng-options="role.id as role.value for role in CI_RoleCode" ng-model="contact.role">
+                    <option value="">Sélectionnez un role</option>
+                </select>
+            </div>
+            <div class="col-md-7 btn-toolbar">
+                <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeContact(contact)"></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <!-- contacts.individualName -->
+                <div class="form-group">
+                    <label class="bt-doc control-label" for="{{fields.children.individualName.id}}" uib-tooltip="{{fields.children.individualName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                        {{fields.children.individualName.label}}
+                    </label>
+                    <input type="text" class="form-control input-sm" name="{{fields.children.individualName.id}}" id="{{fields.children.individualName.id}}" placeholder="{{fields.children.individualName.placeholder}}" ng-model="contact.individualName" />
+                </div>
+                <!-- contacts.positionName -->
+                <div class="form-group">
+                    <label class="bt-doc control-label" for="{{fields.children.positionName.id}}" uib-tooltip="{{fields.children.positionName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                        {{fields.children.positionName.label}}
+                    </label>
+                    <input type="text" class="form-control input-sm" name="{{fields.children.positionName.label}}" id="{{fields.children.positionName.id}}" placeholder="{{fields.children.positionName.placeholder}}" ng-model="contact.positionName" />
+                </div>
+                <!-- contacts.organisationName -->
+                <div class="form-group _has-warning">
+                    <label class="bt-doc control-label" for="{{fields.children.organisationName.id}}" uib-tooltip="{{fields.children.organisationName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                        {{fields.children.organisationName.label}}
+                    </label>
+                    <input type="text" class="form-control input-sm" name="{{fields.children.organisationName.id}}" id="{{fields.children.organisationName.id}}" placeholder="{{fields.children.organisationName.placeholder}}" ng-model="contact.organisationName"
+                    />
+                </div>
+            </div>
+            <div class="col-md-7">
+                <!-- contacts.deliveryPoint -->
+                <div class="form-group">
+                    <label class="bt-doc control-label" for="{{fields.children.deliveryPoint.id}}" uib-tooltip="{{fields.children.deliveryPoint.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                        {{fields.children.deliveryPoint.label}}
+                    </label>
+                    <textarea class="form-control input-sm" id="{{fields.children.deliveryPoint.id}}" name="{{fields.children.deliveryPoint.id}}" placeholder="{{fields.children.deliveryPoint.placeholder}}" rows="3" ng-model="contact.deliveryPoint"></textarea>
+                </div>
+                <div class="row">
+                    <!-- contacts.postalCode -->
+                    <div class="col-md-4 form-group">
+                        <label class="bt-doc control-label" for="{{fields.children.postalCode.id}}" uib-tooltip="{{fields.children.postalCode.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                            {{fields.children.postalCode.label}}
+                        </label>
+                        <input type="text" class="form-control input-sm" name="{{fields.children.postalCode.label}}" id="{{fields.children.postalCode.id}}" placeholder="{{fields.children.postalCode.placeholder}}" ng-model="contact.postalCode" />
+                    </div>
+                    <!-- contacts.city -->
+                    <div class="col-md-8 form-group">
+                        <label class="bt-doc control-label" for="{{fields.children.city.id}}" uib-tooltip="{{fields.children.city.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                            {{fields.children.city.label}}
+                        </label>
+                        <input type="text" class="form-control input-sm" name="{{fields.children.city.label}}" id="{{fields.children.city.id}}" placeholder="{{fields.children.city.placeholder}}" ng-model="contact.city" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- contacts.phoneVoice -->
+            <div class="col-md-5 form-group">
+                <label class="bt-doc control-label" for="{{fields.children.phoneVoice.id}}" uib-tooltip="{{fields.children.phoneVoice.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                    {{fields.children.phoneVoice.label}}
+                </label>
+                <input type="tel" class="form-control input-sm" name="{{fields.children.phoneVoice.label}}" id="{{fields.children.phoneVoice.id}}" placeholder="{{fields.children.phoneVoice.placeholder}}" ng-model="contact.phoneVoice" />
+            </div>
+            <!-- contacts.email -->
+            <div class="col-md-7 form-group _has-warning">
+                <label class="bt-doc control-label" for="{{fields.children.email.id}}" uib-tooltip="{{fields.children.email.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                    {{fields.children.email.label}}
+                </label>
+                <input type="mail" class="form-control input-sm" name="{{fields.children.email.label}}" id="{{fields.children.email.id}}" placeholder="{{fields.children.email.placeholder}}" ng-model="contact.email" />
+            </div>
+        </div>
+        <div class="row">
+            <!-- Logo -->
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="bt-doc control-label" for="{{fields.data_browsegraphics.children.logoUrl.id}}" uib-tooltip="{{fields.children.logoUrl.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                        {{fields.children.logoUrl.label}}
+                    </label>
+                    <input type="text" class="form-control input-sm" name="{{fields.children.logoUrl.id}}" id="{{fields.children.logoUrl.id}}" placeholder="{{fields.children.logoUrl.placeholder}}" ng-model="contact.logoUrl" />
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="bt-doc control-label" for="{{fields.children.logoDescription.id}}" uib-tooltip="{{fields.children.logoDescription.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc('documentation/md/empty.md')">
+                        {{fields.children.logoDescription.label}}
+                    </label>
+                    <input type="text" class="form-control input-sm" name="{{fields.children.logoDescription.label}}" id="{{fields.children.logoDescription.id}}" placeholder="{{fields.children.logoDescription.placeholder}}" ng-model="contact.logoDescription" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img class="img-thumbnail" ng-if="contact.logoUrl != ''" ng-src="{{contact.logoUrl}}" alt="{{contact.logoDescription}}" />
+            </div>
+        </div>
+        <hr />
+    </div>
+    <div class="row">
+        <div class="col-md-12 btn-toolbar">
+            <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-plus" aria-hidden="true" ng-click="addContact()"></button>
+        </div>
+    </div>
+</div>
