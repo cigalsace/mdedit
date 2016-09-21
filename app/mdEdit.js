@@ -13,7 +13,7 @@ angular.module('mdEdit.directives')
         $locationProvider.html5Mode(true);
     });
 
-angular.module('mdEdit.directives')
+angular.module('mdEdit')
     .run(['configSrv', 'modelsSrv', 'viewsSrv', 'localesSrv', 'xmlSrv', 'AppDataSrv', 'BroadcastSrv', runApp]);
 
 
@@ -97,5 +97,3 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
             });
     }
 }
-
-// })();
