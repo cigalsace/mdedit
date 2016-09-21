@@ -20,7 +20,6 @@ function modalSetXmlSrv($uibModal, AppDataSrv) {
     ////////////////////////////////////////////////////////////////////////////
 
     function openModalSetXml() {
-        // console.log(753);
         var modalInstance = $uibModal.open({
             animation: true,
             ariaLabelledBy: 'modal-title',

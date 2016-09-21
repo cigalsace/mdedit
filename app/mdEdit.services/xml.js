@@ -52,10 +52,7 @@ function xmlSrv($http, $location, jsonConverterSrv, mdjsSrv, AppDataSrv) {
 
     function loadXml(xml) {
         var data = mdjsSrv.toJson(xml);
-        // console.log('data', data);
-        console.log('jsonConverterSrv.mdjsToForm(data)');
         AppDataSrv.metadata = jsonConverterSrv.mdjsToForm(data);
-        // console.log('form', AppDataSrv.metadata);
     }
 
 }

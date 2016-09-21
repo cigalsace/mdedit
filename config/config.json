@@ -1,7 +1,7 @@
 {
     "app_name": "mdEdit",
     "app_title": "mdEdit",
-    "app_version": "0.14.5",
+    "app_version": "0.14.8",
     "app_copyrights": "(c) CIGAL 2016",
     "defaultLanguage": "fr",
     "server_url_getxml": "php/index.php?act=getXML",

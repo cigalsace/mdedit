@@ -6,7 +6,6 @@ angular.module('mdEdit.filters')
 
 function string2array() {
     return function(string, breakTag) {
-        // console.log(string);
         if (typeof(string) === 'string') {
             breakTag = breakTag || ',';
             var result = string.split(breakTag);

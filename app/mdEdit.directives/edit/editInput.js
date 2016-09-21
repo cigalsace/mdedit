@@ -48,15 +48,13 @@ function editInputDirective(editInputTemplateurl, AppDataSrv, modalDocSrv) {
             return AppDataSrv.userLanguage;
         }, function(newValue, oldValue) {
             if (newValue[0] || newValue[1] !== oldValue[1]) {
-                AppDataSrv.pageLoaded = false;
                 init();
-                AppDataSrv.pageLoaded = true;
             }
         });
 
         function init() {
+            AppDataSrv.pageLoaded = false;
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            // AppDataSrv.pageLoaded += 1;
             // Define values from attributes or use default fields.dataTitle properties values
             scope.field = attrs.field;
             var properties = ['id', 'label', 'description', 'placeholder'];
@@ -67,7 +65,7 @@ function editInputDirective(editInputTemplateurl, AppDataSrv, modalDocSrv) {
                     scope[p] = attrs[p];
                 }
             }
-            // AppDataSrv.pageLoaded -= 1;
+            AppDataSrv.pageLoaded = true;
         }
     }
 }

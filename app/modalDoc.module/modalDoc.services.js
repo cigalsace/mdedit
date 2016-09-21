@@ -21,7 +21,6 @@ function modalDocSrv($http, $uibModal) {
 
     function getDoc(lg, field) {
         field = field || "default";
-        console.log(field);
         var help_file = 'config/locales/' + lg + '/help.json';
         return $http
             .get(help_file)
@@ -39,7 +38,6 @@ function modalDocSrv($http, $uibModal) {
     }
 
     function openModalDoc(docField) {
-        console.log('test');
         var modalInstance = $uibModal.open({
             animation: true,
             ariaLabelledBy: 'modal-title',
@@ -49,7 +47,6 @@ function modalDocSrv($http, $uibModal) {
             size: 'lg',
             resolve: {
                 docField: function() {
-                    console.log('test');
                     return docField;
                 }
             }

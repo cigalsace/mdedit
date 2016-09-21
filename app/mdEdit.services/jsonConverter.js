@@ -140,21 +140,15 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         json = angular.copy(md);
 
         // mdFileIdentifier
-        console.log(json.mdFileIdentifier);
         json.mdFileIdentifier = checkValuesSrv.mdFileIdentifier(json.mdFileIdentifier, json.dataIdentifiers);
         AppDataSrv.metadata.mdFileIdentifier = json.mdFileIdentifier;
-        console.log(json.mdFileIdentifier);
 
         // mdDateStamp
-        console.log(json.mdDateStamp);
-        // var isToday = True;
-        // if (json.mdDateStamp) { isToday = False; }
         var isToday = !json.mdDateStamp;
         json.mdDateStamp = {
             date: checkValuesSrv.formatDate(json.mdDateStamp, isToday)
         };
         AppDataSrv.metadata.mdDateStamp = new Date(json.mdDateStamp.date);
-        console.log(json.mdDateStamp.date);
 
         // Put json.dataDateRevision, json.dataDateCreation and json.dataDatePublication in dataDate object (date/dateType format)
         var dataDates = [{
@@ -315,12 +309,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
         json.dataQualityInfo.push(dq);
 
-        // json.dataTransferOptions = undefined;
-
-        // console.log('formToMdjs', json);
-
-        // AppDataSrv.metadata = json;
-
         return json;
     }
 
@@ -330,8 +318,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
      * @return {Object}      Resulting JSON metadata object to display in mdEdit form
      */
     function modelToForm(json) {
-        console.log('modelToForm');
-
 
         // Change date in YYYY-MM-DD format to javascript date object
         if (json.mdDateStamp) {
@@ -374,13 +360,9 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         // dataLegalAccessInspireConstraints / MD_InspireRestrictionCode
         json.dataLegalAccessInspireConstraints = checkValuesSrv.checkCodes(json.dataLegalAccessInspireConstraints, AppDataSrv.codelists.MD_InspireRestrictionCode);
 
-        // json = translate(json);
-        // return translate(json);
-        // Convert Inspire keywords to code value (english) UTILITE?
-        // translateValues('dataInspireKeywords', 'MD_InspireTopicCategoryCode');
+        // Convert Inspire keywords to code value (english)
         json.dataInspireKeywords = checkValuesSrv.translateValues(json.dataInspireKeywords, AppDataSrv.codelists.MD_InspireTopicCategoryCode);
         AppDataSrv.metadata = json;
-        console.log(json);
         return json;
     }
 
@@ -391,8 +373,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
      * @return {Object}      result JSON metadata object to display in mdEdit form
      */
     function mdjsToForm(json) {
-        console.log('mdjsToForm');
-
         // Dates
         function getDate(json, fieldName) {
             var formats = ['date', 'dateTime'];
@@ -462,7 +442,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             }
         }
 
-        // TODO: Add json as function parameter
         json.dataReferenceSystems = checkValuesSrv.checkCodes(json.dataReferenceSystems, AppDataSrv.codelists.MD_ReferenceSystemCode, 'code');
 
         // dataKeywords / dataInspireKeywords
@@ -486,9 +465,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             json.dataKeywords = dataKeywords;
         }
         // dataLegalConstraints
-        // if (json.hasOwnProperty('dataLegalConstraints')) {
-        // json.dataLegalConstraints = [];
-        // }
         // dataLegalUseLimitations
         // dataLegalUseConstraints
         // dataLegalAccessConstraints
@@ -504,7 +480,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
                     json.dataLegalAccessInspireConstraints = [];
                 }
                 for (var lc = 0; lc < json.dataLegalConstraints[0].dataLegalOtherConstraints.length; lc++) {
-                    // json.dataLegalConstraints[0].dataLegalOtherConstraints[lc]. = json.dataKeywords[kw].keywords.join(', ');
                     if (json.dataLegalConstraints[0].dataLegalOtherConstraints[lc].toLowerCase()
                         .indexOf('inspire') > -1) {
                         json.dataLegalAccessInspireConstraints.push(json.dataLegalConstraints[0].dataLegalOtherConstraints[lc]);
@@ -517,7 +492,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             json.dataLegalAccessConstraints = json.dataLegalConstraints[0].dataLegalAccessConstraints;
             json.dataLegalUseLimitations = json.dataLegalConstraints[0].dataLegalUseLimitations;
             json.dataLegalUseConstraints = json.dataLegalConstraints[0].dataLegalUseConstraints;
-            // json.dataLegalOtherConstraints = json.dataLegalConstraints[0].dataLegalAccessInspireConstraints;
         }
         json.dataLegalAccessInspireConstraints = checkValuesSrv.checkCodes(json.dataLegalAccessInspireConstraints, AppDataSrv.codelists.MD_InspireRestrictionCode);
 
@@ -575,66 +549,9 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             }
         }
 
-        // console.log('mdjsToForm', json);
-        console.log(JSON.stringify(json));
-        // return translate(json);
-        // json = translate(json);
-        // Convert Inspire keywords to code value (english) UTILITE? => utiliser la langue de la fiche pour décoder la valeur... ou le français par défaut
-        // translateValues('dataInspireKeywords', 'MD_InspireTopicCategoryCode');
+        // Convert Inspire keywords to code value (english) => utiliser la langue de la fiche pour décoder la valeur... ou le français par défaut
         json.dataInspireKeywords = checkValuesSrv.translateValues(json.dataInspireKeywords, AppDataSrv.codelists.MD_InspireTopicCategoryCode);
         AppDataSrv.metadata = json;
         return json;
     }
-
-
-
-    // /**
-    //  * translateValues function
-    //  * @param  {[type]} data [description]
-    //  * @param  {[type]} list [description]
-    //  * @param  {[type]} field    [description]
-    //  * @return {[type]}          [description]
-    //  */
-    // function translateValues(data, list, field) {
-    //     field = field || false;
-    //     if (data) {
-    //         var type;
-    //         type = typeof(data);
-    //         if (Array.isArray(data)) {
-    //             type = 'array';
-    //         }
-    //         // var list = $rootScope.codelists[listname];
-    //         //var list = list;
-    //         var item, option;
-    //         if (type == 'string') {
-    //             code = data;
-    //             for (option in list) {
-    //                 if (code.toLowerCase() == list[option].value.toLowerCase()) {
-    //                     data = list[option].id;
-    //                 }
-    //             }
-    //         } else {
-    //             for (item in data) {
-    //                 if (typeof(data[item]) == 'string') {
-    //                     code = data[item];
-    //                     for (option in list) {
-    //                         if (code.toLowerCase() == list[option].value.toLowerCase()) {
-    //                             data[item] = list[option].id;
-    //                         }
-    //                     }
-    //                 } else {
-    //                     code = data[item][field];
-    //                     for (option in list) {
-    //                         if (code.toLowerCase() == list[option].value.toLowerCase()) {
-    //                             data[item] = {};
-    //                             data[item][field] = list[option].id;
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //         return data;
-    //     }
-    //     return {};
-    // }
 }

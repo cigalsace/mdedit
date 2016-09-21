@@ -45,7 +45,6 @@ function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
             size: 'lg',
             resolve: {
                 models: function() {
-                    // console.log('111');
                     return AppDataSrv.models;
                 }
             }

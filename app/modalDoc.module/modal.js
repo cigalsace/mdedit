@@ -22,7 +22,6 @@ function ModalSrv($uibModal) {
     ////////////////////////////////////////////////////////////////////////
 
     function open(docField) {
-        console.log('test');
         var modalInstance = $uibModal.open({
             animation: true,
             ariaLabelledBy: 'modal-title',
@@ -32,7 +31,6 @@ function ModalSrv($uibModal) {
             size: 'lg',
             resolve: {
                 docField: function() {
-                    console.log('test');
                     return docField;
                 }
             }

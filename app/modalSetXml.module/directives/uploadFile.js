@@ -20,18 +20,16 @@ function uploadFileDirective(AppDataSrv) {
      * @return {[type]}         [description]
      */
     function link(scope, element, attrs) {
-        
-        console.log(1);
+
         scope.xml = '';
-        
+
         element.on('change', function() {
-            console.log(2);
             var reader = new FileReader();
             reader.onload = function(e) {
                 scope.modal.getFileContent(reader.result);
             };
             reader.readAsText(element[0].files[0]);
-            
+
         });
     }
 }

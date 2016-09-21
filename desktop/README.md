@@ -14,6 +14,7 @@ Il s'agit simplement d'un micro serveur web Python qui permet d'encapsuler l'ens
 
 - Téléchargez le fichier "mdEdit_desktop.zip".
 - Décompressez-le sur votre ordinateur
+- Copier l'ensemble les dossiers _app_, _config_, _css_ et _lib_, ainsi que les fichiers de mdEdit dans le dossier _mdEdit_desktop/www_
 - Double-cliquez sur le fichier "server.exe"
 
 Une console DOS s'ouvre. Ne pas la fermer sinon l'application s'arrête.
@@ -45,7 +46,7 @@ pip install bottle
 pyinstaller --onefile server.py
 
 # Copy config file
-copy config.json .\dist 
+copy config.json .\dist
 
 # Create www directory (and copy mdEdit app in it)
 cd .\dist\www

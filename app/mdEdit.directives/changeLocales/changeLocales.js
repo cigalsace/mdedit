@@ -54,10 +54,7 @@ function changeLocalesDirective(AppDataSrv, changeLocalesTemplateurl, localesSrv
         function init() {
             scope.locales = vm.data.locales;
             scope.userLanguage = vm.data.userLanguage;
-            // console.log(scope.locales, scope.userLanguage);
-
             scope.changeLocale = function(userLanguage) {
-                // console.log(userLanguage);
                 localesSrv.getLocale(AppDataSrv.config.locales_path, userLanguage)
                     .then(function(data) {
                         vm.data.ui = data.ui;
@@ -66,7 +63,6 @@ function changeLocalesDirective(AppDataSrv, changeLocalesTemplateurl, localesSrv
                     vm.data.view = data.view;
                     vm.data.fields = data.fields;
                     vm.data.codelists = data.codelists;
-                    // console.log(vm.data.userLanguage);
                     vm.data.userLanguage = userLanguage;
                 });
             };

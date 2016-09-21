@@ -22,7 +22,6 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
     // Config file URL
     var config_file = 'config/config.json';
 
-    AppDataSrv.pageLoaded = false;
     getConfig(config_file);
 
     // Get config data from config_file
@@ -30,15 +29,9 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
         configSrv.getFile(config_file)
             .then(function(data) {
                 AppDataSrv.config = data;
-            })
-            .then(function() {
                 getLocales(AppDataSrv.config.locales_path);
                 AppDataSrv.userLanguage = localesSrv.getLanguage(AppDataSrv.config.defaultLanguage);
-            })
-            .then(function() {
                 getLocale(AppDataSrv.userLanguage);
-            })
-            .then(function() {
                 getViews(AppDataSrv.userLanguage);
             });
     }

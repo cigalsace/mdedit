@@ -48,7 +48,6 @@ function modelsSrv($http, $location, jsonConverterSrv, AppDataSrv) {
         // console.log(model);
         $http.get(modelsList[model-1].path)
             .success(function(data) {
-                console.log('jsonConverterSrv.modelToForm(data)');
                 AppDataSrv.metadata = jsonConverterSrv.modelToForm(data);
                 AppDataSrv.model = model;
                 callback(model);

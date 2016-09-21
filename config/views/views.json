@@ -4,21 +4,25 @@
         "path": "config/views/edit/tpl-edit.html",
         "values": {
             "fr": "Edition",
-            "en": "Edit"
+            "en": "Edit",
+            "de": "Edit"
         },
         "locales": {
             "fr": "config/views/edit/tpl-edit_fr.json",
-            "en": "config/views/edit/tpl-edit_en.json"
+            "en": "config/views/edit/tpl-edit_en.json",
+            "de": "config/views/edit/tpl-edit_de.json"
         }
     }, {
         "path": "config/views/view/tpl-view.html",
         "values": {
             "fr": "Vue",
-            "en": "View"
+            "en": "View",
+            "de": "View"
         },
         "locales": {
             "fr": "config/views/view/tpl-view_fr.json",
-            "en": "config/views/view/tpl-view_en.json"
+            "en": "config/views/view/tpl-view_en.json",
+            "de": "config/views/view/tpl-view_de.json"
         }
     }]
 }

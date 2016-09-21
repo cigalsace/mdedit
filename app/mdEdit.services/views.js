@@ -44,12 +44,10 @@ function viewsSrv($http, $location, AppDataSrv) {
                 view = 1;
             }
         }
-        // view -= 1;
         viewLocales = viewsList[view-1].locales[userLanguage];
         $http.get(viewLocales)
             .success(function(data) {
                 callback(view, data);
-                console.log(view, data, viewLocales);
             })
             .error(function(data, status) {
                 console.log("Error: can't get " + viewLocales + " file (status: " + status + ").");
@@ -59,7 +57,6 @@ function viewsSrv($http, $location, AppDataSrv) {
     function changeView(viewId) {
         AppDataSrv.view = viewId;
         AppDataSrv.template_url = AppDataSrv.views[viewId-1].path;
-        console.log(AppDataSrv.metadata);
     }
 
 }

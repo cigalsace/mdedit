@@ -43,9 +43,7 @@ function modalGetXmlCtrl($uibModalInstance, modalGetXmlSrv, AppDataSrv, mdjsSrv,
     }
 
     function generateXML() {
-        console.log('jsonConverterSrv.formToMdjs(AppDataSrv.metadata)', AppDataSrv.metadata);
         vm.md.xml = mdjsSrv.toXml(jsonConverterSrv.formToMdjs(AppDataSrv.metadata));
-        // console.log('id', AppDataSrv.metadata.mdFileIdentifier);
         var file = {
             'filecontent': vm.md.xml,
             'filename': AppDataSrv.metadata.mdFileIdentifier

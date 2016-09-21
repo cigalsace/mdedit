@@ -21,24 +21,18 @@ function mdjsSrv() {
     ////////////////////////////////////////////////////////////////////////
 
     function toXml(json) {
-        
-        var metadata = new mdjs.Metadata();
-        // console.log(222, metadata);
 
-        // md = angular.copy(json);
-        // console.log(md);
+        var metadata = new mdjs.Metadata();
 
         return metadata.toXmlString({
             beautifier: true
         }, json);
-        // return false;
     }
 
     function toJson(xml) {
         xml = $.parseXML(xml);
         var metadata = new mdjs.Metadata();
         metadata.setXml(xml);
-        // console.log(metadata.toJson());
         return metadata.toJson();
     }
 }

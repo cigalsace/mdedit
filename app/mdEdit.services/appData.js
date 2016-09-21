@@ -13,12 +13,13 @@ angular
 
 function AppDataSrv() {
     var AppDataSrv = {
-        pageLoaded: 0,
+        pageLoaded: false,
         config: {},
         userLanguage: '',
         locales: {},
         models: {},
-        view: 0,
+        model: 1,
+        view: 1,
         views: {},
         fields: {},
         ui: {},

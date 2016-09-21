@@ -40,7 +40,7 @@ function editDataTitleDirective(editDataTitleTemplateurl) {
      * @return {[type]}         [description]
      */
     function link(scope, element, attrs, vm) {
-        scope.$watch('pageLoaded', function(newVal) {
+        scope.$watch('vm.data.userLanguage', function(newVal) {
             if (newVal) {init();}
         });
 
