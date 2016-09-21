@@ -1,11 +1,6 @@
 {
     "description": "List of default models",
     "list": [{
-        "path": "config/models/model-bdocs-cigal-2011-12.json",
-        "value": "Modèle de fiche BdOCS CIGAL 2011/12",
-        "value_fr": "Modèle de fiche BdOCS CIGAL 2011/12",
-        "value_en": "BdOCS CIGAL 2011/12 model"
-    },{
         "path": "config/models/model-empty.json",
         "value": "Modèle de fiche vierge",
         "value_fr": "Modèle de fiche vierge",

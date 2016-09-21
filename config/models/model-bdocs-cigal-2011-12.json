@@ -37,10 +37,15 @@
         "code": "3948"
     }],
     "dataTitle": "DONNEES - Base de données d'occupation du sol CIGAL 2011/2012 v2 (BdOCS20112012-CIGAL v2) - Alsace",
-    "dataDates": [{
-        "date": "2013-05-17",
-        "dateType": "creation"
-    }],
+    "dataDateCreation": "2013-05-17",
+    "dataDatePublication": "",
+    "dataDateRevision": "",
+    "dataIdentifiers": [
+        {
+            "code": "FR-236700019-BdOCS20112012-CIGAL-V2",
+            "codeSpace": ""
+        }
+    ],
     "dataAbstract": "La base de données géographiques de l'occupation du sol CIGAL 20112012 v2 est issue de la mise à jour de la base de donnée d'occuaption du sol CIGAL 2008 v2 réalisée par photointerprétation sur la région Alsace au niveau 3 et 4 de nomenclature. Les images de référence thématique et  géométrique sont la les orthophotographies CIGAL de résolution 20cm de 2011 pour le Bas-Rhin et 2012 pour le Haut-Rhin.\nLa création de la BdOCS20112012-CIGAL v2 s'appuie sur les limites existantes de la BdOCS2008-CIGAL v2. Seuls les contours et/ou  codes des zones de changement d'occupation du sol entre les 2 dates ont été modifiés . Ce lot de données  a été produit pour permettre une exploitation optimale à l'échelle 1/10 000.  L'aire d'étude représente une superficie de 8330 km² et couvre l'Alsace.\nLes couches d’information ont également été généralisées et sont disponibles pour une exploitation au 1/50 000ème (niveau 2 de la nomenclature) et au 1/250 000ème (niveau 1 de la nomenclature).",
     "dataPointOfContacts": [{
         "individualName": "Guillaume RYCKELYNCK",
@@ -90,6 +95,7 @@
         "fileDescription": "BdOCS CIGAL v2",
         "fileType": ".jpg"
     }],
+    "dataInspireKeywords": ["Occupation des terres"],
     "dataKeywords": [{
         "keywords": ["aménagement du territoire", "occupation du sol", "données ouvertes", "environnement", "Géoportail"],
         "keywordType": "theme"
@@ -97,15 +103,14 @@
         "keywordType": "place",
         "keywords": "Alsace"
     }],
-    "dataUseLimitations": ["Licence ouverte Etalab.", "Mentions: \"Source : BdOCS CIGAL v2 (www.cigalsace.org)\".", "Se référer au guide d'utilisation de la base de données pour plus d'information."],
-    "dataLegalConstraints": [{
-        "dataLegalAccessConstraints": ["otherRestrictions"],
-        "dataLegalUseConstraints": ["license"],
-        "dataLegalOtherConstraints": ["Pas de restriction d’accès public selon INSPIRE"]
-    }],
-    "dataSecurityConstraints": [{
-        "dataSecurityClassification": "unclassified"
-    }],
+    "dataUseLimitations": [""],
+    "dataLegalUseLimitations": ["Licence ouverte Etalab.", "Mentions: \"Source : BdOCS CIGAL v2 (www.cigalsace.org)\".", "Se référer au guide d'utilisation de la base de données pour plus d'information."],
+    "dataLegalUseConstraints": ["license"],
+    "dataLegalAccessConstraints": [""],
+    "dataLegalAccessInspireConstraints": ["Pas de restriction d'accès public selon INSPIRE"],
+    "dataLegalAccessOtherConstraints": [""],
+    "dataSecurityUseLimitations": [""],
+    "dataSecurityClassification": "unclassified",
     "dataSpatialRepresentationType": "vector",
     "dataScaleDenominator": "10000",
     "dataLanguages": ["fre"],
@@ -132,10 +137,11 @@
         "url": "https://www.cigalsace.org/geoserver/cigal/wms",
         "protocol": "OGC:WMS",
         "name": "CIGAL_BD_OCS_V2_2011_2012_ALSACE",
-        "description": "BdOCS 2011-12 CIGAL v2 (WMS)"
+        "description": "Consulter la BdOCS 2011-12 CIGAL v2 (WMS)"
     }, {
         "url": "https://www.cigalsace.org/metadata/CIGAL/FR-236700019-BdOCS20112012-CIGAL-V2/FR-236700019-BdOCS20112012-CIGAL-V2.zip",
         "protocol": "WWW:DOWNLOAD-1.0-http--download",
+        "name": "CIGAL_BD_OCS_V2_2011_2012_ALSACE.zip",
         "description": "Télécharger la BdOCS 2011-12 CIGAL v2 (SHP)"
     }],
     "dataGeographicExtents": [{
@@ -147,17 +153,5 @@
     }],
     "dataDateCreation": "2013-05-17T00:00:00.000Z",
     "dataLiStatement": "La base de données géographiques de l'occupation du sol  CIGAL 2011/2012 v2 a été produite par Photo-Interprétation Assistée par Ordinateur (PIAO), c'est-à-dire directement à l'écran par numérisation des objets de l'occupation du sol sur les différentes photographies aériennes à 20 cm composant l’aire d’étude, suivant la nomenclature BdOCS établie par le partenariat CIGAL. La PIAO s’appuie sur les nombreuses données exogènes préexistantes et mises à disposition. La nomenclature dite emboîtée, de type CORINE Land Cover, comprend 4 niveaux hiérarchiques, comprenant 4 thèmes au niveau général et 55 postes de typologie d'occupation du sol au niveau le plus détaillé. L'échelle de numérisation et d’interprétation est 1/8 500 pour une exploitation recommandée à une échelle inférieure ou égale à 1/10 000. La largeur minimale d’interprétation des objets linéaires est de 12 mètres .Pour assurer une bonne fiabilité de la BdOCS20112012-CIGAL v2, deux contrôles qualité ont été établis. L’un en interne (CQI) effectué par SIRS, producteur de la base de données, et l’autre en externe (CQE). De plus, des matrices de confusion par département ont été effectuées.\nLe taux de fiabilité est qualifié dans l’attribut «Fiabilité» de la donnée SIG. Le taux de fiabilité global est de 85 % sur l’ensemble du territoire.\nLes couches d’information ont également été généralisées et sont disponibles pour une exploitation au 1/50 000ème (niveau 2 de la nomenclature - 11 postes) et au 1/250 000ème (niveau 1 de la nomenclature - 4 postes).",
-    "dataDqLevel": "dataset",
-    "dataInspireKeywords": ["Occupation des terres"],
-    "dataLegalAccessInspireConstraints": ["Pas de restriction d'accès public selon INSPIRE"],
-    "dataLegalOtherConstraints": [],
-    "dataLegalAccessConstraints": ["otherRestrictions"],
-    "dataLegalUseConstraints": ["license"],
-    "dataSecurityClassification": "unclassified",
-    "dataIdentifiers": [{
-        "code": "FR-236700019-BdOCS20112012-CIGAL-V2",
-        "codeSpace": "MD_URI"
-    }, {
-        "code": "FR-236700019-130530-BdOCS20112012-CIGAL-V2"
-    }]
+    "dataDqLevel": "dataset"
 }

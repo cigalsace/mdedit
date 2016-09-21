@@ -56,20 +56,6 @@
     "dataLanguages": ["fre"],
     "dataTopicCategories": [""],
     "dataInspireKeywords": [""],
-    "_dataInspireKeywords": [
-        {
-            "keywords": [],
-            "keywordType": "theme",
-            "thesaurusName": "GEMET - INSPIRE themes, version 1.0",
-            "thesaurusDates": [
-                {
-                    "dateType": "publication",
-                    "date": "2008-06-01"
-                }
-            ]
-        }
-    ],
-    "dataKeywordsList": "",
     "dataKeywords": [
         {
             "keywords": [""],
