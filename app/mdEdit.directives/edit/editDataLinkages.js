@@ -48,10 +48,16 @@ function editDataLinkagesDirective(editDataLinkagesTemplateurl, AppDataSrv, moda
         });
 
         function init() {
+            scope.field = attrs.field;
+            if (!scope.field) {
+                scope.field = 'dataLinkages';
+            }
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
             scope.openModalDoc = modalDocSrv.openModalDoc;
             scope.MD_LinkageProtocolCode = AppDataSrv.codelists.MD_LinkageProtocolCode;
-            // Define values from attributes or use default fields.dataTitle properties values
-            scope.field = 'dataLinkages';
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {

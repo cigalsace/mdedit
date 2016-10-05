@@ -48,9 +48,15 @@ function editDataDistributionFormatsDirective(editDataDistributionFormatsTemplat
         });
 
         function init() {
+            scope.field = attrs.field;
+            if (!scope.field) {
+                scope.field = 'dataDistributionFormats';
+            }
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            // Define values from attributes or use default fields.dataTitle properties values
-            scope.field = 'dataDistributionFormats';
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {

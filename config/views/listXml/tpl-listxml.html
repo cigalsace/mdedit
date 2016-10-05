@@ -1,0 +1,28 @@
+<div id="content" class="container">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Liste des fichiers XML</div>
+        <div class="panel-body" ng-show="!vm.data.xmlfiles.length">
+            Aucun fichier XML disponible.
+        </div>
+        <div class="panel-body" ng-show="vm.data.xmlfiles.length">
+            <p>
+                La liste ci-dessous correspond aux fichiers XML de votre entrepot Pydio "{{vm.data.sec.org}}".<br />
+                Avec mdEdit vous pouvez consulter et éditer ces fiches.
+            </p>
+        </div>
+    </div>
+    <div class="panel panel-default" ng-repeat="xmlfile in vm.data.xmlfiles | filter:vm.fieldSearch track by $index">
+        <div class="panel-body">
+            <div class="col-md-10">
+                Titre: <strong>{{xmlfile.title}}</strong><br />
+                Fichier: <span>{{xmlfile.filename}}</span><br />
+                Chemin: {{xmlfile.path}}<br />
+            </div>
+            <div class="col-md-2">
+                <a ng-href="index.html?view=1&xml={{vm.data.config.server_url_md}}/{{xmlfile.path}}/{{xmlfile.filename}}" class="btn btn-primary btn-sm" target="_self">Edit</a>
+                <a ng-href="index.html?view=2&xml={{vm.data.config.server_url_md}}/{{xmlfile.path}}/{{xmlfile.filename}}" class="btn btn-primary btn-sm" target="_self">View</a>
+            </div>
+        </div>
+    </div>
+</div>

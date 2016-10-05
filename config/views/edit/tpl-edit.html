@@ -22,35 +22,35 @@
                         </div> -->
                         <!-- metadata.mdFileIdentifier -->
                         <div class="col-md-4 form-group">
-                            <div edit-input field="mdFileIdentifier"></div>
+                            <div edit-input field="mdFileIdentifier" help="mdFileIdentifier"></div>
                         </div>
                         <!-- metadata.mdLanguage -->
                         <div class="col-md-4 form-group">
-                            <div edit-select field="mdLanguage" list="MD_LanguageCode"></div>
+                            <div edit-select field="mdLanguage" list="MD_LanguageCode" help="mdLanguage"></div>
                         </div>
                         <!-- mdStandardName -->
                         <div class="col-md-4 form-group">
-                            <div edit-input field="mdStandardName"></div>
+                            <div edit-input field="mdStandardName" help="mdStandardName"></div>
                         </div>
                     </div>
                     <div class="row">
                         <!--mdHierarchyLevel -->
                         <div class="col-md-4 form-group">
-                            <div edit-select field="mdHierarchyLevel" list="MD_ScopeCode"></div>
+                            <div edit-select field="mdHierarchyLevel" list="MD_ScopeCode" help="mdHierarchyLevel"></div>
                         </div>
                         <!-- mdCharacterSet -->
                         <div class="col-md-4 form-group">
-                            <div edit-select field="mdCharacterSet" list="MD_CharacterSetCode" disabled="true"></div>
+                            <div edit-select field="mdCharacterSet" list="MD_CharacterSetCode" disabled="true" help="mdCharacterSet"></div>
                         </div>
                         <!-- mdStandardVersion -->
                         <div class="col-md-4 form-group">
-                            <div edit-input field="mdStandardVersion"></div>
+                            <div edit-input field="mdStandardVersion" help="mdStandardVersion"></div>
                         </div>
                     </div>
                     <!-- mdDateStamp -->
                     <div class="row">
                         <div class="col-md-4 form-group">
-                            <div edit-date field="mdDateStamp"></div>
+                            <div edit-date field="mdDateStamp" help="mdDateStamp"></div>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                     <span uib-tooltip="Informations relatives aux auteurs et contacts pour la fiche de métadonnées" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
                         Auteurs et contacts pour la fiche de métadonnées
                     </span>
-                    <!-- <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="vm.openModalDoc('empty')"></span> -->
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="vm.openModalDoc('mdContacts')"></span>
                     <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
                 </div>
                 <!-- directive editContact: mdContacts -->
@@ -87,53 +87,53 @@
                     <!-- dataTitle -->
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-input field="dataTitle"></div>
+                            <div edit-input field="dataTitle" help="dataTitle"></div>
                         </div>
                     </div>
                     <!-- dataAbstract -->
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-textarea field="dataAbstract"></div>
+                            <div edit-textarea field="dataAbstract" help="dataAbstract"></div>
                         </div>
                     </div>
                     <!-- dataIdentifiers -->
                     <div class="row">
                         <hr />
                         <div class="col-md-12 form-group">
-                            <div edit-data-identifiers multi="true"></div>
+                            <div edit-data-identifiers multi="true" help="dataIdentifiers"></div>
                         </div>
                     </div>
                     <!-- dataBrowseGraphics -->
                     <div class="row">
                         <hr />
                         <div class="col-md-12 form-group">
-                            <div edit-data-browsegraphics multi="true"></div>
+                            <div edit-data-browsegraphics multi="true" help="dataBrowseGraphics"></div>
                         </div>
                     </div>
                     <div class="row">
                         <hr />
                         <!-- dataDateCreation -->
                         <div class="col-md-4 form-group">
-                            <div edit-date field="dataDateCreation"></div>
+                            <div edit-date field="dataDateCreation" help="dataDates"></div>
                         </div>
                         <!-- dataDateRevision -->
                         <div class="col-md-4 form-group">
-                            <div edit-date field="dataDateRevision"></div>
+                            <div edit-date field="dataDateRevision" help="dataDates"></div>
                         </div>
                         <!-- dataDatePublication -->
                         <div class="col-md-4 form-group">
-                            <div edit-date field="dataDatePublication"></div>
+                            <div edit-date field="dataDatePublication" help="dataDates"></div>
                         </div>
                         <!-- dataMaintenanceFrequencyCode -->
                         <div class="col-md-4 form-group">
-                            <div edit-select field="dataMaintenanceFrequency" list="MD_MaintenanceFrequencyCode"></div>
+                            <div edit-select field="dataMaintenanceFrequency" list="MD_MaintenanceFrequencyCode" help="dataMaintenanceFrequency"></div>
                         </div>
                     </div>
                     <div class="row" ng-show="vm.showAllFields">
                         <hr />
                         <!-- dataTemporalExtents -->
                         <div class="col-md-12">
-                            <div edit-data-temporal-extents multi="true"></div>
+                            <div edit-data-temporal-extents multi="true" help="dataTemporalExtents"></div>
                         </div>
                     </div>
                     <div class="row" ng-show="vm.showAllFields">
@@ -147,11 +147,11 @@
                         <hr />
                         <!-- dataTopicCategories -->
                         <div class="col-md-6 form-group">
-                            <div edit-multi-select field="dataTopicCategories" list="MD_TopicCategoryCode" multi="true"></div>
+                            <div edit-multi-select field="dataTopicCategories" list="MD_TopicCategoryCode" multi="true" help="dataTopicCategories"></div>
                         </div>
                         <!-- dataInspireKeywords -->
                         <div class="col-md-6 form-group">
-                            <div edit-multi-select field="dataInspireKeywords" list="MD_InspireTopicCategoryCode" multi="true"></div>
+                            <div edit-multi-select field="dataInspireKeywords" list="MD_InspireTopicCategoryCode" multi="true" help="dataInspireKeywords"></div>
                         </div>
                     </div>
                     <!-- dataKeywordsList -->
@@ -170,7 +170,7 @@
                         <hr />
                         <!-- dataKeywords -->
                         <div class="col-md-12 form-group">
-                            <div edit-data-keywords field="dataKeywords" multi="true"></div>
+                            <div edit-data-keywords field="dataKeywords" multi="true" help="dataKeywords"></div>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                     <span uib-tooltip="Informations relatives aux contacts pour la base de données" tooltip-popup-close-delay="100" tooltip-trigger="mouseenter" tooltip-placement="right">
                         Contacts pour la base de données
                     </span>
-                    <!-- <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="vm.openModalDoc('empty')"></span> -->
+                    <span class="bt-doc glyphicon glyphicon-info-sign" aria-hidden="true" ng-click="vm.openModalDoc('dataPointsOfContacts')"></span>
                     <span class="glyphicon glyphicon-resize-vertical pull-right"></span>
                 </div>
                 <!-- directive editContact: dataPointOfContacts -->
@@ -211,48 +211,47 @@
                 <div>
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <div edit-select field="dataSpatialRepresentationType" list="MD_SpatialRepresentationTypeCode"></div>
+                            <div edit-select field="dataSpatialRepresentationType" list="MD_SpatialRepresentationTypeCode" help="dataSpatialRepresentationType"></div>
                         </div>
                     </div>
                     <!-- geographic extents -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-data-geographic-extents multi="true"></div>
+                            <div edit-data-geographic-extents multi="true" help="dataGeographicExtents"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-data-reference-systems field="dataReferenceSystems" multi="true"></div>
+                            <div edit-data-reference-systems field="dataReferenceSystems" multi="true" help="dataReferenceSystems"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <div edit-input field="dataScaleDenominator"></div>
+                            <div edit-input field="dataScaleDenominator" help="dataScale"></div>
                         </div>
                         <div class="col-md-6 form-group">
-                            <div edit-input field="dataScaleDistance"></div>
+                            <div edit-input field="dataScaleDistance" help="dataScale"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-textarea field="dataLiStatement"></div>
+                            <div edit-textarea field="dataLiStatement" help="dataLiStatement"></div>
                         </div>
                     </div>
                     <div class="row" ng-show="vm.showAllFields">
                         <div class="col-md-12 form-group">
-                            <!--<div edit-textarea field="dataUseLimitations"></div>-->
-                            <div edit-multi-textarea field="dataUseLimitations" multi="true" rows="1"></div>
+                            <div edit-multi-textarea field="dataUseLimitations" multi="true" rows="1" help="dataUseLimitations"></div>
                         </div>
                     </div>
                     <!-- dataCharacterSet -->
                     <div class="row" ng-show="vm.showAllFields">
                         <div class="col-md-12 form-group">
-                            <div edit-select field="dataCharacterSet" list="MD_CharacterSetCode"></div>
+                            <div edit-select field="dataCharacterSet" list="MD_CharacterSetCode" help="dataCharacterSet"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-data-distribution-formats field="dataDistributionFormats" multi="true"></div>
+                            <div edit-data-distribution-formats field="dataDistributionFormats" multi="true" help="dataDistributionFormats"></div>
                         </div>
                     </div>
                 </div>
@@ -274,28 +273,28 @@
                 <div>
                     <div class="row">
                         <div class="col-md-12 form-group">
-                            <div edit-select field="dataSecurityClassification" list="MD_ClassificationCode"></div>
+                            <div edit-select field="dataSecurityClassification" list="MD_ClassificationCode" help="dataSecurityClassification"></div>
                         </div>
                     </div>
                     <!-- dataLegalAccessInspireConstraints -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-multi-select field="dataLegalAccessInspireConstraints" list="MD_InspireRestrictionCode" multi="true"></div>
+                            <div edit-multi-select field="dataLegalAccessInspireConstraints" list="MD_InspireRestrictionCode" multi="true" help="dataLegalAccessInspireConstraints"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-multi-select field="dataLegalAccessConstraints" list="MD_RestrictionCode" multi="true"></div>
+                            <div edit-multi-select field="dataLegalAccessConstraints" list="MD_RestrictionCode" multi="true" help="dataLegalAccessConstraints"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-multi-select field="dataLegalUseConstraints" list="MD_RestrictionCode" multi="true"></div>
+                            <div edit-multi-select field="dataLegalUseConstraints" list="MD_RestrictionCode" multi="true" help="dataLegalUseConstraints"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-multi-textarea field="dataLegalUseLimitations" multi="true" rows="2"></div>
+                            <div edit-multi-textarea field="dataLegalUseLimitations" multi="true" rows="2" help="dataLegalUseLimitations"></div>
                         </div>
                     </div>
                 </div>
@@ -317,7 +316,7 @@
                 <div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div edit-data-linkages field="dataLinkages" multi="true"></div>
+                            <div edit-data-linkages field="dataLinkages" multi="true" help="dataLinkages"></div>
                         </div>
                     </div>
                 </div>

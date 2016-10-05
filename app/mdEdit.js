@@ -50,6 +50,7 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
             .then(function(data) {
                 AppDataSrv.ui = data.ui;
                 AppDataSrv.md_errors = data.md_errors;
+                AppDataSrv.codelists = data.codelists;
             });
     }
 
@@ -64,7 +65,6 @@ function runApp(configSrv, modelsSrv, viewsSrv, localesSrv, xmlSrv, AppDataSrv, 
                 viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
                     AppDataSrv.view = view;
                     AppDataSrv.fields = data.fields;
-                    AppDataSrv.codelists = data.codelists;
                 });
                 getModels();
             });

@@ -7,6 +7,7 @@
 	<meta name="robots" content="noindex,nofollow" />
 	<title>MD Edit</title>
 	<link rel="stylesheet" href="./lib/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./css/table.css" />
 	<link rel="stylesheet" href="./css/mdedit.css" />
 	<style type="text/css">
 
@@ -32,12 +33,12 @@
 				<a class="navbar-brand" href="#">mdedit</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbar-menu">
-				<form class="navbar-form navbar-left" role="search">
+				<form class="navbar-form navbar-left" role="search" ng-show="vm.data.view == 3">
 					<div class="form-group has-feedback">
 						<div class="input-group input-group-sm">
-							<input type="text" class="form-control" id="txt-search" placeholder="Search" ng-model="vm.fieldSearch" disabled>
+							<input type="text" class="form-control" id="txt-search" placeholder="Search" ng-model="vm.fieldSearch">
 							<div class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="vm.clearSearch()" disabled>
+								<button type="button" class="btn btn-default" ng-click="vm.clearSearch()">
 										<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 									</button>
 							</div>
@@ -54,11 +55,16 @@
 					<li class="" uib-tooltip="Générer un XML" tooltip-trigger="mouseenter" tooltip-placement="bottom">
 						<a href="#" role="button" class="glyphicon glyphicon-export" ng-click="vm.openModalGetXml()"><span class="visible-xs-inline"> {{vm.ui.bt_download_xml}}</span></a>
 					</li>
-					<li class="" uib-tooltip="Permuter entre les modes 'Edition' et 'Visualisation'" tooltip-trigger="mouseenter" tooltip-placement="bottom">
-						<a href="#" role="button" class="glyphicon glyphicon-pencil" ng-click="vm.changeView(1)" ng-show="vm.data.view == 2"><span class="visible-xs-inline"> {{vm.ui.bt_view_mode}}</span></a>
-						<a href="#" role="button" class="glyphicon glyphicon-eye-open" ng-click="vm.changeView(2)" ng-show="vm.data.view == 1"><span class="visible-xs-inline"> {{vm.ui.bt_edit_mode}}</span></a>
+					<li class="" uib-tooltip="Permuter entre les modes 'Edition' et 'Visualisation'" tooltip-trigger="mouseenter" tooltip-placement="bottom" ng-hide="vm.data.view == 1">
+						<a href="#" role="button" class="glyphicon glyphicon-pencil" ng-click="vm.changeView(1)"><span class="visible-xs-inline"> {{vm.ui.bt_view_mode}}</span></a>
 					</li>
-					<li ng-show="vm.data.view == 1" uib-tooltip="Permuter entre l'affichage 'simple' et 'complet'" tooltip-trigger="mouseenter" tooltip-placement="bottom">
+					<li class="" uib-tooltip="Permuter entre les modes 'Edition' et 'Visualisation'" tooltip-trigger="mouseenter" tooltip-placement="bottom" ng-hide="vm.data.view != 1">
+						<a href="#" role="button" class="glyphicon glyphicon-eye-open" ng-click="vm.changeView(2)"><span class="visible-xs-inline"> {{vm.ui.bt_edit_mode}}</span></a>
+					</li>
+					<li class="" uib-tooltip="Liste des fichiers xml ({{vm.data.sec.org}})" tooltip-trigger="mouseenter" tooltip-placement="bottom" ng-show="vm.data.sec.editor && vm.data.view != 3">
+						<a href="#" role="button" class="glyphicon glyphicon-list-alt" ng-click="vm.getListXml()"><span class="visible-xs-inline"> Liste des métadonnées</span></a>
+					</li>
+					<li ng-show="vm.data.view == 1" uib-tooltip="Permuter entre l'affichage 'simple' et 'complet'" tooltip-trigger="mouseenter" tooltip-placement="bottom" ng-hide="vm.data.view == 3">
 						<a href="#" role="button" class="glyphicon glyphicon-th" ng-init="vm.showAllFields=False" ng-click="vm.showAllFields = !vm.showAllFields" ng-show="!vm.showAllFields"><span class="visible-xs-inline"> {{vm.ui.bt_simple_view}}</span></a>
 						<a href="#" role="button" class="glyphicon glyphicon-th-large" ng-click="vm.showAllFields = !vm.showAllFields" ng-show="vm.showAllFields"><span class="visible-xs-inline"> {{vm.ui.bt_complet_view}}</span></a>
 					</li>
@@ -104,6 +110,8 @@
 	<script src="./app/mdEdit.controllers.js"></script>
 
 	<!-- mdEdit Services -->
+	<script src="./app/mdEdit.services/mdjs.js"></script>
+	<script src="./app/mdEdit.services/empty-json.js"></script>
 	<script src="./app/mdEdit.services/config.js"></script>
 	<script src="./app/mdEdit.services/appData.js"></script>
 	<script src="./app/mdEdit.services/broadcast.js"></script>
@@ -112,8 +120,6 @@
 	<script src="./app/mdEdit.services/locales.js"></script>
 	<script src="./app/mdEdit.services/models.js"></script>
 	<script src="./app/mdEdit.services/views.js"></script>
-	<script src="./app/mdEdit.services/mdjs.js"></script>
-	<script src="./app/mdEdit.services/empty-json.js"></script>
 	<script src="./app/mdEdit.services/extents.js"></script>
 	<script src="./app/mdEdit.services/checkValues.js"></script>
 	<script src="./app/mdEdit.services/permalink.js"></script>

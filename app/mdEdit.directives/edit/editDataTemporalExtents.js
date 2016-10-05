@@ -48,9 +48,15 @@ function editDataTemporalExtentsDirective(editDataTemporalExtentsTemplateurl, Ap
         });
 
         function init() {
+            scope.field = attrs.field;
+            if (!scope.field) {
+                scope.field = 'dataTemporalExtents';
+            }
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            // Define values from attributes or use default fields.dataTitle properties values
-            scope.field = 'dataTemporalExtents';
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {
@@ -81,7 +87,7 @@ function editDataTemporalExtentsDirective(editDataTemporalExtentsTemplateurl, Ap
 
             // Add / remove item
             scope.removeItem = function(item) {
-                AppDataSrv.metadata[scope.field].splice(scope.metadata[scope.field].indexOf(item), 1);
+                AppDataSrv.metadata[scope.field].splice(AppDataSrv.metadata[scope.field].indexOf(item), 1);
             };
             scope.addItem = function() {
                 if (!AppDataSrv.metadata[scope.field]) {

@@ -48,10 +48,16 @@ function editDataKeywordsDirective(editDataKeywordsTemplateurl, AppDataSrv, moda
         });
 
         function init() {
+            scope.field = attrs.field;
+            if (!scope.field) {
+                scope.field = 'dataKeywords';
+            }
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
             scope.openModalDoc = modalDocSrv.openModalDoc;
             scope.MD_KeywordTypeCode = AppDataSrv.codelists.MD_KeywordTypeCode;
-            // Define values from attributes or use default fields.dataTitle properties values
-            scope.field = 'dataKeywords';
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {

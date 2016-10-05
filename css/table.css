@@ -1,0 +1,19 @@
+/* Tables in modalDoc */
+
+#modal-body table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 10px 2px 10px 2px;
+}
+
+#modal-body table thead {
+    background-color: #ccc;
+}
+
+#modal-body td,
+#modal-body th {
+    padding: 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+}

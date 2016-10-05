@@ -48,9 +48,12 @@ function editMultiTextareaDirective(editMultiTextareaTemplateurl, AppDataSrv, mo
         });
 
         function init() {
-            scope.openModalDoc = modalDocSrv.openModalDoc;
-            // Define values from attributes or use default fields.dataTitle properties values
             scope.field = attrs.field;
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
+            scope.openModalDoc = modalDocSrv.openModalDoc;
             scope.rows = attrs.rows;
             scope.disabled = attrs.disabled;
             scope.multi = false;

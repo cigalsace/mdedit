@@ -24,5 +24,18 @@
             "en": "config/views/view/tpl-view_en.json",
             "de": "config/views/view/tpl-view_de.json"
         }
-    }]
+    }, {
+        "path": "config/views/listXml/tpl-listxml.html",
+        "values": {
+            "fr": "Liste XML",
+            "en": "List XML",
+            "de": "List XML"
+        },
+        "locales": {
+            "fr": "config/views/listXml/tpl-listxml_fr.json",
+            "en": "config/views/listXml/tpl-listxml_fr.json",
+            "de": "config/views/listXml/tpl-listxml_de.json"
+        }
+    }
+]
 }

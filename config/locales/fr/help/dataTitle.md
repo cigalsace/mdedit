@@ -1,12 +1,13 @@
-
-<!-- Begin @data_title.md -->
+<!-- Begin @dataTitle.md -->
 
 # Titre de la donnée
 
 ## Définition
+
 Le titre correspond à un ensemble d’informations permettant d’identifier et qualifier rapidement la donnée. C’est généralement l’information qui apparaît en premier à la suite des recherches effectuées pour trouver une donnée. Le titre doit être explicite et définir clairement la donnée.
 
 ## Recommandations
+
 Il est recommandé de préciser dans le titre :
 
 - Le type de donnée (carte, donnée thématique, référentiel, etc.)
@@ -15,6 +16,7 @@ Il est recommandé de préciser dans le titre :
 - Le nom de l’emprise ou du territoire concerné par la donnée
 
 ## Exemples
+
 **Titre de la donnée : « REFERENTIEL CIGAL : Base de données d’occupation du sol 2008 (BdOCS2008-CIGAL) – Alsace »**
 
 - *"REFERENTIEL CIGAL"* : la donnée correspond à un référentiel produit ou acquis dans le cadre du partenariat CIGAL.
@@ -33,5 +35,4 @@ Il est recommandé de préciser dans le titre :
 - *"Découpage administratif pas SCOT en 2004"* : titre de la carte précisant son objet ainsi que le millésime.
 - *"Haut-Rhin"* : territoire couvert par la donnée.
 
-<!-- End @data_title.md -->
-
+<!-- End @dataTitle.md -->

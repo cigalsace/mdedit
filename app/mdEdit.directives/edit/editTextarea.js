@@ -48,8 +48,11 @@ function editTextareaDirective(editTextareaTemplateurl, AppDataSrv, modalDocSrv)
         });
 
         function init() {
-            // Define values from attributes or use default fields.dataTitle properties values
             scope.field = attrs.field;
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
             scope.openModalDoc = modalDocSrv.openModalDoc;
             var properties = ['id', 'label', 'description', 'placeholder'];
             for (var i = 0; i < properties.length; i++) {

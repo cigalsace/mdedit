@@ -24,6 +24,8 @@ function modalGetXmlCtrl($uibModalInstance, modalGetXmlSrv, AppDataSrv, mdjsSrv,
     vm.downloadXML = downloadXML;
 
     vm.downloadJSON = downloadJSON;
+    
+    vm.uploadXml = uploadXml;
 
     ////////////////////////////////////////////////////////////////////////////
 
@@ -41,6 +43,12 @@ function modalGetXmlCtrl($uibModalInstance, modalGetXmlSrv, AppDataSrv, mdjsSrv,
         //window.open('data:text/json,' + encodeURIComponent(vm.md.xml));
         //$uibModalInstance.close();
     }
+    
+    function uploadXml(filename) {
+        modalGetXmlSrv.uploadXml(filename, function(response) {
+            alert(response.data.msg);
+        });
+    }
 
     function generateXML() {
         vm.md.xml = mdjsSrv.toXml(jsonConverterSrv.formToMdjs(AppDataSrv.metadata));
@@ -51,11 +59,13 @@ function modalGetXmlCtrl($uibModalInstance, modalGetXmlSrv, AppDataSrv, mdjsSrv,
         modalGetXmlSrv.getFileUrl(file, function(response) {
             vm.md.url = response.data.url;
             vm.md.filename = response.data.filename;
-            vm.md.sec_proxy = response.data.sec_proxy;
-            vm.md.sec_username = response.data.sec_username;
-            vm.md.sec_email = response.data.sec_email;
-            vm.md.sec_org = response.data.sec_org;
-            vm.md.sec_roles = response.data.sec_roles;
+            vm.sec = AppDataSrv.sec;
+            // vm.sec = [];
+            // vm.md.sec_editor = response.data.sec_editor;
+            // vm.md.sec_username = response.data.sec_username;
+            // vm.md.sec_email = response.data.sec_email;
+            // vm.md.sec_org = response.data.sec_org;
+            // vm.md.sec_roles = response.data.sec_roles;
         });
     }
 

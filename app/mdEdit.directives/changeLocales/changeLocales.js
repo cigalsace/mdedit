@@ -58,10 +58,10 @@ function changeLocalesDirective(AppDataSrv, changeLocalesTemplateurl, localesSrv
                 localesSrv.getLocale(AppDataSrv.config.locales_path, userLanguage)
                     .then(function(data) {
                         vm.data.ui = data.ui;
+                        vm.data.codelists = data.codelists;
                     });
                 viewsSrv.getViewLocales(false, AppDataSrv.views, userLanguage, function(view, data) {
                     vm.data.fields = data.fields;
-                    vm.data.codelists = data.codelists;
                     vm.data.userLanguage = userLanguage;
                 });
             };

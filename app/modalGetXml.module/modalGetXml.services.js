@@ -13,7 +13,8 @@ function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
 
     var modalGetXmlSrv = {
         getFileUrl: getFileUrl,
-        openModalGetXml: openModalGetXml
+        openModalGetXml: openModalGetXml,
+        uploadXml: uploadXml
     };
 
     return modalGetXmlSrv;
@@ -32,6 +33,21 @@ function modalGetXmlSrv($http, AppDataSrv, $uibModal) {
         })
         .catch(function(reason) {
             console.log('modalGetXMLSrv.getFileUrl() error.');
+        });
+    }
+    
+    function uploadXml(filename, callback) {
+        return $http({
+            method: 'GET',
+            url: AppDataSrv.config.server_url_sendxml,
+            dataType: 'json',
+            params: { filename: filename }
+        })
+        .then(function(response) {
+            callback(response);
+        })
+        .catch(function(reason) {
+            console.log('modalGetXMLSrv.uploadXml() error.');
         });
     }
 

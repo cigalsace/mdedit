@@ -48,9 +48,15 @@ function editDataBrowsegraphicsDirective(editDataBrowsegraphicsTemplateurl, AppD
         });
 
         function init() {
+            scope.field = attrs.field;
+            if (!scope.field) {
+                scope.field = 'dataBrowseGraphics';
+            }
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            // Define values from attributes or use default fields.dataTitle properties values
-            scope.field = 'dataBrowseGraphics';
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {

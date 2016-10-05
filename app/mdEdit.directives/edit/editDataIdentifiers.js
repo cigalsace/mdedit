@@ -48,9 +48,15 @@ function editDataIdentifiersDirective(editDataIdentifiersTemplateurl, AppDataSrv
         });
 
         function init() {
+            scope.field = attrs.field;
+            if (!scope.field) {
+                scope.field = 'dataIdentifiers';
+            }
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            // Define values from attributes or use default fields.dataTitle properties values
-            scope.field = 'dataIdentifiers';
             scope.disabled = attrs.disabled;
             scope.multi = false;
             if (attrs.multi === 'true') {

@@ -16,7 +16,8 @@ function xmlSrv($http, $location, jsonConverterSrv, mdjsSrv, AppDataSrv) {
     var xmlSrv = {
         getFile: getFile,
         getXml: getXml,
-        loadXml: loadXml
+        loadXml: loadXml,
+        getListXml: getListXml
     };
 
     return xmlSrv;
@@ -24,7 +25,6 @@ function xmlSrv($http, $location, jsonConverterSrv, mdjsSrv, AppDataSrv) {
     ////////////////////////////////////////////////////////////////////////
 
     function getFile(url, callback) {
-        // $rootScope.xml_url = url;
         AppDataSrv.xml_url = url;
         return $http({
                 method: 'GET',
@@ -53,6 +53,20 @@ function xmlSrv($http, $location, jsonConverterSrv, mdjsSrv, AppDataSrv) {
     function loadXml(xml) {
         var data = mdjsSrv.toJson(xml);
         AppDataSrv.metadata = jsonConverterSrv.mdjsToForm(data);
+    }
+    
+    function getListXml(callback) {
+        return $http({
+                method: 'GET',
+                url: AppDataSrv.config.server_url_getlistxml,
+                dataType: 'json'
+            })
+            .success(function(data) {
+                callback(data);
+            })
+            .error(function(data, status) {
+                console.log("Error: can't get " + org + " XML files list (status: " + status + ").");
+            });
     }
 
 }

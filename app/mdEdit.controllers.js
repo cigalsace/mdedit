@@ -5,9 +5,9 @@
  */
 angular.module('mdEdit')
     .controller('mdEditCtrl', mdEditCtrl);
-mdEditCtrl.$inject = ['AppDataSrv', '$http', '$sce', '$log', 'configSrv', 'localesSrv', 'modelsSrv', 'viewsSrv', 'mdjsSrv', 'jsonConverterSrv', 'BroadcastSrv', 'PermalinkSrv', '$window', 'modalDocSrv', 'modalSetXmlSrv', 'modalGetXmlSrv'];
+mdEditCtrl.$inject = ['AppDataSrv', '$http', '$sce', '$log', 'configSrv', 'localesSrv', 'modelsSrv', 'viewsSrv', 'mdjsSrv', 'jsonConverterSrv', 'BroadcastSrv', 'PermalinkSrv', '$window', 'modalDocSrv', 'modalSetXmlSrv', 'modalGetXmlSrv', 'xmlSrv'];
 
-function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, modelsSrv, viewsSrv, mdjsSrv, jsonConverterSrv, BroadcastSrv, PermalinkSrv, $window, modalDocSrv, modalSetXmlSrv, modalGetXmlSrv) {
+function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, modelsSrv, viewsSrv, mdjsSrv, jsonConverterSrv, BroadcastSrv, PermalinkSrv, $window, modalDocSrv, modalSetXmlSrv, modalGetXmlSrv, xmlSrv) {
 
     var vm = this;
 
@@ -21,6 +21,19 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
 
 
     function loadPage() {
+        
+        xmlSrv.getListXml(function(data) {
+            vm.data.xmlfiles = data.files;
+            vm.data.sec = {
+                success: data.success,
+                editor: data.sec_editor,
+                username: data.sec_username,
+                email: data.sec_email,
+                org: data.sec_org,
+                roles: data.sec_roles
+            };
+        });
+        
         vm.clearSearch = function() {
             vm.fieldSearch = '';
         };
@@ -33,6 +46,10 @@ function mdEditCtrl(AppDataSrv, $http, $sce, $log, configSrv, localesSrv, models
         vm.getPermalink = function() {
             var url = PermalinkSrv.get();
             $window.location.href = url;
+        };
+        
+        vm.getListXml = function() {
+            viewsSrv.changeView(3);
         };
 
         // Modal to get XML

@@ -55,8 +55,11 @@ function viewsSrv($http, $location, AppDataSrv) {
     }
 
     function changeView(viewId) {
-        AppDataSrv.view = viewId;
-        AppDataSrv.template_url = AppDataSrv.views[viewId-1].path;
+        getViewLocales(viewId, AppDataSrv.views, AppDataSrv.userLanguage, function(viewId, data) {
+            AppDataSrv.fields = data.fields;
+            AppDataSrv.view = viewId;
+            AppDataSrv.template_url = AppDataSrv.views[viewId-1].path;
+        });
     }
 
 }

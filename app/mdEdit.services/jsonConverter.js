@@ -23,113 +23,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
 
     ////////////////////////////////////////////////////////////////////////
 
-    // /**
-    //  * checkMdFileIdentifier function
-    //  * @param  {[type]} mdFileIdentifier [description]
-    //  * @param  {[type]} dataIdentifiers  [description]
-    //  * @return {[type]}                  [description]
-    //  */
-    // function checkMdFileIdentifier(mdFileIdentifier, dataIdentifiers) {
-    //     /**
-    //      * [guid description]
-    //      * @return {[type]} [description]
-    //      */
-    //     function guid() {
-    //         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    //             var r = Math.random() * 16 | 0,
-    //                 v = c === 'x' ? r : (r & 0x3 | 0x8);
-    //             return v.toString(16);
-    //         });
-    //     }
-    //
-    //     if (!mdFileIdentifier || mdFileIdentifier === '') {
-    //         if (dataIdentifiers && dataIdentifiers.length && dataIdentifiers[0].code) {
-    //             mdFileIdentifier = json.dataIdentifiers[0].code;
-    //         } else {
-    //             mdFileIdentifier = guid();
-    //         }
-    //     }
-    //     return mdFileIdentifier;
-    // }
-
-    // /**
-    //  * [cleanList description]
-    //  * @param  {[type]} items [description]
-    //  * @return {[type]}       [description]
-    //  */
-    // function cleanList(items) {
-    //     var cleanItems = [];
-    //     if (items) {
-    //         for (var i = 0; i < items.length; i++) {
-    //             if (items[i]) {
-    //                 cleanItems.push(items[i]);
-    //             }
-    //         }
-    //     }
-    //     return cleanItems;
-    // }
-
-    // /**
-    //  * Manage date format
-    //  * @param  {[type]} d [description]
-    //  * @return {[type]}   [description]
-    //  */
-    // function formatDate(d, today) {
-    //     today = today || false;
-    //     var date;
-    //     if (d) {
-    //         date = new Date(d);
-    //     } else {
-    //         if (today) {
-    //             date = new Date();
-    //         } else {
-    //             return '';
-    //         }
-    //     }
-    //     var day = date.getDate();
-    //     day = (day < 10 ? '0' + day : day);
-    //     var month = date.getMonth() + 1;
-    //     month = (month < 10 ? '0' + month : month);
-    //     var fullYear = date.getFullYear();
-    //     return [fullYear, month, day].join('-');
-    // }
-
-    // /**
-    //  * checkValues function
-    //  * @param  {[type]} dataname [description]
-    //  * @param  {[type]} listname [description]
-    //  * @param  {[type]} field    [description]
-    //  * @return {[type]}          [description]
-    //  */
-    // function checkValues(json, dataname, listname, field) {
-    //     field = field || false;
-    //     for (var item in json[dataname]) {
-    //         var code;
-    //         if (field) {
-    //             code = json[dataname][item][field];
-    //         } else {
-    //             code = json[dataname][item];
-    //         }
-    //         if (code) {
-    //             // var list = $rootScope.codelists[listname];
-    //             var list = AppDataSrv.codelists[listname];
-    //             for (var option in list) {
-    //                 var id = list[option].id;
-    //                 var search = list[option].search.toLowerCase();
-    //                 if (code.toLowerCase()
-    //                     .indexOf(search) > -1) {
-    //                     if (field) {
-    //                         json[dataname][item][field] = id;
-    //                     } else {
-    //                         json[dataname][item] = id;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return json;
-    // }
-
     /**
      * formToMdjs function: prepare json metadata to export to XML
      * @param  {Object} json JSON metadata object to convert before export to XML
@@ -195,11 +88,11 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         // temporalExtents
         if (json.dataTemporalExtents) {
             for (var t = 0; t < json.dataTemporalExtents.length; t++) {
-                if (json.dataTemporalExtents[t].dataExtentName) {
+                if (json.dataTemporalExtents[t].dataTemporalExtentBegin) {
                     var temporalExtent = {
                         dataExtentName: json.dataTemporalExtents[t].dataExtentName,
-                        dataTemporalExtentBegin: json.dataTemporalExtents[t].dataTemporalExtentBegin,
-                        dataTemporalExtentEnd: json.dataTemporalExtents[t].dataTemporalExtentEnd
+                        dataTemporalExtentBegin: checkValuesSrv.formatDate(json.dataTemporalExtents[t].dataTemporalExtentBegin),
+                        dataTemporalExtentEnd: checkValuesSrv.formatDate(json.dataTemporalExtents[t].dataTemporalExtentEnd)
                     };
                     json.dataExtents.push(temporalExtent);
                 }
@@ -208,7 +101,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         // geographicExtents (get list of extents from service)
         if (json.dataGeographicExtents) {
             for (var g = 0; g < json.dataGeographicExtents.length; g++) {
-                if (json.dataGeographicExtents[g].dataExtentName) {
+                if (json.dataGeographicExtents[g].dataGeographicExtentWestBound) {
                     var geographicExtent = {
                         dataExtentName: json.dataGeographicExtents[g].dataExtentName,
                         dataGeographicExtentWestBound: json.dataGeographicExtents[g].dataGeographicExtentWestBound,
@@ -228,13 +121,29 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         // dataLegalAccessConstraints
         // dataLegalAccessInspireConstraints
         // dataLegalOtherConstraints
-        var dataLegalConstraints = {
-            dataLegalUseLimitations: checkValuesSrv.cleanList(json.dataLegalUseLimitations),
-            dataLegalUseConstraints: checkValuesSrv.cleanList(json.dataLegalUseConstraints),
-            dataLegalAccessConstraints: checkValuesSrv.cleanList(json.dataLegalAccessConstraints),
-            dataLegalOtherConstraints: checkValuesSrv.cleanList(json.dataLegalAccessInspireConstraints)
-        };
+
+        var dataLegalUseLimitations = checkValuesSrv.cleanList(json.dataLegalUseLimitations);
+        var dataLegalUseConstraints = checkValuesSrv.cleanList(json.dataLegalUseConstraints);
+        var dataLegalAccessConstraints = checkValuesSrv.cleanList(json.dataLegalAccessConstraints);
+        var dataLegalOtherConstraints = checkValuesSrv.cleanList(json.dataLegalAccessInspireConstraints);
+
+        var dataLegalConstraints = {};
+        if (dataLegalUseLimitations.length) {
+            dataLegalConstraints.dataLegalUseLimitations = dataLegalUseLimitations;
+        }
+        if (dataLegalUseConstraints.length) {
+            dataLegalConstraints.dataLegalUseConstraints = dataLegalUseConstraints;
+        }
+        if (dataLegalAccessConstraints.length) {
+            dataLegalConstraints.dataLegalAccessConstraints = dataLegalAccessConstraints;
+        }
+        if (dataLegalOtherConstraints.length) {
+            dataLegalConstraints.dataLegalOtherConstraints = dataLegalOtherConstraints;
+        }
         if (checkValuesSrv.cleanList(json.dataLegalAccessInspireConstraints).length > 0) {
+            if (!dataLegalConstraints.dataLegalAccessConstraints) {
+                dataLegalConstraints.dataLegalAccessConstraints = [];
+            }
             dataLegalConstraints.dataLegalAccessConstraints.push('otherConstraints');
         }
         json.dataLegalConstraints.push(dataLegalConstraints);
@@ -249,9 +158,12 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             json.dataSecurityConstraints.push(dataSecurityClassification);
         }
         // dataSecurityUseLimitations
-        json.dataSecurityConstraints.push({
-            dataSecurityUseLimitations: checkValuesSrv.cleanList(json.dataSecurityUseLimitations)
-        });
+        var dataSecurityUseLimitations = checkValuesSrv.cleanList(json.dataSecurityUseLimitations);
+        if (dataSecurityUseLimitations.length) {
+            json.dataSecurityConstraints.push({
+                dataSecurityUseLimitations: dataSecurityUseLimitations
+            });
+        }
 
         // inspireKeywords
         if (json.dataInspireKeywords.length > 0) {
@@ -308,6 +220,8 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             dq.dataLiStatement = json.dataLiStatement;
         }
         json.dataQualityInfo.push(dq);
+
+        console.log(json);
 
         return json;
     }
@@ -403,6 +317,18 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
                             json.dataDateCreation = new Date(json.dataDates[d][formats[f]]);
                         }
                     }
+                }
+            }
+        }
+
+        // dataTemporalExtents
+        if (json.dataTemporalExtents) {
+            // var formats = ['date', 'dateTime'];
+            for (var dt = 0; dt < json.dataTemporalExtents.length; dt++) {
+                if (json.dataTemporalExtents[dt]) {
+                    json.dataTemporalExtents[dt].dataExtentName = json.dataTemporalExtents[dt].dataExtentName;
+                    json.dataTemporalExtents[dt].dataTemporalExtentBegin = new Date(json.dataTemporalExtents[dt].dataTemporalExtentBegin);
+                    json.dataTemporalExtents[dt].dataTemporalExtentEnd = new Date(json.dataTemporalExtents[dt].dataTemporalExtentEnd);
                 }
             }
         }
@@ -520,9 +446,9 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
         if (json.dataMdIdentifiers) {
             for (var mdId = 0; mdId < json.dataMdIdentifiers.length; mdId++) {
-                if (json.dataMdIdentifiers[mdId].code && json.dataMdIdentifiers[mdId].code !== '') {
+                if (json.dataMdIdentifiers[mdId] && json.dataMdIdentifiers[mdId] !== '') {
                     var dataMdIdentifier = {
-                        code: json.dataMdIdentifiers[mdId].code,
+                        code: json.dataMdIdentifiers[mdId],
                     };
                     json.dataIdentifiers.push(dataMdIdentifier);
                 }
@@ -552,6 +478,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         // Convert Inspire keywords to code value (english) => utiliser la langue de la fiche pour décoder la valeur... ou le français par défaut
         json.dataInspireKeywords = checkValuesSrv.translateValues(json.dataInspireKeywords, AppDataSrv.codelists.MD_InspireTopicCategoryCode);
         AppDataSrv.metadata = json;
+        console.log(json);
         return json;
     }
 }

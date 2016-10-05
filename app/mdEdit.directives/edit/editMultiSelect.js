@@ -48,9 +48,12 @@ function editMultiSelectDirective(editMultiSelectTemplateurl, AppDataSrv, modalD
         });
 
         function init() {
-            scope.openModalDoc = modalDocSrv.openModalDoc;
-            // Define values from attributes or use default fields.dataTitle properties values
             scope.field = attrs.field;
+            scope.help = attrs.help;
+            if (!scope.help) {
+                scope.help = attrs.field;
+            }
+            scope.openModalDoc = modalDocSrv.openModalDoc;
             scope.list = AppDataSrv.codelists[attrs.list];
             scope.disabled = attrs.disabled;
             scope.multi = false;

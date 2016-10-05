@@ -1,21 +1,21 @@
 <div class="">
-    <label class="bt-doc control-label" for="{{id}}" uib-tooltip="{{description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(field)">
+    <label class="bt-doc control-label" for="{{id}}" uib-tooltip="{{description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(help)">
         {{label}}
     </label>
     <table class="table table-condensed">
         <tr>
             <th>
-                <span class="bt-doc control-label" uib-tooltip="{{dataTemporalExtentBegin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(field)">
+                <span class="bt-doc control-label" uib-tooltip="{{dataTemporalExtentBegin.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(help)">
                     {{dataTemporalExtentBegin.label}}
                 </span>
             </th>
             <th>
-                <span class="bt-doc control-label" uib-tooltip="{{dataTemporalExtentEnd.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(field)">
+                <span class="bt-doc control-label" uib-tooltip="{{dataTemporalExtentEnd.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(help)">
                     {{dataTemporalExtentEnd.label}}
                 </span>
             </th>
             <th>
-                <span class="bt-doc control-label" uib-tooltip="{{dataExtentName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(field)">
+                <span class="bt-doc control-label" uib-tooltip="{{dataExtentName.description}}" tooltip-trigger="mouseenter" tooltip-placement="right" ng-click="openModalDoc(help)">
                     {{dataExtentName.label}}
                 </span>
             </th>
@@ -36,14 +36,14 @@
             <td>
                 <div class="input-group date">
                     <input type="text" name="{{dataTemporalExtentEnd.id}}" id="{{dataTemporalExtentEnd.id}}" class="form-control input-sm" uib-datepicker-popup="yyyy-MM-dd" is-open="datePicker['temporalExtentEndOpened_'+$index]" datepicker-options="{startingDay: 1}"
-                        close-text="Close" ng-model="item.end" />
+                        close-text="Close" ng-model="item.dataTemporalExtentEnd" />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default btn-sm" ng-click="openDatePicker($event, 'temporalExtentEndOpened_'+$index)"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
             </td>
             <td>
-                <textarea class="form-control input-sm" id="{{dataExtentName.id}}" name="{{dataExtentName.id}}" placeholder="{{dataExtentName.placeholder}}" rows="3" ng-model="item.description"></textarea>
+                <textarea class="form-control input-sm" id="{{dataExtentName.id}}" name="{{dataExtentName.id}}" placeholder="{{dataExtentName.placeholder}}" rows="3" ng-model="item.dataExtentName"></textarea>
             </td>
             <td>
                 <button type="button" class="btn btn-default btn-xs pull-right glyphicon glyphicon-minus" aria-hidden="true" ng-click="removeItem(item)"></button>
