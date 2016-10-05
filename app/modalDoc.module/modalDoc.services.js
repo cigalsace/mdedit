@@ -29,7 +29,7 @@ function modalDocSrv($http, $uibModal) {
                 return $http.get(path)
                     .then(function(response) {
                         // Change path for images in documentation
-                        markdown = response.data.replace(/\]\(userGuideImages\//ig, '](documentation/userGuide/images/');
+                        markdown = response.data.replace(/\]\(userGuideImages\//ig, '](documentation/userGuide/userGuideImages/');
                         showdown.setFlavor('github');
                         var converter = new showdown.Converter({
                             tables: true
