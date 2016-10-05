@@ -31,32 +31,32 @@ mdEdit ne nécessite pas d'authentification pour fonctionner. Il vous suffit de 
 mdEdit s'ouvre directement sur la vue "édition".
 Une fois l'application chargée, pour décrire vos données, il vous suffit de remplir le formulaire proposé.
 
-![screen_mdedit.jpg](documentation/userGuide/images/screen_mdedit.jpg)
+![screen_mdedit.jpg](userGuideImages/screen_mdedit.jpg)
 
 L'interface propose les fonctionnalités suivantes:
 
 - Consultation de la documentation de chaque champ. Un clic sur l'intitulé du champ permet d'accéder directement à la documentation de ce champ.
-- Affichage en vue "Consultation" via le bouton ![bt_view.jpg](documentation/userGuide/images/bt_view.jpg)
-- Masquage des ensemble de champs. Pour cela, cliquez sur le bouton ![bt_accordion.jpg](documentation/userGuide/images/bt_accordion.jpg)
-- Affichage de champs supplémentaires. Le bouton ![bt_showall.jpg](documentation/userGuide/images/bt_showall.jpg) permet d'afficher des champs plus techniques ou généralement auto-générés par l'application (identifiant de la fiche, encodage des caratères, etc.).
-- Gestion des champs multiples. Certains champs, comme les contacts peuvent être multiples. Utilisez les boutons ![bt_plus.jpg](documentation/userGuide/images/bt_plus.jpg) et ![bt_minus.jpg](documentation/userGuide/images/bt_minus.jpg) pour ajouter ou supprimer une valeur.
+- Affichage en vue "Consultation" via le bouton ![bt_view.jpg](userGuideImages/bt_view.jpg)
+- Masquage des ensemble de champs. Pour cela, cliquez sur le bouton ![bt_accordion.jpg](userGuideImages/bt_accordion.jpg)
+- Affichage de champs supplémentaires. Le bouton ![bt_showall.jpg](userGuideImages/bt_showall.jpg) permet d'afficher des champs plus techniques ou généralement auto-générés par l'application (identifiant de la fiche, encodage des caratères, etc.).
+- Gestion des champs multiples. Certains champs, comme les contacts peuvent être multiples. Utilisez les boutons ![bt_plus.jpg](userGuideImages/bt_plus.jpg) et ![bt_minus.jpg](userGuideImages/bt_minus.jpg) pour ajouter ou supprimer une valeur.
 
-**NB**: les utilisateur authentifiés sur la Géoplateforme CIGAL disposent d'un bouton supplémentaire ![bt_listxml.jpg](documentation/userGuide/images/bt_listxml.jpg) leur permettant de lister et d'éditer les fichiers de leur espace Pydio. L'utilisateur doit être administrateur de son catalogue.
+**NB**: les utilisateur authentifiés sur la Géoplateforme CIGAL disposent d'un bouton supplémentaire ![bt_listxml.jpg](userGuideImages/bt_listxml.jpg) leur permettant de lister et d'éditer les fichiers de leur espace Pydio. L'utilisateur doit être administrateur de son catalogue.
 
 
 ## Visualiser/consulter une fiche de métadonnées
 
-Le bouton ![bt_view.jpg](documentation/userGuide/images/bt_view.jpg) permet de basculer en vue "consultation". La fiche est alors réorganisée selon une présentation plus adaptée à la lecture.
-Pour revenir à la vue "édition", utilisez le bouton ![bt_edit.jpg](documentation/userGuide/images/bt_edit.jpg).
+Le bouton ![bt_view.jpg](userGuideImages/bt_view.jpg) permet de basculer en vue "consultation". La fiche est alors réorganisée selon une présentation plus adaptée à la lecture.
+Pour revenir à la vue "édition", utilisez le bouton ![bt_edit.jpg](userGuideImages/bt_edit.jpg).
 
 
 ## Importer une fiche de métadonnées
 
-Pour importer une fiche de métadonnées, cliquez sur le bouton ![bt_import.jpg](documentation/userGuide/images/bt_import.jpg).
+Pour importer une fiche de métadonnées, cliquez sur le bouton ![bt_import.jpg](userGuideImages/bt_import.jpg).
 
 La fenêtre offre plusieurs possibilités d'import:
 
-![modal_import.jpg](documentation/userGuide/images/modal_import.jpg)
+![modal_import.jpg](userGuideImages/modal_import.jpg)
 
 Ces possibilités sont:
 
@@ -69,10 +69,10 @@ Ces possibilités sont:
 
 ## Exporter une fiche de métadonnées
 
-Pour exporter une fiche au format XML, cliquez sur le bouton ![bt_export.jpg](documentation/userGuide/images/bt_export.jpg).
+Pour exporter une fiche au format XML, cliquez sur le bouton ![bt_export.jpg](userGuideImages/bt_export.jpg).
 La fenêtre qui s'ouvre vous permet de visualiser le résultat de la conversion.
 
-![modal_export.jpg](documentation/userGuide/images/modal_export.jpg)
+![modal_export.jpg](userGuideImages/modal_export.jpg)
 
 Le bouton "Download file" permet soit:
 
@@ -84,12 +84,12 @@ Le bouton "Download file" permet soit:
 
 ## Changer la langue de l'interface
 
-Le bouton ![bt_lang.jpg](documentation/userGuide/images/bt_lang.jpg) en bas à droite de l'écran propose une liste des langues disponibles pour l'interface. Il vous suffit de choisir celle qui vous convient.
+Le bouton ![bt_lang.jpg](userGuideImages/bt_lang.jpg) en bas à droite de l'écran propose une liste des langues disponibles pour l'interface. Il vous suffit de choisir celle qui vous convient.
 
 
 ## Obtenir un permalien
 
-Le bouton ![bt_link.jpg](documentation/userGuide/images/bt_link.jpg) en bas à droite de l'écran permet d'obtenir un permalien.
+Le bouton ![bt_link.jpg](userGuideImages/bt_link.jpg) en bas à droite de l'écran permet d'obtenir un permalien.
 Le permalien permet de préciser:
 
 - le model
@@ -102,8 +102,8 @@ Le permalien permet de préciser:
 
 Comme indiqué précédemment, les utilisateurs authentifiés de la Géoplateforme CIGAL peuvent:
 
-- Lister les fichiers XML de leur espace Pydio (bouton ![bt_listxml.jpg](documentation/userGuide/images/bt_listxml.jpg))
+- Lister les fichiers XML de leur espace Pydio (bouton ![bt_listxml.jpg](userGuideImages/bt_listxml.jpg))
 - Editer les fichiers XMl de leur espace Pydio
 - Téléverser les nouvelles fiches sur leur espace Pydio
 
-![screen_listxml.jpg](documentation/userGuide/images/screen_listxml.jpg)
+![screen_listxml.jpg](userGuideImages/screen_listxml.jpg)

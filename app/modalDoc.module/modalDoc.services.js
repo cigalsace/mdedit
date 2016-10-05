@@ -28,11 +28,13 @@ function modalDocSrv($http, $uibModal) {
                 path = help.data[field] || 'config/locales/' + lg + '/help/' + field + '.md';
                 return $http.get(path)
                     .then(function(response) {
+                        // Change path for images in documentation
+                        markdown = response.data.replace(/\]\(userGuideImages\//ig, '](documentation/userGuide/images/');
                         showdown.setFlavor('github');
                         var converter = new showdown.Converter({
                             tables: true
                         });
-                        return converter.makeHtml(response.data);
+                        return converter.makeHtml(markdown);
                     });
             });
     }
