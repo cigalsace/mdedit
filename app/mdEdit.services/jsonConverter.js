@@ -329,35 +329,21 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             }
         }
 
-        // dataTopicCategories
-        // if (json.dataTopicCategories.length === 0) {
-        //     json.dataTopicCategories.push('');
-        // }
-
         // dataDistributionFormats
         if (json.dataDistributionFormats.length === 0) {
             json.dataDistributionFormats.push(mdjs.empty_json.distributionformat);
         }
         // dataBrowseGraphics
-        // if (!json.dataBrowseGraphics) {
-        //     json.dataBrowseGraphics = [];
-        // }
         if (json.dataBrowseGraphics.length === 0) {
             json.dataBrowseGraphics.push(mdjs.empty_json.browsegraphic);
         }
 
         // dataGeographicExtents
-        // if (!json.dataGeographicExtents) {
-        //     json.dataGeographicExtents = [];
-        // }
         if (json.dataGeographicExtents.length === 0) {
             json.dataGeographicExtents.push(mdjs.empty_json.geographicextent);
         }
 
         // dataTemporalExtents
-        // if (!json.dataTemporalExtents) {
-        //     json.dataTemporalExtents = [];
-        // }
         if (json.dataTemporalExtents) {
             // var formats = ['date', 'dateTime'];
             for (var dt = 0; dt < json.dataTemporalExtents.length; dt++) {
@@ -412,9 +398,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         // dataKeywords / dataInspireKeywords
         if (json.dataKeywords) {
             var dataKeywords = [];
-            // if (!json.dataInspireKeywords) {
-            //     json.dataInspireKeywords = [];
-            // }
             for (var kw = 0; kw < json.dataKeywords.length; kw++) {
                 if (json.dataKeywords[kw].keyword) {
                     json.dataKeywords[kw].keyword = json.dataKeywords[kw].keywords.join(', ');
@@ -434,9 +417,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         if (json.dataKeywords.length === 0) {
             json.dataKeywords.push(mdjs.empty_json.keyword);
         }
-        // if (json.dataInspireKeywords.length === 0) {
-        //     json.dataInspireKeywords.push(mdjs.empty_json.inspirekeywords);
-        // }
+
         // dataLegalConstraints
         // dataLegalUseLimitations
         // dataLegalUseConstraints
@@ -449,9 +430,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             // json.dataLegalAccessConstraints = json.dataLegalConstraints[0].dataLegalAccessConstraints;
             if (json.dataLegalConstraints[0].dataLegalOtherConstraints) {
                 var dataLegalOtherConstraints = [];
-                // if (!json.dataLegalAccessInspireConstraints) {
-                //     json.dataLegalAccessInspireConstraints = [];
-                // }
                 for (var lc = 0; lc < json.dataLegalConstraints[0].dataLegalOtherConstraints.length; lc++) {
                     if (json.dataLegalConstraints[0].dataLegalOtherConstraints[lc].toLowerCase()
                         .indexOf('inspire') > -1) {
@@ -483,9 +461,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
 
         // dataRsIdentifiers and dataMdIdentifiers to dataIdentifiers
-        // if (!json.dataIdentifiers) {
-        //     json.dataIdentifiers = [];
-        // }
         if (json.dataRsIdentifiers) {
             for (var rsId = 0; rsId < json.dataRsIdentifiers.length; rsId++) {
                 if (json.dataRsIdentifiers[rsId].code && json.dataRsIdentifiers[rsId].code !== '') {
@@ -512,9 +487,6 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
 
         // dataLinkages
-        // if (!json.dataLinkages) {
-        //     json.dataLinkages = [];
-        // }
         for (var lk = 0; lk < json.dataLinkages.length; lk++) {
             if (!json.dataLinkages[lk].description) {
                 if (json.dataLinkages[lk].name) {
