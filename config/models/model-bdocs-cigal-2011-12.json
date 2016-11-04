@@ -96,13 +96,15 @@
         "fileType": ".jpg"
     }],
     "dataInspireKeywords": ["Occupation des terres"],
-    "dataKeywords": [{
-        "keywords": ["aménagement du territoire", "occupation du sol", "données ouvertes", "environnement", "Géoportail"],
-        "keywordType": "theme"
-    }, {
-        "keywordType": "place",
-        "keywords": "Alsace"
-    }],
+    "dataKeywords": [
+        {
+            "keywords": ["aménagement du territoire", "occupation du sol", "données ouvertes", "environnement", "Géoportail"],
+            "keywordType": "theme"
+        }, {
+            "keywordType": "place",
+            "keywords": "Alsace"
+        }
+    ],
     "dataUseLimitations": [""],
     "dataLegalUseLimitations": ["Licence ouverte Etalab.", "Mentions: \"Source : BdOCS CIGAL v2 (www.cigalsace.org)\".", "Se référer au guide d'utilisation de la base de données pour plus d'information."],
     "dataLegalUseConstraints": ["license"],

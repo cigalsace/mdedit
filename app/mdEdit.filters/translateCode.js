@@ -6,6 +6,7 @@ translateCode.$inject = ['AppDataSrv'];
 
 function translateCode(AppDataSrv) {
     return function(code, listName) {
+        console.log(code);
         if (listName) {
             var list = AppDataSrv.codelists[listName];
             for (var option in list) {

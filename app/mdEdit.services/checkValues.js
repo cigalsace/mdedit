@@ -51,7 +51,7 @@ function checkValuesSrv(AppDataSrv) {
                 return guid();
             }
         }
-        
+
         return mdFileIdentifier;
     }
 
@@ -165,17 +165,21 @@ function checkValuesSrv(AppDataSrv) {
                 for (item in data) {
                     if (typeof(data[item]) == 'string') {
                         code = data[item];
-                        for (option in list) {
-                            if (code.toLowerCase() == list[option].value.toLowerCase()) {
-                                data[item] = list[option].id;
+                        if (code) {
+                            for (option in list) {
+                                if (code.toLowerCase() == list[option].value.toLowerCase()) {
+                                    data[item] = list[option].id;
+                                }
                             }
                         }
                     } else {
                         code = data[item][field];
-                        for (option in list) {
-                            if (code.toLowerCase() == list[option].value.toLowerCase()) {
-                                data[item] = {};
-                                data[item][field] = list[option].id;
+                        if (code) {
+                            for (option in list) {
+                                if (code.toLowerCase() == list[option].value.toLowerCase()) {
+                                    data[item] = {};
+                                    data[item][field] = list[option].id;
+                                }
                             }
                         }
                     }

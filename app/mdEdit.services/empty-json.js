@@ -81,7 +81,7 @@ mdjs.empty_json.temporalextent = {
  */
 mdjs.empty_json.keyword = {
     "keywords": '',
-    "type": "",
+    "keywordType": "",
     "thesaurusName": "",
     "thesaurusDates": [{
         "dateType": "",
@@ -93,6 +93,7 @@ mdjs.empty_json.keyword = {
  * Empty inspire keyword object
  * @type {Array}
  */
+/*
 mdjs.empty_json.inspirekeywords = {
     "keywords": [],
     "keywordType": "theme",
@@ -102,6 +103,7 @@ mdjs.empty_json.inspirekeywords = {
         "date": "2008-06-01"
     }]
 };
+*/
 
 /**
  * Empty reference system object
@@ -167,16 +169,16 @@ mdjs.empty_json.metadata = {
     "dataDateRevision": "",
     "dataIdentifiers": [],
     "dataAbstract": "",
-    "dataBrowsegraphics": [],
+    "dataBrowseGraphics": [],
     "dataMaintenanceFrequency": "",
     "dataTemporalExtents": [],
     "dataLanguages": [],
-    "dataTopicCategories": [],
+    "dataTopicCategories": [""],
     "dataKeywords": [],
-    "dataInspireKeywords": [],
+    "dataInspireKeywords": [""],
     "dataKeywordsList": "",
     "dataPointOfContacts": [],
-    "data_geographicextents": [],
+    "dataGeographicExtents": [],
     "dataReferenceSystems": [],
     "dataPresentationForm": "",
     "dataSpatialRepresentationType": "",
@@ -187,13 +189,13 @@ mdjs.empty_json.metadata = {
     "dataCharacterSet": "",
     "dataDistributionFormats": [],
     "dataUseLimitations": [],
-    "dataLegalUseLimitations": [],
-    "dataLegalUseConstraints": [],
-    "dataLegalAccessConstraints": [],
-    "dataLegalAccessInspireConstraints": [],
-    "dataLegalAccessotherConstraints": [],
+    "dataLegalUseLimitations": [""],
+    "dataLegalUseConstraints": [""],
+    "dataLegalAccessConstraints": [""],
+    "dataLegalAccessInspireConstraints": [""],
+    "dataLegalAccessotherConstraints": [""],
     "dataSecurityClassification": "",
-    "dataSecurityUseLimitations": [],
+    "dataSecurityUseLimitations": [""],
     "dataLinkages": [],
     "dataDqInspireConformities": [],
     "dataDqConformities": []
