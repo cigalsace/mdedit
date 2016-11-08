@@ -29,9 +29,11 @@
                     </div>
                     <div ng-if="vm.data.metadata.dataTemporalExtents">
                         <div ng-repeat="dataTemporalExtent in vm.data.metadata.dataTemporalExtents track by $index">
-                            <strong>{{dataTemporalExtent.dataExtentName}}:</strong>
-                            <span class="pre">{{dataTemporalExtent.dataTemporalExtentBegin | date:'dd/MM/yyyy'}}</span>
-                            <span class="pre" ng-if="dataTemporalExtent.dataTemporalExtentEnd"> - {{dataTemporalExtent.dataTemporalExtentEnd | date:'dd/MM/yyyy'}}</span>
+                            <div ng-if="dataTemporalExtent.dataExtentBegin">
+                                <strong>{{dataTemporalExtent.dataExtentName}}:</strong>
+                                <span class="pre">{{dataTemporalExtent.dataTemporalExtentBegin | date:'dd/MM/yyyy'}}</span>
+                                <span class="pre" ng-if="dataTemporalExtent.dataTemporalExtentEnd"> - {{dataTemporalExtent.dataTemporalExtentEnd | date:'dd/MM/yyyy'}}</span>
+                            </div>
                         </div>
                     </div>
                     <div ng-if="vm.data.metadata.dataMaintenanceFrequency">

@@ -453,7 +453,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         json.dataLegalAccessInspireConstraints = checkValuesSrv.checkCodes(json.dataLegalAccessInspireConstraints, AppDataSrv.codelists.MD_InspireRestrictionCode);
 
         // dataSecurityConstraints
-        if (json.dataSecurityConstraints.length > 0) {
+        if (json.dataSecurityConstraints && json.dataSecurityConstraints.length > 0) {
             // dataSecurityClassification
             json.dataSecurityClassification = json.dataSecurityConstraints[0].dataSecurityClassification;
             // dataSecurityUseLimitations
