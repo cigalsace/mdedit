@@ -51,10 +51,13 @@ function xmlSrv($http, $location, jsonConverterSrv, mdjsSrv, AppDataSrv) {
     }
 
     function loadXml(xml) {
-        var data = mdjsSrv.toJson(xml);
+        var data = angular.copy(mdjsSrv.toJson(xml));
+        // data = mdjsSrv.toJson(xml);
+        console.log(mdjsSrv.toJson(xml));
+        console.log(data);
         AppDataSrv.metadata = jsonConverterSrv.mdjsToForm(data);
     }
-    
+
     function getListXml(callback) {
         return $http({
                 method: 'GET',

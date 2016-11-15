@@ -144,7 +144,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
             if (!dataLegalConstraints.dataLegalAccessConstraints) {
                 dataLegalConstraints.dataLegalAccessConstraints = [];
             }
-            dataLegalConstraints.dataLegalAccessConstraints.push('otherConstraints');
+            dataLegalConstraints.dataLegalAccessConstraints.push('otherRestrictions');
         }
         json.dataLegalConstraints.push(dataLegalConstraints);
 
@@ -426,6 +426,8 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
 
         // dataLegalOtherConstraints
         // dataLegalConstraints
+        json.dataLegalAccessInspireConstraints = [];
+        json.dataLegalOtherConstraints = [];
         if (json.dataLegalConstraints) {
             // json.dataLegalAccessConstraints = json.dataLegalConstraints[0].dataLegalAccessConstraints;
             if (json.dataLegalConstraints[0].dataLegalOtherConstraints) {
@@ -441,6 +443,17 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
                 json.dataLegalOtherConstraints = dataLegalOtherConstraints;
             }
             if (json.dataLegalConstraints[0].dataLegalAccessConstraints) {
+                var dataLegalAccessConstraints = [];
+                var other = false;
+                for (i = 0; i < json.dataLegalConstraints[0].dataLegalAccessConstraints.length; i++) {
+                    if (json.dataLegalConstraints[0].dataLegalAccessConstraints[i].toLowerCase() == 'otherrestrictions') {
+                        json.dataLegalConstraints[0].dataLegalAccessConstraints.splice(i, 1);
+                        other = true;
+                    }
+                }
+                if (other) {
+                    json.dataLegalConstraints[0].dataLegalAccessConstraints.push('otherRestrictions');
+                }
                 json.dataLegalAccessConstraints = json.dataLegalConstraints[0].dataLegalAccessConstraints;
             }
             if (json.dataLegalConstraints[0].dataLegalUseLimitations) {
@@ -461,6 +474,7 @@ function jsonConverterSrv(AppDataSrv, checkValuesSrv) {
         }
 
         // dataRsIdentifiers and dataMdIdentifiers to dataIdentifiers
+        json.dataIdentifiers = [];
         if (json.dataRsIdentifiers) {
             for (var rsId = 0; rsId < json.dataRsIdentifiers.length; rsId++) {
                 if (json.dataRsIdentifiers[rsId].code && json.dataRsIdentifiers[rsId].code !== '') {
