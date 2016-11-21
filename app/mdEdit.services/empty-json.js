@@ -93,7 +93,6 @@ mdjs.empty_json.keyword = {
  * Empty inspire keyword object
  * @type {Array}
  */
-/*
 mdjs.empty_json.inspirekeywords = {
     "keywords": [],
     "keywordType": "theme",
@@ -103,7 +102,6 @@ mdjs.empty_json.inspirekeywords = {
         "date": "2008-06-01"
     }]
 };
-*/
 
 /**
  * Empty reference system object
