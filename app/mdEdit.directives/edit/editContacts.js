@@ -67,6 +67,12 @@ function editContactsDirective(editContactsTemplateurl, AppDataSrv, modalDocSrv)
                 }
                 AppDataSrv.metadata[scope.cnt_type].push(angular.copy(mdjs.empty_json.contact));
             };
+            scope.duplicateContact = function(contact) {
+                if (!AppDataSrv.metadata[scope.cnt_type]) {
+                    AppDataSrv.metadata[scope.cnt_type] = [];
+                }
+                AppDataSrv.metadata[scope.cnt_type].push(angular.copy(contact));
+            };
         }
     }
 }
