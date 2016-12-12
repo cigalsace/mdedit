@@ -57,6 +57,12 @@ function editContactsDirective(editContactsTemplateurl, AppDataSrv, modalDocSrv)
 
             scope.fields = AppDataSrv.fields[scope.cnt_type];
 
+            var otherTypes = {
+                'mdContacts': 'dataPointOfContacts',
+                'dataPointOfContacts': 'mdContacts'
+            };
+            var otherType = otherTypes[scope.cnt_type];
+
             // Add / remove contacts
             scope.removeContact = function(contact) {
                 AppDataSrv.metadata[scope.cnt_type].splice(AppDataSrv.metadata[scope.cnt_type].indexOf(contact), 1);
@@ -72,6 +78,12 @@ function editContactsDirective(editContactsTemplateurl, AppDataSrv, modalDocSrv)
                     AppDataSrv.metadata[scope.cnt_type] = [];
                 }
                 AppDataSrv.metadata[scope.cnt_type].push(angular.copy(contact));
+            };
+            scope.sendContact = function(contact) {
+                if (!AppDataSrv.metadata[otherType]) {
+                    AppDataSrv.metadata[otherType] = [];
+                }
+                AppDataSrv.metadata[otherType].push(angular.copy(contact));
             };
         }
     }
