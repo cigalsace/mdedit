@@ -40,6 +40,7 @@ L'interface propose les fonctionnalités suivantes:
 - Masquage des ensemble de champs. Pour cela, cliquez sur le bouton ![bt_accordion.jpg](userGuideImages/bt_accordion.jpg)
 - Affichage de champs supplémentaires. Le bouton ![bt_showall.jpg](userGuideImages/bt_showall.jpg) permet d'afficher des champs plus techniques ou généralement auto-générés par l'application (identifiant de la fiche, encodage des caratères, etc.).
 - Gestion des champs multiples. Certains champs, comme les contacts peuvent être multiples. Utilisez les boutons ![bt_plus.jpg](userGuideImages/bt_plus.jpg) et ![bt_minus.jpg](userGuideImages/bt_minus.jpg) pour ajouter ou supprimer une valeur.
+- Duplication des contacts. Spécifiquement pour les contacts, il existe un bouton ![bt_duplicate.jpg](userGuideImages/bt_duplicate.jpg) qui permet de dupliquer un contact et un bouton ![bt_send.jpg](userGuideImages/bt_send.jpg) qui permet d'envoyer un contact dans l'autre catégorie (copier un contact pour les métadonnées vers les contacts pour les données ou inversement).
 
 **NB**: les utilisateur authentifiés sur la Géoplateforme CIGAL disposent d'un bouton supplémentaire ![bt_listxml.jpg](userGuideImages/bt_listxml.jpg) leur permettant de lister et d'éditer les fichiers de leur espace Pydio. L'utilisateur doit être administrateur de son catalogue.
 

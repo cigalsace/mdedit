@@ -52,4 +52,3 @@ Il est recommandé de saisir l’ensemble des informations descriptives du conta
 - Rôle: Point de contact
 
 <!-- End @contacts.md -->
-
