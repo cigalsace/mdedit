@@ -54,7 +54,13 @@ function editSelectDirective(editSelectTemplateurl, AppDataSrv, modalDocSrv) {
                 scope.help = attrs.field;
             }
             scope.openModalDoc = modalDocSrv.openModalDoc;
-            scope.list = AppDataSrv.codelists[attrs.list];
+            list = AppDataSrv.codelists[attrs.list];
+            scope.list = [];
+            for (var l in list) {
+                if (! list[l].id.startsWith('_')) {
+                    scope.list.push(list[l]);
+                }
+            }
             scope.disabled = attrs.disabled;
             var properties = ['id', 'label', 'description', 'placeholder'];
             for (var i = 0; i < properties.length; i++) {

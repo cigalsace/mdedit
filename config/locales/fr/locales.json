@@ -564,16 +564,16 @@
         }],
 
         "MD_ScopeCode": [{
-            "id": "attribute",
+            "id": "_attribute",
             "value": "Attribut"
         }, {
-            "id": "attributeType",
+            "id": "_attributeType",
             "value": "Type d’attribut"
         }, {
-            "id": "collectionHardware",
+            "id": "_collectionHardware",
             "value": "Collection matérielle"
         }, {
-            "id": "collectionSession",
+            "id": "_collectionSession",
             "value": "Collection de session"
         }, {
             "id": "series",
@@ -582,37 +582,37 @@
             "id": "dataset",
             "value": "Jeu de données"
         }, {
-            "id": "nonGeographicDataset",
+            "id": "_nonGeographicDataset",
             "value": "Jeu de données non géographique"
         }, {
-            "id": "dimensionGroup",
+            "id": "_dimensionGroup",
             "value": "Dimension d’un groupe"
         }, {
-            "id": "feature",
+            "id": "_feature",
             "value": "Entité"
         }, {
-            "id": "featureType",
+            "id": "_featureType",
             "value": "Type d’entité"
         }, {
-            "id": "propertyType",
+            "id": "_propertyType",
             "value": "Type de propriété"
         }, {
-            "id": "software",
+            "id": "_software",
             "value": "Logiciel"
         }, {
-            "id": "fieldSession",
+            "id": "_fieldSession",
             "value": "Champ de Session"
         }, {
-            "id": "service",
+            "id": "_service",
             "value": "Service"
         }, {
-            "id": "model",
+            "id": "_model",
             "value": "Modèle"
         }, {
-            "id": "tile",
+            "id": "_tile",
             "value": "Sous-ensemble de données"
         }, {
-            "id": "fieldCampaign",
+            "id": "_fieldCampaign",
             "value": "Campagne de mesures"
         }],
 
